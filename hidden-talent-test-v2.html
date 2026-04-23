@@ -107,9 +107,12 @@ body {
   line-height: 1.18;
   letter-spacing: -0.015em;
   margin-bottom: 10px;
-  max-width: 500px;
+  width: min(100%, 760px);
+  max-width: 760px;
 }
 .intro-title em {
+  display: inline-block;
+  font-size: 0.92em;
   font-style: italic;
   color: var(--green);
 }
@@ -791,6 +794,8 @@ body {
 @media (max-width: 480px) {
   #intro { padding: 64px 18px 24px; }
   .intro-hero { min-height: auto; padding: 16px 0 28px; }
+  .intro-title { max-width: 360px; }
+  .intro-title em { font-size: 1em; }
   .intro-stats { flex-wrap: wrap; }
   .proof-grid { grid-template-columns: 1fr; }
   .site-footer { flex-direction: column; align-items: flex-start; }
@@ -799,6 +804,10 @@ body {
   .paywall-top { flex-direction: column; align-items: flex-start; }
   .preview-grid,
   .compare-grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 700px) {
+  .intro-title em { white-space: nowrap; }
 }
 </style>
 </head>
