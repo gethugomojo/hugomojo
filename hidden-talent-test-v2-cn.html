@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hidden Talent Test — Hugo Mojo</title>
-<meta name="description" content="Hidden Talent Test by Hugo Mojo is a 3-minute self-discovery test with a free result and an optional full digital talent report.">
-<meta property="og:title" content="Hidden Talent Test — Hugo Mojo">
-<meta property="og:description" content="You think you're ordinary. There's more to you than you think.">
+<title>隐藏天赋测试 — Hugo Mojo · 雨果灵机</title>
+<meta name="description" content="雨果灵机隐藏天赋测试：3 分钟获得免费结果，可选择解锁完整数字天赋报告。">
+<meta property="og:title" content="隐藏天赋测试 — Hugo Mojo · 雨果灵机">
+<meta property="og:description" content="你以为自己普通，其实有点东西。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hugomojo.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -28,11 +28,36 @@
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   background: var(--paper);
   color: var(--ink);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+}
+.is-cn .intro-title,
+.is-cn .q-main,
+.is-cn .loader-text,
+.is-cn .talent-name,
+.is-cn .paywall-title {
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  letter-spacing: 0;
+}
+.is-cn #hm-label,
+.is-cn .quiz-logo,
+.is-cn .scp-brand {
+  letter-spacing: 0;
+}
+.is-cn .intro-title {
+  font-weight: 500;
+  line-height: 1.28;
+}
+.is-cn .intro-title em {
+  font-style: normal;
+}
+.is-cn .q-main,
+.is-cn .talent-name,
+.is-cn .paywall-title {
+  font-weight: 600;
 }
 
 /* LANG */
@@ -802,12 +827,7 @@ body {
 }
 </style>
 </head>
-<body>
-
-<div class="lang-bar">
-  <button class="lang-btn active" onclick="setLang('en')">EN</button>
-  <button class="lang-btn" onclick="setLang('zh')">中文</button>
-</div>
+<body class="is-cn">
 
 <!-- INTRO -->
 <div id="intro" class="screen active">
@@ -816,51 +836,51 @@ body {
       <div class="hm-avatar">HM</div>
       <span id="hm-label">Hugo Mojo · 雨果灵机</span>
     </div>
-    <h1 class="intro-title" id="intro-h1">You think you're ordinary.<br><em>There's more to you than you think.</em></h1>
-    <p class="intro-sub" id="intro-p">12 questions. You've been using this talent all along — you just never named it.</p>
+    <h1 class="intro-title" id="intro-h1">你以为自己普通，<em>其实有点东西。</em></h1>
+    <p class="intro-sub" id="intro-p">12 道题，测出你一直在用、但最容易忽略的那个天赋。</p>
     <div class="intro-stats">
-      <div class="stat-pill" id="stat1">12 questions</div>
-      <div class="stat-pill" id="stat2">3 min</div>
-      <div class="stat-pill" id="stat3">Free</div>
+      <div class="stat-pill" id="stat1">12 道题</div>
+      <div class="stat-pill" id="stat2">3 分钟</div>
+      <div class="stat-pill" id="stat3">免费</div>
     </div>
     <button class="btn-primary" onclick="startQuiz()">
-      <span id="btn-start">Find out</span>
+      <span id="btn-start">测出来</span>
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
     <div class="talent-chips" id="chips-row">
-      <span class="chip chip-green" id="c0">The Spark Maker</span>
-      <span class="chip chip-blue" id="c1">The Strategist</span>
-      <span class="chip chip-warm" id="c2">The Magnetizer</span>
-      <span class="chip chip-ink" id="c3">The Executor</span>
-      <span class="chip chip-ink" id="c4">The Empath</span>
-      <span class="chip chip-ink" id="c5">The Seer</span>
+      <span class="chip chip-green" id="c0">灵感制造者</span>
+      <span class="chip chip-blue" id="c1">长线布局者</span>
+      <span class="chip chip-warm" id="c2">气场带动者</span>
+      <span class="chip chip-ink" id="c3">落地推进者</span>
+      <span class="chip chip-ink" id="c4">情绪感知者</span>
+      <span class="chip chip-ink" id="c5">本质看见者</span>
     </div>
   </div>
 
-  <section class="site-proof" aria-label="Product details">
+  <section class="site-proof" aria-label="产品说明">
     <div class="proof-grid">
       <div class="proof-card">
         <div class="proof-kicker">Product</div>
-        <div class="proof-title">Free result + optional report</div>
-        <div class="proof-text">Take the 3-minute test for a free talent result. Unlock the full 5-part digital report only if you want the deeper version.</div>
+        <div class="proof-title">免费结果 + 可选完整报告</div>
+        <div class="proof-text">3 分钟获得基础天赋结果。想看更完整版本时，可以解锁 5 部分数字报告。</div>
       </div>
       <div class="proof-card">
         <div class="proof-kicker">Delivery</div>
-        <div class="proof-title">Digital access after checkout</div>
-        <div class="proof-text">The paid report is delivered digitally after payment. No physical goods are shipped.</div>
+        <div class="proof-title">支付后数字交付</div>
+        <div class="proof-text">完整报告为数字内容，支付后在线交付，不涉及实体商品发货。</div>
       </div>
       <div class="proof-card">
         <div class="proof-kicker">Support</div>
-        <div class="proof-title">Help by email</div>
-        <div class="proof-text">Questions, delivery issues, or refund requests can be sent to hi@hugomojo.com.</div>
+        <div class="proof-title">邮件支持</div>
+        <div class="proof-text">支付、交付、退款问题都可以发邮件到 hi@hugomojo.com。</div>
       </div>
       <div class="proof-card">
         <div class="proof-kicker">Use</div>
-        <div class="proof-title">Entertainment and self-discovery</div>
-        <div class="proof-text">This is not medical, psychological, financial, legal, or career advice.</div>
+        <div class="proof-title">情绪娱乐与自我发现</div>
+        <div class="proof-text">本产品不是医疗、心理、财务、法律或职业建议。</div>
       </div>
     </div>
-    <div class="trust-note">Hugo Mojo creates lightweight internet products for self-discovery and shareable results. 中文用户可切换到中文版本，付费报告为数字内容交付。</div>
+    <div class="trust-note">雨果灵机做的是轻量自我发现产品：先给你一个好分享的结果，再把更完整的自己展开给你看。</div>
   </section>
 
   <footer class="site-footer">
@@ -880,7 +900,7 @@ body {
 <!-- QUIZ -->
 <div id="quiz" class="screen">
   <div class="quiz-top">
-    <div class="quiz-logo">Hugo Mojo</div>
+    <div class="quiz-logo">雨果灵机</div>
     <div class="progress-bar"><div class="progress-fill" id="pfill" style="width:0%"></div></div>
     <div class="q-counter"><span id="qn">1</span><span id="qslash"> / 12</span></div>
   </div>
@@ -888,27 +908,27 @@ body {
     <div class="question-card" id="qcard"></div>
   </div>
   <div class="quiz-footer">
-    <button class="btn-next" id="bnext" onclick="nextQ()"><span id="bnext-text">Next</span> →</button>
+    <button class="btn-next" id="bnext" onclick="nextQ()"><span id="bnext-text">下一题</span> →</button>
   </div>
 </div>
 
 <!-- LOADING -->
 <div id="loading" class="screen">
   <div class="loader"></div>
-  <div class="loader-text" id="ltext">Finding your talent…</div>
+  <div class="loader-text" id="ltext">正在分析你的答题模式…</div>
 </div>
 
 <!-- RESULT -->
 <div id="result" class="screen">
   <div class="result-top">
-    <div class="quiz-logo">Hugo Mojo</div>
-    <button class="btn-ghost" id="retake-top" onclick="startQuiz()">Retake</button>
+    <div class="quiz-logo">雨果灵机</div>
+    <button class="btn-ghost" id="retake-top" onclick="startQuiz()">重新测试</button>
   </div>
   <div class="result-body" id="rbody"></div>
 </div>
 
 <script>
-const L = { c: 'en' };
+const L = { c: 'zh' };
 
 const TX = {
   en: {
@@ -1116,16 +1136,14 @@ function renderQ() {
   document.getElementById('qn').textContent=cur+1;
   document.getElementById('bnext-text').textContent=cur===total-1?t.finish:t.next;
   document.getElementById('qcard').innerHTML=`
-    <div class="q-number fade">${L.c==='zh'?`第 ${cur+1} / ${total} 题`:`Question ${cur+1} of ${total}`}</div>
-    <div class="q-main fade">${L.c==='zh'?q.zh:q.en}</div>
-    ${L.c==='zh'?`<div class="q-sub fade">${q.en}</div>`:''}
+    <div class="q-number fade">第 ${cur+1} / ${total} 题</div>
+    <div class="q-main fade">${q.zh}</div>
     <div class="options">
       ${q.opts.map((o,i)=>`
         <button class="opt fade ${picked===o.t?'selected':''}" style="animation-delay:${i*0.05}s" onclick="pick(this,'${o.t}')">
           <div class="opt-letter">${String.fromCharCode(65+i)}</div>
           <div>
-            <div class="opt-zh">${L.c==='zh'?o.zh:o.en}</div>
-            ${L.c==='zh'?`<div class="opt-en">${o.en}</div>`:''}
+            <div class="opt-zh">${o.zh}</div>
           </div>
         </button>
       `).join('')}
@@ -1164,7 +1182,6 @@ function buildResult(key) {
   document.getElementById('rbody').innerHTML=`
     <div class="result-eyebrow">${t.eyebrow}</div>
     <div class="talent-name" style="color:${td.color}">${tl.name}</div>
-    <div class="talent-en">${tl.en}</div>
     <div class="verdict-card">${tl.verdict}</div>
     <div class="desc-text">${tl.desc}</div>
 
@@ -1214,7 +1231,7 @@ function buildResult(key) {
 
     <div class="share-section">
       <div class="share-card-preview">
-        <div class="scp-brand">HUGO MOJO</div>
+        <div class="scp-brand">雨果灵机 · HUGO MOJO</div>
         <div class="scp-label">${t.shareLabel}</div>
         <div class="scp-name">${tl.name}</div>
         <div class="scp-tag">${t.shareTag}</div>
