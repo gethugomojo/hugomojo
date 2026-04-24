@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Low-Key Power Type — Hugo Mojo</title>
+<meta name="description" content="Low-Key Power Type by Hugo Mojo gives you a free result in a few minutes, then a sharper digital deep dive if it actually hits a nerve.">
+<meta property="og:title" content="Low-Key Power Type — Hugo Mojo">
+<meta property="og:description" content="You think you're ordinary. You're not even on full power yet.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hugomojo.com/tests/hidden-talent/">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #111410;
+  --paper: #F5F7F2;
+  --paper2: #ECEEE9;
+  --green: #28B36A;
+  --green-light: #E8F7EF;
+  --blue: #7DB7FF;
+  --blue-light: #EBF3FF;
+  --warm: #FFB35C;
+  --warm-light: #FFF3E4;
+  --ink2: #454840;
+  --ink3: #7b7f77;
+  --border: rgba(17,20,16,0.12);
+  --shadow: 0 10px 0 rgba(17,20,16,0.08);
+  --r: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(180deg, #f6f7f1 0%, #eef2ea 100%);
+  color: var(--ink);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(128deg, rgba(125,183,255,0.12) 0 16%, transparent 16% 100%),
+    linear-gradient(24deg, rgba(255,179,92,0.12) 0 13%, transparent 13% 100%),
+    repeating-linear-gradient(90deg, rgba(17,20,16,0.025) 0 1px, transparent 1px 26px);
+  opacity: 0.9;
+}
+
+.lang-bar {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(17,20,16,0.12);
+  border-radius: 8px;
+  background: rgba(245,247,242,0.88);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(17,20,16,0.08);
+}
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--ink3);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.lang-btn.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.screen { display: none; min-height: 100vh; position: relative; z-index: 1; }
+.screen.active { display: flex; flex-direction: column; }
+
+#intro {
+  align-items: center;
+  justify-content: flex-start;
+  padding: 88px 24px 32px;
+  text-align: center;
+}
+.intro-hero {
+  width: 100%;
+  max-width: 920px;
+  min-height: calc(100vh - 170px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 8px 14px 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 24px rgba(17,20,16,0.14);
+  transform: rotate(-2deg);
+}
+.hm-avatar {
+  width: 22px;
+  height: 22px;
+  background: var(--green);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.intro-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(36px, 7.2vw, 76px);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+  width: min(100%, 900px);
+}
+.intro-title em {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  color: var(--ink);
+  z-index: 1;
+}
+.intro-title em::after {
+  content: "";
+  position: absolute;
+  left: -1%;
+  right: -1%;
+  bottom: 0.08em;
+  height: 0.3em;
+  background: linear-gradient(90deg, rgba(40,179,106,0.34), rgba(255,179,92,0.26));
+  z-index: -1;
+  transform: rotate(-1deg);
+}
+.intro-sub {
+  font-size: 17px;
+  color: var(--ink2);
+  max-width: 520px;
+  margin: 0 auto 22px;
+  line-height: 1.55;
+}
+.intro-stats {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.stat-pill {
+  border: 1px solid rgba(17,20,16,0.12);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  box-shadow: 0 6px 0 rgba(17,20,16,0.05);
+}
+.stat-pill:nth-child(1) { background: white; }
+.stat-pill:nth-child(2) { background: var(--blue-light); }
+.stat-pill:nth-child(3) { background: var(--warm-light); }
+.btn-primary,
+.btn-next,
+.btn-unlock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--green);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 15px 28px;
+  box-shadow: 0 8px 0 rgba(17,20,16,0.16);
+}
+.btn-primary:hover {
+  transform: translateY(2px);
+  box-shadow: 0 5px 0 rgba(17,20,16,0.16);
+}
+.btn-primary svg { transition: transform 0.15s; }
+.btn-primary:hover svg { transform: translateX(3px); }
+.intro-note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--ink3);
+  letter-spacing: 0.02em;
+}
+.talent-chips {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 34px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.chip {
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid;
+  font-weight: 700;
+  box-shadow: 0 6px 0 rgba(17,20,16,0.05);
+}
+.chip:nth-child(1) { transform: rotate(-3deg); }
+.chip:nth-child(2) { transform: rotate(2deg); }
+.chip:nth-child(3) { transform: rotate(-2deg); }
+.chip:nth-child(4) { transform: rotate(3deg); }
+.chip:nth-child(5) { transform: rotate(-1deg); }
+.chip:nth-child(6) { transform: rotate(2deg); }
+.chip-green { border-color: rgba(40,179,106,0.35); color: #187446; background: var(--green-light); }
+.chip-blue { border-color: rgba(125,183,255,0.4); color: #2f71c4; background: var(--blue-light); }
+.chip-warm { border-color: rgba(255,179,92,0.45); color: #ba6f11; background: var(--warm-light); }
+.chip-ink { border-color: rgba(17,20,16,0.15); color: var(--ink); background: white; }
+
+.site-proof {
+  width: 100%;
+  max-width: 960px;
+  margin: 26px auto 0;
+  text-align: left;
+}
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.proof-card {
+  border-radius: 8px;
+  padding: 18px;
+  min-height: 160px;
+  border: 1px solid rgba(17,20,16,0.12);
+  box-shadow: 0 12px 32px rgba(17,20,16,0.06);
+}
+.proof-card:nth-child(1) {
+  background: var(--ink);
+  color: var(--paper);
+}
+.proof-card:nth-child(2) {
+  background: linear-gradient(180deg, rgba(232,247,239,0.96), white);
+  transform: rotate(-1deg);
+}
+.proof-card:nth-child(3) {
+  background: white;
+  border-top: 4px solid var(--blue);
+}
+.proof-card:nth-child(4) {
+  background: linear-gradient(180deg, rgba(255,243,228,0.96), white);
+  transform: rotate(1deg);
+}
+.proof-kicker {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 10px;
+}
+.proof-card:nth-child(1) .proof-kicker,
+.proof-card:nth-child(1) .proof-text {
+  color: rgba(245,247,242,0.72);
+}
+.proof-card:nth-child(1) .proof-title {
+  color: var(--paper);
+}
+.proof-title {
+  font-size: 20px;
+  line-height: 1.12;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.proof-text {
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.6;
+}
+.trust-note {
+  margin-top: 14px;
+  background: rgba(255,255,255,0.76);
+  border: 1px solid rgba(17,20,16,0.08);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.6;
+  box-shadow: 0 10px 24px rgba(17,20,16,0.04);
+}
+.site-footer {
+  width: 100%;
+  max-width: 960px;
+  margin: 24px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(17,20,16,0.1);
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  text-align: left;
+  color: var(--ink3);
+  font-size: 12px;
+}
+.footer-brand {
+  color: var(--ink2);
+  line-height: 1.6;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+.footer-links a {
+  color: var(--ink2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.footer-links a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+#quiz {
+  background:
+    linear-gradient(180deg, rgba(245,247,242,0.82), rgba(255,255,255,0.94));
+}
+.quiz-top {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid rgba(17,20,16,0.08);
+  background: rgba(245,247,242,0.92);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.quiz-logo {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(17,20,16,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--blue));
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+.q-counter {
+  font-size: 12px;
+  color: var(--ink3);
+  white-space: nowrap;
+}
+.quiz-body {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 24px 120px;
+}
+.question-card {
+  width: 100%;
+  max-width: 720px;
+}
+.q-number {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(17,20,16,0.08);
+  background: rgba(255,255,255,0.88);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 18px;
+  box-shadow: 0 6px 18px rgba(17,20,16,0.04);
+}
+.q-main {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(24px, 4vw, 36px);
+  line-height: 1.18;
+  margin-bottom: 8px;
+  font-weight: 400;
+  max-width: 640px;
+}
+.q-sub {
+  font-size: 13px;
+  color: var(--ink3);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid rgba(17,20,16,0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: rgba(255,255,255,0.88);
+  text-align: left;
+  width: 100%;
+  box-shadow: 0 8px 22px rgba(17,20,16,0.04);
+}
+.opt:hover {
+  transform: translateY(-2px);
+  border-color: rgba(40,179,106,0.4);
+  box-shadow: 0 14px 28px rgba(40,179,106,0.08);
+}
+.opt.selected {
+  border-color: var(--ink);
+  background: white;
+  box-shadow: 0 14px 0 rgba(40,179,106,0.14);
+}
+.opt-letter {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(17,20,16,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink3);
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+.opt.selected .opt-letter {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--ink);
+}
+.opt-zh {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+.opt-en {
+  font-size: 12px;
+  color: var(--ink3);
+  margin-top: 3px;
+}
+.quiz-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 24px;
+  background: rgba(245,247,242,0.94);
+  border-top: 1px solid rgba(17,20,16,0.08);
+  display: flex;
+  justify-content: flex-end;
+  backdrop-filter: blur(8px);
+}
+.btn-next {
+  background: var(--green);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 24px;
+  box-shadow: 0 8px 0 rgba(17,20,16,0.14);
+  opacity: 0.34;
+  pointer-events: none;
+}
+.btn-next.on {
+  opacity: 1;
+  pointer-events: all;
+}
+.btn-next.on:hover {
+  transform: translateY(2px);
+  box-shadow: 0 5px 0 rgba(17,20,16,0.14);
+}
+
+#loading {
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: linear-gradient(180deg, rgba(245,247,242,0.86), white);
+}
+.loader {
+  width: 42px;
+  height: 42px;
+  border: 3px solid rgba(17,20,16,0.08);
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+.loader-text {
+  font-family: 'Instrument Serif', serif;
+  font-size: 24px;
+  font-style: italic;
+  color: var(--ink2);
+  text-align: center;
+  max-width: 360px;
+}
+
+#result {
+  background: linear-gradient(180deg, rgba(246,247,241,0.98), rgba(236,242,233,0.88));
+}
+.result-top {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(17,20,16,0.08);
+  background: rgba(245,247,242,0.92);
+  backdrop-filter: blur(8px);
+}
+.result-body {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 34px 24px 72px;
+  width: 100%;
+}
+.result-hero-card {
+  position: relative;
+  background: var(--ink);
+  border-radius: 8px;
+  padding: 22px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 42px rgba(17,20,16,0.14);
+}
+.result-hero-card::after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  bottom: -28px;
+  width: 220px;
+  height: 110px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 76%, white) 0%, transparent 100%);
+  opacity: 0.28;
+  transform: rotate(-8deg);
+}
+.result-stamp {
+  display: inline-flex;
+  align-items: center;
+  background: white;
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  transform: rotate(-3deg);
+}
+.result-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,247,242,0.62);
+  margin-bottom: 10px;
+}
+.talent-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(42px, 8vw, 82px);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  max-width: 680px;
+  position: relative;
+  z-index: 1;
+}
+.talent-en {
+  font-size: 13px;
+  color: rgba(245,247,242,0.72);
+  letter-spacing: 0.02em;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+.mixline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(245,247,242,0.74);
+  position: relative;
+  z-index: 1;
+}
+.mix-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: white;
+  font-weight: 700;
+}
+.verdict-card {
+  background: white;
+  border: 1px solid rgba(17,20,16,0.08);
+  border-radius: 8px;
+  padding: 18px 20px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 12px;
+  box-shadow: 0 12px 28px rgba(17,20,16,0.06);
+  border-left: 4px solid var(--accent);
+}
+.desc-text {
+  font-size: 15px;
+  color: var(--ink2);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.detail-card {
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(17,20,16,0.08);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(17,20,16,0.04);
+}
+.detail-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 8px;
+}
+.detail-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.share-section {
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(17,20,16,0.08);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 28px rgba(17,20,16,0.04);
+}
+.share-card-preview {
+  position: relative;
+  background: linear-gradient(135deg, var(--ink) 0%, #23271f 100%);
+  border-radius: 8px;
+  padding: 22px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.share-card-preview::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 18px;
+  width: 126px;
+  height: 26px;
+  background: var(--accent);
+  transform: rotate(12deg);
+  opacity: 0.95;
+}
+.scp-brand {
+  position: relative;
+  z-index: 1;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,247,242,0.46);
+  margin-bottom: 12px;
+}
+.scp-label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: rgba(245,247,242,0.8);
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+.scp-name {
+  position: relative;
+  z-index: 1;
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 0.98;
+  color: var(--paper);
+  margin-bottom: 10px;
+  max-width: 78%;
+  word-break: break-word;
+}
+.scp-sub {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(245,247,242,0.72);
+  max-width: 74%;
+  margin-bottom: 14px;
+}
+.scp-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.scp-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+  font-weight: 700;
+}
+.scp-tag.muted {
+  background: rgba(255,255,255,0.12);
+  color: rgba(245,247,242,0.86);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+.share-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.btn-share {
+  flex: 1;
+  min-width: 120px;
+  background: white;
+  border: 1px solid rgba(17,20,16,0.12);
+  border-radius: 8px;
+  padding: 11px 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+.btn-share:hover {
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.paywall-section {
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(232,247,239,0.8));
+  border: 1px solid rgba(40,179,106,0.18);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 18px;
+  box-shadow: 0 14px 30px rgba(40,179,106,0.08);
+}
+.paywall-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.price-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(17,20,16,0.08);
+  background: white;
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.price-tag {
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.paywall-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+.paywall-sub {
+  font-size: 14px;
+  color: var(--ink2);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  max-width: 640px;
+}
+.value-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.value-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(17,20,16,0.08);
+  background: white;
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.report-preview {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(17,20,16,0.08);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 18px;
+}
+.preview-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 10px;
+}
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.preview-card {
+  position: relative;
+  background: white;
+  border: 1px solid rgba(17,20,16,0.08);
+  border-radius: 8px;
+  padding: 14px;
+  min-height: 118px;
+  overflow: hidden;
+}
+.preview-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 54px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(245,247,242,0.96) 100%);
+}
+.preview-lock {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.preview-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  padding-right: 58px;
+}
+.preview-text {
+  font-size: 12px;
+  color: var(--ink2);
+  line-height: 1.6;
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.compare-col {
+  border: 1px solid rgba(17,20,16,0.08);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.86);
+  padding: 14px;
+}
+.compare-col.featured {
+  border-color: rgba(40,179,106,0.25);
+  box-shadow: 0 0 0 2px rgba(40,179,106,0.08);
+}
+.compare-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 10px;
+}
+.compare-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.compare-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink2);
+  line-height: 1.5;
+}
+.compare-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--ink3);
+}
+.compare-col.featured .compare-dot {
+  background: var(--green);
+}
+.unlock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.unlock-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.55;
+}
+.u-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+.btn-unlock {
+  width: 100%;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 16px;
+  box-shadow: 0 10px 0 rgba(17,20,16,0.14);
+  margin-bottom: 10px;
+}
+.btn-unlock:hover {
+  transform: translateY(2px);
+  box-shadow: 0 6px 0 rgba(17,20,16,0.14);
+}
+.unlock-note,
+.unlock-safe-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink3);
+  line-height: 1.6;
+}
+.unlock-safe-note {
+  font-size: 11px;
+  margin-top: 6px;
+}
+.retake-link {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink3);
+  margin-top: 18px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.retake-link:hover {
+  color: var(--ink);
+}
+
+.btn-ghost {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(17,20,16,0.1);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--ink2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-ghost:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade { animation: fadeUp 0.3s ease forwards; }
+
+@media (max-width: 720px) {
+  #intro {
+    padding: 74px 18px 24px;
+  }
+  .intro-hero {
+    min-height: auto;
+    padding: 18px 0 32px;
+  }
+  .intro-title {
+    font-size: clamp(34px, 13vw, 54px);
+    line-height: 1.02;
+  }
+  .intro-title em {
+    font-size: 0.96em;
+  }
+  .proof-grid,
+  .detail-grid,
+  .preview-grid,
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+  .proof-card:nth-child(2),
+  .proof-card:nth-child(4) {
+    transform: none;
+  }
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-links {
+    justify-content: flex-start;
+  }
+  .share-row {
+    flex-direction: column;
+  }
+  .paywall-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .scp-name,
+  .scp-sub {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hm-badge {
+    transform: none;
+    margin-bottom: 18px;
+  }
+  .intro-sub {
+    font-size: 15px;
+  }
+  .quiz-top,
+  .result-top,
+  .quiz-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .quiz-body,
+  .result-body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .share-section,
+  .paywall-section,
+  .result-hero-card {
+    padding: 18px;
+  }
+}
+
+@media (min-width: 700px) {
+  .intro-title em { white-space: nowrap; }
+}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('zh')">中文</button>
+</div>
+
+<!-- INTRO -->
+<div id="intro" class="screen active">
+  <div class="intro-hero">
+    <div class="hm-badge">
+      <div class="hm-avatar">HM</div>
+      <span id="hm-label">Hugo Mojo · 雨果灵机</span>
+    </div>
+    <h1 class="intro-title" id="intro-h1">You think you're ordinary.<br><em>You're not even on full power yet.</em></h1>
+    <p class="intro-sub" id="intro-p">24 questions. Find out which low-key power type you really are.</p>
+    <div class="intro-stats">
+      <div class="stat-pill" id="stat1">24 questions</div>
+      <div class="stat-pill" id="stat2">4 min</div>
+      <div class="stat-pill" id="stat3">Free</div>
+    </div>
+    <button class="btn-primary" onclick="startQuiz()">
+      <span id="btn-start">Get my type</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="intro-note" id="intro-note">No signup. Just the result first.</div>
+    <div class="talent-chips" id="chips-row">
+      <span class="chip chip-green" id="c0">Spark Instigator</span>
+      <span class="chip chip-blue" id="c1">Human Radar</span>
+      <span class="chip chip-warm" id="c2">Quiet Operator</span>
+      <span class="chip chip-ink" id="c3">Silent Finisher</span>
+      <span class="chip chip-ink" id="c4">Vibe Charger</span>
+      <span class="chip chip-ink" id="c5">Truth Sniffer</span>
+    </div>
+  </div>
+
+  <section class="site-proof" aria-label="Product details">
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-kicker" id="p1k">Type</div>
+        <div class="proof-title" id="p1t">Free first. Sharper version if it hits.</div>
+        <div class="proof-text" id="p1d">Get your main type up front. Pay only if you want the deeper read, backup type, and result angle.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-kicker" id="p2k">Share</div>
+        <div class="proof-title" id="p2t">Built to screenshot</div>
+        <div class="proof-text" id="p2d">The result card is made for posting, sending to friends, and starting group-chat arguments.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-kicker" id="p3k">Delivery</div>
+        <div class="proof-title" id="p3t">Digital after checkout</div>
+        <div class="proof-text" id="p3d">The paid version opens as digital content. No shipping, no waiting for physical delivery.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-kicker" id="p4k">Use</div>
+        <div class="proof-title" id="p4t">For fun, with teeth</div>
+        <div class="proof-text" id="p4d">This is entertainment and self-discovery, not medical, psychological, financial, legal, or career advice.</div>
+      </div>
+    </div>
+    <div class="trust-note" id="trust-note">Hugo Mojo makes internet products that hit a nerve fast, look good in a screenshot, and give you a version worth keeping.</div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      Hugo Mojo · 雨果灵机<br>
+      Contact: hi@hugomojo.com
+    </div>
+    <nav class="footer-links" aria-label="Legal links">
+      <a href="/tests/">Tests</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/refund.html">Refund</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </footer>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="screen">
+  <div class="quiz-top">
+    <div class="quiz-logo">Hugo Mojo</div>
+    <div class="progress-bar"><div class="progress-fill" id="pfill" style="width:0%"></div></div>
+    <div class="q-counter"><span id="qn">1</span><span id="qslash"> / 24</span></div>
+  </div>
+  <div class="quiz-body">
+    <div class="question-card" id="qcard"></div>
+  </div>
+  <div class="quiz-footer">
+    <button class="btn-next" id="bnext" onclick="nextQ()"><span id="bnext-text">Next</span> →</button>
+  </div>
+</div>
+
+<!-- LOADING -->
+<div id="loading" class="screen">
+  <div class="loader"></div>
+  <div class="loader-text" id="ltext">Finding your talent…</div>
+</div>
+
+<!-- RESULT -->
+<div id="result" class="screen">
+  <div class="result-top">
+    <div class="quiz-logo">Hugo Mojo</div>
+    <button class="btn-ghost" id="retake-top" onclick="startQuiz()">Retake</button>
+  </div>
+  <div class="result-body" id="rbody"></div>
+</div>
+
+<script>
+const L = { c: 'en' };
+const SITE_URL = document.querySelector('meta[property="og:url"]')?.content || 'https://hugomojo.com';
+
+const TX = {
+  en: {
+    brandShort: "Hugo Mojo",
+    h1: "You think you're ordinary.<br><em>You're not even on full power yet.</em>",
+    p: "24 questions. Find out which low-key power type you really are.",
+    s1: "24 questions", s2: "4 min", s3: "Free",
+    start: "Get my type",
+    note: "No signup. Just the result first.",
+    chips: ["Spark Instigator","Human Radar","Quiet Operator","Silent Finisher","Vibe Charger","Truth Sniffer"],
+    proof: [
+      { k: "Type", t: "Free first. Sharper version if it hits.", d: "Get your main type up front. Pay only if you want the deeper read, backup type, and result angle." },
+      { k: "Share", t: "Built to screenshot", d: "The result card is made for posting, sending to friends, and starting group-chat arguments." },
+      { k: "Delivery", t: "Digital after checkout", d: "The paid version opens as digital content. No shipping, no waiting for physical delivery." },
+      { k: "Use", t: "For fun, with teeth", d: "This is entertainment and self-discovery, not medical, psychological, financial, legal, or career advice." }
+    ],
+    trustNote: "Hugo Mojo makes internet products that hit a nerve fast, look good in a screenshot, and give you a version worth keeping.",
+    next: "Keep going", finish: "Show my type",
+    loading: "Reading the part of you that usually stays in stealth mode...",
+    retake: "Retake",
+    stamp: "Too accurate",
+    eyebrow: "YOUR LOW-KEY POWER TYPE",
+    detailLabels: ["On the surface", "Actually", "Where you win"],
+    mix: "You also carry some",
+    shareLabel: "MY LOW-KEY POWER TYPE",
+    shareTag: "Hugo Mojo Personality Type",
+    shareBtns: ["Copy flex", "Post on X", "Copy link"],
+    shareIntro: (n) => `I got ${n}. This was annoyingly accurate. What's yours?`,
+    pwTitle: "Unlock the version that gets your personality a little too right",
+    pwSub: "See your backup type, what people feel from you first, your self-sabotage move, and where this energy turns into real results fastest.",
+    pricePill: "Launch price",
+    priceTag: "$1.99",
+    lockLabel: "Locked",
+    valuePills: ["more specific","worth saving","too easy to share"],
+    previewEyebrow: "Inside the full read",
+    previewCards: [
+      { title: "Backup type", text: "The second layer that keeps showing up when people get to know you." },
+      { title: "What people feel first", text: "The signal your personality sends out before anyone can explain it." },
+      { title: "Self-sabotage move", text: "How your best trait starts working against you under pressure." },
+      { title: "Result angle", text: "Where this energy compounds fastest in work, content, or money." }
+    ],
+    freeLabel: "Free now",
+    fullLabel: "Full read",
+    freeItems: ["Main type","3 quick reads","Share card"],
+    fullItems: ["Main + backup type","Social read + blind spot","Result angle","Saveable full version"],
+    items: ["Your backup type and why it keeps showing up","The part of your personality people feel before they understand it","How your best trait flips into self-sabotage under pressure","The kind of work or role this compounds in fastest","A full digital read you can keep, send, or post"],
+    unlockBtn: "Unlock the sharper version - $1.99",
+    unlockNote: "One-time payment · Secure checkout · Digital delivery",
+    paymentHelp: "Need help with access or refunds? Email hi@hugomojo.com.",
+    retakeLink: "Retake and bully the algorithm",
+    copyDone: "Copied",
+    copyManual: "Copy this text manually:"
+  },
+  zh: {
+    brandShort: "雨果灵机",
+    h1: "你以为自己普通。<em>其实你还没开大。</em>",
+    p: "24 道题，测出你是哪种有点东西人格。",
+    s1: "24 道题", s2: "4 分钟", s3: "免费",
+    start: "看看我是哪种",
+    note: "不用注册，先看结果。",
+    chips: ["脑洞点火器","人间雷达","暗线操盘手","闷声成事的人","气氛带电体","真相拆穿机"],
+    proof: [
+      { k: "结果", t: "先免费出结果，准了再解锁", d: "先拿主人格结果。想看备份人格、翻车点和更完整那版，再付费也不晚。" },
+      { k: "分享", t: "就是拿来截图发的", d: "结果卡就是按发群里、发朋友圈、发给朋友看这个场景做的。" },
+      { k: "交付", t: "付费后直接数字交付", d: "完整版本为数字内容，支付后在线打开，不涉及实体发货。" },
+      { k: "使用", t: "情绪娱乐，但不是瞎说", d: "它适合自我发现和社交互动，不是医疗、心理、财务、法律或职业建议。" }
+    ],
+    trustNote: "雨果灵机做的是会戳中人、也值得发出去的轻产品。先给你一个好转发的结果，再把更完整的你展开。",
+    next: "继续", finish: "看我是哪种",
+    loading: "正在读取你平时开静音的那一面...",
+    retake: "重新测试",
+    stamp: "准得有点烦",
+    eyebrow: "你是哪种有点东西人格",
+    detailLabels: ["表面上", "实际上", "最容易赢的地方"],
+    mix: "你身上还混着一点",
+    shareLabel: "我的有点东西人格",
+    shareTag: "雨果灵机有点东西人格",
+    shareBtns: ["复制这段去发", "发到 X", "复制链接"],
+    shareIntro: (n) => `我测出来是「${n}」。这结果准得有点烦，你也试试。`,
+    pwTitle: "解锁那版更像你，也更扎心的人格解读",
+    pwSub: "看见你的备份人格、别人最先感受到的你、你最容易翻车的点，以及这股劲最容易在哪儿变成结果。",
+    pricePill: "首发价",
+    priceTag: "¥9.9",
+    lockLabel: "已锁定",
+    valuePills: ["更准","更像你","适合截图"],
+    previewEyebrow: "完整版里有什么",
+    previewCards: [
+      { title: "备份人格", text: "那个总在关键时刻冒出来的第二层你。" },
+      { title: "别人先感受到的你", text: "你的性格还没被解释清楚前，别人已经感受到的那股劲。" },
+      { title: "你最容易翻车的点", text: "你最强的地方，一上头就会怎么反过来绊你。" },
+      { title: "结果路径", text: "这股劲最容易在哪些工作、内容或赚钱路径里长出来。" }
+    ],
+    freeLabel: "现在就有",
+    fullLabel: "完整版",
+    freeItems: ["主人格结果","3 个快速解读","分享结果卡"],
+    fullItems: ["主人格 + 备份人格","社交感受 + 翻车点","结果路径","适合保存转发的完整版"],
+    items: ["你的备份人格，以及它为什么老在关键时刻出现","别人先感受到的你，和你以为自己在发出的信号","你最强那点在压力下会怎么反咬你","这股人格最容易在哪种角色、工作或内容里长出结果","一份更完整、也更适合保存和转发的数字解读"],
+    unlockBtn: "解锁更扎心的完整版 - ¥9.9",
+    unlockNote: "一次性付费 · 安全支付页面 · 数字内容交付",
+    paymentHelp: "支付或交付遇到问题，可发邮件到 hi@hugomojo.com。",
+    retakeLink: "重新测一次，看它还敢不敢这么准",
+    copyDone: "已复制",
+    copyManual: "手动复制这段内容："
+  }
+};
+
+const TALENTS = {
+  creator: {
+    en: {
+      name: "Spark Instigator",
+      en: "Creative Firestarter",
+      verdict: "You don't look loud, but your brain keeps throwing sparks at boring things until they catch.",
+      desc: "You get restless when something feels too safe, too stale, or way too obvious. That's why your best moves often show up as a joke, a tangent, or one small twist that changes the whole direction. People think you're messing around. Half the time, you're the first one who found the alive version of the idea.",
+      surface: "People read you as playful. You're actually allergic to dead ideas.",
+      core: "You come alive when you get to bend the obvious into something fresher.",
+      win: "Hooks, concepts, creative direction, content, product angles."
+    },
+    zh: {
+      name: "脑洞点火器",
+      en: "Creative Firestarter",
+      verdict: "你看起来没多夸张，但一旦东西太无聊，你的大脑就会自己点火。",
+      desc: "你受不了太安全、太重复、太像别人做过八百遍的东西。所以你的好点子经常不是正襟危坐想出来的，而是在吐槽、开玩笑、随手一改的时候突然冒出来。别人以为你只是爱玩，你其实是更快看到了更活的版本。",
+      surface: "别人觉得你随性，其实你只是对无聊过敏。",
+      core: "越是死气沉沉的东西，你越想把它拧活。",
+      win: "内容选题、标题钩子、创意方向、产品包装，都是你的强区。"
+    },
+    color: '#28B36A', chip: 'chip-green'
+  },
+  empath: {
+    en: {
+      name: "Human Radar",
+      en: "Emotional Signal Reader",
+      verdict: "You're not too sensitive. You're just getting signals other people miss.",
+      desc: "You clock tone, energy, pauses, and that tiny shift that says something is off before anyone admits it. People often underestimate this because it doesn't look flashy. But being the person who can read the room before it breaks is a real kind of power.",
+      surface: "People first notice how easy you are to be around.",
+      core: "You're constantly picking up emotional data the room hasn't named yet.",
+      win: "Community, service, storytelling with empathy, user insight, relationship-heavy work."
+    },
+    zh: {
+      name: "人间雷达",
+      en: "Emotional Signal Reader",
+      verdict: "你不是敏感过头，你只是总能先收到别人没说出口的信号。",
+      desc: "你会先感觉到气氛、语气、停顿和那个“有点不对”的瞬间。很多人低估这件事，是因为它不吵，也不张扬。但能在一屋子人快要失控之前先感觉到问题，本身就是一种很强的能力。",
+      surface: "别人先记住的是你的舒服感。",
+      core: "你一直在接收房间里那些最轻的情绪变化。",
+      win: "用户洞察、服务、内容共情、关系维护、社区运营。"
+    },
+    color: '#FFB35C', chip: 'chip-warm'
+  },
+  strategist: {
+    en: {
+      name: "Quiet Operator",
+      en: "Long-Game Reader",
+      verdict: "You don't make the biggest noise, but your brain is usually three moves ahead of the room.",
+      desc: "While other people are reacting to what's right in front of them, you're already tracking timing, leverage, tradeoffs, and what breaks later. You're not slow. You're doing the part most people skip: seeing the cost before it arrives.",
+      surface: "You come off calm. Internally, you're running the board.",
+      core: "You get sharp when a situation has layers, leverage, and consequences.",
+      win: "Planning, growth, product direction, decisions with real downside."
+    },
+    zh: {
+      name: "暗线操盘手",
+      en: "Long-Game Reader",
+      verdict: "你不爱瞎热闹，但很多人没发现，你脑子里一直在跑后面三步。",
+      desc: "别人刚看到眼前这一步时，你已经在看路径、时机、代价和后手。你不是慢，你是在提前替所有人把坑看一遍。你不一定永远站到最前面，但很多局之所以没跑歪，是因为你一直在后面默默撑着形状。",
+      surface: "别人觉得你安静，实际上你在看整盘。",
+      core: "你最擅长的不是冲，而是提早看见代价。",
+      win: "项目推进、决策判断、增长节奏、长期布局。"
+    },
+    color: '#7DB7FF', chip: 'chip-blue'
+  },
+  executor: {
+    en: {
+      name: "Silent Finisher",
+      en: "Momentum Builder",
+      verdict: "Your edge isn't just having ideas. It's dragging them into the real world.",
+      desc: "A lot of people live in possibility mode forever. You don't. You move, patch, ship, and keep momentum alive when everyone else is still discussing vibes. People often realize late that the whole thing only became real because you kept carrying it forward.",
+      surface: "People call you reliable. That's underselling it.",
+      core: "In chaos, you instinctively look for the next workable move.",
+      win: "Execution, operations, project delivery, turning concepts into results."
+    },
+    zh: {
+      name: "闷声成事的人",
+      en: "Momentum Builder",
+      verdict: "你最狠的地方，不是会想，是会把一堆散的东西真做出来。",
+      desc: "很多人把“有想法”当能力，但你更稀缺的点是能把想法接到现实上。你会先动、会补位、会推进，事情卡住的时候你天然就想把它重新接上。别人可能直到结果出来才意识到，这局其实是你在默默扛。",
+      surface: "别人觉得你靠谱，其实你比靠谱更难得。",
+      core: "混乱里你会自然去找下一步，而不是继续聊。",
+      win: "执行落地、项目交付、运营推进、把想法变成结果。"
+    },
+    color: '#111410', chip: 'chip-ink'
+  },
+  influencer: {
+    en: {
+      name: "Vibe Charger",
+      en: "Social Voltage",
+      verdict: "You're not just good with words. You know how to get a room to feel something at the same time.",
+      desc: "You know when to make something lighter, sharper, warmer, or louder. You don't just express ideas. You give them charge. That's why average things can suddenly feel worth following when they pass through you.",
+      surface: "People feel your momentum before they can explain it.",
+      core: "You turn abstract ideas into something other people actually want to move with.",
+      win: "Brand, sales, content, launches, leadership, anything that needs lift."
+    },
+    zh: {
+      name: "气氛带电体",
+      en: "Social Voltage",
+      verdict: "你不是单纯会说话，你是很会让一屋子人同时有感觉。",
+      desc: "你知道一句话什么时候该轻一点，什么时候该狠狠干脆一点。你不只是表达想法，你会给想法通电。所以很多原本平平的东西，一到你手里，就突然变得有人想跟。",
+      surface: "别人先感受到的是你的带动感。",
+      core: "你擅长把抽象的东西说成别人愿意跟的东西。",
+      win: "传播、销售、内容表达、品牌叙事、带团队起势。"
+    },
+    color: '#28B36A', chip: 'chip-green'
+  },
+  insight: {
+    en: {
+      name: "Truth Sniffer",
+      en: "Pattern Hunter",
+      verdict: "The thing that makes people go quiet around you is not cruelty. It's accuracy.",
+      desc: "You have a low tolerance for surface-level stories. While other people are circling around the point, you're already looking for the real motive, the hidden pattern, or the one detail that changes the whole read. Accuracy has its own kind of sharpness, and you carry it.",
+      surface: "People think you're quiet. Really, you just don't like wasting a sentence.",
+      core: "Your brain naturally digs for motive, structure, and what the story is hiding.",
+      win: "Research, positioning, analysis, strategy, breakdowns, sharp communication."
+    },
+    zh: {
+      name: "真相拆穿机",
+      en: "Pattern Hunter",
+      verdict: "你最容易把别人整沉默的，不是毒，是你总能一下说到最关键。",
+      desc: "你对表面叙述的耐受度很低。别人还在绕，你已经在找逻辑漏洞、情绪底色和真正的动机。你不是爱挑刺，你只是很难对假的东西装作没看见。准这件事，本身就有杀伤力。",
+      surface: "别人以为你话不多，其实你只是不想说废话。",
+      core: "你会本能地往底层逻辑和真实动机钻。",
+      win: "分析判断、用户研究、定位、内容拆解、需要一针见血的表达。"
+    },
+    color: '#111410', chip: 'chip-ink'
+  }
+};
+
+const QS = [
+  { zh:"群聊突然冷掉，你一般会？", en:"The group chat suddenly dies. You usually...",
+    opts:[{zh:"扔一个新角度把气氛点着",en:"Drop a weird angle that wakes it up",t:"creator"},{zh:"发一句能把场子拉回来的话",en:"Send one line that brings the room back",t:"influencer"},{zh:"去私聊那个突然沉默的人",en:"Check on the one who went quiet",t:"empath"},{zh:"想刚刚到底哪一下开始尴尬",en:"Figure out what made it awkward",t:"insight"}]},
+  { zh:"一个新点子刚冒出来，你最自然的下一步是？", en:"A new idea shows up. Your next instinct is to...",
+    opts:[{zh:"先做个能跑的版本",en:"Build a rough version immediately",t:"executor"},{zh:"先想它半年后还值不值",en:"Ask if it still matters in six months",t:"strategist"},{zh:"先把它改得更有梗",en:"Twist it into something fresher",t:"creator"},{zh:"先想谁会被它打动",en:"Think about who it would hit hardest",t:"influencer"}]},
+  { zh:"朋友说“我没事”，你第一反应是？", en:"A friend says, \"I'm fine.\" Your first reaction is...",
+    opts:[{zh:"你根本不是没事",en:"You are absolutely not fine",t:"empath"},{zh:"找真正出问题的那一层",en:"Look for what's actually wrong",t:"insight"},{zh:"直接帮他把局面理顺",en:"Start making the mess workable",t:"executor"},{zh:"顺手想这事以后怎么别再来一次",en:"Think how to stop this happening again",t:"strategist"}]},
+  { zh:"你最常被人误会的一点是？", en:"What do people misunderstand about you the most?",
+    opts:[{zh:"看着随便，其实主意很多",en:"Seems casual, actually full of angles",t:"creator"},{zh:"看着安静，其实一直在看后手",en:"Seems quiet, actually tracking the board",t:"strategist"},{zh:"看着能聊，其实很会带动场子",en:"Seems social, actually moves the room",t:"influencer"},{zh:"看着佛，其实什么都感觉得到",en:"Seems chill, actually feels everything",t:"empath"}]},
+  { zh:"截止时间直接压脸上了，你通常会？", en:"The deadline is suddenly on your face. You usually...",
+    opts:[{zh:"先做起来再说",en:"Start moving right now",t:"executor"},{zh:"先砍掉不重要的",en:"Cut what doesn't matter",t:"strategist"},{zh:"先找最关键那个洞口",en:"Find the pressure point",t:"insight"},{zh:"先想个能让我兴奋起来的做法",en:"Find the version that gives me a spark",t:"creator"}]},
+  { zh:"进到一群新朋友里，你通常是？", en:"You walk into a bunch of new people. You usually...",
+    opts:[{zh:"最快破冰的那个",en:"Break the ice first",t:"influencer"},{zh:"最快记住每个人状态的那个",en:"Clock everyone's vibe first",t:"empath"},{zh:"最快看懂谁靠谱的那个",en:"Figure out who actually has it",t:"insight"},{zh:"最快知道怎么分工的那个",en:"See how the roles should shake out",t:"strategist"}]},
+  { zh:"看到一个“还行但不够好”的东西，你脑子里第一句通常是？", en:"You see something that's fine but not great. Your first thought is...",
+    opts:[{zh:"这能更有意思",en:"This could hit harder",t:"creator"},{zh:"这能更好用",en:"This could work better",t:"executor"},{zh:"这方向有点歪",en:"The direction is off",t:"strategist"},{zh:"这根本没说到点上",en:"It still hasn't hit the real point",t:"insight"}]},
+  { zh:"朋友问你“这事我该不该做”，你通常先给什么？", en:"A friend asks, \"Should I do this?\" You usually start with...",
+    opts:[{zh:"先听你到底想要什么",en:"Tell me what you actually want",t:"empath"},{zh:"先看长期值不值",en:"Let's talk long-term payoff",t:"strategist"},{zh:"先给你一个你没想过的角度",en:"Here's the angle you haven't looked at",t:"creator"},{zh:"先拆成你今天能做的决定",en:"Let's turn it into today's decision",t:"executor"}]},
+  { zh:"你最容易上头的是哪一种爽感？", en:"Which kind of thrill gets you the fastest?",
+    opts:[{zh:"一个很新的点子",en:"A fresh idea with bite",t:"creator"},{zh:"一种强烈的现场气氛",en:"A room with real charge",t:"influencer"},{zh:"一个终于想通的底层逻辑",en:"A pattern finally clicking",t:"insight"},{zh:"一盘慢慢被盘活的长期局",en:"A long game starting to work",t:"strategist"}]},
+  { zh:"大家都在纠结时，你通常会？", en:"When everyone is hesitating, you usually...",
+    opts:[{zh:"直接拍板往前推",en:"Make the call and move",t:"executor"},{zh:"说一句让大家都想跟",en:"Say the one line everyone leans toward",t:"influencer"},{zh:"说出大家都绕着不说的真相",en:"Name the truth everyone's dodging",t:"insight"},{zh:"先感受到谁其实已经顶不住了",en:"Notice who's already overloaded",t:"empath"}]},
+  { zh:"最让你烦的是什么？", en:"What annoys you the most?",
+    opts:[{zh:"太重复太没火花",en:"Repetition with zero spark",t:"creator"},{zh:"情绪明明在，没人接",en:"Unspoken emotion nobody addresses",t:"empath"},{zh:"大家只看眼前不看后面",en:"People thinking only one step deep",t:"strategist"},{zh:"讲了半天还是没动",en:"Endless talk with no movement",t:"executor"}]},
+  { zh:"你做成一件事时，最爽的那个瞬间是？", en:"When something lands, the best moment is...",
+    opts:[{zh:"它终于被我做出来了",en:"It became real",t:"executor"},{zh:"我早就知道会这样",en:"The ending finally matched my read",t:"strategist"},{zh:"大家终于被我点燃了",en:"The room finally caught fire",t:"influencer"},{zh:"我果然没看错那个关键",en:"I knew that detail mattered",t:"insight"}]},
+  { zh:"别人夸你时最常说哪一句？", en:"What's the compliment you hear most?",
+    opts:[{zh:"你脑子真会拐弯",en:"Your brain makes wild but good turns",t:"creator"},{zh:"跟你聊完会轻松很多",en:"Talking to you makes people feel lighter",t:"empath"},{zh:"你一说话大家就动了",en:"People move when you speak",t:"influencer"},{zh:"你真能把事扛下来",en:"You actually carry things through",t:"executor"}]},
+  { zh:"到了一个陌生环境，你先启动的是？", en:"You enter a totally new environment. What turns on first?",
+    opts:[{zh:"先看气氛和人",en:"Scan the vibe and people",t:"empath"},{zh:"先看谁在暗中控场",en:"Spot who's quietly controlling the room",t:"insight"},{zh:"先看规则和暗线",en:"Look for the rules and hidden structure",t:"strategist"},{zh:"先看有什么能被玩出新花样",en:"Look for what can be remixed",t:"creator"}]},
+  { zh:"如果只能留一种能力，你最舍不得哪种？", en:"If you could keep only one ability, which one stays?",
+    opts:[{zh:"把复杂东西看穿",en:"Seeing through complexity",t:"insight"},{zh:"把混乱局面变成结果",en:"Turning chaos into results",t:"executor"},{zh:"把人和人接上电",en:"Getting people lit up together",t:"influencer"},{zh:"把普通东西拧出新意",en:"Making ordinary things feel alive",t:"creator"}]},
+  { zh:"你平时最像哪种隐藏角色？", en:"What's your hidden role most of the time?",
+    opts:[{zh:"幕后稳盘的那个",en:"The one holding the board steady behind the scenes",t:"strategist"},{zh:"把情绪接住的那个",en:"The one catching the emotional spill",t:"empath"},{zh:"最后补位救场的那个",en:"The one who closes the gap when it matters",t:"executor"},{zh:"关键时刻一句话说到点上的那个",en:"The one who lands the exact line at the exact moment",t:"insight"}]},
+  { zh:"看到一个很厉害的人，你最先研究的是什么？", en:"When you see someone impressive, what do you study first?",
+    opts:[{zh:"他怎么一开口就能带人",en:"How they get people to move when they speak",t:"influencer"},{zh:"他怎么把局布这么稳",en:"How they set the board this well",t:"strategist"},{zh:"他怎么把东西做得这么成",en:"How they make things actually happen",t:"executor"},{zh:"他到底抓住了什么关键",en:"What exact thing they saw before everyone else",t:"insight"}]},
+  { zh:"别人最不该低估你的哪一点？", en:"What should people stop underestimating about you?",
+    opts:[{zh:"我不是瞎玩，我真的能把普通东西搞出新意",en:"I'm not random. I make dull things come alive",t:"creator"},{zh:"我不是只是脾气好，我是真的接得住人",en:"I'm not just nice. I actually know how to hold people",t:"empath"},{zh:"我不是只会说，我是真的能把场子带起来",en:"I'm not just talking. I can move a room",t:"influencer"},{zh:"我不是想太多，我是在提前看后果",en:"I'm not overthinking. I'm seeing the consequence early",t:"strategist"}]},
+  { zh:"朋友情绪一股脑倒给你时，你通常更像？", en:"When a friend dumps all their feelings on you, you usually become...",
+    opts:[{zh:"先把他情绪接住的人",en:"The one who catches the emotional spill first",t:"empath"},{zh:"一针见血讲穿问题的人",en:"The one who cuts to the real issue",t:"insight"},{zh:"把他重新打起精神的人",en:"The one who gets their energy back up",t:"influencer"},{zh:"顺手把下一步排出来的人",en:"The one who maps the next move",t:"executor"}]},
+  { zh:"一个普通题材到你手里，你最想先改哪部分？", en:"A very average topic lands in your hands. What do you change first?",
+    opts:[{zh:"让它更有新意",en:"Make it fresher",t:"creator"},{zh:"让它更容易让人想发出去",en:"Make it more shareable",t:"influencer"},{zh:"让它更清楚为什么现在做",en:"Make the timing and angle make sense",t:"strategist"},{zh:"让它今天就能先跑起来",en:"Make it runnable today",t:"executor"}]},
+  { zh:"你最容易在什么时候突然觉得“这也太像我了”？", en:"When do you suddenly feel, \"Yep, that's exactly me\"?",
+    opts:[{zh:"看到别人快崩之前我先感觉到了",en:"I feel the crack before anyone says it",t:"empath"},{zh:"看到一个局其实还有更深后手",en:"I can see the next layer in the situation",t:"strategist"},{zh:"看到一群人被一句话带动了",en:"One line shifts the whole room",t:"influencer"},{zh:"看到一个没灵魂的东西被我改活了",en:"I make something flat suddenly feel alive",t:"creator"}]},
+  { zh:"别人最常来借你的哪种能力？", en:"What do people borrow from you the most?",
+    opts:[{zh:"帮他看穿一下",en:"Seeing through the situation",t:"insight"},{zh:"帮他稳住节奏",en:"Holding the pace steady",t:"strategist"},{zh:"帮他把事推进",en:"Getting the thing moving",t:"executor"},{zh:"帮他把话说到人心里",en:"Saying it in a way people feel",t:"influencer"}]},
+  { zh:"你最容易偷偷较劲的点是什么？", en:"What do you secretly compete with the hardest?",
+    opts:[{zh:"为什么这东西不能更妙一点",en:"Why this can't be more alive",t:"creator"},{zh:"为什么这人明明难受还装没事",en:"Why someone is clearly not okay but still pretending",t:"empath"},{zh:"为什么大家不把话说透",en:"Why nobody is saying the real thing out loud",t:"insight"},{zh:"为什么这局明明还能做更大",en:"Why this could be built into something bigger",t:"strategist"}]},
+  { zh:"到最后，最让你有掌控感的瞬间是？", en:"At the end of the day, what gives you the strongest sense of control?",
+    opts:[{zh:"我把场子带起来了",en:"I lifted the room",t:"influencer"},{zh:"我把人接住了",en:"I held the person",t:"empath"},{zh:"我把东西做出来了",en:"I got the thing done",t:"executor"},{zh:"我把全局看明白了",en:"I understood the whole board",t:"strategist"}]}
+];
+
+const TALENT_ORDER = ["creator","empath","strategist","executor","influencer","insight"];
+const PAYMENT_LINKS = {
+  en: "https://hugomojo.lemonsqueezy.com/checkout/buy/c0c2279f-5606-4ea6-b0fe-0c5d7ca0c593",
+  // Replace this with the Aifaka link after the Chinese payment channel is approved.
+  zh: "https://hugomojo.lemonsqueezy.com/checkout/buy/c0c2279f-5606-4ea6-b0fe-0c5d7ca0c593"
+};
+
+let cur=0, ans={}, sc=makeScores(), lastResultKey=null;
+
+function makeScores() {
+  return {creator:0,empath:0,strategist:0,executor:0,influencer:0,insight:0};
+}
+
+function currentScreen() {
+  return document.querySelector('.screen.active')?.id || 'intro';
+}
+
+function rankTalents() {
+  return Object.entries(sc)
+    .sort((a,b)=>(b[1]-a[1]) || (TALENT_ORDER.indexOf(a[0]) - TALENT_ORDER.indexOf(b[0])))
+    .map(([key])=>key);
+}
+
+function setLang(l) {
+  L.c = l;
+  document.querySelectorAll('.lang-btn').forEach((b,i)=>b.classList.toggle('active',(i===0&&l==='en')||(i===1&&l==='zh')));
+  const t = TX[l];
+  document.getElementById('intro-h1').innerHTML = t.h1;
+  document.getElementById('intro-p').textContent = t.p;
+  document.getElementById('stat1').textContent = t.s1;
+  document.getElementById('stat2').textContent = t.s2;
+  document.getElementById('stat3').textContent = t.s3;
+  document.getElementById('btn-start').textContent = t.start;
+  document.getElementById('intro-note').textContent = t.note;
+  document.getElementById('qslash').textContent = ` / ${QS.length}`;
+  ['c0','c1','c2','c3','c4','c5'].forEach((id,i)=>{ const el=document.getElementById(id); if(el) el.textContent=t.chips[i]; });
+  t.proof.forEach((item,i)=>{
+    document.getElementById(`p${i+1}k`).textContent = item.k;
+    document.getElementById(`p${i+1}t`).textContent = item.t;
+    document.getElementById(`p${i+1}d`).textContent = item.d;
+  });
+  document.getElementById('trust-note').textContent = t.trustNote;
+  document.querySelectorAll('.quiz-logo').forEach((el)=>{ el.textContent = t.brandShort; });
+  document.getElementById('ltext').textContent = t.loading;
+  if (document.getElementById('retake-top')) {
+    document.getElementById('retake-top').textContent = t.retake;
+  }
+
+  if (currentScreen() === 'quiz') {
+    renderQ();
+  } else if (currentScreen() === 'loading') {
+    document.getElementById('ltext').textContent = t.loading;
+  } else if (currentScreen() === 'result' && lastResultKey) {
+    buildResult(lastResultKey);
+  }
+}
+
+function show(id) { document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); }
+
+function startQuiz() {
+  cur=0; ans={}; sc=makeScores(); lastResultKey=null;
+  show('quiz'); renderQ();
+}
+
+function renderQ() {
+  const q=QS[cur], t=TX[L.c], total=QS.length;
+  const picked = ans[cur];
+  document.getElementById('pfill').style.width=((cur+1)/total*100)+'%';
+  document.getElementById('qn').textContent=cur+1;
+  document.getElementById('bnext-text').textContent=cur===total-1?t.finish:t.next;
+  document.getElementById('qcard').innerHTML=`
+    <div class="q-number fade">${L.c==='zh'?`第 ${cur+1} / ${total} 题`:`Question ${cur+1} of ${total}`}</div>
+    <div class="q-main fade">${L.c==='zh'?q.zh:q.en}</div>
+    ${L.c==='zh'?`<div class="q-sub fade">${q.en}</div>`:''}
+    <div class="options">
+      ${q.opts.map((o,i)=>`
+        <button class="opt fade ${picked===o.t?'selected':''}" style="animation-delay:${i*0.05}s" onclick="pick(this,'${o.t}')">
+          <div class="opt-letter">${String.fromCharCode(65+i)}</div>
+          <div>
+            <div class="opt-zh">${L.c==='zh'?o.zh:o.en}</div>
+            ${L.c==='zh'?`<div class="opt-en">${o.en}</div>`:''}
+          </div>
+        </button>
+      `).join('')}
+    </div>
+  `;
+  document.getElementById('bnext').classList.toggle('on', Boolean(picked));
+}
+
+function pick(btn,talent) {
+  document.querySelectorAll('.opt').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  ans[cur]=talent;
+  document.getElementById('bnext').classList.add('on');
+}
+
+function nextQ() {
+  if(!ans[cur]) return;
+  sc[ans[cur]]=(sc[ans[cur]]||0)+1;
+  if(cur<QS.length-1){ cur++; renderQ(); }
+  else { showResult(); }
+}
+
+function showResult() {
+  show('loading');
+  document.getElementById('ltext').textContent=TX[L.c].loading;
+  setTimeout(()=>{
+    const top=rankTalents()[0];
+    buildResult(top); show('result');
+  },1800);
+}
+
+function buildResult(key) {
+  lastResultKey = key;
+  const ranked = rankTalents();
+  const secondaryKey = ranked.find((item)=>item!==key) || key;
+  const t=TX[L.c], td=TALENTS[key], tl=td[L.c], sd=TALENTS[secondaryKey], sl=sd[L.c];
+  document.getElementById('retake-top').textContent=t.retake;
+  document.getElementById('rbody').innerHTML=`
+    <div class="result-hero-card" style="--accent:${td.color}">
+      <div class="result-stamp">${t.stamp}</div>
+      <div class="result-eyebrow">${t.eyebrow}</div>
+      <div class="talent-name" style="color:${td.color}">${tl.name}</div>
+      <div class="talent-en">${tl.en}</div>
+      <div class="mixline">${t.mix} <span class="mix-pill">${sl.name}</span></div>
+    </div>
+    <div class="verdict-card" style="--accent:${td.color}">${tl.verdict}</div>
+    <div class="desc-text">${tl.desc}</div>
+
+    <div class="detail-grid">
+      <div class="detail-card">
+        <div class="detail-label">${t.detailLabels[0]}</div>
+        <div class="detail-text">${tl.surface}</div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-label">${t.detailLabels[1]}</div>
+        <div class="detail-text">${tl.core}</div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-label">${t.detailLabels[2]}</div>
+        <div class="detail-text">${tl.win}</div>
+      </div>
+    </div>
+
+    <div class="share-section">
+      <div class="share-card-preview" style="--accent:${td.color}">
+        <div class="scp-brand">${L.c==='zh'?'雨果灵机 · HUGO MOJO':'HUGO MOJO · 雨果灵机'}</div>
+        <div class="scp-label">${t.shareLabel}</div>
+        <div class="scp-name">${tl.name}</div>
+        <div class="scp-sub">${tl.verdict}</div>
+        <div class="scp-meta">
+          <div class="scp-tag">${t.shareTag}</div>
+          <div class="scp-tag muted">${sl.name}</div>
+        </div>
+      </div>
+      <div class="share-row">
+        ${t.shareBtns.map((b,i)=>`<button class="btn-share" onclick="doShare(${i},'${tl.name.replace(/'/g,"\\'")}',event)">${b}</button>`).join('')}
+      </div>
+    </div>
+
+    <div class="paywall-section">
+      <div class="paywall-top">
+        <div class="price-pill">${t.pricePill}</div>
+        <div class="price-tag">${t.priceTag}</div>
+      </div>
+      <div class="paywall-title">${t.pwTitle}</div>
+      <div class="paywall-sub">${t.pwSub}</div>
+      <div class="value-pills">
+        ${t.valuePills.map(i=>`<div class="value-pill">${i}</div>`).join('')}
+      </div>
+      <div class="report-preview">
+        <div class="preview-eyebrow">${t.previewEyebrow}</div>
+        <div class="preview-grid">
+          ${t.previewCards.map(card=>`
+            <div class="preview-card">
+              <div class="preview-lock">${t.lockLabel}</div>
+              <div class="preview-title">${card.title}</div>
+              <div class="preview-text">${card.text}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="compare-grid">
+        <div class="compare-col">
+          <div class="compare-label">${t.freeLabel}</div>
+          <div class="compare-list">
+            ${t.freeItems.map(i=>`<div class="compare-item"><div class="compare-dot"></div><span>${i}</span></div>`).join('')}
+          </div>
+        </div>
+        <div class="compare-col featured">
+          <div class="compare-label">${t.fullLabel}</div>
+          <div class="compare-list">
+            ${t.fullItems.map(i=>`<div class="compare-item"><div class="compare-dot"></div><span>${i}</span></div>`).join('')}
+          </div>
+        </div>
+      </div>
+      <div class="unlock-list">
+        ${t.items.map(i=>`<div class="unlock-row"><div class="u-dot"></div><span>${i}</span></div>`).join('')}
+      </div>
+      <button class="btn-unlock" onclick="doUnlock()">${t.unlockBtn}</button>
+      <div class="unlock-note">${t.unlockNote}</div>
+      <div class="unlock-safe-note">${t.paymentHelp}</div>
+    </div>
+
+    <div class="retake-link" onclick="startQuiz()">${t.retakeLink} →</div>
+  `;
+}
+
+function setTempButtonText(btn, text) {
+  if (!btn) return;
+  const orig = btn.textContent;
+  btn.textContent = text;
+  setTimeout(()=>{ btn.textContent = orig; }, 1500);
+}
+
+function fallbackCopy(text, btn) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.setAttribute('readonly', '');
+  ta.style.position = 'absolute';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+
+  try {
+    const copied = document.execCommand('copy');
+    if (copied) {
+      setTempButtonText(btn, TX[L.c].copyDone);
+    } else {
+      window.prompt(TX[L.c].copyManual, text);
+    }
+  } catch (err) {
+    window.prompt(TX[L.c].copyManual, text);
+  } finally {
+    document.body.removeChild(ta);
+  }
+}
+
+function copyShareText(text, btn) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text)
+      .then(()=>setTempButtonText(btn, TX[L.c].copyDone))
+      .catch(()=>fallbackCopy(text, btn));
+    return;
+  }
+
+  fallbackCopy(text, btn);
+}
+
+function doShare(i,name,e) {
+  const t=TX[L.c];
+  const text=t.shareIntro(name)+' '+SITE_URL;
+  if(i===0||i===2){ copyShareText(text, e?.currentTarget || e?.target); }
+  else if(i===1){ window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`,'_blank'); }
+}
+
+function doUnlock() {
+  const url = new URL(PAYMENT_LINKS[L.c] || PAYMENT_LINKS.en);
+  url.searchParams.set('checkout[custom][product]', 'low-key-power-type');
+  url.searchParams.set('checkout[custom][lang]', L.c);
+  window.open(url.toString(), '_blank', 'noopener');
+}
+
+setLang(L.c);
+</script>
+</body>
+</html>
