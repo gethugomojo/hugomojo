@@ -1,7 +1,13 @@
 const DODO_API_BASE = "https://live.dodopayments.com";
 const PRODUCT_ID = "pdt_0NdSBu2hGqTa514vmmjUa";
-const RETURN_URL = "https://www.hugomojo.com/delivery/hidden-talent-full-report/";
-const CANCEL_URL = "https://www.hugomojo.com/";
+const RETURN_URLS = {
+  en: "https://www.hugomojo.com/delivery/hidden-talent-full-report/",
+  "zh-CN": "https://www.hugomojo.com/cn/delivery/hidden-talent-full-report/"
+};
+const CANCEL_URLS = {
+  en: "https://www.hugomojo.com/",
+  "zh-CN": "https://www.hugomojo.com/cn/"
+};
 
 function isValidEmail(email) {
   return typeof email === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -27,16 +33,18 @@ export default async function handler(req, res) {
     const email = cleanText(body.email, 180).trim();
     const talent = cleanText(body.talent, 40);
     const talentName = cleanText(body.talentName, 80);
+    const lang = body.lang === "zh-CN" ? "zh-CN" : "en";
 
     const payload = {
       product_cart: [{ product_id: PRODUCT_ID, quantity: 1 }],
-      return_url: RETURN_URL,
-      cancel_url: CANCEL_URL,
+      return_url: RETURN_URLS[lang],
+      cancel_url: CANCEL_URLS[lang],
       feature_flags: {
         redirect_immediately: true
       },
       metadata: {
-        source: "hugomojo_hidden_talent_en",
+        source: lang === "zh-CN" ? "hugomojo_hidden_talent_cn" : "hugomojo_hidden_talent_en",
+        lang,
         talent,
         talent_name: talentName
       }

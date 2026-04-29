@@ -6,7 +6,7 @@
 <title>隐藏天赋测试 - Hugo Mojo</title>
 <meta name="description" content="12道快测试，先看到你的隐藏技能标签，再看它适合变成什么副业方向。">
 <meta property="og:title" content="隐藏天赋测试 - Hugo Mojo">
-<meta property="og:description" content="三分钟发现你的隐藏天赋，找到你的理想工作/副业。">
+<meta property="og:description" content="三分钟！发现你的隐藏天赋，找到适合你的工作或副业。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hugomojo.com/cn/">
 <meta property="og:image" content="https://hugomojo.com/og-hidden-talent-cn.png">
@@ -328,8 +328,8 @@
     <div class="flex items-start justify-between gap-4">
       <div>
         <p class="text-xs font-bold uppercase text-moss">微信 / 支付宝收款</p>
-        <h2 class="hm-section-title mt-2 text-4xl leading-none">扫码支付 ¥9.9，截图后领取完整报告。</h2>
-        <p class="mt-3 text-sm leading-6 text-paper/65">付款后请截图保存凭证，并发送到 hi@hugomojo.com。确认后人工补发报告链接。</p>
+        <h2 class="hm-section-title mt-2 text-4xl leading-none">备用扫码支付 ¥9.9。</h2>
+        <p class="mt-3 text-sm leading-6 text-paper/65">推荐使用测试结果页里的自动付款按钮。二维码只作为备用手动收款，无法自动确认付款。</p>
         <p class="mt-3 inline-flex rounded-lg border border-paper/10 bg-paper/10 px-3 py-2 text-xs font-bold text-paper/70">订单号：<span id="payOrderId" class="ml-1 text-moss">HM-REPORT</span></p>
       </div>
       <button class="rounded-lg border border-paper/10 px-3 py-2 text-sm font-bold transition hover:bg-paper hover:text-ink" onclick="closePayModal()">关闭</button>
@@ -337,15 +337,15 @@
     <div class="mt-5 grid gap-3 sm:grid-cols-2">
       <div class="rounded-lg border border-paper/10 bg-paper p-4 text-ink">
         <p class="text-xs font-bold uppercase text-ink/55">微信支付</p>
-        <img class="mt-3 aspect-square w-full rounded-lg border border-ink/10 bg-white object-contain p-2" src="wechat-pay.jpg" alt="微信收款二维码">
+        <img class="mt-3 aspect-square w-full rounded-lg border border-ink/10 bg-white object-contain p-2" src="/cn/wechat-pay.jpg" alt="微信收款二维码">
       </div>
       <div class="rounded-lg border border-paper/10 bg-paper p-4 text-ink">
         <p class="text-xs font-bold uppercase text-ink/55">支付宝</p>
-        <img class="mt-3 aspect-square w-full rounded-lg border border-ink/10 bg-white object-contain p-2" src="alipay-pay.jpg" alt="支付宝收款二维码">
+        <img class="mt-3 aspect-square w-full rounded-lg border border-ink/10 bg-white object-contain p-2" src="/cn/alipay-pay.jpg" alt="支付宝收款二维码">
       </div>
     </div>
     <div class="mt-5 grid gap-2 sm:grid-cols-2">
-      <button id="deliverButton" class="rounded-lg border border-moss bg-moss px-5 py-4 text-sm font-bold text-ink transition hover:bg-paper" onclick="showManualDeliveryNotice()">我已付款，怎么拿报告？</button>
+      <button id="deliverButton" class="rounded-lg border border-moss bg-moss px-5 py-4 text-sm font-bold text-ink transition hover:bg-paper" onclick="showManualDeliveryNotice()">我已扫码付款，怎么拿报告？</button>
       <a class="rounded-lg border border-paper/10 bg-card px-5 py-4 text-center text-sm font-bold text-paper transition hover:bg-paper hover:text-ink" href="mailto:hi@hugomojo.com?subject=隐藏天赋报告付款截图">发送付款截图</a>
     </div>
   </div>
@@ -372,7 +372,7 @@
 <nav class="fixed left-0 right-0 top-0 z-30 px-4 py-4">
   <div class="mx-auto flex max-w-6xl items-center justify-between rounded-lg border border-paper/10 bg-card/80 px-3 py-2 shadow-lift backdrop-blur-md">
     <a href="#" class="flex items-center gap-3 text-sm font-bold text-paper" onclick="goHome(event)"><img class="h-9 w-9 rounded-lg object-cover" src="/Hugo_Mojo_avatar_HM.png" onerror="this.onerror=null;this.src='Hugo_Mojo_avatar_HM.png'" alt="Hugo Mojo"><span>Hugo Mojo</span></a>
-    <div class="brand-nav hidden items-center gap-4 text-xs font-bold sm:flex"><a href="#" onclick="event.preventDefault(); startQuiz()">开始测试</a><a href="delivery/hidden-talent-full-report/" onclick="goRoute(event, 'cn/delivery/hidden-talent-full-report/')">交付</a><a href="contact.html" onclick="goRoute(event, 'cn/contact.html')">联系</a></div>
+    <div class="brand-nav hidden items-center gap-4 text-xs font-bold sm:flex"><a href="#" onclick="event.preventDefault(); startQuiz()">开始测试</a><a href="delivery/hidden-talent-full-report/" onclick="goRoute(event, 'cn/delivery/hidden-talent-full-report/')">交付</a><a href="contact.html" onclick="goRoute(event, 'cn/contact.html')">联系</a><a href="/" onclick="goRoute(event, '')">English</a></div>
   </div>
 </nav>
 
@@ -380,19 +380,19 @@
   <section class="mx-auto grid max-w-6xl gap-4 lg:grid-cols-12">
     <div class="hero-stage paper-card reveal rounded-lg p-5 sm:p-7 lg:col-span-7 lg:p-8">
       <p class="spotify-pill inline-flex rounded-full border px-3 py-1 text-xs font-bold uppercase">隐藏天赋测试 · 12道题</p>
-      <h1 class="hm-title mt-4 max-w-4xl break-words">三分钟发现你的隐藏天赋，<br>找到你的理想工作/副业。</h1>
-      <p class="hero-copy mt-4 max-w-2xl text-base leading-7 sm:text-lg">12道题，大约3分钟。免费先拿到隐藏技能标签，完整报告会给你方向和执行包。</p>
+      <h1 class="hm-title mt-4 max-w-4xl break-words">三分钟！发现你的隐藏天赋，<br>找到适合你的工作或副业。</h1>
+      <p class="hero-copy mt-4 max-w-2xl text-base leading-7 sm:text-lg">12道题，大约3分钟。先拿到你的隐藏技能标签，再看它适合变成哪种工作方式或副业方向。</p>
       <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-start"><div class="hero-cta-wrap"><button class="primary-cta spring-hover rounded-lg px-7 py-5 text-base font-bold shadow-lift" onclick="startQuiz()">开始测试 →</button><span class="hero-signal"></span></div></div>
       <div class="hero-hook-grid"><div class="hero-hook"><b>被说中</b><span>把你那个从没被命名的能力，说清楚。</span></div><div class="hero-hook"><b>看方向</b><span>适合变成内容、服务，还是一个小产品。</span></div><div class="hero-hook"><b>能开始</b><span>一个小报价，不是一份巨大商业计划。</span></div></div>
-      <div class="stamp-row mt-6"><span class="stamp">不用登录</span><span class="stamp">12道题</span><span class="stamp">免费隐藏技能结果</span><span class="stamp">¥9.9 付费报告</span></div>
+      <div class="stamp-row mt-6"><span class="stamp">不用登录</span><span class="stamp">12道题</span><span class="stamp">免费隐藏技能结果</span><span class="stamp">结果页可继续看完整报告</span></div>
     </div>
 
     <div id="result-preview" class="focus-card paper-card reveal rounded-lg p-5 lg:col-span-5">
       <div class="mix-cover"><strong>HM<br>隐藏技能</strong><span>结果卡预览</span></div>
       <p class="hero-kicker mt-5 text-xs font-bold uppercase">你会拿到什么？</p>
-      <h2 class="hm-section-title mt-2 text-4xl leading-none">免费告诉你是谁。<br>付费告诉你能从哪开始。</h2>
+      <h2 class="hm-section-title mt-2 text-4xl leading-none">先看到你的隐藏技能。<br>再决定要不要继续深入。</h2>
       <div class="track-list"><div class="track-row"><span class="num">01</span><span><b>你的隐藏技能结果</b><small>气氛侦探、点火器、模式猎手...</small></span></div><div class="track-row"><span class="num">02</span><span><b>一句扎心描述</b><small>短到能记住，准到想转发。</small></span></div><div class="track-row"><span class="num">03</span><span><b>完整报告</b><small>方向、AI提示词、选题、销售文案和执行清单。</small></span></div><div class="track-row"><span class="num">04</span><span><b>执行包</b><small>把一个方向做成第一版可卖小东西。</small></span></div></div>
-      <div class="mini-player mt-4"><div class="mb-3 flex items-center justify-between gap-3 text-xs font-bold text-paper/60"><span>免费技能结果</span><span>付费报告 ¥9.9</span></div><div class="player-bar"><span></span></div></div>
+      <div class="mini-player mt-4"><div class="mb-3 flex items-center justify-between gap-3 text-xs font-bold text-paper/60"><span>免费技能结果</span><span>完整方向报告</span></div><div class="player-bar"><span></span></div></div>
     </div>
 
     <footer class="site-footer reveal rounded-lg border border-paper/10 bg-ink/70 p-5 text-sm text-paper/60 backdrop-blur-md lg:col-span-12"><div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><div><p class="font-bold text-paper">Hugo Mojo</p><p class="mt-1">给那些不想听大道理，只想被说中，再拿一个小方向的人。</p><p class="mt-2">Support: <a class="font-bold text-paper" href="mailto:hi@hugomojo.com">hi@hugomojo.com</a></p></div><div class="flex flex-wrap gap-3 font-bold"><a href="privacy.html" onclick="goRoute(event, 'cn/privacy.html')">隐私</a><a href="terms.html" onclick="goRoute(event, 'cn/terms.html')">条款</a><a href="refund.html" onclick="goRoute(event, 'cn/refund.html')">退款</a><a href="contact.html" onclick="goRoute(event, 'cn/contact.html')">联系</a><a href="delivery/hidden-talent-full-report/" onclick="goRoute(event, 'cn/delivery/hidden-talent-full-report/')">交付</a></div></div></footer>
@@ -408,6 +408,9 @@
 <script>
 const DELIVERY_URL = "cn/delivery/hidden-talent-full-report/";
 const SITE_URL = document.querySelector('meta[property="og:url"]')?.content || "https://hugomojo.com";
+const CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NdSBu2hGqTa514vmmjUa?quantity=1";
+const DODO_PRODUCT_ID = "pdt_0NdSBu2hGqTa514vmmjUa";
+const DODO_PRODUCT_NAME = "Hugo Mojo Hidden Talent Full Report + AI Execution Kit";
 
 const TYPES = {
   overloaded: {
@@ -556,8 +559,8 @@ function buildResult(key) {
         <p class="mt-5 text-paper/65">${type.hidden}</p>
         <div class="mt-6 rounded-lg border border-paper/10 bg-ink p-4 text-paper shadow-lift">
           <p class="text-xs font-bold uppercase text-moss">¥9.9 付费报告</p>
-          <p class="mt-2 text-sm leading-6 text-paper/72">免费结果只告诉你是谁。完整报告会继续给你：隐藏技能解读、3 个方向、AI提示词、选题、销售文案、交付模板和 7 天执行清单。</p>
-          <button class="mt-4 w-full rounded-lg border border-moss bg-moss px-4 py-3 text-sm font-bold text-ink transition hover:bg-paper" onclick="openPayModal('${key}')">微信 / 支付宝支付 ¥9.9 →</button>
+          <p class="mt-2 text-sm leading-6 text-paper/72">完整报告会继续给你：隐藏技能解读、3 个方向、AI提示词、选题、销售文案、交付模板和 7 天执行清单。付款完成后自动跳转交付页。</p>
+          <button class="mt-4 w-full rounded-lg border border-moss bg-moss px-4 py-3 text-sm font-bold text-ink transition hover:bg-paper" onclick="openCheckout('${key}')">自动付款并打开报告 ¥9.9 →</button>
         </div>
       </section>
 
@@ -587,11 +590,11 @@ function buildResult(key) {
       </section>
 
       <section data-result-part class="paywall-pop rounded-lg border border-ink bg-ink p-6 text-paper shadow-soft lg:col-span-12">
-        <p class="text-xs font-bold uppercase text-moss">下一步：¥9.9 付费报告</p>
+        <p class="text-xs font-bold uppercase text-moss">下一步：完整方向报告</p>
         <h2 class="hm-section-title mt-3 text-5xl leading-none">免费结果负责说中你。报告负责让你开做。</h2>
         <p class="mt-5 max-w-3xl text-paper/70">报告不是“更多人格分析”，而是完整隐藏技能结果 + AI副业执行包：你为什么被低估、适合什么方向、第一个小报价是什么、AI怎么帮你做出第一版。</p>
         <div class="mt-6 grid gap-2 md:grid-cols-3"><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">完整报告 · ¥9.9</div><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">完整隐藏技能解读 + AI执行包</div><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">一次付费，不是订阅</div></div>
-        <div class="mt-5 flex flex-col gap-2 md:max-w-xl"><p class="text-xs font-bold uppercase text-moss">微信 / 支付宝收款</p><p class="text-xs leading-5 text-paper/55">扫码支付 ¥9.9。付款后截图发到 hi@hugomojo.com，确认后人工补发报告链接。</p><button class="rounded-lg border border-moss bg-moss px-5 py-4 text-sm font-bold text-ink transition hover:bg-paper" onclick="openPayModal('${key}')">微信 / 支付宝支付 ¥9.9 →</button></div>
+        <div class="mt-5 flex flex-col gap-2 md:max-w-xl"><p class="text-xs font-bold uppercase text-moss">自动交付</p><p class="text-xs leading-5 text-paper/55">付款完成后会自动跳转到交付页，不需要等待邮件回复。</p><button class="rounded-lg border border-moss bg-moss px-5 py-4 text-sm font-bold text-ink transition hover:bg-paper" onclick="openCheckout('${key}')">自动付款并打开报告 ¥9.9 →</button><button class="rounded-lg border border-paper/10 bg-card px-5 py-3 text-sm font-bold text-paper transition hover:bg-paper hover:text-ink" onclick="openPayModal('${key}')">备用：微信 / 支付宝扫码</button></div>
       </section>
 
       <section data-result-part class="paper-card rounded-lg p-6 text-center text-paper lg:col-span-12"><h2 class="hm-section-title text-4xl leading-none">想再测一次？</h2><p class="mt-3 text-paper/60">这次少礼貌一点。结果通常会变。</p><button class="mt-5 rounded-lg border border-paper/10 bg-card px-5 py-3 text-sm font-bold transition hover:bg-paper hover:text-ink" onclick="startQuiz()">重新测试</button></section>
@@ -604,9 +607,10 @@ function shareResult(key) { const type = TYPES[key]; const text = `${type.shareL
 function getShareUrl(key) { if (window.location.protocol === 'file:' || window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') { const localUrl = new URL(resolveRoute('share/hidden-talent/index.html')); localUrl.searchParams.set('type', key); return localUrl.href; } return `${SITE_URL.replace(/\/$/,'')}/share/hidden-talent/?type=${encodeURIComponent(key)}`; }
 function openSharePage(key) { window.location.href = getShareUrl(key); }
 function makeOrderId() { return `HM-${Date.now().toString(36).toUpperCase().slice(-6)}`; }
-function openPayModal(key) { const type = TYPES[key] || TYPES[lastResult] || {}; const orderId = makeOrderId(); localStorage.setItem('hmLastPaymentIntent', JSON.stringify({ orderId, talent: key || lastResult, talentName: type.name || '', amount: '¥9.9', method: 'wechat_alipay_manual', lang: 'zh-CN', at: new Date().toISOString() })); const orderEl = document.getElementById('payOrderId'); if(orderEl) orderEl.textContent = orderId; const btn = document.getElementById('deliverButton'); if(btn) btn.textContent = '我已付款，怎么拿报告？'; document.getElementById('payModal').classList.add('show'); }
+async function openCheckout(key) { const type = TYPES[key] || TYPES[lastResult] || {}; const talentKey = key || lastResult || ''; localStorage.setItem('hmLastCheckoutIntent', JSON.stringify({ talent: talentKey, talentName: type.name || '', amount: '¥9.9', method: 'dodo_checkout_session', lang: 'zh-CN', at: new Date().toISOString() })); toast('正在打开安全付款页。'); try { const response = await fetch('/api/create-checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ talent: talentKey, talentName: type.name || '', lang: 'zh-CN' }) }); const data = await response.json().catch(() => ({})); if (!response.ok || !data.checkout_url) throw new Error(data.error || 'Checkout unavailable'); window.location.href = data.checkout_url; } catch (error) { console.warn(error); toast('自动付款暂时不可用，正在打开备用付款页。'); setTimeout(() => { window.location.href = CHECKOUT_URL; }, 650); } }
+function openPayModal(key) { const type = TYPES[key] || TYPES[lastResult] || {}; const orderId = makeOrderId(); localStorage.setItem('hmLastPaymentIntent', JSON.stringify({ orderId, talent: key || lastResult, talentName: type.name || '', amount: '¥9.9', method: 'wechat_alipay_manual_backup', lang: 'zh-CN', at: new Date().toISOString() })); const orderEl = document.getElementById('payOrderId'); if(orderEl) orderEl.textContent = orderId; const btn = document.getElementById('deliverButton'); if(btn) btn.textContent = '我已扫码付款，怎么拿报告？'; document.getElementById('payModal').classList.add('show'); }
 function closePayModal() { document.getElementById('payModal').classList.remove('show'); }
-function showManualDeliveryNotice() { toast('请把付款截图发送到 hi@hugomojo.com，确认后补发报告链接。'); const btn = document.getElementById('deliverButton'); if(btn) btn.textContent = '截图发邮箱，确认后补发'; }
+function showManualDeliveryNotice() { toast('二维码付款无法自动确认。请用自动付款按钮，或把截图发到 hi@hugomojo.com。'); const btn = document.getElementById('deliverButton'); if(btn) btn.textContent = '二维码付款需人工核对'; }
 function openModal() { document.getElementById('kitModal').classList.add('show'); }
 function closeModal() { document.getElementById('kitModal').classList.remove('show'); }
 function toast(msg) { const el = document.getElementById('toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(window.hmToastTimer); window.hmToastTimer = setTimeout(()=>el.classList.remove('show'),2200); }
