@@ -451,8 +451,8 @@
     <div class="flex items-start justify-between gap-4">
       <div>
         <p class="text-xs font-bold uppercase text-moss">微信 / 支付宝收款</p>
-        <h2 class="hm-section-title mt-2 text-4xl leading-none">备用扫码支付 ¥9.9。</h2>
-        <p class="mt-3 text-sm leading-6 text-paper/65">推荐使用测试结果页里的自动付款按钮。二维码只作为备用手动收款，无法自动确认付款。</p>
+        <h2 class="hm-section-title mt-2 text-4xl leading-none">扫码支付 ¥9.9，付款后自动打开报告。</h2>
+        <p class="mt-3 text-sm leading-6 text-paper/65">上线初期先用个人收款跑通流程。付款完成后点下方按钮即可进入交付页；订单会保存在本机，后续可凭截图补发。</p>
         <p class="mt-3 inline-flex rounded-lg border border-paper/10 bg-paper/10 px-3 py-2 text-xs font-bold text-paper/70">订单号：<span id="payOrderId" class="ml-1 text-moss">HM-REPORT</span></p>
       </div>
       <button class="rounded-lg border border-paper/10 px-3 py-2 text-sm font-bold transition hover:bg-paper hover:text-ink" onclick="closePayModal()">关闭</button>
@@ -468,7 +468,7 @@
       </div>
     </div>
     <div class="mt-5 grid gap-2 sm:grid-cols-2">
-      <button id="deliverButton" class="rounded-lg border border-moss bg-moss px-5 py-4 text-sm font-bold text-ink transition hover:bg-paper" onclick="showManualDeliveryNotice()">我已扫码付款，怎么拿报告？</button>
+      <button id="deliverButton" class="rounded-lg border border-moss bg-moss px-5 py-4 text-sm font-bold text-ink transition hover:bg-paper" onclick="openManualDelivery()">我已付款，打开报告 →</button>
       <a class="rounded-lg border border-paper/10 bg-card px-5 py-4 text-center text-sm font-bold text-paper transition hover:bg-paper hover:text-ink" href="mailto:hi@hugomojo.com?subject=隐藏天赋报告付款截图">发送付款截图</a>
     </div>
   </div>
@@ -518,8 +518,8 @@
     <div id="result-preview" class="focus-card paper-card reveal rounded-lg p-5 lg:col-span-5">
       <div class="mix-cover"><strong>HM<br>隐藏技能</strong><span>结果卡预览</span></div>
       <p class="hero-kicker mt-5 text-xs font-bold uppercase">你会拿到什么？</p>
-      <h2 class="hm-section-title mt-2 text-4xl leading-none">先看到你的隐藏技能。<br>再决定要不要继续深入。</h2>
-      <div class="track-list"><div class="track-row"><span class="num">01</span><span><b>你的隐藏技能结果</b><small>气氛侦探、点火器、模式猎手...</small></span></div><div class="track-row"><span class="num">02</span><span><b>一句扎心描述</b><small>短到能记住，准到想转发。</small></span></div><div class="track-row"><span class="num">03</span><span><b>完整报告</b><small>方向、AI提示词、选题、销售文案和执行清单。</small></span></div><div class="track-row"><span class="num">04</span><span><b>执行包</b><small>把一个方向做成第一版可卖小东西。</small></span></div></div>
+      <h2 class="hm-section-title mt-2 text-4xl leading-none">先看到那个你一直以为“人人都会”的能力。<br>再看它能不能变成一个小生意。</h2>
+      <div class="track-list"><div class="track-row"><span class="num">01</span><span><b>隐藏技能标签</b><small>气氛侦探、点火器、模式猎手... 哪个最像你？</small></span></div><div class="track-row"><span class="num">02</span><span><b>一句扎心描述</b><small>短到能记住，准到想截图。</small></span></div><div class="track-row"><span class="num">03</span><span><b>变现方向</b><small>这个能力，具体能卖给谁、怎么卖。</small></span></div><div class="track-row"><span class="num">04</span><span><b>执行包入口</b><small>把一个方向，变成第一版可赚钱的行动文案。</small></span></div></div>
       <div class="mini-player mt-4"><div class="mb-3 flex items-center justify-between gap-3 text-xs font-bold text-paper/60"><span>免费技能结果</span><span>完整方向报告</span></div><div class="player-bar"><span></span></div></div>
     </div>
 
@@ -687,8 +687,8 @@ function buildResult(key) {
         <p class="mt-5 text-paper/65">${type.hidden}</p>
         <div class="mt-6 rounded-lg border border-paper/10 bg-ink p-4 text-paper shadow-lift">
           <p class="text-xs font-bold uppercase text-moss">¥9.9 付费报告</p>
-          <p class="mt-2 text-sm leading-6 text-paper/72">完整报告会继续给你：隐藏技能解读、3 个方向、AI提示词、选题、销售文案、交付模板和 7 天执行清单。付款完成后自动跳转交付页。</p>
-          <button class="mt-4 w-full rounded-lg border border-moss bg-moss px-4 py-3 text-sm font-bold text-ink transition hover:bg-paper" onclick="openCheckout('${key}')">自动付款并打开报告 ¥9.9 →</button>
+          <p class="mt-2 text-sm leading-6 text-paper/72">完整报告会继续给你：隐藏技能解读、3 个方向、AI提示词、选题、销售文案、交付模板和 7 天执行清单。微信或支付宝付款后可直接打开交付页。</p>
+          <button class="mt-4 w-full rounded-lg border border-moss bg-moss px-4 py-3 text-sm font-bold text-ink transition hover:bg-paper" onclick="openPayModal('${key}')">微信 / 支付宝付款 ¥9.9 →</button>
         </div>
       </section>
 
@@ -722,7 +722,7 @@ function buildResult(key) {
         <h2 class="hm-section-title mt-3 text-5xl leading-none">免费结果负责说中你。报告负责让你开做。</h2>
         <p class="mt-5 max-w-3xl text-paper/70">报告不是“更多人格分析”，而是完整隐藏技能结果 + AI副业执行包：你为什么被低估、适合什么方向、第一个小报价是什么、AI怎么帮你做出第一版。</p>
         <div class="mt-6 grid gap-2 md:grid-cols-3"><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">完整报告 · ¥9.9</div><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">完整隐藏技能解读 + AI执行包</div><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">一次付费，不是订阅</div></div>
-        <div class="mt-5 flex flex-col gap-2 md:max-w-xl"><p class="text-xs font-bold uppercase text-moss">自动交付</p><p class="text-xs leading-5 text-paper/55">付款完成后会自动跳转到交付页，不需要等待邮件回复。</p><button class="rounded-lg border border-moss bg-moss px-5 py-4 text-sm font-bold text-ink transition hover:bg-paper" onclick="openCheckout('${key}')">自动付款并打开报告 ¥9.9 →</button><button class="rounded-lg border border-paper/10 bg-card px-5 py-3 text-sm font-bold text-paper transition hover:bg-paper hover:text-ink" onclick="openPayModal('${key}')">备用：微信 / 支付宝扫码</button></div>
+        <div class="mt-5 flex flex-col gap-2 md:max-w-xl"><p class="text-xs font-bold uppercase text-moss">自动交付</p><p class="text-xs leading-5 text-paper/55">中文优先支持微信 / 支付宝。付款后点确认按钮即可打开报告，不需要等待邮件回复。</p><button class="rounded-lg border border-moss bg-moss px-5 py-4 text-sm font-bold text-ink transition hover:bg-paper" onclick="openPayModal('${key}')">微信 / 支付宝付款 ¥9.9 →</button><button class="rounded-lg border border-paper/10 bg-card px-5 py-3 text-sm font-bold text-paper transition hover:bg-paper hover:text-ink" onclick="openCheckout('${key}')">海外卡支付 / Dodo</button></div>
       </section>
 
       <section data-result-part class="paper-card rounded-lg p-6 text-center text-paper lg:col-span-12"><h2 class="hm-section-title text-4xl leading-none">想再测一次？</h2><p class="mt-3 text-paper/60">这次少礼貌一点。结果通常会变。</p><button class="mt-5 rounded-lg border border-paper/10 bg-card px-5 py-3 text-sm font-bold transition hover:bg-paper hover:text-ink" onclick="startQuiz()">重新测试</button></section>
@@ -732,13 +732,13 @@ function buildResult(key) {
 function copyResult(key) { const type = TYPES[key]; const text = `${type.shareLine} → 轮到你了：${getShareUrl(key)}`; if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(() => toast('已复制。发给那个会说“有点冒犯但很准”的朋友。')).catch(()=>fallbackCopy(text)); else fallbackCopy(text); }
 function fallbackCopy(text) { const area = document.createElement('textarea'); area.value = text; area.setAttribute('readonly',''); area.style.position='fixed'; area.style.left='-9999px'; document.body.appendChild(area); area.select(); try { document.execCommand('copy'); toast("已复制。去烦一个朋友。"); } catch(e) { window.prompt("复制这段：", text); } document.body.removeChild(area); }
 function shareResult(key) { const type = TYPES[key]; const text = `${type.shareLine} → 轮到你了：${getShareUrl(key)}`; copyResult(key); if (navigator.share) navigator.share({ title: `我测出${type.name}`, text, url: getShareUrl(key) }).catch(()=>{}); }
-function getShareUrl(key) { if (window.location.protocol === 'file:' || window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') { const localUrl = new URL(resolveRoute('share/hidden-talent/index.html')); localUrl.searchParams.set('type', key); return localUrl.href; } return `${SITE_URL.replace(/\/$/,'')}/share/hidden-talent/?type=${encodeURIComponent(key)}`; }
+function getShareUrl(key) { if (window.location.protocol === 'file:' || window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') { const localUrl = new URL(resolveRoute('share/hidden-talent/index.html')); localUrl.searchParams.set('type', key); localUrl.searchParams.set('lang', 'cn'); return localUrl.href; } return `${SITE_URL.replace(/\/$/,'')}/share/hidden-talent/?type=${encodeURIComponent(key)}&lang=cn`; }
 function openSharePage(key) { window.location.href = getShareUrl(key); }
 function makeOrderId() { return `HM-${Date.now().toString(36).toUpperCase().slice(-6)}`; }
 async function openCheckout(key) { const type = TYPES[key] || TYPES[lastResult] || {}; const talentKey = key || lastResult || ''; localStorage.setItem('hmLastCheckoutIntent', JSON.stringify({ talent: talentKey, talentName: type.name || '', amount: '¥9.9', method: 'dodo_checkout_session', lang: 'zh-CN', at: new Date().toISOString() })); toast('正在打开安全付款页。'); try { const response = await fetch('/api/create-checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ talent: talentKey, talentName: type.name || '', lang: 'zh-CN' }) }); const data = await response.json().catch(() => ({})); if (!response.ok || !data.checkout_url) throw new Error(data.error || 'Checkout unavailable'); window.location.href = data.checkout_url; } catch (error) { console.warn(error); toast('自动付款暂时不可用，正在打开备用付款页。'); setTimeout(() => { window.location.href = CHECKOUT_URL; }, 650); } }
-function openPayModal(key) { const type = TYPES[key] || TYPES[lastResult] || {}; const orderId = makeOrderId(); localStorage.setItem('hmLastPaymentIntent', JSON.stringify({ orderId, talent: key || lastResult, talentName: type.name || '', amount: '¥9.9', method: 'wechat_alipay_manual_backup', lang: 'zh-CN', at: new Date().toISOString() })); const orderEl = document.getElementById('payOrderId'); if(orderEl) orderEl.textContent = orderId; const btn = document.getElementById('deliverButton'); if(btn) btn.textContent = '我已扫码付款，怎么拿报告？'; document.getElementById('payModal').classList.add('show'); }
+function openPayModal(key) { const type = TYPES[key] || TYPES[lastResult] || {}; const orderId = makeOrderId(); localStorage.setItem('hmLastPaymentIntent', JSON.stringify({ orderId, talent: key || lastResult, talentName: type.name || '', amount: '¥9.9', method: 'wechat_alipay_self_delivery', lang: 'zh-CN', at: new Date().toISOString() })); const orderEl = document.getElementById('payOrderId'); if(orderEl) orderEl.textContent = orderId; const btn = document.getElementById('deliverButton'); if(btn) btn.textContent = '我已付款，打开报告 →'; document.getElementById('payModal').classList.add('show'); }
 function closePayModal() { document.getElementById('payModal').classList.remove('show'); }
-function showManualDeliveryNotice() { toast('二维码付款无法自动确认。请用自动付款按钮，或把截图发到 hi@hugomojo.com。'); const btn = document.getElementById('deliverButton'); if(btn) btn.textContent = '二维码付款需人工核对'; }
+function openManualDelivery() { const raw = localStorage.getItem('hmLastPaymentIntent') || '{}'; let intent = {}; try { intent = JSON.parse(raw); } catch(e) {} localStorage.setItem('hmLastManualDelivery', JSON.stringify({ ...intent, confirmedByUser: true, deliveredAt: new Date().toISOString() })); toast('正在打开交付页。'); setTimeout(() => { window.location.href = resolveRoute(DELIVERY_URL); }, 450); }
 function openModal() { document.getElementById('kitModal').classList.add('show'); }
 function closeModal() { document.getElementById('kitModal').classList.remove('show'); }
 function toast(msg) { const el = document.getElementById('toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(window.hmToastTimer); window.hmToastTimer = setTimeout(()=>el.classList.remove('show'),2200); }

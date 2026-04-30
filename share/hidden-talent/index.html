@@ -1,1 +1,281 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hidden Talent Result - Hugo Mojo</title><meta name="description" content="A shareable Hugo Mojo hidden talent result card."><meta property="og:title" content="Hidden Talent Result - Hugo Mojo"><meta property="og:description" content="Take the 3-minute hidden talent test."><meta property="og:type" content="website"><meta property="og:url" content="https://hugomojo.com/share/hidden-talent/"><meta property="og:image" content="https://hugomojo.com/og-hidden-talent-cn.png"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><style>body{margin:0;min-height:100vh;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:linear-gradient(180deg,#0D0D14,#17142B);color:#F0EDE6}.title{font-family:'Bebas Neue',Impact,sans-serif;letter-spacing:0;line-height:.9}.card{background:rgba(18,18,31,.88);border:1px solid rgba(240,237,230,.14);border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,.35)}</style></head><body class="flex items-center justify-center p-4"><main class="w-full max-w-3xl"><section id="card" class="card overflow-hidden p-6 sm:p-8"><p class="text-xs font-bold uppercase text-[#F5C842]">Hugo Mojo result</p><div id="art" class="mt-6 h-48 rounded-lg border border-white/10"></div><h1 id="name" class="title mt-6 text-7xl sm:text-8xl">Hidden Talent</h1><p id="archetype" class="mt-2 text-lg font-bold text-white/60">Result card</p><p id="line" class="mt-5 text-2xl font-bold leading-9">Take the test to find your hidden talent.</p></section><div class="mt-4 grid gap-2 sm:grid-cols-2"><a class="rounded-lg border border-[#F5C842] bg-[#F5C842] px-4 py-3 text-center text-sm font-bold text-[#0D0D14] no-underline" href="/">Take the test</a><a class="rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-center text-sm font-bold text-white no-underline" href="/delivery/hidden-talent-full-report/">Full report</a></div></main><script>const TYPES={"overloaded":["Calm Alchemist","Emotional Support Builder","#2A2840","#5CE8C4","I got Calm Alchemist. My hidden talent is turning messy feelings into something people can actually use."],"rabbit":["Exit Architect","Risk Filter Designer","#241C3E","#FF7043","I got Exit Architect. My hidden talent is spotting the bad path before it eats months of my life."],"radar":["Vibe Detective","People Signal Reader","#1B3140","#7B5CFF","I got Vibe Detective. My hidden talent is catching what people almost said."],"sprite":["Spark Starter","Launch Energy Maker","#3A2D0A","#F5C842","I got Spark Starter. My hidden talent is making ideas easier to start."],"bulldozer":["Quiet Finisher","Execution System Builder","#123331","#29B6B0","I got Quiet Finisher. My hidden talent is turning almost-finished plans into real things."],"fox":["Pattern Hunter","Market Pattern Reader","#311B27","#FF5C5C","I got Pattern Hunter. My hidden talent is finding the missing piece everyone else skipped."]};const key=new URLSearchParams(location.search).get('type')||'radar';const t=TYPES[key]||TYPES.radar;document.getElementById('name').textContent=t[0];document.getElementById('archetype').textContent=t[1];document.getElementById('line').textContent=t[4];document.getElementById('art').style.background='linear-gradient(135deg,'+t[3]+',transparent 42%),repeating-linear-gradient(135deg,transparent 0 18px,'+t[3]+'33 18px 24px),'+t[2];</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Hidden Talent Result - Hugo Mojo</title>
+<meta name="description" content="A shareable Hugo Mojo hidden talent result card.">
+<meta property="og:title" content="Hidden Talent Result - Hugo Mojo">
+<meta property="og:description" content="Take the 3-minute hidden talent test.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hugomojo.com/share/hidden-talent/">
+<meta property="og:image" content="https://hugomojo.com/og-hidden-talent-cn.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@500;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root { --ink:#0D0D14; --paper:#F0EDE6; --moss:#F5C842; --card:#12121F; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Plus Jakarta Sans', 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif;
+    background:
+      radial-gradient(circle at 14% 0%, rgba(245, 200, 66, 0.24), transparent 28rem),
+      radial-gradient(circle at 88% 12%, rgba(123, 92, 255, 0.22), transparent 24rem),
+      linear-gradient(180deg, #0D0D14 0%, #12121F 55%, #17142B 100%);
+    color: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.26;
+    background-image:
+      linear-gradient(90deg, rgba(240,237,230,0.045) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(240,237,230,0.035) 1px, transparent 1px);
+    background-size: 52px 52px;
+  }
+  .title-en { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing: 0; line-height: .88; }
+  .card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(240,237,230,.16);
+    border-radius: 10px;
+    background: rgba(18,18,31,.86);
+    box-shadow: 0 30px 100px rgba(0,0,0,.42);
+  }
+  .share-card {
+    position: relative;
+    min-height: 42rem;
+    isolation: isolate;
+    background:
+      radial-gradient(circle at 22% 14%, color-mix(in srgb, var(--accent) 48%, transparent), transparent 18rem),
+      linear-gradient(145deg, var(--base), #0D0D14 74%);
+  }
+  .share-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .36;
+    background:
+      repeating-linear-gradient(135deg, transparent 0 18px, color-mix(in srgb, var(--accent) 18%, transparent) 18px 24px),
+      radial-gradient(rgba(240,237,230,.28) .7px, transparent .7px);
+    background-size: auto, 5px 5px;
+  }
+  .badge, .pill {
+    border: 1px solid rgba(240,237,230,.18);
+    background: rgba(240,237,230,.08);
+    border-radius: 999px;
+  }
+  .mark {
+    width: fit-content;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--ink);
+    box-shadow: 0 20px 55px color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+  .cn-title {
+    font-size: clamp(3.25rem, 11vw, 7.4rem);
+    font-weight: 900;
+    line-height: .96;
+    letter-spacing: 0;
+  }
+  .en-title {
+    font-size: clamp(4rem, 13vw, 8.5rem);
+  }
+  .qr-lite {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
+    width: 4.8rem;
+    height: 4.8rem;
+    padding: .42rem;
+    border-radius: 8px;
+    background: var(--paper);
+  }
+  .qr-lite span { border-radius: 2px; background: var(--ink); opacity: .18; }
+  .qr-lite span:nth-child(1), .qr-lite span:nth-child(2), .qr-lite span:nth-child(4), .qr-lite span:nth-child(6),
+  .qr-lite span:nth-child(9), .qr-lite span:nth-child(11), .qr-lite span:nth-child(13), .qr-lite span:nth-child(15),
+  .qr-lite span:nth-child(17), .qr-lite span:nth-child(20), .qr-lite span:nth-child(21), .qr-lite span:nth-child(23),
+  .qr-lite span:nth-child(25) { opacity: 1; }
+  @media (max-width: 640px) {
+    .share-card { min-height: 37rem; }
+    .cn-title { font-size: clamp(3rem, 17vw, 5.4rem); }
+    .en-title { font-size: clamp(4rem, 19vw, 6.4rem); }
+  }
+</style>
+</head>
+<body>
+<main class="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center gap-4 px-4 py-6 sm:py-10">
+  <nav class="card flex items-center justify-between px-4 py-3">
+    <a id="homeLink" class="flex items-center gap-3 text-sm font-black text-white no-underline" href="/">
+      <img class="h-9 w-9 rounded-lg object-cover" src="/Hugo_Mojo_avatar_HM.png" alt="Hugo Mojo">
+      <span id="brandName">Hugo Mojo</span>
+    </a>
+    <a id="langSwitch" class="rounded-lg border border-white/15 px-3 py-2 text-xs font-bold text-white/70 no-underline" href="#">中文</a>
+  </nav>
+
+  <section class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem]">
+    <article id="card" class="share-card card p-6 sm:p-8" style="--base:#1B3140;--accent:#7B5CFF;">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p id="eyebrow" class="badge inline-flex px-3 py-1 text-xs font-black uppercase text-white/70">Hugo Mojo Result</p>
+          <p id="subEyebrow" class="mt-3 text-sm font-bold text-white/55">Hidden Talent Test</p>
+        </div>
+        <div class="qr-lite shrink-0" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="mt-12 sm:mt-16">
+        <p id="gotLine" class="text-base font-black text-white/70">I got</p>
+        <h1 id="name" class="title-en en-title mt-3 break-words">Vibe Detective</h1>
+        <p id="archetype" class="mt-4 text-xl font-black text-white/70">People Signal Reader</p>
+        <p id="line" class="mt-8 max-w-2xl text-2xl font-black leading-9 sm:text-3xl sm:leading-10">My hidden talent is catching what people almost said.</p>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-2">
+        <span id="tag1" class="pill px-3 py-2 text-xs font-black text-white/72">feels too true</span>
+        <span id="tag2" class="pill px-3 py-2 text-xs font-black text-white/72">screenshotable</span>
+        <span id="tag3" class="pill px-3 py-2 text-xs font-black text-white/72">3-minute test</span>
+      </div>
+
+      <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 sm:bottom-8 sm:left-8 sm:right-8">
+        <div>
+          <p id="ctaMini" class="text-xs font-black uppercase text-white/45">Take the test</p>
+          <p id="urlLine" class="mt-1 text-sm font-bold text-white/72">hugomojo.com</p>
+        </div>
+        <div class="mark px-4 py-3 text-lg font-black">HM</div>
+      </div>
+    </article>
+
+    <aside class="card flex flex-col justify-between p-5">
+      <div>
+        <p id="sideKicker" class="text-xs font-black uppercase text-[#F5C842]">Share it</p>
+        <h2 id="sideTitle" class="mt-3 text-3xl font-black leading-tight">Post the result card, then let people ask for theirs.</h2>
+        <p id="sideCopy" class="mt-4 text-sm leading-6 text-white/58">This page is designed for quick screenshots and social sharing.</p>
+      </div>
+      <div class="mt-6 grid gap-2">
+        <button id="copyBtn" class="rounded-lg border border-[#F5C842] bg-[#F5C842] px-4 py-3 text-sm font-black text-[#0D0D14]">Copy share text</button>
+        <button id="nativeBtn" class="rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm font-black text-white">Share</button>
+        <a id="channelBtn" class="rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-center text-sm font-black text-white no-underline" href="#" target="_blank" rel="noopener">Share on X</a>
+        <a id="testBtn" class="rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-center text-sm font-black text-white no-underline" href="/">Take the test</a>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<script>
+const TYPES = {
+  overloaded: {
+    en: ["Calm Alchemist", "Emotional Support Builder", "I got Calm Alchemist. My hidden talent is turning messy feelings into something people can actually use."],
+    cn: ["情绪抚慰师", "情绪型产品建造者", "我测出「情绪抚慰师」。我的隐藏天赋是把混乱的情绪整理成别人真正能用的东西。"],
+    color: "#2A2840", accent: "#5CE8C4"
+  },
+  rabbit: {
+    en: ["Exit Architect", "Risk Filter Designer", "I got Exit Architect. My hidden talent is spotting the bad path before it eats months of my life."],
+    cn: ["避坑设计师", "决策风险设计师", "我测出「避坑设计师」。我的隐藏天赋是在坏选择吞掉时间之前，先看见它。"],
+    color: "#241C3E", accent: "#FF7043"
+  },
+  radar: {
+    en: ["Vibe Detective", "People Signal Reader", "I got Vibe Detective. My hidden talent is catching what people almost said."],
+    cn: ["气氛侦探", "人群信号阅读者", "我测出「气氛侦探」。我的隐藏天赋是抓住大家差一点说出口的东西。"],
+    color: "#1B3140", accent: "#7B5CFF"
+  },
+  sprite: {
+    en: ["Spark Starter", "Launch Energy Maker", "I got Spark Starter. My hidden talent is making ideas easier to start."],
+    cn: ["点火器", "启动能量制造者", "我测出「点火器」。我的隐藏天赋是让想法变得更容易开始。"],
+    color: "#3A2D0A", accent: "#F5C842"
+  },
+  bulldozer: {
+    en: ["Quiet Finisher", "Execution System Builder", "I got Quiet Finisher. My hidden talent is turning almost-finished plans into real things."],
+    cn: ["沉默交付人", "执行系统建造者", "我测出「沉默交付人」。我的隐藏天赋是把差点完成的计划变成真的东西。"],
+    color: "#123331", accent: "#29B6B0"
+  },
+  fox: {
+    en: ["Pattern Hunter", "Market Pattern Reader", "I got Pattern Hunter. My hidden talent is finding the missing piece everyone else skipped."],
+    cn: ["模式猎手", "市场模式拆解者", "我测出「模式猎手」。我的隐藏天赋是找到大家都漏掉的那一块拼图。"],
+    color: "#311B27", accent: "#FF5C5C"
+  }
+};
+
+const params = new URLSearchParams(location.search);
+const key = params.get("type") || "radar";
+const lang = params.get("lang") === "cn" || params.get("lang") === "zh" ? "cn" : "en";
+const type = TYPES[key] || TYPES.radar;
+const data = type[lang];
+const pageUrl = new URL(location.href);
+pageUrl.searchParams.set("type", key);
+pageUrl.searchParams.set("lang", lang);
+const shareText = lang === "cn" ? `${data[2]} 你也测一下：${pageUrl.href}` : `${data[2]} Your turn: ${pageUrl.href}`;
+
+document.documentElement.lang = lang === "cn" ? "zh-CN" : "en";
+document.title = lang === "cn" ? `${data[0]} - Hugo Mojo 雨果灵机` : `${data[0]} - Hugo Mojo`;
+document.getElementById("card").style.setProperty("--base", type.color);
+document.getElementById("card").style.setProperty("--accent", type.accent);
+document.getElementById("name").textContent = data[0];
+document.getElementById("archetype").textContent = data[1];
+document.getElementById("line").textContent = data[2];
+document.getElementById("homeLink").href = lang === "cn" ? "/cn/" : "/";
+document.getElementById("testBtn").href = lang === "cn" ? "/cn/" : "/";
+
+if (lang === "cn") {
+  document.getElementById("brandName").innerHTML = 'Hugo Mojo <span style="color:#F5C842">雨果灵机</span>';
+  document.getElementById("langSwitch").textContent = "English";
+  document.getElementById("langSwitch").href = `?type=${encodeURIComponent(key)}&lang=en`;
+  document.getElementById("eyebrow").textContent = "雨果灵机结果卡";
+  document.getElementById("subEyebrow").textContent = "隐藏天赋测试";
+  document.getElementById("gotLine").textContent = "我测出";
+  document.getElementById("gotLine").className = "text-base font-black text-white/70";
+  document.getElementById("name").className = "cn-title mt-3 break-words";
+  document.getElementById("tag1").textContent = "适合截图";
+  document.getElementById("tag2").textContent = "发朋友圈不尴尬";
+  document.getElementById("tag3").textContent = "3分钟测试";
+  document.getElementById("ctaMini").textContent = "轮到你测";
+  document.getElementById("urlLine").textContent = "hugomojo.com/cn";
+  document.getElementById("sideKicker").textContent = "微信 / 微博分享";
+  document.getElementById("sideTitle").textContent = "这页按截图传播设计。先保存，再发给那个会说“这不就是你吗”的人。";
+  document.getElementById("sideCopy").textContent = "微信内可以直接用系统分享；微博可复制文案后发布。";
+  document.getElementById("copyBtn").textContent = "复制微信文案";
+  document.getElementById("nativeBtn").textContent = "系统分享";
+  document.getElementById("channelBtn").textContent = "分享到微博";
+  document.getElementById("channelBtn").href = `https://service.weibo.com/share/share.php?url=${encodeURIComponent(pageUrl.href)}&title=${encodeURIComponent(shareText)}`;
+  document.getElementById("testBtn").textContent = "我也测一下";
+} else {
+  document.getElementById("langSwitch").textContent = "中文";
+  document.getElementById("langSwitch").href = `?type=${encodeURIComponent(key)}&lang=cn`;
+  document.getElementById("channelBtn").href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(pageUrl.href)}`;
+}
+
+async function copyShare() {
+  try {
+    await navigator.clipboard.writeText(shareText);
+    document.getElementById("copyBtn").textContent = lang === "cn" ? "已复制" : "Copied";
+  } catch (e) {
+    window.prompt(lang === "cn" ? "复制这段：" : "Copy this:", shareText);
+  }
+}
+function nativeShare() {
+  if (navigator.share) {
+    navigator.share({ title: document.title, text: shareText, url: pageUrl.href }).catch(() => {});
+  } else {
+    copyShare();
+  }
+}
+document.getElementById("copyBtn").addEventListener("click", copyShare);
+document.getElementById("nativeBtn").addEventListener("click", nativeShare);
+</script>
+</body>
+</html>
