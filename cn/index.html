@@ -665,6 +665,26 @@
     #intro .focus-card .mix-cover { min-height: 7.2rem !important; }
   }
 
+
+  /* HM homepage refit v9: align secondary preview with hero */
+  #intro > section { max-width: 56rem !important; }
+  #intro #result-preview, #intro .focus-card { grid-column: 1 / -1 !important; width: 100% !important; }
+  #intro .focus-card { display: block !important; padding: clamp(.9rem, 1.8vw, 1.15rem) !important; }
+  #intro .focus-card .mix-cover { width: 100% !important; min-height: 8.4rem !important; margin: 0 !important; }
+  #intro .focus-card .hero-kicker, #intro .focus-card > h2, #intro .focus-card .track-list, #intro .focus-card .mini-player { grid-column: auto !important; width: 100% !important; }
+  #intro .focus-card .hero-kicker, #intro .focus-card > p:not(.hero-copy) { margin-left: 0 !important; }
+  #intro .focus-card > h2 { max-width: 40rem !important; }
+  #intro .track-list { grid-template-columns: 1fr !important; }
+  #intro .track-row { width: 100% !important; }
+  @media (min-width: 760px) {
+    #intro .track-list { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    #intro .focus-card .mini-player { display: none !important; }
+  }
+  @media (max-width: 760px) {
+    #intro > section { max-width: 100% !important; }
+    #intro .focus-card { padding: .82rem !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -726,13 +746,13 @@
 <main id="intro" class="screen active px-4 pb-16 pt-28">
   <section class="mx-auto grid max-w-6xl gap-4 lg:grid-cols-12">
     <div class="hero-stage paper-card reveal rounded-lg p-5 sm:p-7 lg:col-span-12 lg:p-8">
-      <p class="spotify-pill inline-flex rounded-full border px-3 py-1 text-xs font-bold uppercase">隐藏天赋测试 · 12道题</p>
+      <p class="spotify-pill inline-flex rounded-full border px-3 py-1 text-xs font-bold uppercase">Hugo Mojo 快测试</p>
       <h1 class="hm-title hero-title-cn mt-4 break-words" aria-label="三分钟，发现你的隐藏天赋，找到一个能用 AI 赚钱的副业方向。">
         <span class="hero-title-small">三分钟测试</span>
         <span>发现你的隐藏天赋</span>
         <span class="hero-title-mark">找到 AI 副业方向</span>
       </h1>
-      <p class="hero-copy mt-4 max-w-2xl text-base leading-7 sm:text-lg">12 道题，大约 3 分钟。先拿到你的隐藏天赋结果，再看它能不能变成一个 AI 副业方向。</p>
+      <p class="hero-copy mt-4 max-w-2xl text-base leading-7 sm:text-lg">先拿到你的隐藏天赋结果，再看它能不能变成一个 AI 副业方向。</p>
       <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-start"><div class="hero-cta-wrap"><button class="primary-cta spring-hover rounded-lg px-7 py-5 text-base font-bold shadow-lift" onclick="startQuiz()">开始测试 →</button><span class="hero-signal"></span></div></div>
       <div class="hero-hook-grid"><div class="hero-hook"><b>免费测试</b><span>先看到你的隐藏天赋标签。</span></div><div class="hero-hook"><b>AI方向</b><span>再看它适合帮谁、解决什么问题。</span></div><div class="hero-hook"><b>小报价</b><span>最后落到一个能开始收钱的第一步。</span></div></div>
       <div class="stamp-row mt-6"><span class="stamp">不用登录</span><span class="stamp">12道题</span><span class="stamp">免费隐藏技能结果</span><span class="stamp">做完看结果</span></div>
