@@ -129,7 +129,14 @@
   }
   .hero-stage .hm-title { font-size: clamp(2.7rem, 5.6vw, 5rem); line-height: 0.92; max-width: 42rem; }
   .hm-section-title { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing: 0; }
-  .quiz-shell .hm-section-title { color: var(--paper); text-shadow: none; }
+  .quiz-shell .hm-section-title {
+    color: var(--paper);
+    font-family: 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+    font-weight: 900;
+    line-height: 1.12;
+    text-shadow: none;
+  }
   p { text-wrap: pretty; overflow-wrap: anywhere; }
 
   @media (max-width: 520px) {
@@ -311,8 +318,24 @@
   .stamp-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .stamp { border: 1px solid rgba(247, 243, 234, 0.13); border-radius: 8px; background: rgba(247, 243, 234, 0.08); padding: 0.6rem 0.7rem; font-size: 0.75rem; font-weight: 800; color: rgba(247, 243, 234, 0.78); box-shadow: none; }
   .choice-card { background: linear-gradient(145deg, rgba(28, 26, 48, 0.96), rgba(18, 18, 31, 0.92)); border-color: rgba(240, 237, 230, 0.10); }
-  .question-title { font-size: clamp(1.55rem, 4.4vw, 2.55rem); line-height: 1.08; color: var(--paper); text-shadow: 0 2px 18px rgba(0,0,0,0.28); }
-  .answer-text { font-size: clamp(1.08rem, 2.4vw, 1.28rem); line-height: 1.42; }
+  .question-title {
+    color: var(--paper);
+    font-family: 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(1.55rem, 3.1vw, 2.35rem);
+    font-weight: 900;
+    line-height: 1.15;
+    max-width: 58rem;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.28);
+  }
+  .answer-text { font-size: clamp(1rem, 1.7vw, 1.15rem); line-height: 1.4; }
+  #questionCard .option {
+    min-height: 4.35rem;
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    align-items: center;
+    gap: 1rem;
+  }
+  #questionCard .option span:first-child { margin-bottom: 0; }
   .quiz-shell {
     background: linear-gradient(135deg, rgba(30, 215, 96, 0.05), rgba(18, 18, 31, 0.96) 50%, rgba(245, 200, 66, 0.06)), rgba(18, 18, 31, 0.94);
     border-color: rgba(240, 237, 230, 0.10);
@@ -471,7 +494,7 @@
 
 <nav class="fixed left-0 right-0 top-0 z-30 px-4 py-4">
   <div class="mx-auto flex max-w-6xl items-center justify-between rounded-lg border border-paper/10 bg-card/80 px-3 py-2 shadow-lift backdrop-blur-md">
-    <a href="#" class="flex items-center gap-3 text-paper" onclick="goHome(event)"><img class="h-9 w-9 rounded-lg object-cover" src="/Hugo_Mojo_avatar_HM.png" onerror="this.onerror=null;this.src='Hugo_Mojo_avatar_HM.png'" alt="Hugo Mojo 雨果灵机"><span class="leading-tight"><span class="block text-sm font-bold">Hugo Mojo</span><span class="block text-xs font-black text-moss">雨果灵机</span></span></a>
+    <a href="#" class="flex items-center gap-3 text-paper" onclick="goHome(event)"><img class="h-9 w-9 rounded-lg object-cover" src="/Hugo_Mojo_avatar_HM.png" onerror="this.onerror=null;this.src='Hugo_Mojo_avatar_HM.png'" alt="Hugo Mojo 雨果灵机"><span class="text-sm font-black tracking-normal">Hugo Mojo <span class="text-moss">雨果灵机</span></span></a>
     <div class="brand-nav hidden items-center gap-4 text-xs font-bold sm:flex"><a href="#" onclick="event.preventDefault(); startQuiz()">开始测试</a><a href="delivery/hidden-talent-full-report/" onclick="goRoute(event, 'cn/delivery/hidden-talent-full-report/')">交付</a><a href="contact.html" onclick="goRoute(event, 'cn/contact.html')">联系</a><a href="/" onclick="goRoute(event, '')">English</a></div>
   </div>
 </nav>
@@ -627,7 +650,7 @@ function renderQuestion() {
   document.getElementById('progressFill').style.width = `${((current + 1) / total) * 100}%`;
   const nextBtn = document.getElementById('nextButton'); nextBtn.innerText = current === total - 1 ? "好，给我结果" : "对，有点像我";
   nextBtn.classList.toggle('opacity-40', !picked); nextBtn.classList.toggle('shadow-lift', !!picked);
-  document.getElementById('questionCard').innerHTML = `<p class="text-xs font-bold uppercase text-moss">第 ${current + 1} 题</p><h1 class="question-title mt-3 font-serif">${q.q}</h1><div class="mt-7 grid gap-3">${q.a.map(([label, key], idx) => `<button class="choice-card option spring-hover rounded-lg border border-ink/10 bg-card p-4 text-left text-ink shadow-lift sm:p-5 ${picked === key ? 'selected' : ''}" onclick="pickAnswer('${key}')"><span class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full border border-paper/20 bg-paper/10 text-xs font-bold text-paper">${String.fromCharCode(65+idx)}</span><span class="answer-text block font-semibold text-paper/85">${label}</span></button>`).join('')}</div>`;
+  document.getElementById('questionCard').innerHTML = `<p class="text-xs font-bold uppercase text-moss">第 ${current + 1} 题</p><h1 class="question-title mt-3">${q.q}</h1><div class="mt-6 grid gap-3">${q.a.map(([label, key], idx) => `<button class="choice-card option spring-hover rounded-lg border border-ink/10 bg-card p-4 text-left text-ink shadow-lift sm:p-5 ${picked === key ? 'selected' : ''}" onclick="pickAnswer('${key}')"><span class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full border border-paper/20 bg-paper/10 text-xs font-bold text-paper">${String.fromCharCode(65+idx)}</span><span class="answer-text block font-semibold text-paper/85">${label}</span></button>`).join('')}</div>`;
   animateQuestion();
 }
 function pickAnswer(key) { const pickedQuestion = current; clearTimeout(autoAdvanceTimer); answers[current] = key; renderQuestion(); autoAdvanceTimer = setTimeout(() => { if (current === pickedQuestion && answers[pickedQuestion] === key) nextQuestion(); }, 280); }
