@@ -519,7 +519,7 @@
       <div class="mix-cover"><strong>HM<br>隐藏技能</strong><span>结果卡预览</span></div>
       <p class="hero-kicker mt-5 text-xs font-bold uppercase">你会拿到什么？</p>
       <h2 class="hm-section-title mt-2 text-4xl leading-none">先看到那个你一直以为“人人都会”的能力。<br>再看它能不能变成一个小生意。</h2>
-      <div class="track-list"><div class="track-row"><span class="num">01</span><span><b>隐藏技能标签</b><small>气氛侦探、点火器、模式猎手... 哪个最像你？</small></span></div><div class="track-row"><span class="num">02</span><span><b>一句扎心描述</b><small>短到能记住，准到想截图。</small></span></div><div class="track-row"><span class="num">03</span><span><b>变现方向</b><small>这个能力，具体能卖给谁、怎么卖。</small></span></div><div class="track-row"><span class="num">04</span><span><b>执行包入口</b><small>把一个方向，变成第一版可赚钱的行动文案。</small></span></div></div>
+      <div class="track-list"><div class="track-row"><span class="num">01</span><span><b>隐藏技能标签</b><small>气氛侦探、趋势能手、模式猎手... 哪个最像你？</small></span></div><div class="track-row"><span class="num">02</span><span><b>一句扎心描述</b><small>短到能记住，准到想截图。</small></span></div><div class="track-row"><span class="num">03</span><span><b>变现方向</b><small>这个能力，具体能卖给谁、怎么卖。</small></span></div><div class="track-row"><span class="num">04</span><span><b>执行包入口</b><small>把一个方向，变成第一版可赚钱的行动文案。</small></span></div></div>
       <div class="mini-player mt-4"><div class="mb-3 flex items-center justify-between gap-3 text-xs font-bold text-paper/60"><span>免费技能结果</span><span>完整方向报告</span></div><div class="player-bar"><span></span></div></div>
     </div>
 
@@ -539,6 +539,14 @@ const SITE_URL = document.querySelector('meta[property="og:url"]')?.content || "
 const CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NdSBu2hGqTa514vmmjUa?quantity=1";
 const DODO_PRODUCT_ID = "pdt_0NdSBu2hGqTa514vmmjUa";
 const DODO_PRODUCT_NAME = "Hugo Mojo Hidden Talent Full Report + AI Execution Kit";
+function hmTrack(event, data = {}) {
+  const payload = JSON.stringify({ event, page: location.pathname, lang: 'zh-CN', ...data });
+  try {
+    if (navigator.sendBeacon) navigator.sendBeacon('/api/track', new Blob([payload], { type: 'application/json' }));
+    else fetch('/api/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true });
+  } catch(e) {}
+}
+hmTrack('page_view');
 
 const TYPES = {
   overloaded: {
@@ -581,17 +589,17 @@ const TYPES = {
     shareLine: "我测出「气氛侦探」。我的隐藏天赋是抓住大家差一点说出口的东西。"
   },
   sprite: {
-    name: "点火器",
-    archetype: "启动能量制造者",
+    name: "趋势能手",
+    archetype: "趋势启动者",
     color: "#3A2D0A", accent: "#F5C842",
     verdict: "你一开口，很多原本卡住的事就没那么难开始了。",
     sting: "你不是没想法。你只是经常把帮别人起步这件事当成顺手。",
     hidden: "你很会把一个普通想法说得更容易开始，也更容易让别人愿意参与。",
     pathTitle: "方向：启动文案、钩子、社群动能。",
-    paths: ["启动钩子", "短视频脚本", "第一条发布包"],
-    tinyOffer: "给想发布小东西的人做一份“启动钩子包”。",
+    paths: ["趋势钩子", "短视频脚本", "第一条发布包"],
+    tinyOffer: "给想发布小东西的人做一份“趋势钩子包”。",
     seven: ["选一个有用但听起来无聊的东西。", "写10个让它更容易开始的说法。", "留下3句你自己会笑的。", "做一条短发布文案。", "做一个朋友会转发的版本。", "整理成一个小灵感库。", "卖给那些想发布但不想像机器人说话的人。"],
-    shareLine: "我测出「点火器」。我的隐藏天赋是让想法变得更容易开始。"
+    shareLine: "我测出「趋势能手」。我的隐藏天赋是把一个没人敢先动的想法，变成大家愿意试一下的开头。"
   },
   bulldozer: {
     name: "沉默交付人",
@@ -643,7 +651,7 @@ function showScreen(id) { document.querySelectorAll('.screen').forEach(s => s.cl
 function goHome(event) { if (event) event.preventDefault(); showScreen('intro'); }
 function resolveRoute(path) { const clean = path.replace(/^\/+/, ''); if (window.location.protocol === 'file:') { const prefix = decodeURIComponent(window.location.pathname).includes('/tests/hidden-talent/') ? '../../' : './'; return new URL(`${prefix}${clean}`, window.location.href).href; } return `${window.location.origin}/${clean}`; }
 function goRoute(event, path) { if (event) event.preventDefault(); window.location.href = resolveRoute(path); }
-function startQuiz() { clearTimeout(autoAdvanceTimer); current = 0; answers = {}; scores = makeScores(); lastResult = null; renderQuestion(); showScreen('quiz'); }
+function startQuiz() { hmTrack('quiz_start'); clearTimeout(autoAdvanceTimer); current = 0; answers = {}; scores = makeScores(); lastResult = null; renderQuestion(); showScreen('quiz'); }
 function renderQuestion() {
   const q = QUESTIONS[current], total = QUESTIONS.length, picked = answers[current];
   document.getElementById('qNumber').innerText = current + 1; document.getElementById('qTotal').innerText = total;
@@ -658,7 +666,7 @@ function prevQuestion() { clearTimeout(autoAdvanceTimer); if (current === 0) { s
 function nextQuestion() { clearTimeout(autoAdvanceTimer); if (!answers[current]) { toast("先选一个，小小诚实一下。"); return; } if (current < QUESTIONS.length - 1) { current++; renderQuestion(); return; } scoreAnswers(); showLoading(); }
 function scoreAnswers() { scores = makeScores(); Object.values(answers).forEach(key => scores[key]++); }
 function rankTypes() { return Object.entries(scores).sort((a,b)=> (b[1]-a[1]) || (TYPE_ORDER.indexOf(a[0])-TYPE_ORDER.indexOf(b[0]))).map(([k])=>k); }
-function showLoading() { showScreen('loading'); setTimeout(() => { const result = rankTypes()[0] || TYPE_ORDER[0]; buildResult(result); showScreen('result'); animateResult(); }, 3200); }
+function showLoading() { showScreen('loading'); setTimeout(() => { const result = rankTypes()[0] || TYPE_ORDER[0]; hmTrack('quiz_complete', { talent: result }); buildResult(result); showScreen('result'); animateResult(); }, 3200); }
 function buildResult(key) {
   lastResult = key;
   const type = TYPES[key];
@@ -729,16 +737,16 @@ function buildResult(key) {
     </div>
   `;
 }
-function copyResult(key) { const type = TYPES[key]; const text = `${type.shareLine} → 轮到你了：${getShareUrl(key)}`; if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(() => toast('已复制。发给那个会说“有点冒犯但很准”的朋友。')).catch(()=>fallbackCopy(text)); else fallbackCopy(text); }
+function copyResult(key) { hmTrack('share_copy', { talent: key }); const type = TYPES[key]; const text = `${type.shareLine} → 轮到你了：${getShareUrl(key)}`; if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(() => toast('已复制。发给那个会说“有点冒犯但很准”的朋友。')).catch(()=>fallbackCopy(text)); else fallbackCopy(text); }
 function fallbackCopy(text) { const area = document.createElement('textarea'); area.value = text; area.setAttribute('readonly',''); area.style.position='fixed'; area.style.left='-9999px'; document.body.appendChild(area); area.select(); try { document.execCommand('copy'); toast("已复制。去烦一个朋友。"); } catch(e) { window.prompt("复制这段：", text); } document.body.removeChild(area); }
-function shareResult(key) { const type = TYPES[key]; const text = `${type.shareLine} → 轮到你了：${getShareUrl(key)}`; copyResult(key); if (navigator.share) navigator.share({ title: `我测出${type.name}`, text, url: getShareUrl(key) }).catch(()=>{}); }
+function shareResult(key) { hmTrack('share_native', { talent: key }); const type = TYPES[key]; const text = `${type.shareLine} → 轮到你了：${getShareUrl(key)}`; copyResult(key); if (navigator.share) navigator.share({ title: `我测出${type.name}`, text, url: getShareUrl(key) }).catch(()=>{}); }
 function getShareUrl(key) { if (window.location.protocol === 'file:' || window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') { const localUrl = new URL(resolveRoute('share/hidden-talent/index.html')); localUrl.searchParams.set('type', key); localUrl.searchParams.set('lang', 'cn'); return localUrl.href; } return `${SITE_URL.replace(/\/$/,'')}/share/hidden-talent/?type=${encodeURIComponent(key)}&lang=cn`; }
-function openSharePage(key) { window.location.href = getShareUrl(key); }
+function openSharePage(key) { hmTrack('share_page_open', { talent: key }); window.location.href = getShareUrl(key); }
 function makeOrderId() { return `HM-${Date.now().toString(36).toUpperCase().slice(-6)}`; }
-async function openCheckout(key) { const type = TYPES[key] || TYPES[lastResult] || {}; const talentKey = key || lastResult || ''; localStorage.setItem('hmLastCheckoutIntent', JSON.stringify({ talent: talentKey, talentName: type.name || '', amount: '¥9.9', method: 'dodo_checkout_session', lang: 'zh-CN', at: new Date().toISOString() })); toast('正在打开安全付款页。'); try { const response = await fetch('/api/create-checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ talent: talentKey, talentName: type.name || '', lang: 'zh-CN' }) }); const data = await response.json().catch(() => ({})); if (!response.ok || !data.checkout_url) throw new Error(data.error || 'Checkout unavailable'); window.location.href = data.checkout_url; } catch (error) { console.warn(error); toast('自动付款暂时不可用，正在打开备用付款页。'); setTimeout(() => { window.location.href = CHECKOUT_URL; }, 650); } }
-function openPayModal(key) { const type = TYPES[key] || TYPES[lastResult] || {}; const orderId = makeOrderId(); localStorage.setItem('hmLastPaymentIntent', JSON.stringify({ orderId, talent: key || lastResult, talentName: type.name || '', amount: '¥9.9', method: 'wechat_alipay_self_delivery', lang: 'zh-CN', at: new Date().toISOString() })); const orderEl = document.getElementById('payOrderId'); if(orderEl) orderEl.textContent = orderId; const btn = document.getElementById('deliverButton'); if(btn) btn.textContent = '我已付款，打开报告 →'; document.getElementById('payModal').classList.add('show'); }
+async function openCheckout(key) { const type = TYPES[key] || TYPES[lastResult] || {}; const talentKey = key || lastResult || ''; hmTrack('checkout_dodo_click', { talent: talentKey, product: 'full_report_9_9' }); localStorage.setItem('hmLastCheckoutIntent', JSON.stringify({ talent: talentKey, talentName: type.name || '', amount: '¥9.9', method: 'dodo_checkout_session', lang: 'zh-CN', at: new Date().toISOString() })); toast('正在打开安全付款页。'); try { const response = await fetch('/api/create-checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ talent: talentKey, talentName: type.name || '', lang: 'zh-CN' }) }); const data = await response.json().catch(() => ({})); if (!response.ok || !data.checkout_url) throw new Error(data.error || 'Checkout unavailable'); window.location.href = data.checkout_url; } catch (error) { console.warn(error); toast('自动付款暂时不可用，正在打开备用付款页。'); setTimeout(() => { window.location.href = CHECKOUT_URL; }, 650); } }
+function openPayModal(key) { const type = TYPES[key] || TYPES[lastResult] || {}; const orderId = makeOrderId(); hmTrack('pay_modal_open', { talent: key || lastResult, product: 'full_report_9_9' }); localStorage.setItem('hmLastPaymentIntent', JSON.stringify({ orderId, talent: key || lastResult, talentName: type.name || '', amount: '¥9.9', method: 'wechat_alipay_self_delivery', lang: 'zh-CN', at: new Date().toISOString() })); const orderEl = document.getElementById('payOrderId'); if(orderEl) orderEl.textContent = orderId; const btn = document.getElementById('deliverButton'); if(btn) btn.textContent = '我已付款，打开报告 →'; document.getElementById('payModal').classList.add('show'); }
 function closePayModal() { document.getElementById('payModal').classList.remove('show'); }
-function openManualDelivery() { const raw = localStorage.getItem('hmLastPaymentIntent') || '{}'; let intent = {}; try { intent = JSON.parse(raw); } catch(e) {} localStorage.setItem('hmLastManualDelivery', JSON.stringify({ ...intent, confirmedByUser: true, deliveredAt: new Date().toISOString() })); toast('正在打开交付页。'); setTimeout(() => { window.location.href = resolveRoute(DELIVERY_URL); }, 450); }
+function openManualDelivery() { const raw = localStorage.getItem('hmLastPaymentIntent') || '{}'; let intent = {}; try { intent = JSON.parse(raw); } catch(e) {} hmTrack('manual_delivery_open', { talent: intent.talent || lastResult, product: 'full_report_9_9' }); localStorage.setItem('hmLastManualDelivery', JSON.stringify({ ...intent, confirmedByUser: true, deliveredAt: new Date().toISOString() })); toast('正在打开交付页。'); setTimeout(() => { window.location.href = resolveRoute(DELIVERY_URL); }, 450); }
 function openModal() { document.getElementById('kitModal').classList.add('show'); }
 function closeModal() { document.getElementById('kitModal').classList.remove('show'); }
 function toast(msg) { const el = document.getElementById('toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(window.hmToastTimer); window.hmToastTimer = setTimeout(()=>el.classList.remove('show'),2200); }

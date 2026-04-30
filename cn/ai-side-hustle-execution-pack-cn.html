@@ -2,53 +2,192 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI副业执行包 - Hugo Mojo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AI副业执行包 - Hugo Mojo 雨果灵机</title>
+<meta name="description" content="把你的隐藏天赋做成第一个可卖小产品：小报价、AI提示词、销售文案、交付模板和3天验证计划。">
+<meta property="og:title" content="AI副业执行包 - Hugo Mojo 雨果灵机">
+<meta property="og:description" content="把你的隐藏天赋做成第一个可卖小产品。">
+<meta property="og:image" content="https://hugomojo.com/og-hidden-talent-cn.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
-  :root { --ink:#0D0D14; --paper:#F0EDE6; --gold:#F5C842; --mint:#5CE8C4; }
+  :root { --ink:#0D0D14; --card:#12121F; --paper:#F0EDE6; --gold:#F5C842; --mint:#5CE8C4; --line:rgba(240,237,230,.12); }
   * { box-sizing:border-box; }
-  body { margin:0; font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif; color:var(--paper); background:linear-gradient(180deg,#0D0D14,#12121F 55%,#17142B); }
-  main { width:min(1080px, calc(100% - 32px)); margin:0 auto; padding:48px 0 72px; }
-  nav, section { border:1px solid rgba(240,237,230,.12); border-radius:10px; background:rgba(18,18,31,.84); box-shadow:0 22px 70px rgba(0,0,0,.3); }
-  nav { display:flex; justify-content:space-between; padding:14px 18px; margin-bottom:18px; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif; color:var(--paper); background:radial-gradient(circle at 16% 0%,rgba(245,200,66,.22),transparent 28rem),radial-gradient(circle at 88% 8%,rgba(92,232,196,.14),transparent 24rem),linear-gradient(180deg,#0D0D14,#12121F 56%,#17142B); }
+  body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.24; background-image:linear-gradient(90deg,rgba(240,237,230,.04) 1px,transparent 1px),linear-gradient(180deg,rgba(240,237,230,.03) 1px,transparent 1px); background-size:52px 52px; }
+  main { position:relative; z-index:1; width:min(1120px,calc(100% - 32px)); margin:0 auto; padding:28px 0 76px; }
+  nav, section, .card { border:1px solid var(--line); border-radius:10px; background:rgba(18,18,31,.86); box-shadow:0 22px 72px rgba(0,0,0,.30); backdrop-filter:blur(12px); }
+  nav { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 18px; margin-bottom:18px; }
   a { color:inherit; text-decoration:none; }
-  .hero { padding:38px; background:radial-gradient(circle at 80% 10%, rgba(92,232,196,.18), transparent 22rem), rgba(18,18,31,.84); }
+  .brand { font-weight:900; }
+  .links { display:flex; flex-wrap:wrap; gap:14px; color:rgba(240,237,230,.62); font-size:13px; font-weight:800; }
+  .hero { display:grid; gap:18px; grid-template-columns:minmax(0,1.4fr) minmax(280px,.7fr); padding:34px; background:radial-gradient(circle at 80% 10%,rgba(92,232,196,.18),transparent 24rem),rgba(18,18,31,.86); }
   .eyebrow { color:var(--gold); font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
-  h1 { margin:12px 0 0; font-size:clamp(44px,7vw,92px); line-height:.92; }
-  h2 { margin:0; font-size:28px; }
-  p { color:rgba(240,237,230,.72); line-height:1.75; }
+  h1 { margin:12px 0 0; font-size:clamp(42px,7vw,86px); line-height:.94; letter-spacing:0; }
+  h2 { margin:0; font-size:clamp(28px,4vw,48px); line-height:1.05; }
+  h3 { margin:0 0 8px; font-size:20px; }
+  p, li { color:rgba(240,237,230,.72); line-height:1.75; }
+  strong { color:var(--paper); }
+  code, .template { font-family:"SFMono-Regular",Consolas,monospace; }
   .price { display:inline-flex; margin-top:18px; padding:10px 14px; border-radius:10px; background:var(--gold); color:var(--ink); font-weight:900; }
-  .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:18px; }
-  .card, .block { border:1px solid rgba(240,237,230,.12); border-radius:10px; padding:20px; background:rgba(240,237,230,.06); }
+  .grid { display:grid; gap:14px; }
+  .cols-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .cols-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
   .block { margin-top:18px; padding:30px; }
-  .btn { display:inline-flex; margin-top:14px; padding:14px 18px; border-radius:10px; background:var(--gold); color:var(--ink); font-weight:900; }
-  @media (max-width:760px){main{padding-top:22px}.hero{padding:24px}.grid{grid-template-columns:1fr}.block{padding:22px}}
+  .card { padding:18px; background:rgba(240,237,230,.055); box-shadow:none; }
+  .step { display:flex; gap:12px; align-items:flex-start; border:1px solid var(--line); border-radius:10px; padding:14px; background:rgba(240,237,230,.045); }
+  .num { flex:0 0 auto; display:grid; place-items:center; width:30px; height:30px; border-radius:999px; background:var(--gold); color:var(--ink); font-weight:900; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; margin-top:14px; padding:14px 18px; border-radius:10px; border:1px solid var(--gold); background:var(--gold); color:var(--ink); font-weight:900; }
+  .btn.secondary { background:rgba(240,237,230,.08); color:var(--paper); border-color:var(--line); }
+  .template { white-space:pre-wrap; border:1px solid rgba(245,200,66,.35); border-radius:10px; padding:16px; background:rgba(245,200,66,.09); color:rgba(240,237,230,.88); line-height:1.75; }
+  .type-card { border-left:5px solid var(--gold); }
+  @media (max-width:820px){ main{padding-top:18px}.hero{grid-template-columns:1fr;padding:22px}.block{padding:22px}.cols-2,.cols-3{grid-template-columns:1fr}nav{align-items:flex-start;flex-direction:column} }
 </style>
 </head>
 <body>
 <main>
-  <nav><a href="/cn/"><strong>Hugo Mojo</strong></a><a href="/cn/delivery/hidden-talent-full-report/">返回报告页</a></nav>
+  <nav>
+    <a class="brand" href="/cn/">Hugo Mojo <span style="color:var(--gold)">雨果灵机</span></a>
+    <div class="links">
+      <a href="/cn/">测试</a>
+      <a href="/cn/delivery/hidden-talent-full-report/">¥9.9报告</a>
+      <a href="/cn/contact.html">联系</a>
+    </div>
+  </nav>
+
   <section class="hero">
-    <div class="eyebrow">¥49 独立交付</div>
-    <h1>AI副业执行包</h1>
-    <p>这不是测试结果，也不是报告的附录。它是报告之后的执行层：帮你把一个方向做成第一版内容、第一版销售文案和第一版可交付小产品。</p>
-    <span class="price">¥49</span>
-  </section>
-  <section class="block">
-    <div class="eyebrow">你会拿到</div>
-    <div class="grid">
-      <div class="card"><strong>AI 提示词包</strong><p>用你的隐藏技能结果，生成选题、定位、销售文案和交付物。</p></div>
-      <div class="card"><strong>10 条内容选题</strong><p>不是泛流量选题，而是围绕你的方向写得出来、发得出去的选题。</p></div>
-      <div class="card"><strong>第一条销售文案</strong><p>帮你把“小报价”讲清楚，让别人知道买的是什么。</p></div>
-      <div class="card"><strong>7 天执行清单</strong><p>每天做一件事，把方向推进到能发、能问、能卖。</p></div>
+    <div>
+      <div class="eyebrow">¥49 AI副业执行包 · 独立交付页</div>
+      <h1>把你的隐藏天赋，做成第一个可卖小产品。</h1>
+      <p>这不是更多分析，也不是一堆空模板。它要解决的是报告之后最难的一步：你今天到底怎么把方向发出去、卖出去、交付出去。</p>
+      <span class="price">当前版本：¥49</span>
+    </div>
+    <div class="card">
+      <strong>使用顺序</strong>
+      <p>1. 先选你的测试结果类型。<br>2. 用小报价生成器写出第一版报价。<br>3. 复制 AI 提示词生成文案和交付物。<br>4. 用 3 天验证计划去问真实用户。</p>
+      <a class="btn" href="#offer">直接开始生成小报价 →</a>
     </div>
   </section>
+
+  <section class="block" style="border-color:rgba(92,232,196,.45);background:linear-gradient(135deg,rgba(92,232,196,.12),rgba(18,18,31,.9));">
+    <div class="eyebrow">交付方式</div>
+    <h2>这是网页工具包，不是等邮件下载。</h2>
+    <p>付款后会直接打开这个页面。你可以在手机上复制提示词和模板，也可以在电脑浏览器里用“打印 / 保存为 PDF”保存离线版。邮件只用于补发和售后，避免你付完还要等人工回复。</p>
+    <div class="grid cols-3" style="margin-top:18px">
+      <div class="card"><strong>主交付</strong><p>网页交付，付款后立刻打开。</p></div>
+      <div class="card"><strong>离线保存</strong><p>浏览器打印，保存为 PDF。</p></div>
+      <div class="card"><strong>补发方式</strong><p>保留付款截图，邮件补发链接。</p></div>
+    </div>
+  </section>
+
   <section class="block">
-    <div class="eyebrow">定位</div>
-    <h2>¥9.9 报告回答“我适合什么”。¥49 执行包回答“我今天怎么做”。</h2>
-    <p>所以它不放在免费结果页卖。它应该出现在付费报告交付页底部，作为看完方向之后的自然下一步。</p>
-    <a class="btn" href="mailto:hi@hugomojo.com?subject=购买AI副业执行包">获取执行包 →</a>
+    <div class="eyebrow">你拿到的不是资料，是动作</div>
+    <div class="grid cols-3" style="margin-top:18px">
+      <div class="card"><h3>小报价生成器</h3><p>把“我好像有点能力”改成一句别人听得懂的报价。</p></div>
+      <div class="card"><h3>AI提示词包</h3><p>生成方向、选题、销售文案、交付清单、私信回复。</p></div>
+      <div class="card"><h3>3天验证计划</h3><p>不用憋30天。先发出去，先问人，先看有没有人愿意付钱。</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eyebrow">按你的隐藏天赋选方向</div>
+    <h2>不要复制别人的副业。先用你已经会的那件事。</h2>
+    <div class="grid cols-2" style="margin-top:18px">
+      <div class="card type-card"><h3>气氛侦探</h3><p><strong>适合卖：</strong>人群洞察、评论分析、选题诊断、趋势备忘录。<br><strong>第一单：</strong>给一个账号做“10条评论背后的用户情绪报告”。</p></div>
+      <div class="card type-card"><h3>起势者</h3><p><strong>适合卖：</strong>发布钩子、朋友圈文案、社群启动、短视频开头。<br><strong>第一单：</strong>给一个想发布产品的人做“第一条发布文案包”。</p></div>
+      <div class="card type-card"><h3>模式猎手</h3><p><strong>适合卖：</strong>案例拆解、竞品分析、可复制清单、赛道小报告。<br><strong>第一单：</strong>拆解一个客户想复制的账号/产品。</p></div>
+      <div class="card type-card"><h3>情绪抚慰师</h3><p><strong>适合卖：</strong>情绪急救包、自我照顾模板、陪伴型内容、社群提示词。<br><strong>第一单：</strong>做一份“别硬撑”自救清单。</p></div>
+      <div class="card type-card"><h3>避坑设计师</h3><p><strong>适合卖：</strong>决策评分卡、职业转向清单、风险排查、红旗报告。<br><strong>第一单：</strong>做一页“该留还是该走”评分卡。</p></div>
+      <div class="card type-card"><h3>沉默交付人</h3><p><strong>适合卖：</strong>7天计划、流程模板、项目推进表、完成追踪系统。<br><strong>第一单：</strong>帮一个拖延项目拆出7天交付计划。</p></div>
+    </div>
+  </section>
+
+  <section id="offer" class="block">
+    <div class="eyebrow">小报价生成器</div>
+    <h2>先不要做产品。先写出一个能收钱的小报价。</h2>
+    <p>填空就行，越具体越好：</p>
+    <div class="template">我帮【具体人群】在【具体时间】内解决【一个小但烦的问题】，
+交付【一个看得见的结果】。
+
+例如：
+我帮刚开始做小红书的自由职业者，在2天内整理出10条更容易被点开的选题，交付一份选题表和第一条发布文案。</div>
+    <div class="grid cols-3" style="margin-top:16px">
+      <div class="card"><strong>价格建议</strong><p>第一版不要太贵：¥29 / ¥49 / ¥99 都可以。目标不是赚大钱，是验证有人愿意付。</p></div>
+      <div class="card"><strong>交付建议</strong><p>一页文档、一份清单、一次30分钟语音、一个模板包，越轻越好。</p></div>
+      <div class="card"><strong>验证标准</strong><p>有人转发、有人私信、有人问价格、有人付款，才算有效反馈。</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eyebrow">AI提示词包</div>
+    <h2>复制下面的提示词，直接让 AI 帮你出第一版。</h2>
+    <div class="grid" style="margin-top:18px">
+      <div class="template">你是一个小产品顾问。我的隐藏天赋类型是【填写结果类型】。
+请帮我列出5个可以在3天内做出第一版的小报价。
+要求：每个报价都要包含目标人群、具体问题、交付物、建议价格、第一条销售文案。</div>
+      <div class="template">你是一个用户研究员。请围绕【我的小报价】列出：
+1. 目标用户最常说的10句原话
+2. 他们为什么现在还没解决
+3. 我应该在文案里避开的空话
+4. 最能戳中的3个标题</div>
+      <div class="template">你是一个自然、不油腻的销售文案编辑。
+请根据这个报价写3版发布文案：
+1. 朋友圈版
+2. 小红书版
+3. 私信给朋友版
+要求：不要夸张，不要像广告，要像一个真实的人在试卖一个小东西。</div>
+      <div class="template">你是一个交付设计师。请帮我把【小报价】拆成一份交付模板。
+输出：
+1. 交付文档目录
+2. 用户需要提供的信息
+3. 我交付时的步骤
+4. 交付完成后的复盘问题</div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eyebrow">第一条销售文案模板</div>
+    <h2>你今天就可以发的版本。</h2>
+    <div class="template">我最近在做一个很小的测试。
+
+我发现自己其实很擅长【你的隐藏天赋能解决的事】。
+所以想先做一个小服务：
+
+我帮【目标人群】解决【具体问题】，
+交付【具体结果】。
+
+第一版只收【价格】，想找3个人试。
+如果你正好需要，或者你身边有人需要，可以直接找我。</div>
+  </section>
+
+  <section class="block">
+    <div class="eyebrow">3天验证计划</div>
+    <div class="grid">
+      <div class="step"><span class="num">1</span><div><strong>第1天：定报价</strong><p>选一个结果类型、一个人群、一个痛点，写出小报价。用 AI 生成3版文案，留下最像你说话的一版。</p></div></div>
+      <div class="step"><span class="num">2</span><div><strong>第2天：发出去</strong><p>发朋友圈/小红书/微信群，或者私信10个可能需要的人。不要解释太多，让对方先看懂你卖什么。</p></div></div>
+      <div class="step"><span class="num">3</span><div><strong>第3天：看反馈</strong><p>记录谁点了赞、谁私信、谁问价格、谁愿意付。根据反馈改一句话报价，而不是重做整个产品。</p></div></div>
+    </div>
+  </section>
+
+  <section class="block" style="border-color:rgba(245,200,66,.45);background:linear-gradient(135deg,rgba(245,200,66,.16),rgba(18,18,31,.9));">
+    <div class="eyebrow">交付完成</div>
+    <h2>现在不要继续学习。去发第一条测试。</h2>
+    <p>这个工具包的目标不是让你“准备好”，而是让你今天就能把第一版发出去。真正的方向，不是在脑子里想出来的，是被真实反馈撞出来的。</p>
+    <a class="btn" href="/cn/delivery/hidden-talent-full-report/">返回完整报告</a>
+    <a class="btn secondary" href="mailto:hi@hugomojo.com?subject=AI副业执行包反馈">交付有问题，联系补发</a>
   </section>
 </main>
+<script>
+function hmTrack(event, data = {}) {
+  const payload = JSON.stringify({ event, page: location.pathname, lang: 'zh-CN', product: 'execution_kit_49', ...data });
+  try {
+    if (navigator.sendBeacon) navigator.sendBeacon('/api/track', new Blob([payload], { type: 'application/json' }));
+    else fetch('/api/track', { method:'POST', headers:{'Content-Type':'application/json'}, body:payload, keepalive:true });
+  } catch(e) {}
+}
+hmTrack('page_view');
+document.querySelectorAll('a[href^="mailto:"]').forEach(link => link.addEventListener('click', () => hmTrack('support_mail_click')));
+document.querySelectorAll('a[href="#offer"]').forEach(link => link.addEventListener('click', () => hmTrack('kit_offer_jump')));
+</script>
 </body>
 </html>

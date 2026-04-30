@@ -3,25 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>隐藏天赋结果卡 - Hugo Mojo</title>
-<meta name="description" content="看看你的隐藏天赋类型。">
-<meta property="og:title" content="隐藏天赋结果卡 - Hugo Mojo">
-<meta property="og:description" content="你以为自己普通？做完再说。">
-<meta property="og:image" content="https://hugomojo.com/og-hidden-talent-cn.png">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<style>
-  :root{--ink:#0D0D14;--paper:#F0EDE6;--gold:#F5C842;--card:#12121F;}
-  *{box-sizing:border-box} body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:var(--paper);background:radial-gradient(circle at 18% 0%,rgba(245,200,66,.22),transparent 28rem),linear-gradient(180deg,#0D0D14,#17142B)}
-  main{width:min(760px,100%)} .card{position:relative;overflow:hidden;border:1px solid rgba(240,237,230,.14);border-radius:14px;padding:28px;background:linear-gradient(145deg,var(--type-color,#1B3140),#0D0D14 78%);box-shadow:0 28px 90px rgba(0,0,0,.32)}
-  .cover{height:190px;border:1px solid rgba(240,237,230,.18);border-radius:10px;background:linear-gradient(135deg,var(--accent,#F5C842),transparent 42%),repeating-linear-gradient(135deg,transparent 0 18px,rgba(245,200,66,.16) 18px 24px),rgba(255,255,255,.03)}
-  .eyebrow{color:rgba(240,237,230,.6);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em} h1{margin:22px 0 0;font-size:clamp(64px,14vw,128px);line-height:.86;letter-spacing:0} h2{margin:12px 0 0;font-size:22px;color:rgba(240,237,230,.75)} p{line-height:1.7;color:rgba(240,237,230,.76)} .line{margin-top:24px;font-size:22px;font-weight:800;color:var(--paper)} .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.btn{border:1px solid rgba(240,237,230,.14);border-radius:10px;padding:13px 16px;background:var(--gold);color:var(--ink);font-weight:900;text-decoration:none}.btn.secondary{background:rgba(240,237,230,.08);color:var(--paper)}
-</style>
-</head>
-<body>
-<main><section id="card" class="card"><div class="eyebrow">Hugo Mojo 结果卡</div><div class="cover"></div><h1 id="name">气氛侦探</h1><h2 id="archetype">人群信号阅读者</h2><p id="verdict" class="line">在所有人还没意识到气氛变了之前，你已经看见那个微妙的变化。</p><p id="shareLine">我的隐藏天赋是抓住大家差一点说出口的东西。</p><div class="actions"><a class="btn" href="/cn/">我也测一下</a><a class="btn secondary" href="/delivery/hidden-talent-full-report/">查看完整报告</a></div></section></main>
+<title>隐藏天赋结果卡 - Hugo Mojo 雨果灵机</title>
+<meta name="robots" content="noindex">
 <script>
-const TYPES={overloaded:{name:'情绪抚慰师',archetype:'情绪型产品建造者',color:'#2A2840',accent:'#5CE8C4',verdict:'你嘴上说“我没事”，脑子里却在给身边所有人开情绪急救台。',shareLine:'我的隐藏天赋是把混乱的情绪整理成别人真正能用的东西。'},rabbit:{name:'避坑设计师',archetype:'决策风险设计师',color:'#241C3E',accent:'#FF7043',verdict:'你不是遇事就逃。你只是很早就能感觉到，有些地方会把你的未来越压越小。',shareLine:'我的隐藏天赋是在坏选择吞掉时间之前，先看见它。'},radar:{name:'气氛侦探',archetype:'人群信号阅读者',color:'#1B3140',accent:'#7B5CFF',verdict:'在所有人还没意识到气氛变了之前，你已经看见那个微妙的变化。',shareLine:'我的隐藏天赋是抓住大家差一点说出口的东西。'},sprite:{name:'点火器',archetype:'启动能量制造者',color:'#3A2D0A',accent:'#F5C842',verdict:'你一进来，很多事就突然变得更容易开始了。',shareLine:'我的隐藏天赋是让想法变得更容易开始。'},bulldozer:{name:'沉默交付人',archetype:'执行系统建造者',color:'#123331',accent:'#29B6B0',verdict:'别人还在讨论感觉对不对，你已经默默把东西做出来了。',shareLine:'我的隐藏天赋是把差点完成的计划变成真的东西。'},fox:{name:'模式猎手',archetype:'市场模式拆解者',color:'#311B27',accent:'#FF5C5C',verdict:'你不是扫兴。你只是总能找到真正起作用的那一层逻辑。',shareLine:'我的隐藏天赋是找到大家都漏掉的那一块拼图。'}};
-const key=new URLSearchParams(location.search).get('type')||'radar';const type=TYPES[key]||TYPES.radar;document.getElementById('card').style.setProperty('--type-color',type.color);document.getElementById('card').style.setProperty('--accent',type.accent);document.getElementById('name').textContent=type.name;document.getElementById('archetype').textContent=type.archetype;document.getElementById('verdict').textContent=type.verdict;document.getElementById('shareLine').textContent=type.shareLine;
+const params = new URLSearchParams(location.search);
+const type = params.get('type') || 'radar';
+location.replace(`/share/hidden-talent/?type=${encodeURIComponent(type)}&lang=cn`);
 </script>
-</body>
+</head>
+<body>正在打开结果卡...</body>
 </html>
