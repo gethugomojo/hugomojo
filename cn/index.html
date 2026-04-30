@@ -136,19 +136,20 @@
     #intro { padding-top: 5.25rem; }
     #intro h1, .hero-stage .hm-title { font-size: 2.55rem; line-height: 0.94; }
     #intro h1.hero-title-cn {
-      font-size: 2.28rem;
-      line-height: 1.02;
+      font-size: 2.02rem;
+      line-height: 1.08;
     }
     .hero-title-cn .hero-title-small {
-      margin-bottom: 0.42rem;
-      font-size: 0.78rem;
+      margin-bottom: 0.36rem;
+      padding: 0.36rem 0.54rem;
+      font-size: 0.76rem;
     }
     .hero-title-cn .hero-title-mark {
-      margin-top: 0.04em;
-      padding-bottom: 0.08em;
+      margin-top: 0.08em;
+      padding: 0.06em 0.14em 0.12em;
     }
     .hero-stage { min-height: auto; padding: 1.15rem !important; }
-    .hero-stage .hero-copy { margin-top: 0.85rem; font-size: 0.95rem; line-height: 1.55; }
+    .hero-stage .hero-copy { margin-top: 0.75rem; font-size: 0.92rem; line-height: 1.5; }
     .hero-stage .hero-hook-grid, .hero-stage .stamp-row { display: none; }
     .hero-stage .mt-6 { margin-top: 1rem; }
     .hero-stage .mt-7 { margin-top: 1.15rem; }
@@ -208,15 +209,15 @@
   .hero-copy { color: rgba(240, 237, 230, 0.72); }
   .hero-title-cn {
     font-family: 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif;
-    font-size: clamp(2.95rem, 6.2vw, 5.65rem);
+    font-size: clamp(2.45rem, 4.55vw, 4.15rem);
     font-weight: 900;
-    line-height: 0.98;
-    max-width: 43rem;
+    line-height: 1.06;
+    max-width: 35rem;
   }
   .hero-title-cn span { display: block; }
   .hero-title-cn .hero-title-small {
     width: fit-content;
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.72rem;
     border: 1px solid rgba(245, 200, 66, 0.42);
     border-radius: 8px;
     background: rgba(245, 200, 66, 0.12);
@@ -231,17 +232,17 @@
   }
   .hero-title-cn .hero-title-mark {
     width: fit-content;
-    margin: 0.08em 0 0.12em;
+    margin: 0.12em 0 0.06em;
     border-radius: 8px;
     background: var(--moss);
     color: var(--ink);
-    padding: 0.03em 0.12em 0.1em;
+    padding: 0.06em 0.14em 0.12em;
     box-shadow: 0 18px 42px rgba(245, 200, 66, 0.18);
     text-shadow: none;
   }
   .hero-title-cn .hero-title-end {
     color: rgba(240, 237, 230, 0.92);
-    font-size: 0.74em;
+    font-size: 0.78em;
   }
 
   .focus-card {
@@ -470,7 +471,7 @@
 
 <nav class="fixed left-0 right-0 top-0 z-30 px-4 py-4">
   <div class="mx-auto flex max-w-6xl items-center justify-between rounded-lg border border-paper/10 bg-card/80 px-3 py-2 shadow-lift backdrop-blur-md">
-    <a href="#" class="flex items-center gap-3 text-sm font-bold text-paper" onclick="goHome(event)"><img class="h-9 w-9 rounded-lg object-cover" src="/Hugo_Mojo_avatar_HM.png" onerror="this.onerror=null;this.src='Hugo_Mojo_avatar_HM.png'" alt="Hugo Mojo"><span>Hugo Mojo</span></a>
+    <a href="#" class="flex items-center gap-3 text-paper" onclick="goHome(event)"><img class="h-9 w-9 rounded-lg object-cover" src="/Hugo_Mojo_avatar_HM.png" onerror="this.onerror=null;this.src='Hugo_Mojo_avatar_HM.png'" alt="Hugo Mojo 雨果灵机"><span class="leading-tight"><span class="block text-sm font-bold">Hugo Mojo</span><span class="block text-xs font-black text-moss">雨果灵机</span></span></a>
     <div class="brand-nav hidden items-center gap-4 text-xs font-bold sm:flex"><a href="#" onclick="event.preventDefault(); startQuiz()">开始测试</a><a href="delivery/hidden-talent-full-report/" onclick="goRoute(event, 'cn/delivery/hidden-talent-full-report/')">交付</a><a href="contact.html" onclick="goRoute(event, 'cn/contact.html')">联系</a><a href="/" onclick="goRoute(event, '')">English</a></div>
   </div>
 </nav>
@@ -481,8 +482,8 @@
       <p class="spotify-pill inline-flex rounded-full border px-3 py-1 text-xs font-bold uppercase">隐藏天赋测试 · 12道题</p>
       <h1 class="hm-title hero-title-cn mt-4 break-words" aria-label="三分钟！找到那个能让你赚钱的隐藏天赋。">
         <span class="hero-title-small">三分钟！</span>
-        <span>找到那个</span>
-        <span class="hero-title-end">能让你赚钱的</span>
+        <span>找到那个能让你</span>
+        <span class="hero-title-end">赚钱的</span>
         <span class="hero-title-mark">隐藏天赋。</span>
       </h1>
       <p class="hero-copy mt-4 max-w-2xl text-base leading-7 sm:text-lg">12道题，大约3分钟。先拿到你的隐藏技能标签，再看它适合变成哪种工作方式或副业方向。</p>
