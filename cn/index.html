@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>隐藏天赋测试 - Hugo Mojo</title>
-<meta name="description" content="三分钟！找到那个能让你赚钱的隐藏天赋。">
+<meta name="description" content="三分钟，发现你的隐藏天赋，找到一个能用 AI 赚钱的副业方向。">
 <meta property="og:title" content="隐藏天赋测试 - Hugo Mojo">
-<meta property="og:description" content="三分钟！找到那个能让你赚钱的隐藏天赋。">
+<meta property="og:description" content="三分钟，发现你的隐藏天赋，找到一个能用 AI 赚钱的副业方向。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hugomojo.com/cn/">
 <meta property="og:image" content="https://hugomojo.com/og-hidden-talent-cn.png">
@@ -14,7 +14,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
   tailwind = {
     config: {
@@ -34,7 +34,7 @@
           },
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'PingFang SC', 'Microsoft YaHei', 'ui-sans-serif', 'system-ui'],
-            serif: ['Bebas Neue', 'Impact', 'sans-serif']
+            serif: ['DM Serif Display', 'Georgia', 'serif']
           },
           boxShadow: {
             soft: '0 18px 60px rgba(42, 38, 28, 0.12)',
@@ -122,17 +122,17 @@
   .hm-title, .hm-section-title, .question-title { color: var(--paper); text-shadow: 0 2px 22px rgba(0, 0, 0, 0.36); }
   .hm-title {
     display: block;
-    font-family: 'Bebas Neue', Impact, sans-serif;
-    font-size: clamp(3rem, 7.2vw, 5.9rem);
-    line-height: 0.9;
-    letter-spacing: 0;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
   }
-  .hero-stage .hm-title { font-size: clamp(2.7rem, 5.6vw, 5rem); line-height: 0.92; max-width: 42rem; }
-  .hm-section-title { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing: 0; }
+  .hero-stage .hm-title { font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 0.94; max-width: 42rem; }
+  .hm-section-title { font-family: 'DM Serif Display', 'PingFang SC', 'Microsoft YaHei', Georgia, serif; letter-spacing: -0.01em; }
   .quiz-shell .hm-section-title {
     color: var(--paper);
     font-family: 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif;
-    font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
     font-weight: 900;
     line-height: 1.12;
     text-shadow: none;
@@ -141,7 +141,7 @@
 
   @media (max-width: 520px) {
     #intro { padding-top: 5.25rem; }
-    #intro h1, .hero-stage .hm-title { font-size: 2.55rem; line-height: 0.94; }
+    #intro h1, .hero-stage .hm-title { font-size: 2.15rem; line-height: 0.96; }
     #intro h1.hero-title-cn {
       font-size: 2.02rem;
       line-height: 1.08;
@@ -360,21 +360,23 @@
     pointer-events: none;
   }
   .result-cover > * { position: relative; z-index: 1; }
-  .result-cover .hm-title { font-size: clamp(4.8rem, 11vw, 8rem); }
+  .result-cover .hm-title { font-size: clamp(3.4rem, 8vw, 6rem); }
   @media (max-width: 640px) {
     .result-cover { min-height: 28rem; }
-    .result-cover .hm-title { font-size: 4.2rem; }
+    .result-cover .hm-title { font-size: 3rem; }
   }
   .result-hero::after { content: "结果已打开"; position: absolute; right: -1.4rem; top: 1.8rem; border-radius: 8px; background: var(--moss); color: var(--ink); padding: 0.7rem 2.2rem; font-size: 0.72rem; font-weight: 800; transform: rotate(9deg); }
   .share-snap { position: relative; overflow: hidden; }
   .share-snap::before { content: ""; position: absolute; inset: auto -2rem -2rem auto; width: 8rem; height: 8rem; border-radius: 8px; background: var(--share-color, var(--moss)); opacity: 0.44; transform: rotate(17deg); }
   .paywall-pop { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(21, 23, 18, 0.98), rgba(21, 23, 18, 0.90)), var(--ink); }
+  [data-result-part] .hm-section-title.text-5xl, .paywall-pop .hm-section-title.text-5xl { font-size: clamp(2rem, 4.2vw, 3.2rem); line-height: 1.0; }
+  [data-result-part] .hm-section-title.text-4xl { font-size: clamp(1.65rem, 3.2vw, 2.6rem); line-height: 1.04; }
   .paywall-pop::before { content: "¥9.9"; position: absolute; right: -0.8rem; top: 1.4rem; border-radius: 8px; background: var(--moss); color: var(--ink); padding: 0.65rem 1.4rem; font-size: 0.78rem; font-weight: 900; transform: rotate(8deg); }
   .option.selected {
     border-color: rgba(245, 200, 66, 0.92);
-    background: linear-gradient(135deg, rgba(245, 200, 66, 0.22), rgba(255, 253, 248, 0.92)), rgba(255, 253, 248, 0.92);
+    background: linear-gradient(135deg, rgba(245, 200, 66, 0.22), rgba(18, 18, 31, 0.88));
     transform: translateY(-2px);
-    box-shadow: 0 18px 45px rgba(245, 200, 66, 0.18);
+    box-shadow: 0 18px 45px rgba(245, 200, 66, 0.24);
   }
   .progress-fill { transition: width 520ms cubic-bezier(.2, 1.15, .3, 1); }
   .reveal, [data-result-part] { opacity: 1; transform: none; }
@@ -441,6 +443,228 @@
     * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     .reveal, [data-result-part] { opacity: 1; transform: none; }
   }
+
+
+  /* HM editorial v4: Typeform pacing + Wrapped-style identity card */
+  :root {
+    --hm-muted: #9B96A8;
+    --hm-line: rgba(240, 237, 230, 0.13);
+  }
+  body, button, input { font-family: 'Plus Jakarta Sans', 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif; }
+  .hm-title, .hm-section-title, .question-title { font-family: inherit !important; letter-spacing: 0 !important; text-shadow: none !important; }
+  .paper-card { border-radius: 8px; background: rgba(18, 18, 31, 0.82); border-color: var(--hm-line); box-shadow: 0 18px 56px rgba(0,0,0,.28); }
+  nav .max-w-6xl { min-height: 3.8rem; }
+  #intro { padding-top: 6.15rem; }
+  #intro > section { gap: 1rem; align-items: stretch; }
+  .hero-stage, .focus-card { min-height: 29rem; }
+  .hero-stage { display: flex; flex-direction: column; justify-content: center; padding: clamp(1.35rem, 3vw, 2.35rem) !important; }
+  .hero-title-cn, .hero-title-en, .hero-stage .hm-title { max-width: 40rem !important; font-size: clamp(2.35rem, 4.45vw, 4.35rem) !important; line-height: 1.02 !important; font-weight: 900 !important; }
+  .hero-title-cn span, .hero-title-en span { display: block; width: fit-content; }
+  .hero-title-small { margin-bottom: .75rem !important; border: 1px solid rgba(245,200,66,.38) !important; border-radius: 999px !important; background: rgba(245,200,66,.10) !important; padding: .42rem .72rem !important; color: var(--moss) !important; font-size: .78rem !important; font-weight: 900 !important; line-height: 1 !important; }
+  .hero-title-mark { margin-top: .18rem !important; border-radius: 8px !important; background: var(--moss) !important; color: var(--ink) !important; padding: .06em .16em .12em !important; box-shadow: 0 16px 40px rgba(245,200,66,.18) !important; }
+  .hero-title-end { color: rgba(240,237,230,.88) !important; font-size: .82em !important; }
+  .hero-copy { max-width: 34rem !important; color: rgba(240,237,230,.68) !important; font-size: clamp(.98rem, 1.25vw, 1.08rem) !important; line-height: 1.72 !important; }
+  .primary-cta { min-width: 13.5rem; border-radius: 8px; padding: 1rem 1.65rem !important; font-size: .98rem !important; box-shadow: 0 16px 38px rgba(245,200,66,.16), 0 0 0 5px rgba(245,200,66,.10); }
+  .hero-hook-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; margin-top: 1.15rem; }
+  .hero-hook { padding: .78rem !important; background: rgba(240,237,230,.055) !important; }
+  .hero-hook b { font-size: .86rem !important; }
+  .hero-hook span { font-size: .76rem !important; line-height: 1.45 !important; color: rgba(240,237,230,.54) !important; }
+  .stamp-row { display: none !important; }
+  .focus-card { padding: clamp(1.15rem, 2.4vw, 1.85rem) !important; justify-content: center; }
+  .mix-cover { min-height: 10.4rem !important; border: 1px solid rgba(240,237,230,.13); background: radial-gradient(circle at 88% 18%, rgba(245,200,66,.50), transparent 8rem), linear-gradient(135deg, #F5C842 0%, #7B5CFF 54%, #12121F 100%) !important; }
+  .mix-cover strong { max-width: 11rem !important; font-size: clamp(2.15rem, 4vw, 3.25rem) !important; line-height: .92 !important; }
+  .mix-cover span { position: absolute !important; right: 1rem; bottom: 1rem; margin: 0 !important; font-size: .72rem !important; }
+  .focus-card .hm-section-title { font-size: clamp(1.65rem, 2.9vw, 2.45rem) !important; line-height: 1.12 !important; font-weight: 850 !important; }
+  .track-list { gap: .62rem !important; }
+  .track-row { grid-template-columns: 2.25rem minmax(0, 1fr) !important; padding: .82rem !important; background: rgba(240,237,230,.055) !important; }
+  .track-row .num { color: var(--moss) !important; font-family: inherit !important; font-size: .78rem !important; font-weight: 900 !important; }
+  .track-row b { font-size: .9rem !important; }
+  .track-row small { font-size: .78rem !important; color: rgba(240,237,230,.52) !important; }
+  #quiz { padding-top: 6rem !important; }
+  #quiz section { max-width: 54rem !important; }
+  #quiz .quiz-shell { padding: 1rem 1.15rem !important; }
+  #quiz .quiz-shell .hm-section-title { font-size: clamp(1.05rem, 1.6vw, 1.35rem) !important; line-height: 1.18 !important; font-weight: 850 !important; }
+  #questionCard { padding: clamp(1.15rem, 2.8vw, 2rem) !important; }
+  #questionCard .question-title { max-width: 48rem !important; font-size: clamp(1.55rem, 2.75vw, 2.35rem) !important; line-height: 1.14 !important; font-weight: 850 !important; }
+  #questionCard .mt-7, #questionCard .mt-6 { margin-top: 1rem !important; gap: .68rem !important; }
+  #questionCard .option { min-height: 3.85rem !important; padding: .82rem .95rem !important; border-radius: 8px !important; }
+  .answer-text, #questionCard .option .block { font-size: .98rem !important; line-height: 1.36 !important; font-weight: 760 !important; }
+  [data-result-part] .hm-section-title, .paywall-pop .hm-section-title { font-family: inherit !important; font-size: clamp(1.5rem, 3vw, 2.4rem) !important; line-height: 1.12 !important; }
+  @media (max-width: 900px) {
+    #intro > section { grid-template-columns: 1fr; }
+    .hero-stage, .focus-card { min-height: auto; }
+  }
+  @media (max-width: 520px) {
+    #intro { padding: 4.85rem .85rem 1.25rem !important; }
+    .hero-stage { padding: 1rem !important; }
+    .hero-title-cn, .hero-title-en, .hero-stage .hm-title { font-size: 2.02rem !important; line-height: 1.05 !important; }
+    .hero-title-small { font-size: .7rem !important; margin-bottom: .55rem !important; }
+    .hero-copy { font-size: .9rem !important; line-height: 1.55 !important; }
+    .hero-hook-grid { display: none !important; }
+    .focus-card { padding: 1rem !important; }
+    .mix-cover { min-height: 8.4rem !important; }
+    .mix-cover strong { font-size: 2rem !important; }
+    .focus-card .hm-section-title { font-size: 1.42rem !important; line-height: 1.16 !important; }
+    .track-row { padding: .68rem !important; }
+    #quiz { padding-top: 4.35rem !important; }
+    #questionCard .question-title { font-size: 1.28rem !important; line-height: 1.14 !important; }
+    #questionCard .option { min-height: 3.05rem !important; padding: .58rem .68rem !important; }
+    .answer-text, #questionCard .option .block { font-size: .88rem !important; line-height: 1.25 !important; }
+  }
+
+
+  /* HM homepage refit v5: 16Personalities clarity + Wrapped result-card energy */
+  #intro { padding-top: 5.15rem !important; }
+  #intro > section { max-width: 72rem !important; gap: 1.05rem !important; align-items: stretch !important; }
+  .hero-stage, .focus-card { min-height: 27rem !important; }
+  .hero-stage { justify-content: flex-start !important; padding: clamp(1rem, 2.1vw, 1.65rem) !important; }
+  .hero-stage .spotify-pill, .hero-stage > p:first-child { margin-top: 0 !important; }
+  .hero-title-cn, .hero-title-en, .hero-stage .hm-title { margin-top: .95rem !important; max-width: 37.5rem !important; font-size: clamp(2.05rem, 3.65vw, 3.65rem) !important; line-height: 1.04 !important; }
+  .hero-title-small { margin-bottom: .52rem !important; }
+  .hero-title-mark { margin-top: .12rem !important; padding: .05em .16em .1em !important; }
+  .hero-copy { margin-top: 1rem !important; max-width: 35rem !important; font-size: clamp(.94rem, 1.12vw, 1rem) !important; line-height: 1.66 !important; }
+  .hero-stage .mt-5 { margin-top: 1rem !important; }
+  .primary-cta { padding: .9rem 1.45rem !important; min-width: 12.5rem !important; }
+  .hero-hook-grid { margin-top: 1rem !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: .55rem !important; }
+  .hero-hook { padding: .66rem .7rem !important; }
+  .hero-hook b { font-size: .8rem !important; }
+  .hero-hook span { margin-top: .25rem !important; font-size: .72rem !important; line-height: 1.38 !important; }
+  .focus-card { justify-content: flex-start !important; padding: clamp(1rem, 2vw, 1.5rem) !important; }
+  .mix-cover { min-height: 9.3rem !important; }
+  .mix-cover strong { font-size: clamp(1.9rem, 3.35vw, 2.85rem) !important; }
+  .focus-card .hm-section-title { font-size: clamp(1.35rem, 2.25vw, 2rem) !important; line-height: 1.16 !important; }
+  .track-list { margin-top: .82rem !important; gap: .52rem !important; }
+  .track-row { padding: .66rem .72rem !important; }
+  .track-row b { font-size: .84rem !important; }
+  .track-row small { font-size: .72rem !important; line-height: 1.38 !important; }
+  @media (min-width: 1024px) {
+    #intro .hero-stage { grid-column: span 6 / span 6 !important; }
+    #intro #result-preview, #intro .focus-card { grid-column: span 6 / span 6 !important; }
+  }
+  @media (max-width: 520px) {
+    #intro { padding: 4.45rem .8rem 1.1rem !important; }
+    .hero-stage { padding: .9rem !important; }
+    .hero-title-cn, .hero-title-en, .hero-stage .hm-title { font-size: 1.85rem !important; line-height: 1.07 !important; margin-top: .72rem !important; }
+    .hero-title-small { font-size: .66rem !important; margin-bottom: .44rem !important; }
+    .hero-copy { font-size: .88rem !important; line-height: 1.5 !important; margin-top: .8rem !important; }
+    .primary-cta { width: 100% !important; padding: .86rem 1rem !important; }
+    .focus-card { padding: .9rem !important; }
+    .mix-cover { min-height: 7.4rem !important; }
+    .focus-card .hm-section-title { font-size: 1.22rem !important; line-height: 1.17 !important; }
+    .track-row { padding: .58rem !important; }
+  }
+
+
+  /* HM homepage refit v6: one primary action above the fold */
+  #intro { padding-top: 5.05rem !important; }
+  #intro > section { max-width: 64rem !important; gap: 1rem !important; }
+  #intro .hero-stage { grid-column: 1 / -1 !important; min-height: min(62vh, 30rem) !important; align-items: center !important; justify-content: center !important; text-align: center !important; padding: clamp(1.25rem, 3vw, 2.4rem) !important; }
+  #intro .hero-stage .spotify-pill, #intro .hero-stage > p:first-child { align-self: center !important; }
+  #intro .hero-title-cn, #intro .hero-title-en, #intro .hero-stage .hm-title { margin-left: auto !important; margin-right: auto !important; max-width: 48rem !important; font-size: clamp(2.45rem, 5.2vw, 5.15rem) !important; line-height: .98 !important; }
+  #intro .hero-title-cn span, #intro .hero-title-en span { margin-left: auto !important; margin-right: auto !important; }
+  #intro .hero-title-mark { display: inline-block !important; }
+  #intro .hero-copy { max-width: 39rem !important; margin-left: auto !important; margin-right: auto !important; font-size: clamp(1rem, 1.25vw, 1.12rem) !important; line-height: 1.68 !important; }
+  #intro .hero-stage .mt-5 { justify-content: center !important; margin-top: 1.15rem !important; }
+  #intro .hero-cta-wrap { margin-left: auto !important; margin-right: auto !important; }
+  #intro .primary-cta { min-width: 15.5rem !important; padding: 1rem 1.8rem !important; }
+  #intro .hero-hook-grid { max-width: 42rem !important; margin: 1.15rem auto 0 !important; }
+  #intro #result-preview, #intro .focus-card { grid-column: 1 / -1 !important; min-height: auto !important; }
+  #intro .focus-card { display: grid !important; grid-template-columns: minmax(14rem, .8fr) minmax(0, 1.2fr) !important; gap: 1.2rem !important; align-items: start !important; text-align: left !important; }
+  #intro .focus-card .mix-cover { min-height: 12rem !important; }
+  #intro .focus-card .hero-kicker, #intro .focus-card > h2, #intro .focus-card .track-list, #intro .focus-card .mini-player { grid-column: 2 !important; }
+  @media (max-width: 760px) {
+    #intro .hero-stage { min-height: auto !important; text-align: left !important; align-items: flex-start !important; padding: 1rem !important; }
+    #intro .hero-stage .spotify-pill, #intro .hero-stage > p:first-child { align-self: flex-start !important; }
+    #intro .hero-title-cn, #intro .hero-title-en, #intro .hero-stage .hm-title { margin-left: 0 !important; margin-right: 0 !important; font-size: 2.05rem !important; line-height: 1.06 !important; }
+    #intro .hero-title-cn span, #intro .hero-title-en span { margin-left: 0 !important; margin-right: 0 !important; }
+    #intro .hero-copy { margin-left: 0 !important; margin-right: 0 !important; font-size: .92rem !important; line-height: 1.52 !important; }
+    #intro .hero-stage .mt-5 { justify-content: stretch !important; }
+    #intro .primary-cta { width: 100% !important; min-width: 0 !important; }
+    #intro .hero-hook-grid { display: none !important; }
+    #intro .focus-card { display: block !important; }
+    #intro .focus-card .mix-cover { min-height: 7.8rem !important; }
+  }
+
+
+  /* HM payment modal mobile fix: keep QR + delivery button reachable */
+  #payModal { align-items: center !important; }
+  #payModal .modal-panel { max-height: calc(100vh - 1.25rem) !important; overflow-y: auto !important; overscroll-behavior: contain !important; }
+  #payModal img { max-height: min(34vh, 17rem) !important; }
+  @media (max-width: 640px) {
+    #payModal { padding: .55rem !important; }
+    #payModal .modal-panel { padding: .82rem !important; }
+    #payModal .modal-panel > .mt-5.grid.gap-3 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: .55rem !important; }
+    #payModal .modal-panel > .mt-5.grid.gap-3 > div { padding: .55rem !important; }
+    #payModal img { max-height: 9.6rem !important; padding: .35rem !important; }
+    #payModal h2 { font-size: 1.45rem !important; line-height: 1.12 !important; }
+    #payModal .mt-5.grid.gap-2 { margin-top: .75rem !important; }
+    #payModal #deliverButton { padding: .9rem 1rem !important; }
+  }
+
+
+  /* HM homepage refit v7: compact conversion-first hero */
+  #intro { padding-top: 4.7rem !important; }
+  #intro > section { max-width: 54rem !important; gap: .85rem !important; }
+  #intro .hero-stage { min-height: auto !important; align-items: flex-start !important; justify-content: flex-start !important; text-align: left !important; padding: clamp(1rem, 2.2vw, 1.55rem) !important; }
+  #intro .hero-stage .spotify-pill, #intro .hero-stage > p:first-child { align-self: flex-start !important; }
+  #intro .hero-title-cn, #intro .hero-title-en, #intro .hero-stage .hm-title { margin: .78rem 0 0 !important; max-width: 44rem !important; font-size: clamp(2.2rem, 4.55vw, 4.15rem) !important; line-height: 1 !important; }
+  #intro .hero-title-cn span, #intro .hero-title-en span { margin-left: 0 !important; margin-right: 0 !important; }
+  #intro .hero-copy { margin: .82rem 0 0 !important; max-width: 38rem !important; font-size: clamp(.96rem, 1.08vw, 1.05rem) !important; line-height: 1.55 !important; }
+  #intro .hero-stage .mt-5 { margin-top: .9rem !important; justify-content: flex-start !important; }
+  #intro .hero-cta-wrap { margin-left: 0 !important; margin-right: 0 !important; }
+  #intro .primary-cta { min-width: 13.5rem !important; padding: .92rem 1.45rem !important; }
+  #intro .hero-hook-grid { max-width: 42rem !important; margin: .9rem 0 0 !important; }
+  #intro #result-preview, #intro .focus-card { margin-top: 0 !important; }
+  #intro .focus-card { padding: 1rem !important; grid-template-columns: 12rem minmax(0,1fr) !important; gap: .9rem !important; }
+  #intro .focus-card .mix-cover { min-height: 8.2rem !important; }
+  #intro .focus-card .hm-section-title { font-size: clamp(1.22rem, 2vw, 1.65rem) !important; }
+  @media (max-width: 760px) {
+    #intro { padding: 4.35rem .72rem 1rem !important; }
+    #intro > section { gap: .72rem !important; }
+    #intro .hero-stage { padding: .86rem !important; }
+    #intro .hero-title-cn, #intro .hero-title-en, #intro .hero-stage .hm-title { font-size: 1.86rem !important; line-height: 1.06 !important; margin-top: .62rem !important; }
+    #intro .hero-copy { font-size: .88rem !important; line-height: 1.45 !important; margin-top: .66rem !important; }
+    #intro .hero-stage .mt-5 { margin-top: .75rem !important; }
+    #intro .focus-card { padding: .86rem !important; }
+  }
+
+
+  /* HM homepage refit v8: reference-style centered quick-test entry */
+  .reveal, .motion-enabled .reveal, .motion-fallback .reveal { opacity: 1 !important; transform: none !important; }
+  #intro { padding-top: 4.6rem !important; }
+  #intro > section { max-width: 58rem !important; gap: .8rem !important; }
+  #intro .hero-stage { min-height: auto !important; text-align: center !important; align-items: center !important; justify-content: flex-start !important; padding: clamp(1rem, 2.2vw, 1.55rem) !important; }
+  #intro .hero-stage .spotify-pill, #intro .hero-stage > p:first-child { align-self: center !important; }
+  #intro .hero-title-cn, #intro .hero-title-en, #intro .hero-stage .hm-title { margin: .7rem auto 0 !important; max-width: 48rem !important; font-size: clamp(2.15rem, 4.7vw, 4.4rem) !important; line-height: 1 !important; text-align: center !important; }
+  #intro .hero-title-cn span, #intro .hero-title-en span { margin-left: auto !important; margin-right: auto !important; }
+  #intro .hero-title-mark { box-decoration-break: clone !important; -webkit-box-decoration-break: clone !important; }
+  #intro .hero-copy { margin: .75rem auto 0 !important; max-width: 39rem !important; text-align: center !important; font-size: clamp(.96rem, 1.08vw, 1.05rem) !important; line-height: 1.52 !important; }
+  #intro .hero-stage .mt-5 { margin-top: .9rem !important; justify-content: center !important; }
+  #intro .hero-cta-wrap { margin-left: auto !important; margin-right: auto !important; width: auto !important; }
+  #intro .primary-cta { min-width: 14.5rem !important; padding: .92rem 1.65rem !important; }
+  #intro .hero-hook-grid { max-width: 43rem !important; margin: .92rem auto 0 !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  #intro .hero-hook { text-align: left !important; }
+  #intro #result-preview { grid-column: 1 / -1 !important; }
+  #intro .focus-card { display: grid !important; grid-template-columns: minmax(12rem, .78fr) minmax(0, 1.22fr) !important; gap: .85rem !important; padding: .95rem !important; min-height: auto !important; }
+  #intro .focus-card .mix-cover { min-height: 7.8rem !important; }
+  #intro .focus-card .hero-kicker, #intro .focus-card > h2, #intro .focus-card .track-list, #intro .focus-card .mini-player { grid-column: 2 !important; }
+  #intro .focus-card .hm-section-title { font-size: clamp(1.2rem, 1.9vw, 1.55rem) !important; line-height: 1.14 !important; }
+  #intro .track-list { gap: .44rem !important; }
+  #intro .track-row { padding: .56rem .62rem !important; }
+  @media (max-width: 760px) {
+    #intro { padding: 4.3rem .72rem 1rem !important; }
+    #intro .hero-stage { text-align: left !important; align-items: flex-start !important; padding: .82rem !important; }
+    #intro .hero-stage .spotify-pill, #intro .hero-stage > p:first-child { align-self: flex-start !important; }
+    #intro .hero-title-cn, #intro .hero-title-en, #intro .hero-stage .hm-title { margin-left: 0 !important; margin-right: 0 !important; text-align: left !important; font-size: 1.86rem !important; line-height: 1.06 !important; }
+    #intro .hero-title-cn span, #intro .hero-title-en span { margin-left: 0 !important; margin-right: 0 !important; }
+    #intro .hero-copy { margin-left: 0 !important; margin-right: 0 !important; text-align: left !important; font-size: .88rem !important; line-height: 1.45 !important; }
+    #intro .hero-stage .mt-5, #intro .hero-cta-wrap { width: 100% !important; }
+    #intro .primary-cta { width: 100% !important; min-width: 0 !important; }
+    #intro .hero-hook-grid { display: none !important; }
+    #intro .focus-card { display: block !important; padding: .82rem !important; }
+    #intro .focus-card .mix-cover { min-height: 7.2rem !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -494,36 +718,35 @@
 
 <nav class="fixed left-0 right-0 top-0 z-30 px-4 py-4">
   <div class="mx-auto flex max-w-6xl items-center justify-between rounded-lg border border-paper/10 bg-card/80 px-3 py-2 shadow-lift backdrop-blur-md">
-    <a href="#" class="flex items-center gap-3 text-paper" onclick="goHome(event)"><img class="h-9 w-9 rounded-lg object-cover" src="/Hugo_Mojo_avatar_HM.png" onerror="this.onerror=null;this.src='Hugo_Mojo_avatar_HM.png'" alt="Hugo Mojo 雨果灵机"><span class="text-sm font-black tracking-normal">Hugo Mojo <span class="text-moss">雨果灵机</span></span></a>
+    <a href="#" class="flex items-center gap-3 text-paper" onclick="goHome(event)"><img class="h-9 w-9 rounded-lg object-cover" src="/Hugo_Mojo_avatar_HM.png" onerror="this.onerror=null;this.src='/Hugo_Mojo_avatar_HM.png'" alt="Hugo Mojo 雨果灵机"><span class="text-sm font-black tracking-normal">Hugo Mojo <span class="text-moss">雨果灵机</span></span></a>
     <div class="brand-nav hidden items-center gap-4 text-xs font-bold sm:flex"><a href="#" onclick="event.preventDefault(); startQuiz()">开始测试</a><a href="delivery/hidden-talent-full-report/" onclick="goRoute(event, 'cn/delivery/hidden-talent-full-report/')">交付</a><a href="contact.html" onclick="goRoute(event, 'cn/contact.html')">联系</a><a href="/" onclick="goRoute(event, '')">English</a></div>
   </div>
 </nav>
 
 <main id="intro" class="screen active px-4 pb-16 pt-28">
   <section class="mx-auto grid max-w-6xl gap-4 lg:grid-cols-12">
-    <div class="hero-stage paper-card reveal rounded-lg p-5 sm:p-7 lg:col-span-7 lg:p-8">
+    <div class="hero-stage paper-card reveal rounded-lg p-5 sm:p-7 lg:col-span-12 lg:p-8">
       <p class="spotify-pill inline-flex rounded-full border px-3 py-1 text-xs font-bold uppercase">隐藏天赋测试 · 12道题</p>
-      <h1 class="hm-title hero-title-cn mt-4 break-words" aria-label="三分钟！找到那个能让你赚钱的隐藏天赋。">
-        <span class="hero-title-small">三分钟！</span>
-        <span>找到那个能让你</span>
-        <span class="hero-title-end">赚钱的</span>
-        <span class="hero-title-mark">隐藏天赋。</span>
+      <h1 class="hm-title hero-title-cn mt-4 break-words" aria-label="三分钟，发现你的隐藏天赋，找到一个能用 AI 赚钱的副业方向。">
+        <span class="hero-title-small">三分钟测试</span>
+        <span>发现你的隐藏天赋</span>
+        <span class="hero-title-mark">找到 AI 副业方向</span>
       </h1>
-      <p class="hero-copy mt-4 max-w-2xl text-base leading-7 sm:text-lg">12道题，大约3分钟。先拿到你的隐藏技能标签，再看它适合变成哪种工作方式或副业方向。</p>
+      <p class="hero-copy mt-4 max-w-2xl text-base leading-7 sm:text-lg">12 道题，大约 3 分钟。先拿到你的隐藏天赋结果，再看它能不能变成一个 AI 副业方向。</p>
       <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-start"><div class="hero-cta-wrap"><button class="primary-cta spring-hover rounded-lg px-7 py-5 text-base font-bold shadow-lift" onclick="startQuiz()">开始测试 →</button><span class="hero-signal"></span></div></div>
-      <div class="hero-hook-grid"><div class="hero-hook"><b>被说中</b><span>把你那个从没被命名的能力，说清楚。</span></div><div class="hero-hook"><b>找方向</b><span>你的这个能力，具体能卖给谁、怎么卖。</span></div><div class="hero-hook"><b>动起来</b><span>一个小报价，不是一份巨大商业计划。</span></div></div>
-      <div class="stamp-row mt-6"><span class="stamp">不用登录</span><span class="stamp">12道题</span><span class="stamp">免费隐藏技能结果</span><span class="stamp">结果页可继续看完整报告</span></div>
+      <div class="hero-hook-grid"><div class="hero-hook"><b>免费测试</b><span>先看到你的隐藏天赋标签。</span></div><div class="hero-hook"><b>AI方向</b><span>再看它适合帮谁、解决什么问题。</span></div><div class="hero-hook"><b>小报价</b><span>最后落到一个能开始收钱的第一步。</span></div></div>
+      <div class="stamp-row mt-6"><span class="stamp">不用登录</span><span class="stamp">12道题</span><span class="stamp">免费隐藏技能结果</span><span class="stamp">做完看结果</span></div>
     </div>
 
-    <div id="result-preview" class="focus-card paper-card reveal rounded-lg p-5 lg:col-span-5">
+    <div id="result-preview" class="focus-card paper-card reveal rounded-lg p-5 lg:col-span-12">
       <div class="mix-cover"><strong>HM<br>隐藏技能</strong><span>结果卡预览</span></div>
       <p class="hero-kicker mt-5 text-xs font-bold uppercase">你会拿到什么？</p>
-      <h2 class="hm-section-title mt-2 text-4xl leading-none">先看到那个你一直以为“人人都会”的能力。<br>再看它能不能变成一个小生意。</h2>
-      <div class="track-list"><div class="track-row"><span class="num">01</span><span><b>隐藏技能标签</b><small>气氛侦探、趋势能手、模式猎手... 哪个最像你？</small></span></div><div class="track-row"><span class="num">02</span><span><b>一句扎心描述</b><small>短到能记住，准到想截图。</small></span></div><div class="track-row"><span class="num">03</span><span><b>变现方向</b><small>这个能力，具体能卖给谁、怎么卖。</small></span></div><div class="track-row"><span class="num">04</span><span><b>执行包入口</b><small>把一个方向，变成第一版可赚钱的行动文案。</small></span></div></div>
+      <h2 class="hm-section-title mt-2 text-4xl leading-none">不是告诉你“你很特别”。<br>是告诉你怎么用 AI 把它做成副业。</h2>
+      <div class="track-list"><div class="track-row"><span class="num">01</span><span><b>免费结果</b><small>隐藏天赋标签 + 一句像你的判断。</small></span></div><div class="track-row"><span class="num">02</span><span><b>完整报告</b><small>这个能力适合哪类 AI 副业方向。</small></span></div><div class="track-row"><span class="num">03</span><span><b>小报价</b><small>具体帮谁、卖什么结果、怎么用 AI 做第一版。</small></span></div><div class="track-row"><span class="num">04</span><span><b>AI执行包</b><small>AI 提示词、销售文案、交付模板和3天验证计划。</small></span></div></div>
       <div class="mini-player mt-4"><div class="mb-3 flex items-center justify-between gap-3 text-xs font-bold text-paper/60"><span>免费技能结果</span><span>完整方向报告</span></div><div class="player-bar"><span></span></div></div>
     </div>
 
-    <footer class="site-footer reveal rounded-lg border border-paper/10 bg-ink/70 p-5 text-sm text-paper/60 backdrop-blur-md lg:col-span-12"><div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><div><p class="font-bold text-paper">Hugo Mojo 雨果灵机</p><p class="mt-1">你不想听大道理。你只想被说中，然后拿一个今天就能试的小方向。</p><p class="mt-2">Support: <a class="font-bold text-paper" href="mailto:hi@hugomojo.com">hi@hugomojo.com</a></p></div><div class="flex flex-wrap gap-3 font-bold"><a href="privacy.html" onclick="goRoute(event, 'cn/privacy.html')">隐私</a><a href="terms.html" onclick="goRoute(event, 'cn/terms.html')">条款</a><a href="refund.html" onclick="goRoute(event, 'cn/refund.html')">退款</a><a href="contact.html" onclick="goRoute(event, 'cn/contact.html')">联系</a><a href="delivery/hidden-talent-full-report/" onclick="goRoute(event, 'cn/delivery/hidden-talent-full-report/')">交付</a></div></div></footer>
+    <footer class="site-footer reveal rounded-lg border border-paper/10 bg-ink/70 p-5 text-sm text-paper/60 backdrop-blur-md lg:col-span-12"><div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><div><p class="font-bold text-paper">Hugo Mojo 雨果灵机</p><p class="mt-1">Hugo Mojo 用好玩的快测试，帮你发现自己身上的隐藏优势，并给你一个能马上试的小方向。</p><p class="mt-2">Support: <a class="font-bold text-paper" href="mailto:hi@hugomojo.com">hi@hugomojo.com</a></p></div><div class="flex flex-wrap gap-3 font-bold"><a href="privacy.html" onclick="goRoute(event, 'cn/privacy.html')">隐私</a><a href="terms.html" onclick="goRoute(event, 'cn/terms.html')">条款</a><a href="refund.html" onclick="goRoute(event, 'cn/refund.html')">退款</a><a href="contact.html" onclick="goRoute(event, 'cn/contact.html')">联系</a><a href="delivery/hidden-talent-full-report/" onclick="goRoute(event, 'cn/delivery/hidden-talent-full-report/')">交付</a></div></div></footer>
   </section>
 </main>
 
@@ -695,7 +918,7 @@ function buildResult(key) {
         <p class="mt-5 text-paper/65">${type.hidden}</p>
         <div class="mt-6 rounded-lg border border-paper/10 bg-ink p-4 text-paper shadow-lift">
           <p class="text-xs font-bold uppercase text-moss">¥9.9 付费报告</p>
-          <p class="mt-2 text-sm leading-6 text-paper/72">完整报告会继续给你：隐藏技能解读、3 个方向、AI提示词、选题、销售文案、交付模板和 7 天执行清单。微信或支付宝付款后可直接打开交付页。</p>
+          <p class="mt-2 text-sm leading-6 text-paper/72">完整报告会继续给你：隐藏技能解读、AI 副业方向、小报价、AI提示词、销售文案、交付模板和 7 天执行清单。微信或支付宝付款后可直接打开交付页。</p>
           <button class="mt-4 w-full rounded-lg border border-moss bg-moss px-4 py-3 text-sm font-bold text-ink transition hover:bg-paper" onclick="openPayModal('${key}')">微信 / 支付宝付款 ¥9.9 →</button>
         </div>
       </section>
@@ -711,7 +934,7 @@ function buildResult(key) {
         <div class="mt-4 grid gap-2">
           <div class="rounded-lg border border-paper/10 bg-paper/5 p-3 text-sm font-bold">完整隐藏技能解读</div>
           <div class="rounded-lg border border-paper/10 bg-paper/5 p-3 text-sm font-bold">3 个方向 + 第一个小报价</div>
-          <div class="rounded-lg border border-paper/10 bg-paper/5 p-3 text-sm font-bold">AI执行包 + 7 天清单</div>
+          <div class="rounded-lg border border-paper/10 bg-paper/5 p-3 text-sm font-bold">AI副业执行包 + 7 天清单</div>
         </div>
       </section>
 
@@ -728,8 +951,8 @@ function buildResult(key) {
       <section data-result-part class="paywall-pop rounded-lg border border-ink bg-ink p-6 text-paper shadow-soft lg:col-span-12">
         <p class="text-xs font-bold uppercase text-moss">下一步：完整方向报告</p>
         <h2 class="hm-section-title mt-3 text-5xl leading-none">免费结果负责说中你。报告负责让你开做。</h2>
-        <p class="mt-5 max-w-3xl text-paper/70">报告不是“更多人格分析”，而是完整隐藏技能结果 + AI副业执行包：你为什么被低估、适合什么方向、第一个小报价是什么、AI怎么帮你做出第一版。</p>
-        <div class="mt-6 grid gap-2 md:grid-cols-3"><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">完整报告 · ¥9.9</div><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">完整隐藏技能解读 + AI执行包</div><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">一次付费，不是订阅</div></div>
+        <p class="mt-5 max-w-3xl text-paper/70">报告不是“更多人格分析”，而是把你的隐藏技能翻译成 AI 副业方向：你为什么被低估、适合帮谁、第一版小报价是什么、AI怎么帮你做出第一版。</p>
+        <div class="mt-6 grid gap-2 md:grid-cols-3"><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">AI副业方向报告 · ¥9.9</div><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">隐藏技能解读 + AI副业方向</div><div class="rounded-lg border border-paper/10 bg-paper/10 p-3 text-sm font-bold">一次付费，不是订阅</div></div>
         <div class="mt-5 flex flex-col gap-2 md:max-w-xl"><p class="text-xs font-bold uppercase text-moss">自动交付</p><p class="text-xs leading-5 text-paper/55">中文优先支持微信 / 支付宝。付款后点确认按钮即可打开报告，不需要等待邮件回复。</p><button class="rounded-lg border border-moss bg-moss px-5 py-4 text-sm font-bold text-ink transition hover:bg-paper" onclick="openPayModal('${key}')">微信 / 支付宝付款 ¥9.9 →</button><button class="rounded-lg border border-paper/10 bg-card px-5 py-3 text-sm font-bold text-paper transition hover:bg-paper hover:text-ink" onclick="openCheckout('${key}')">海外卡支付 / Dodo</button></div>
       </section>
 
