@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Your Hidden Talent: Starter Booster</title>
+<meta name="description" content="People always say you're too pushy? That's your superpower.">
+<meta property="og:title" content="Your Hidden Talent: Starter Booster">
+<meta property="og:description" content="People always say you're too pushy? That's your superpower.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hugomojo.com/">
+<meta property="og:image" content="https://hugomojo.com/og-starter-booster.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+  }
+  .primary-cta {
+    background: #E9C46A;
+    color: #000000;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+  }
+  .primary-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(233, 196, 106, 0.3);
+  }
+  .share-btn {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: white;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .share-btn:hover {
+    border-color: #E9C46A;
+    color: #E9C46A;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: rgba(250,250,250,0.9);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+  }
+  nav .nav-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .result-card {
+    background: white;
+    border-radius: 16px;
+    padding: 48px 24px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .report-section {
+    background: #1a1a1a;
+    color: #f5f5f5;
+    border-radius: 16px;
+    padding: 32px 24px;
+  }
+  .feature-item {
+    margin-bottom: 20px;
+  }
+  .feature-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .feature-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #d4d4d4;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Hugo Mojo</div>
+    <a href="https://www.hugomojo.com" class="text-sm text-gray-500">Back to test</a>
+  </div>
+</nav>
+
+<main class="pt-20 pb-10">
+  <div class="max-w-lg mx-auto px-4">
+    <!-- 结果卡，适合截图，无卡通 -->
+    <div class="result-card">
+      <p class="text-sm text-gray-400 mb-4">Your Hidden Talent</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Starter Booster
+      </h1>
+      <p class="text-2xl text-[#E9C46A] font-semibold mb-8">
+        People always say you're too pushy?<br>That's your superpower.
+      </p>
+      <div class="flex gap-3 justify-center">
+        <button class="share-btn" onclick="shareTwitter()">Share on Twitter</button>
+        <button class="share-btn" onclick="shareFacebook()">Share on Facebook</button>
+      </div>
+    </div>
+
+    <!-- 付费报告部分，深色背景，短分段 -->
+    <div class="report-section">
+      <h2 class="text-2xl font-bold mb-6">Your Full Report</h2>
+      
+      <div class="feature-item">
+        <h3>What this means</h3>
+        <p>
+          You can get things started, when everyone else is stuck.
+        </p>
+        <p>
+          You can push people to take action, when they're overthinking.
+        </p>
+        <p>
+          That's not being too pushy. That's a rare skill.
+        </p>
+      </div>
+
+      <div class="feature-item">
+        <h3>Your first tiny offer</h3>
+        <p>
+          A 30-minute kickstart call.
+        </p>
+        <p>
+          People will pay to have someone who gets them moving.
+        </p>
+      </div>
+
+      <div class="feature-item">
+        <h3>3 side hustle directions</h3>
+        <p>
+          1. Launch coaching services
+        </p>
+        <p>
+          2. Accountability partner services
+        </p>
+        <p>
+          3. Motivation content creation
+        </p>
+      </div>
+
+      <div class="feature-item">
+        <h3>7-day action route</h3>
+        <p>
+          Day 1: Write your first post about this skill.
+        </p>
+        <p>
+          Day 3: Offer your first 3 free checks.
+        </p>
+        <p>
+          Day 7: Launch your tiny paid offer.
+        </p>
+      </div>
+
+      <button class="primary-cta mt-6" onclick="window.location.href='https://dodo.ac/np/hugomojo/hidden-talent-kit?lang=en'">
+        Get the full execution kit - $1.99
+      </button>
+    </div>
+  </div>
+</main>
+<script>
+function shareTwitter() {
+  const text = "My hidden talent is Starter Booster! People always say you're too pushy? That's your superpower. Take the test: https://hugomojo.com";
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+}
+function shareFacebook() {
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+}
+function hmTrack(){}
+window.addEventListener('load', () => {
+  hmTrack('page_view');
+});
+</script>
+</body>
+</html>
