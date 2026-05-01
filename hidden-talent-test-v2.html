@@ -4,193 +4,931 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Hidden Talent Test - Hugo Mojo</title>
-<meta name="description" content="Find your hidden talent in 3 minutes.">
+<meta name="description" content="三分钟，Discover Your Hidden Talent，找到一个能用 AI 赚钱的副业方向。">
 <meta property="og:title" content="Hidden Talent Test - Hugo Mojo">
-<meta property="og:description" content="That thing people tease you about? ">
+<meta property="og:description" content="三分钟，Discover Your Hidden Talent，找到一个能用 AI 赚钱的副业方向。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hugomojo.com/">
 <meta property="og:image" content="https://hugomojo.com/og-hidden-talent-en.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  tailwind = {
+    config: {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#1A1A2E',
+            moss: '#E9C46A',
+            paper: '#F4F1DE',
+            card: '#F9F7F3',
+            peach: '#E07A5F',
+            butter: '#81B29A',
+            coral: '#E9C46A',
+            sky: '#81A1C1',
+            rose: '#D98880',
+            fog: '#E8E6E3'
+          },
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'ui-sans-serif', 'system-ui'],
+            serif: ['DM Serif Display', 'Georgia', 'serif']
+          },
+          boxShadow: {
+            soft: '0 8px 24px rgba(26, 26, 46, 0.08)',
+            lift: '0 4px 12px rgba(26, 26, 46, 0.08)'
+          }
+        }
+      }
+    }
+  };
+</script>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
+  :root {
+    --hm-muted: #6B7280;
+    --hm-line: rgba(26, 26, 46, 0.08);
+    --ink: '#1A1A2E';
+    --paper: '#F9F7F3';
+    --card: '#FFFFFF';
+    --moss: '#E9C46A';
+    --lime: '#81B29A';
+    --night: '#1A1A2E';
+    --charcoal: '#F4F1DE';
+    --peach: '#E07A5F';
+    --butter: '#81B29A;
+    --coral: '#E9C46A;
+    --sky: '#81A1C1;
+    --rose: '#D98880;
+    --fog: '#E8E6E3;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  main, section, article, div, h1, h2, h3, p { min-width: 0; }
+  html { scroll-behavior: smooth; }
   body {
     min-height: 100vh;
     margin: 0;
     overflow-x: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #fafafa;
-    color: #1a1a1a;
+    font-family: var(--font-sans);
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 16% 0%, rgba(233, 196, 106, 0.08), transparent 28rem),
+      radial-gradient(circle at 86% 4%, rgba(129, 161, 193, 0.06), transparent 24rem),
+      linear-gradient(180deg, #F9F7F3 0%, #F4F1DE 54%, #E8E6E3 100%);
     -webkit-font-smoothing: antialiased;
   }
   .screen { position: relative; z-index: 1; display: none; min-height: 100vh; }
   .screen.active { display: block; }
+  .paper-card {
+    min-width: 0;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(26, 26, 46, 0.06);
+    box-shadow: 0 8px 24px rgba(26, 26, 46, 0.06);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  h1, h2, h3 { color: inherit; text-wrap: balance; overflow-wrap: anywhere; }
+  .hm-title, .hm-section-title, .question-title { color: var(--ink); }
+  .hero-stage .hm-title { font-size: clamp(2.2rem, 4.5vw, 3.8rem); line-height: 0.94; max-width: 42rem; }
+  .quiz-shell .hm-section-title {
+    color: var(--ink);
+    font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+    font-weight: 900;
+    line-height: 1.12;
+  }
+  p { text-wrap: pretty; overflow-wrap: anywhere; }
+  .brand-nav a {
+    color: rgba(26, 26, 46, 0.62);
+    text-decoration: none;
+    transition: color 160ms ease, transform 160ms ease;
+  }
+  .brand-nav a:hover { color: var(--ink); transform: translateY(-1px); }
   .primary-cta {
-    background: #f97316;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 16px 32px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
+    position: relative;
+    isolation: isolate;
+    min-width: 14rem;
+    border-color: var(--moss);
+    background: var(--moss);
+    color: #1A1A2E;
+    box-shadow: 0 8px 24px rgba(233, 196, 106, 0.20);
+    border-radius: 8px;
+    transition: all 200ms ease;
+  }
+  .primary-cta::after {
+    content: "";
+    position: absolute;
+    inset: 0.32rem;
+    z-index: -1;
+    border-radius: 6px;
+    border: 1px solid rgba(26, 26, 46, 0.10);
   }
   .primary-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+    border-color: var(--lime);
+    background: var(--lime);
+    transform: translateY(-2px) scale(1.01);
   }
-  .option {
-    width: 100%;
-    background: white;
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: left;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .option:hover {
-    border-color: #f97316;
-    background: #fff7ed;
-  }
-  .option.selected {
-    border-color: #f97316;
-    background: #fff7ed;
-  }
-  .progress-bar {
-    width: 100%;
-    height: 6px;
-    background: #e5e5e5;
-    border-radius: 999px;
+  .hero-stage {
+    position: relative;
     overflow: hidden;
+    background: linear-gradient(155deg, #F9F7F3 0%, #F4F1DE 56%, #E8E6E3 100%);
+    color: var(--ink);
+    min-height: auto;
+    padding: clamp(1rem, 2vw, 1.8rem);
   }
-  .progress-fill {
-    height: 100%;
-    background: #f97316;
-    transition: width 0.3s ease;
+  .hero-stage > * { position: relative; z-index: 1; }
+  .hero-copy { color: rgba(26, 26, 46, 0.72); font-size: 0.95rem; line-height: 1.6; }
+  .hero-title-cn {
+    font-family: var(--font-sans);
+    font-size: clamp(2.1rem, 4vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1.06;
+    max-width: 35rem;
   }
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 16px;
-    background: rgba(250,250,250,0.9);
-    backdrop-filter: blur(8px);
-    z-index: 10;
+  .hero-title-cn span { display: block; }
+  .hero-title-cn .hero-title-small {
+    width: fit-content;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(233, 196, 106, 0.42);
+    border-radius: 6px;
+    background: rgba(233, 196, 106, 0.12);
+    padding: 0.35rem 0.5rem;
+    color: var(--moss);
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1;
   }
-  nav .nav-inner {
-    max-width: 600px;
-    margin: 0 auto;
+  .hero-title-cn .hero-title-mark {
+    width: fit-content;
+    margin: 0.12em 0 0.06em;
+    border-radius: 6px;
+    background: var(--moss);
+    color: var(--ink);
+    padding: 0.06em 0.14em 0.12em;
+    box-shadow: 0 8px 24px rgba(233, 196, 106, 0.12);
+  }
+  .hero-title-cn .hero-title-end {
+    color: rgba(26, 26, 46, 0.92);
+    font-size: 0.78em;
+  }
+  .focus-card {
+    background: radial-gradient(circle at 24% 4%, rgba(233, 196, 106, 0.10), transparent 13rem), linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 241, 222, 0.98)), var(--charcoal);
+    color: var(--ink);
+    min-height: auto;
+    display: grid;
+    grid-template-columns: minmax(12rem, .7fr) minmax(0, 1.3fr);
+    gap: 1rem;
+    align-items: stretch;
+    padding: 1rem;
+    border-color: rgba(26, 26, 46, 0.08);
+    box-shadow: 0 8px 24px rgba(26, 26, 46, 0.08);
+  }
+  .mix-cover {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: radial-gradient(circle at 74% 28%, rgba(129, 178, 154, 0.16), transparent 7rem), linear-gradient(135deg, #E9C46A 0%, #81A1C1 58%, #F9F7F3 100%);
+    padding: 1rem;
+    box-shadow: 0 8px 24px rgba(26, 26, 46, 0.08);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: end;
+  }
+  .mix-cover strong {
+    position: relative;
+    z-index: 1;
+    display: block;
+    color: #1A1A2E;
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 0.9;
+  }
+  .mix-cover span {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    margin-top: 0.6rem;
+    border-radius: 999px;
+    background: rgba(26, 26, 46, 0.72);
+    padding: 0.35rem 0.5rem;
+    color: var(--paper);
+    font-size: 0.68rem;
+    font-weight: 900;
+  }
+  .focus-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    height: 100%;
+  }
+  .track-list { display: grid; gap: 0.5rem; }
+  @media (min-width: 768px) {
+    .track-list { grid-template-columns: repeat(2, 1fr); }
+  }
+  .track-row {
+    display: grid;
+    grid-template-columns: 1.8rem minmax(0, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+    border: 1px solid rgba(26, 26, 46, 0.08);
+    border-radius: 8px;
+    background: rgba(26, 26, 46, 0.03);
+    padding: 0.5rem;
+  }
+  .track-row .num { color: var(--moss); font-size: 0.72rem; font-weight: 900; }
+  .track-row b { display: block; color: var(--ink); font-size: 0.85rem; }
+  .track-row small { display: block; margin-top: 0.15rem; color: rgba(26, 26, 46, 0.56); font-weight: 700; line-height: 1.35; }
+  .mini-player { border: 1px solid rgba(26, 26, 46, 0.08); border-radius: 8px; background: rgba(26, 26, 46, 0.03); padding: 0.6rem; margin-top: auto; }
+  .player-bar { height: 0.3rem; overflow: hidden; border-radius: 999px; background: rgba(26, 26, 46, 0.10); }
+  .player-bar span { display: block; width: 68%; height: 100%; border-radius: inherit; background: var(--moss); }
+  .hero-kicker { color: var(--moss); letter-spacing: 0.08em; }
+  .hero-hook-grid { display: grid; gap: 0.5rem; margin-top: 1rem; }
+  @media (min-width: 640px) { .hero-hook-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .hero-hook { border: 1px solid rgba(26, 26, 46, 0.08); border-radius: 8px; background: rgba(26, 26, 46, 0.03); padding: 0.6rem; }
+  .hero-hook b { display: block; color: var(--ink); font-size: 0.8rem; }
+  .hero-hook span { display: block; margin-top: 0.2rem; color: rgba(26, 26, 46, 0.58); font-size: 0.72rem; font-weight: 700; line-height: 1.45; }
+  .stamp-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .stamp { border: 1px solid rgba(26, 26, 46, 0.10); border-radius: 6px; background: rgba(26, 26, 46, 0.03); padding: 0.4rem 0.5rem; font-size: 0.7rem; font-weight: 800; color: rgba(26, 26, 46, 0.78); }
+  .choice-card { background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(244, 241, 222, 0.92)); border-color: rgba(26, 26, 46, 0.08); border-radius: 8px; }
+  .question-title {
+    color: var(--ink);
+    font-size: clamp(1.35rem, 2.8vw, 2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    max-width: 58rem;
+  }
+  .answer-text { font-size: clamp(0.9rem, 1.5vw, 1rem); line-height: 1.4; }
+  #questionCard .option {
+    min-height: 3.5rem;
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.8rem;
     align-items: center;
   }
-  .logo {
+  #questionCard .option span:first-child { margin-bottom: 0; }
+  .quiz-shell {
+    background: linear-gradient(135deg, rgba(129, 178, 154, 0.03), rgba(255, 255, 255, 0.96) 50%, rgba(233, 196, 106, 0.04)), rgba(255, 255, 255, 0.94);
+    border-color: rgba(26, 26, 46, 0.08);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+  }
+  #questionCard {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.97), rgba(244, 241, 222, 0.96)), var(--card);
+    border-color: rgba(26, 26, 46, 0.08);
+    color: var(--ink);
+    box-shadow: 0 8px 24px rgba(26, 26, 46, 0.08);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  .result-hero { position: relative; overflow: hidden; min-height: 20rem; color: var(--ink); }
+  .result-cover {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  .result-cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.10), transparent 28%), repeating-linear-gradient(135deg, transparent 0 18px, rgba(255,255,255,0.05) 18px 24px);
+    pointer-events: none;
+  }
+  .result-cover > * { position: relative; z-index: 1; }
+  .result-cover .hm-title { font-size: clamp(2.8rem, 7vw, 5rem); }
+  .result-hero::after { content: "结果已打开"; position: absolute; right: -1rem; top: 1.2rem; border-radius: 6px; background: var(--moss); color: var(--ink); padding: 0.5rem 1.8rem; font-size: 0.68rem; font-weight: 800; transform: rotate(9deg); }
+  .share-snap { position: relative; overflow: hidden; }
+  .share-snap::before { content: ""; position: absolute; inset: auto -2rem -2rem auto; width: 7rem; height: 7rem; border-radius: 6px; background: var(--share-color, var(--moss)); opacity: 0.30; transform: rotate(17deg); }
+  .paywall-pop { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(244, 241, 222, 0.90)), var(--paper); border-radius: 10px; }
+  [data-result-part] .hm-section-title.text-5xl, .paywall-pop .hm-section-title.text-5xl { font-size: clamp(1.8rem, 3.8vw, 2.8rem); line-height: 1.0; }
+  [data-result-part] .hm-section-title.text-4xl { font-size: clamp(1.5rem, 3vw, 2.3rem); line-height: 1.04; }
+  .paywall-pop::before { content: "¥9.9"; position: absolute; right: -0.6rem; top: 1rem; border-radius: 6px; background: var(--moss); color: var(--ink); padding: 0.5rem 1.2rem; font-size: 0.7rem; font-weight: 900; transform: rotate(8deg); }
+  .option.selected {
+    border-color: rgba(233, 196, 106, 0.92);
+    background: linear-gradient(135deg, rgba(233, 196, 106, 0.12), rgba(255, 255, 255, 0.88));
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(233, 196, 106, 0.12);
+  }
+  .progress-fill { transition: width 520ms cubic-bezier(.2, 1.15, .3, 1); }
+  .reveal, [data-result-part] { opacity: 1; transform: none; }
+  .motion-enabled .reveal, .motion-enabled [data-result-part] { opacity: 0; transform: translateY(10px); }
+  .motion-fallback .reveal, .motion-fallback [data-result-part] { opacity: 1 !important; transform: none !important; }
+  .toast { transform: translateY(20px); opacity: 0; pointer-events: none; }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .modal { opacity: 0; pointer-events: none; }
+  .modal.show { opacity: 1; pointer-events: auto; }
+  .modal-panel { transform: translateY(10px) scale(0.98); border-radius: 10px; }
+  .modal.show .modal-panel { transform: translateY(0) scale(1); }
+  nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 3;
+    padding: 0.8rem;
+  }
+  nav .max-w-6xl {
+    min-height: 3.2rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 1px solid rgba(26, 26, 46, 0.08);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 0.4rem 0.6rem;
+    box-shadow: 0 4px 12px rgba(26,26,46,0.06);
+  }
+  footer {
+    border-radius: 10px;
+    border: 1px solid rgba(26, 26, 46, 0.08);
+    background: rgba(244, 241, 222, 0.7);
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: rgba(26, 26, 46, 0.6);
+    backdrop-filter: blur(8px);
+  }
+  .result-right-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    height: 100%;
+  }
+  .result-right-card .feature-list {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .feature-item {
+    border: 1px solid rgba(26, 26, 46, 0.08);
+    border-radius: 8px;
+    background: rgba(26, 26, 46, 0.03);
+    padding: 0.6rem;
+  }
+  .feature-item b {
+    display: block;
+    color: var(--ink);
+    font-size: 0.85rem;
+  }
+  .feature-item small {
+    display: block;
+    margin-top: 0.15rem;
+    color: rgba(26, 26, 46, 0.56);
     font-weight: 700;
-    font-size: 16px;
+    line-height: 1.35;
+  }
+  .share-btn {
+    border: 1px solid rgba(26, 26, 46, 0.08);
+    border-radius: 8px;
+    background: rgba(26, 26, 46, 0.03);
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink);
+    transition: all 200ms ease;
+  }
+  .share-btn:hover {
+    background: rgba(26, 26, 46, 0.06);
+    transform: translateY(-1px);
+  }
+  .share-btn.weibo {
+    border-color: #E6162D;
+    color: #E6162D;
+  }
+  .share-btn.xhs {
+    border-color: #FF2442;
+    color: #FF2442;
+  }
+  .share-btn.moments {
+    border-color: #07C160;
+    color: #07C160;
+  }
+  .talent-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+  /* 响应式适配 */
+  @media (max-width: 768px) {
+    .focus-card {
+      grid-template-columns: 1fr;
+    }
+    .mix-cover {
+      min-height: 8rem;
+    }
+    .track-list {
+      grid-template-columns: 1fr;
+    }
+    .primary-cta {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+  @media (max-width: 640px) {
+    .hero-title-cn {
+      font-size: 1.8rem;
+      line-height: 1.08;
+    }
+    .hero-title-cn .hero-title-small {
+      margin-bottom: 0.3rem;
+      padding: 0.3rem 0.4rem;
+      font-size: 0.7rem;
+    }
+    .hero-title-cn .hero-title-mark {
+      margin-top: 0.08em;
+      padding: 0.06em 0.14em 0.12em;
+    }
+    .hero-stage {
+      padding: 0.8rem !important;
+      text-align: center;
+    }
+    .hero-stage .hero-copy {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .hero-hook-grid {
+      display: none;
+    }
+    .stamp-row {
+      justify-content: center;
+    }
+    .quiz-shell .hm-section-title {
+      font-size: 1.1rem !important;
+      line-height: 1.05 !important;
+    }
+    .quiz-shell .mt-5 {
+      margin-top: 0.4rem !important;
+      height: 0.4rem !important;
+    }
+    #questionCard {
+      margin-top: 0.4rem !important;
+      padding: 0.6rem !important;
+    }
+    #questionCard .question-title {
+      font-size: 1.2rem !important;
+      line-height: 1.12 !important;
+      margin-top: 0.3rem;
+    }
+    #questionCard .mt-7 {
+      margin-top: 0.6rem !important;
+      gap: 0.4rem !important;
+    }
+    #questionCard .option {
+      min-height: 2.8rem !important;
+      padding: 0.5rem 0.6rem !important;
+      grid-template-columns: 1.5rem minmax(0, 1fr) !important;
+      gap: 0.4rem !important;
+    }
+    .answer-text {
+      font-size: 0.85rem !important;
+      line-height: 1.25 !important;
+    }
+    #payModal .modal-panel {
+      padding: 0.6rem;
+    }
+    #payModal .modal-panel > .mt-5.grid.gap-3 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.4rem;
+    }
+    #payModal img {
+      max-height: 8rem;
+      padding: 0.25rem;
+    }
+    #payModal h2 {
+      font-size: 1.3rem;
+      line-height: 1.12;
+    }
+    .share-buttons {
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    .reveal, [data-result-part] { opacity: 1; transform: none; }
   }
 </style>
 </head>
 <body>
+<div id="toast" class="toast fixed bottom-5 left-1/2 z-50 -translate-x-1/2 rounded-lg border border-ink/10 bg-ink px-4 py-3 text-sm font-semibold text-paper shadow-soft transition-all duration-200">已复制</div>
+<div id="payModal" class="modal fixed inset-0 z-40 flex items-center justify-center bg-ink/40 p-4 backdrop-blur-sm transition-opacity duration-200">
+  <div class="modal-panel w-full max-w-2xl border border-paper/10 bg-card p-4 text-ink shadow-soft">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <p class="text-xs font-bold uppercase text-moss">微信 / 支付宝收款</p>
+        <h2 class="hm-section-title mt-2 text-4xl leading-none">扫码支付 ¥9.9，付款后自动打开报告。</h2>
+        <p class="mt-3 text-sm leading-6 text-ink/65">上线初期先用个人收款跑通流程。付款完成后点下方按钮即可进入交付页；订单会保存在本机，后续可凭截图补发。</p>
+        <p class="mt-3 inline-flex rounded-lg border border-ink/10 bg-ink/10 px-3 py-2 text-xs font-bold text-ink/70">订单号：<span id="payOrderId" class="ml-1 text-moss">HM-REPORT</span></p>
+      </div>
+      <button class="rounded-lg border border-ink/10 px-3 py-2 text-sm font-bold transition hover:bg-ink hover:text-paper" onclick="closePayModal()">关闭</button>
+    </div>
+    <div class="mt-4 grid gap-2 sm:grid-cols-2">
+      <div class="rounded-lg border border-ink/10 bg-paper p-3 text-ink">
+        <p class="text-xs font-bold uppercase text-ink/55">微信支付</p>
+        <img class="mt-3 aspect-square w-full rounded-lg border border-ink/10 bg-white object-contain p-2" src="/cn/wechat-pay.jpg" alt="微信收款二维码">
+      </div>
+      <div class="rounded-lg border border-ink/10 bg-paper p-3 text-ink">
+        <p class="text-xs font-bold uppercase text-ink/55">支付宝</p>
+        <img class="mt-3 aspect-square w-full rounded-lg border border-ink/10 bg-white object-contain p-2" src="/cn/alipay-pay.jpg" alt="支付宝收款二维码">
+      </div>
+    </div>
+    <div class="mt-4 grid gap-2 sm:grid-cols-2">
+      <button id="deliverButton" class="primary-cta w-full mt-2 rounded-lg px-5 py-3 text-base font-bold" onclick="openManualDelivery()">我已付款，打开报告 →</button>
+      <a class="rounded-lg border border-ink/10 bg-card px-5 py-3 text-center text-sm font-bold text-ink transition hover:bg-ink hover:text-paper" href="mailto:hi@hugomojo.com?subject=隐藏天赋报告付款截图">发送付款截图</a>
+    </div>
+  </div>
+</div>
+<div id="kitModal" class="modal fixed inset-0 z-40 flex items-center justify-center bg-ink/30 p-4 backdrop-blur-sm transition-opacity duration-200">
+  <div class="modal-panel w-full max-w-xl border border-ink/10 bg-card p-4 text-ink shadow-soft">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <p class="text-xs font-bold uppercase text-moss">完整报告里有什么？</p>
+        <h2 class="hm-section-title mt-2 text-4xl leading-none">先看清你是谁，再给你一套能直接开做的执行包。</h2>
+      </div>
+      <button class="rounded-lg border border-ink/10 px-3 py-2 text-sm font-bold transition hover:bg-ink hover:text-paper" onclick="closeModal()">关闭</button>
+    </div>
+    <div class="mt-4 grid gap-2 sm:grid-cols-2">
+      <div class="rounded-lg border border-ink/10 bg-paper p-3 text-ink"><h3 class="font-bold">你的隐藏技能</h3><p class="mt-2 text-sm text-ink/70">那个你一直以为“人人都会”，其实很少人有的能力。</p></div>
+      <div class="rounded-lg border border-ink/10 bg-paper p-3 text-ink"><h3 class="font-bold">3个方向 + AI执行包</h3><p class="mt-2 text-sm text-ink/70">方向、选题、话术、销售文案和交付模板。</p></div>
+      <div class="rounded-lg border border-ink/10 bg-paper p-3 text-ink"><h3 class="font-bold">第一版可卖小东西</h3><p class="mt-2 text-sm text-ink/70">用 AI 辅助做出第一版，不用憋大项目。</p></div>
+      <div class="rounded-lg border border-ink/10 bg-paper p-3 text-ink"><h3 class="font-bold">7天执行清单</h3><p class="mt-2 text-sm text-ink/70">第一天到第七天，每天做什么。没有鸡汤。</p></div>
+    </div>
+  </div>
+</div>
 <nav>
-  <div class="nav-inner">
-    <div class="logo"><img src="/logo.svg" alt="Hugo Mojo" class="h-6 w-auto"></div>
-    <a href="https://www.hugomojo.com/cn" class="text-sm text-gray-500">中文</a>
+  <div class="max-w-6xl">
+    <a href="#" class="flex items-center gap-3 text-ink" onclick="goHome(event)"><img class="h-8 w-8 rounded-lg object-cover" src="/Hugo_Mojo_avatar_HM.png" onerror="this.onerror=null;this.src='/Hugo_Mojo_avatar_HM.png'" alt="Hugo Mojo 雨果灵机"><span class="text-sm font-black tracking-normal">Hugo Mojo <span class="text-moss">雨果灵机</span></span></a>
+    <div class="brand-nav hidden items-center gap-4 text-xs font-bold sm:flex"><a href="#" onclick="event.preventDefault(); startQuiz()">Start the Test</a><a href="delivery/hidden-talent-full-report/" onclick="goRoute(event, 'delivery/hidden-talent-full-report/')">Delivery</a><a href="contact.html" onclick="goRoute(event, 'contact.html')">Contact</a><a href="/cn/" onclick="goRoute(event, 'cn/')">中文</a></div>
   </div>
 </nav>
-
-<main class="pt-16">
-  <section id="intro" class="screen active">
-    <div class="max-w-lg mx-auto px-4 py-20 flex flex-col items-center text-center">
-      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-        3 Minutes<br>Discover Your Hidden Talent<br>Find an AI Side Hustle to Make Money
+<main id="intro" class="screen active px-3 pb-10 pt-20">
+  <section class="mx-auto max-w-6xl grid gap-3">
+    <div class="hero-stage paper-card rounded-lg">
+      <p class="spotify-pill inline-flex rounded-full border px-3 py-1 text-xs font-bold uppercase">Hugo Mojo Quick Test</p>
+      <h1 class="hm-title hero-title-cn mt-3 break-words" aria-label="三分钟，Discover Your Hidden Talent，找到一个能用 AI 赚钱的副业方向。">
+        <span class="hero-title-small">3 Minute Test</span>
+        <span>Discover Your Hidden Talent</span>
+        <span class="hero-title-mark">Find AI Side Hustle</span>
       </h1>
-      <p class="text-2xl text-orange-500 font-semibold mb-8">
-        
-      </p>
-      <p class="text-lg text-gray-500 mb-10">
-      </p>
-      <button class="primary-cta" onclick="startQuiz()">
-        Start the test →
-      </button>
+      <p class="hero-copy mt-2 max-w-2xl">先拿到你的隐藏天赋结果，再看它能不能变成一个 AI 副业方向。</p>
+      <div class="mt-3 flex flex-col gap-2 sm:flex-row sm:items-start"><div class="hero-cta-wrap"><button class="primary-cta spring-hover rounded-lg px-8 py-5 text-lg font-bold shadow-lg" style="background: #E07A5F; color: white; z-index: 999;" onclick="startQuiz()">Start the Test →</button><span class="hero-signal"></span></div></div>
+      <div class="hero-hook-grid"><div class="hero-hook"><b>Free Test</b><span>See your hidden talent tag first.</span></div><div class="hero-hook"><b>AI Direction</b><span>Then see who it fits and what problems it solves.</span></div><div class="hero-hook"><b>Small Product</b><span>Finally a first step you can start to make money.</span></div></div>
+      <div class="stamp-row mt-4"><span class="stamp">No Login</span><span class="stamp">12 Questions</span><span class="stamp">Free Hidden Talent Result</span><span class="stamp">Get Result After</span></div>
     </div>
-  </section>
-
-  <section id="quiz" class="screen">
-    <div class="max-w-lg mx-auto px-4 py-10">
-      <div class="progress-bar mb-8">
-        <div id="progressFill" class="progress-fill" style="width: 0%"></div>
-      </div>
-      <p id="qNumber" class="text-sm text-gray-400 mb-4">Question 1/13</p>
-      <h1 id="questionText" class="text-3xl md:text-4xl font-bold leading-tight mb-10">
-      </h1>
-      <div id="optionsContainer" class="flex flex-col gap-4">
-      </div>
-      <div class="mt-8 flex justify-between">
-        <button id="prevButton" class="text-gray-500 text-sm" onclick="prevQuestion()">Back</button>
-        <button id="nextButton" class="primary-cta opacity-40" onclick="nextQuestion()" disabled>Next</button>
+    <div id="result-preview" class="focus-card paper-card rounded-lg">
+      <div class="mix-cover"><strong>HM<br>隐藏技能</strong><span>结果卡预览</span></div>
+      <div class="focus-right">
+        <p class="hero-kicker text-xs font-bold uppercase">What will you get?</p>
+        <h2 class="hm-section-title mt-1 text-xl leading-none">Not just telling you "you are special".<br>But telling you how to turn it into a side hustle with AI.</h2>
+        <div class="track-list">
+          <div class="track-row"><span class="num">01</span><span><b>免费结果</b><small>Hidden Talent Tag + A judgment that fits you.</small></span></div>
+          <div class="track-row"><span class="num">02</span><span><b>完整报告</b><small>这个能力适合哪类 AI 副业方向。</small></span></div>
+          <div class="track-row"><span class="num">03</span><span><b>Small Product</b><small>具体帮谁、卖什么结果、怎么用 AI 做第一版。</small></span></div>
+          <div class="track-row"><span class="num">04</span><span><b>AI执行包</b><small>AI 话术、销售文案、交付模板和3天验证计划。</small></span></div>
+        </div>
+        <div class="mini-player"><div class="mb-2 flex items-center justify-between gap-3 text-xs font-bold text-ink/60"><span>免费技能结果</span><span>完整方向报告</span></div><div class="player-bar"><span></span></div></div>
       </div>
     </div>
+    <footer class="site-footer reveal">
+      <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p class="font-bold text-ink">Hugo Mojo 雨果灵机</p>
+          <p class="mt-1 text-sm">用好玩的快测试，帮你发现自己身上的隐藏优势，并给你一个能马上试的小方向。</p>
+          <p class="mt-1 text-sm">Support: <a class="font-bold text-ink" href="mailto:hi@hugomojo.com">hi@hugomojo.com</a></p>
+        </div>
+        <div class="flex flex-wrap gap-3 font-bold text-sm"><a href="privacy.html" onclick="goRoute(event, 'cn/privacy.html')">隐私</a><a href="terms.html" onclick="goRoute(event, 'cn/terms.html')">条款</a><a href="refund.html" onclick="goRoute(event, 'cn/refund.html')">退款</a><a href="contact.html" onclick="goRoute(event, 'cn/contact.html')">联系</a><a href="delivery/hidden-talent-full-report/" onclick="goRoute(event, 'cn/delivery/hidden-talent-full-report/')">交付</a></div>
+      </div>
+    </footer>
   </section>
-
-  <section id="loading" class="screen">
-    <div class="max-w-lg mx-auto px-4 py-20 flex flex-col items-center text-center">
-      <h2 class="text-2xl font-bold mb-4">Calculating your result...</h2>
-      <p class="text-gray-500">Just a second.</p>
+</main>
+<main id="quiz" class="screen px-3 pb-10 pt-20">
+  <section class="mx-auto max-w-4xl">
+    <div class="quiz-shell paper-card">
+      <div class="flex items-center justify-between gap-4">
+        <div><p class="text-xs font-bold uppercase text-moss">第 <span id="qNumber">1</span> / <span id="qTotal">12</span> 题</p><h2 class="hm-section-title mt-1">选那个“有点烦但真的是我”的答案。</h2></div>
+        <button class="rounded-lg border border-ink/15 px-4 py-2 text-sm font-bold text-ink/60 transition hover:bg-ink/10" onclick="goHome()">先不测</button>
+      </div>
+      <!-- 进度条高度调大，让用户更容易看到 -->
+      <div class="mt-3 h-4 overflow-hidden rounded-full border border-ink/10 bg-ink/10"><div id="progressFill" class="progress-fill h-full rounded-full bg-moss" style="width: 5.55%"></div></div>
+    </div>
+    <div id="questionCard" class="paper-card mt-3">
+    </div>
+    <div class="mt-3 flex flex-col-reverse gap-2 sm:flex-row sm:justify-between">
+      <button class="rounded-lg border border-ink/10 bg-ink/8 px-5 py-3 text-sm font-bold text-ink/60 transition hover:bg-ink/15 hover:text-ink" onclick="prevQuestion()">上一题</button>
+      <button id="nextButton" class="rounded-lg border border-ink/20 bg-ink/10 px-6 py-3 text-sm font-bold text-ink opacity-40 transition" onclick="nextQuestion()">对，有点像我</button>
     </div>
   </section>
 </main>
+<main id="loading" class="screen px-3 pb-10 pt-20">
+  <section class="mx-auto flex min-h-[70vh] max-w-3xl items-center justify-center">
+    <div class="loading-stage rounded-lg p-6 text-center shadow-soft sm:p-8">
+      <div class="mx-auto h-14 w-22 rotate-[-8deg] rounded-lg border border-ink/20 bg-moss shadow-lift"></div>
+      <p class="mt-5 text-xs font-bold uppercase text-moss">正在生成你的测试结果</p>
+      <h2 class="hm-section-title mt-2 text-2xl leading-none">别急，正在对答案。</h2>
+      <p class="mt-3 text-ink/70 text-sm">这一步会先整理出你的隐藏技能结果。完整方向和执行包会放在报告里。</p>
+      <div class="mt-5 grid gap-2 sm:grid-cols-3">
+        <div class="rounded-lg border border-ink/20 bg-ink/10 p-3 text-sm font-bold">命名隐藏技能</div>
+        <div class="rounded-lg border border-ink/20 bg-ink/10 p-3 text-sm font-bold">生成结果卡</div>
+        <div class="rounded-lg border border-ink/20 bg-ink/10 p-3 text-sm font-bold">准备报告入口</div>
+      </div>
+    </div>
+  </section>
+</main>
+<main id="result" class="screen px-3 pb-10 pt-20">
+  <section id="resultBody" class="mx-auto max-w-6xl"></section>
+</main>
 <script>
+const DELIVERY_URL = "cn/delivery/hidden-talent-full-report/";
+const SITE_URL = document.querySelector('meta[property="og:url"]')?.content || "https://hugomojo.com/";
+const CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NdSBu2hGqTa514vmmjUa?quantity=1";
+const DODO_PRODUCT_ID = "pdt_0NdSBu2hGqTa514vmmjUa";
+const DODO_PRODUCT_NAME = "Hugo Mojo Hidden Talent Full Report + AI Execution Kit";
+function hmTrack(event, data = {}) {
+  const payload = JSON.stringify({ event, page: location.pathname, lang: 'zh-CN', ...data });
+  try {
+    if (navigator.sendBeacon) navigator.sendBeacon('/api/track', new Blob([payload], { type: 'application/json' }));
+    else fetch('/api/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true });
+  } catch(e) {}
+}
+hmTrack('page_view');
+// 天赋的卡通和颜色
+const TALENT_AVATARS = {
+  overloaded: "https://aka.doubaocdn.com/s/CkrU1wTUvG",
+  rabbit: "https://aka.doubaocdn.com/s/QLe61wTUvI",
+  radar: "https://aka.doubaocdn.com/s/oWEV1wTUvV",
+  sprite: "https://aka.doubaocdn.com/s/ENF51wTUvH",
+  bulldozer: "https://aka.doubaocdn.com/s/lMhp1wTUvI",
+  fox: "https://aka.doubaocdn.com/s/3AmZ1wTUv8"
+};
+const TALENT_COLORS = {
+  overloaded: "#81B29A",
+  rabbit: "#E07A5F",
+  radar: "#81A1C1",
+  sprite: "#E9C46A",
+  bulldozer: "#81B29A",
+  fox: "#D98880"
+};
+const TYPES = {
+  overloaded: {
+    name: "情绪充电宝",
+    archetype: "情绪型产品建造者",
+    color: TALENT_COLORS.overloaded,
+    accent: TALENT_COLORS.overloaded,
+    avatar: TALENT_AVATARS.overloaded,
+    verdict: "朋友嘴硬说“我没事”，你一眼就看穿他快绷不住了。",
+    sting: "别人总说你“想太多”，但你就是天生的情绪充电宝，别人的烦心事到你这，都能被你理顺，充完电又能继续冲了。",
+    hidden: "你能很快看出别人真正卡在哪里，然后把一团乱的感受整理成能说出口的话。",
+    pathTitle: "方向：支持、社群、疗愈型内容。",
+    paths: ["社群安抚话术", "情绪急救包", "自我照顾模板"],
+    tinyOffer: "给那些总硬撑的人，做一份「别绷住了」情绪急救包，AI能帮你把你的经验，快速做成可复用的清单。",
+    seven: ["选一个总来找你做情绪急救的人群。", "写下他们反复提到的5个问题。", "把其中一个问题做成脚本或清单。", "发一页出去，看谁会说“等等，我需要这个”。", "问3个人哪句话最扎心。", "把最好版本做成小PDF。", "先卖出去，再纠结字体。"],
+    shareLine: "我测出「情绪充电宝」！我的隐藏天赋是把混乱的情绪，变成别人能直接用的情绪充电站。"
+  },
+  rabbit: {
+    name: "踩坑预警机",
+    archetype: "决策风险设计师",
+    color: TALENT_COLORS.rabbit,
+    accent: TALENT_COLORS.rabbit,
+    avatar: TALENT_AVATARS.rabbit,
+    verdict: "一件事刚开始，你就隐隐觉得“这不对，要踩坑了”。",
+    sting: "别人总说你“太谨慎”，但你就是个踩坑预警机，别人还没踩进去，你早就把风险标出来了。",
+    hidden: "你很容易看出一件事哪里不对、哪里会卡、哪里最好先别急着投入。",
+    pathTitle: "方向：决策、风险过滤、更好的退出方案。",
+    paths: ["决策评分卡", "职业转向指南", "风险预警清单"],
+    tinyOffer: "给卡在坏选择里的人，做一份「留还是走」决策评分卡，AI能帮你把你的风险判断，做成标准化的工具。",
+    seven: ["选一个很多人反复纠结却不敢做的选择。", "写下你最先看到的风险点。", "把它们做成简单评分卡。", "加3个更安全的测试方法。", "做成一页，不要花哨。", "发给一个正在卡住的人。", "把它卖成一个小决策工具。"],
+    shareLine: "我测出「踩坑预警机」！我的隐藏天赋是在坏选择吞掉时间之前，先把它揪出来。"
+  },
+  radar: {
+    name: "气氛雷达",
+    archetype: "人群信号阅读者",
+    color: TALENT_COLORS.radar,
+    accent: TALENT_COLORS.radar,
+    avatar: TALENT_AVATARS.radar,
+    verdict: "群里冷了半秒，你立刻就发现谁不对劲、谁有话没说。",
+    sting: "别人总说你“太敏感”，但你就是个气氛雷达，能精准捕捉到所有人没说出口的信号。",
+    hidden: "你能读出语气、时机和现场的微妙变化。放在生活里有点累，放在内容和用户研究里很有用。",
+    pathTitle: "方向：用户研究、趋势感知、创作者策略。",
+    paths: ["用户需求洞察", "评论情绪挖掘", "趋势信号笔记"],
+    tinyOffer: "给创作者/小商家，做一份「用户到底想要啥」需求洞察，AI能帮你快速整理评论，提炼用户的真实需求。",
+    seven: ["选一个你已经很懂的人群。", "收集10条评论、帖子或评价。", "圈出反复出现的情绪。", "说出他们想要但没说出口的东西。", "写成一页洞察。", "加3条他们真的会点的选题。", "把它卖成一份小人群笔记。"],
+    shareLine: "我测出「气氛雷达」！我的隐藏天赋是抓住大家差一点说出口的真实需求。"
+  },
+  sprite: {
+    name: "开局打气筒",
+    archetype: "趋势启动者",
+    color: TALENT_COLORS.sprite,
+    accent: TALENT_COLORS.sprite,
+    avatar: TALENT_AVATARS.sprite,
+    verdict: "所有人都在犹豫不敢动，你一开口，大家突然就觉得“哦，原来这么简单，我也能试试”。",
+    sting: "你不是没想法，你只是天生会把帮别人起步这件事当成顺手，把大家的“我不行”变成“我来试试”。",
+    hidden: "你很会把一个普通想法说得更容易开始，也更容易让别人愿意参与。",
+    pathTitle: "方向：启动文案、爆款开头、社群动能。",
+    paths: ["爆款启动文案", "短视频开场脚本", "新手发布工具包"],
+    tinyOffer: "给想做副业的人，做一份「新手开局文案包」，AI能帮你批量生成不同风格的开头，帮他们快速迈出第一步。",
+    seven: ["选一个有用但听起来无聊的东西。", "写10个让它更容易开始的说法。", "留下3句你自己会笑的。", "做一条短发布文案。", "做一个朋友会转发的版本。", "整理成一个小灵感库。", "卖给那些想发布但不想像机器人说话的人。"],
+    shareLine: "我测出「开局打气筒」！我的隐藏天赋是把没人敢动的想法，变成大家愿意试的开头。"
+  },
+  bulldozer: {
+    name: "项目推土机",
+    archetype: "执行系统建造者",
+    color: TALENT_COLORS.bulldozer,
+    accent: TALENT_COLORS.bulldozer,
+    avatar: TALENT_AVATARS.bulldozer,
+    verdict: "大家还在讨论“这事要怎么做”，你已经默默把第一步做完了，把事往前推。",
+    sting: "别人都喊你靠谱，其实你只是闲不住，不管多乱的事，你都能推平，把差点黄了的项目拉回正轨。",
+    hidden: "你能把一团乱拆成下一步，让事情先跑起来，而不是一直停在讨论里。",
+    pathTitle: "方向：运营、执行、流程设计。",
+    paths: ["落地流程模板", "7天执行计划", "进度追踪表"],
+    tinyOffer: "给总半途而废的人，做一份「7天落地计划」，AI能帮你把复杂的事，拆成每天能做的小任务。",
+    seven: ["选一个很多人总做不完的事。", "拆成7个很小的日子。", "写出第1天清单。", "加一个卡住时的救援步骤。", "做一个简单追踪表。", "展示前后变化。", "卖给那些厌倦“差点做了”的人。"],
+    shareLine: "我测出「项目推土机」！我的隐藏天赋是把差点烂尾的计划，变成真的能落地的结果。"
+  },
+  fox: {
+    name: "套路挖掘机",
+    archetype: "市场模式拆解者",
+    color: TALENT_COLORS.fox,
+    accent: TALENT_COLORS.fox,
+    avatar: TALENT_AVATARS.fox,
+    verdict: "一个东西火了，别人都在跟风抄，你却只想搞懂：它到底为什么能成？",
+    sting: "别人总说你“爱泼冷水”，但你就是个套路挖掘机，能把表面的热闹挖开，找到背后真正的逻辑。",
+    hidden: "你很容易看出一个东西背后的套路、缺口，以及大家没说透的那一点。",
+    pathTitle: "方向：产品研究、案例拆解、策略。",
+    paths: ["爆款产品拆解", "底层逻辑笔记", "可复制行动清单"],
+    tinyOffer: "给想跟风做副业的人，做一份「爆款套路拆解」，AI能帮你快速整理资料，把复杂的模式拆成别人能直接抄的步骤。",
+    seven: ["选一个很多人在复制的产品或赛道。", "列出大家以为它有效的原因。", "找到底下真正的模式。", "说出真正起作用的部分。", "写成一篇短拆解。", "加3个值得复制的点。", "把它卖成一份锋利的小报告。"],
+    shareLine: "我测出「套路挖掘机」！我的隐藏天赋是找到大家都漏掉的，爆款背后的真正逻辑。"
+  }
+};
+const TYPE_ORDER = ["overloaded", "rabbit", "radar", "sprite", "bulldozer", "fox"];
 const QUESTIONS = [
-{"q":"A group chat suddenly goes quiet. What do you notice first?","a":[["Who stopped replying","radar"],["A line that could make it feel lighter","sprite"],["What needs to happen next","bulldozer"],["Which message changed the mood","fox"]]},
-{"q":"A new plan feels slightly off from the start. You usually...","a":[["Look for the parts that could go wrong","rabbit"],["Check whether someone is already forcing it","overloaded"],["Try to understand why it feels awkward","fox"],["Shrink it into a smaller test","bulldozer"]]},
-{"q":"A friend says, \"I am fine,\" but their tone says otherwise. You...","a":[["Think: no, you are definitely not fine","radar"],["Make it easier for them to stop pretending","overloaded"],["Ask what is actually weighing on them","fox"],["Help them decide what to do tonight","bulldozer"]]},
-{"q":"People usually need you most when they need...","a":[["A little momentum","sprite"],["A filter for a risky choice","rabbit"],["Someone who can read the room","radar"],["A version that can actually be delivered","bulldozer"]]},
-{"q":"The talent people underrate in you is...","a":[["Leaving before the mess has a name","rabbit"],["Making boring things easier to start","sprite"],["Catching the change in someone's tone","radar"],["Carrying a lot without announcing it","overloaded"]]},
-{"q":"Which compliment would land hardest for you?","a":[["You make people feel safe","overloaded"],["You saw the shift before anyone else","radar"],["You actually got it done","bulldozer"],["You made people want to join","sprite"]]},
-{"q":"What drains you fastest?","a":[["Fake explanations","fox"],["Being trapped in the wrong place","rabbit"],["Everyone needing you at once","overloaded"],["A room with no energy","sprite"]]},
-{"q":"Your brain wakes up when...","a":[["A pattern needs to be unpacked","fox"],["There is a cleaner exit route","rabbit"],["Someone needs a soft landing","overloaded"],["An idea needs a better opening line","sprite"]]},
-{"q":"When everyone is hesitating, you usually...","a":[["Make the first usable move","bulldozer"],["Notice who is close to burning out","radar"],["Say the line that changes the mood","sprite"],["Spot the decision everyone is avoiding","fox"]]},
-{"q":"Your first instinct is usually to...","a":[["Scan the room","radar"],["Lower the risk","rabbit"],["Absorb the pressure","overloaded"],["Get something working","bulldozer"]]},
-{"q":"If you made a tiny paid product, it would help people...","a":[["Feel less alone","overloaded"],["Avoid a bad choice","rabbit"],["Understand what is really happening","fox"],["Start with more confidence","sprite"]]},
-{"q":"What would make this test useful for you?","a":[["Show me the hidden pattern","fox"],["Help me avoid the wrong direction","rabbit"],["Give me a clear next step","bulldozer"],["Make me feel accurately seen","radar"]]}
+  { q: "A group chat suddenly goes quiet. What do you notice first?", a: [["Who stopped replying", "radar"], ["A line that could make it feel lighter", "sprite"], ["What needs to happen next", "bulldozer"], ["Which message changed the mood", "fox"]] },
+  { q: "A new plan feels slightly off from the start. You usually...", a: [["Look for the parts that could go wrong", "rabbit"], ["Check whether someone is already forcing it", "overloaded"], ["Try to understand why it feels awkward", "fox"], ["Shrink it into a smaller test", "bulldozer"]] },
+  { q: "A friend says, "I am fine," but their tone says otherwise. You...", a: [["Think: no, you are definitely not fine", "radar"], ["Make it easier for them to stop pretending", "overloaded"], ["Ask what is actually weighing on them", "fox"], ["Help them decide what to do tonight", "bulldozer"]] },
+  { q: "People usually need you most when they need...", a: [["A little momentum", "sprite"], ["A filter for a risky choice", "rabbit"], ["Someone who can read the room", "radar"], ["A version that can actually be delivered", "bulldozer"]] },
+  { q: "The talent people underrate in you is...", a: [["Leaving before the mess has a name", "rabbit"], ["Making boring things easier to start", "sprite"], ["Catching the change in someone's tone", "radar"], ["Carrying a lot without announcing it", "overloaded"]] },
+  { q: "Which compliment would land hardest for you?", a: [["You make people feel safe", "overloaded"], ["You saw the shift before anyone else", "radar"], ["You actually got it done", "bulldozer"], ["You made people want to join", "sprite"]] },
+  { q: "What drains you fastest?", a: [["Fake explanations", "fox"], ["Being trapped in the wrong place", "rabbit"], ["Everyone needing you at once", "overloaded"], ["A room with no energy", "sprite"]] },
+  { q: "Your brain wakes up when...", a: [["A pattern needs to be unpacked", "fox"], ["There is a cleaner exit route", "rabbit"], ["Someone needs a soft landing", "overloaded"], ["An idea needs a better opening line", "sprite"]] },
+  { q: "When everyone is hesitating, you usually...", a: [["Make the first usable move", "bulldozer"], ["Notice who is close to burning out", "radar"], ["Say the line that changes the mood", "sprite"], ["Spot the decision everyone is avoiding", "fox"]] },
+  { q: "Your first instinct is usually to...", a: [["Scan the room", "radar"], ["Lower the risk", "rabbit"], ["Absorb the pressure", "overloaded"], ["Get something working", "bulldozer"]] },
+  { q: "If you made a tiny paid product, it would help people...", a: [["Feel less alone", "overloaded"], ["Avoid a bad choice", "rabbit"], ["Understand what is really happening", "fox"], ["Start with more confidence", "sprite"]] },
+  { q: "What would make this test useful for you?", a: [["Show me the hidden pattern", "fox"], ["Help me avoid the wrong direction", "rabbit"], ["Give me a clear next step", "bulldozer"], ["Make me feel accurately seen", "radar"]] }
 ];
-const TYPE_ORDER=['overloaded','rabbit','radar','sprite','bulldozer','fox'];
-let current=0,answers={},scores=makeScores(),autoAdvanceTimer=null;
-function makeScores(){const s={};TYPE_ORDER.forEach(k=>s[k]=0);return s;}
-function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
-function startQuiz(){hmTrack('quiz_start');clearTimeout(autoAdvanceTimer);current=0;answers={};scores=makeScores();renderQuestion();showScreen('quiz');}
-function renderQuestion(){const q=QUESTIONS[current],picked=answers[current];
-  document.getElementById('qNumber').textContent = `Question ${current+1}/${QUESTIONS.length}`;
-  document.getElementById('progressFill').style.width = ((current+1)/QUESTIONS.length*100)+'%';
-  document.getElementById('questionText').textContent = q.q;
-  const next=document.getElementById('nextButton');
-  next.classList.toggle('opacity-40',!picked);
-  next.disabled = !picked;
-  let html='';
-  q.a.forEach((item,i)=>{
-    html+=`<button class="option ${picked===item[1]?'selected':''}" onclick="pickAnswer('${item[1]}')">${item[0]}</button>`;
-  });
-  document.getElementById('optionsContainer').innerHTML=html;
+let current = 0, answers = {}, scores = makeScores(), lastResult = null, motionApi = null, autoAdvanceTimer = null;
+function makeScores() { return TYPE_ORDER.reduce((acc, key) => ({ ...acc, [key]: 0 }), {}); }
+function showScreen(id) { document.querySelectorAll('.screen').forEach(s => s.classList.remove('active')); document.getElementById(id).classList.add('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+function goHome(event) { if (event) event.preventDefault(); showScreen('intro'); }
+function resolveRoute(path) { const clean = path.replace(/^\/+/, ''); if (window.location.protocol === 'file:') { const prefix = decodeURIComponent(window.location.pathname).includes('/tests/hidden-talent/') ? '../../' : './'; return new URL(`${prefix}${clean}`, window.location.href).href; } return `${window.location.origin}/${clean}`; }
+function goRoute(event, path) { if (event) event.preventDefault(); window.location.href = resolveRoute(path); }
+function startQuiz() { clearTimeout(autoAdvanceTimer); current = 0; answers = {}; scores = makeScores(); lastResult = null; renderQuestion(); showScreen('quiz'); }
+function renderQuestion() {
+  const q = QUESTIONS[current], total = QUESTIONS.length, picked = answers[current];
+  document.getElementById('qNumber').innerText = current + 1; document.getElementById('qTotal').innerText = total;
+  // 更新进度条，确保每次都正确更新
+  document.getElementById('progressFill').style.width = `${((current + 1) / total) * 100}%`;
+  const nextBtn = document.getElementById('nextButton'); nextBtn.innerText = current === total - 1 ? "好，给我结果" : "对，有点像我";
+  nextBtn.classList.toggle('opacity-40', !picked); nextBtn.classList.toggle('shadow-lift', !!picked);
+  document.getElementById('questionCard').innerHTML = `<p class="text-xs font-bold uppercase text-moss">第 ${current + 1} 题</p><h1 class="question-title mt-2">${q.q}</h1><div class="mt-4 grid gap-2">${q.a.map(([label, key], idx) => `<button class="choice-card option spring-hover rounded-lg border border-ink/10 bg-card p-3 text-left shadow-lift sm:p-4 ${picked === key ? 'selected' : ''}" onclick="pickAnswer('${key}')"><span class="mb-2 inline-flex h-7 w-7 items-center justify-center rounded-full border border-ink/20 bg-ink/10 text-xs font-bold text-ink">${String.fromCharCode(65+idx)}</span><span class="answer-text block font-semibold text-ink/85">${label}</span></button>`).join('')}</div>`;
+  animateQuestion();
 }
-function pickAnswer(k){const q=current;clearTimeout(autoAdvanceTimer);answers[current]=k;renderQuestion();autoAdvanceTimer=setTimeout(()=>{if(current===q&&answers[q]===k)nextQuestion()},250);}
-function prevQuestion(){clearTimeout(autoAdvanceTimer);if(current===0){showScreen('intro');return;}current--;renderQuestion();}
-function nextQuestion(){clearTimeout(autoAdvanceTimer);if(!answers[current]){return;}if(current<QUESTIONS.length-1){current++;renderQuestion();return;}
-  Object.values(answers).forEach(k=>scores[k]++);
-  showScreen('loading');
-  setTimeout(()=>{
-    const result=rankTypes()[0]||TYPE_ORDER[0];
-    hmTrack('quiz_complete',{talent:result});
-    window.location.href = '/delivery/delivery_' + result + '_en.html';
-  },900);
+function pickAnswer(key) { const pickedQuestion = current; clearTimeout(autoAdvanceTimer); answers[current] = key; renderQuestion(); autoAdvanceTimer = setTimeout(() => { if (current === pickedQuestion && answers[pickedQuestion] === key) nextQuestion(); }, 280); }
+function prevQuestion() { clearTimeout(autoAdvanceTimer); if (current === 0) { showScreen('intro'); return; } current--; renderQuestion(); }
+function nextQuestion() { clearTimeout(autoAdvanceTimer); if (!answers[current]) { toast("先选一个，小小诚实一下。"); return; } if (current < QUESTIONS.length - 1) { current++; renderQuestion(); return; } scoreAnswers(); showLoading(); }
+function scoreAnswers() { scores = makeScores(); Object.values(answers).forEach(key => scores[key]++); }
+function rankTypes() { return Object.entries(scores).sort((a,b)=> (b[1]-a[1]) || (TYPE_ORDER.indexOf(a[0])-TYPE_ORDER.indexOf(b[0]))).map(([k])=>k); }
+function showLoading() { showScreen('loading'); setTimeout(() => { const result = rankTypes()[0] || TYPE_ORDER[0]; buildResult(result); showScreen('result'); animateResult(); }, 3200); }
+function buildResult(key) {
+  lastResult = key;
+  const type = TYPES[key];
+  const secondKey = rankTypes().find(i => i !== key) || TYPE_ORDER.find(i => i !== key);
+  const second = TYPES[secondKey];
+  document.getElementById('resultBody').innerHTML = `
+    <div class="grid gap-3 lg:grid-cols-12">
+      <section data-result-part class="result-hero paper-card rounded-lg p-4 sm:p-5 lg:col-span-7" style="background: radial-gradient(circle at 72% 18%, ${type.accent}20, transparent 15rem), linear-gradient(145deg, ${type.color}, #F9F7F3 68%); border-color:${type.accent}66;">
+        <p class="inline-flex rounded-lg border border-ink/15 bg-ink/10 px-3 py-1 text-xs font-bold uppercase text-ink/65">Free Hidden Talent Result</p>
+        <div class="result-cover mt-5 rounded-lg border border-ink/15 p-4 sm:p-5" style="background: radial-gradient(circle at 20% 10%, ${type.accent}30, transparent 18rem), linear-gradient(145deg, ${type.color}, #F9F7F3 78%);">
+          <img class="talent-avatar" src="${type.avatar}" alt="${type.name}">
+          <div class="rounded-lg border border-ink/15 p-3" style="background: linear-gradient(135deg, ${type.accent}, transparent 42%), repeating-linear-gradient(135deg, transparent 0 18px, ${type.accent}22 18px 24px), ${type.color};">
+            <p class="text-xs font-bold uppercase text-ink/70">Hugo Mojo 结果卡</p>
+            <p class="mt-2 text-sm font-bold text-ink/85">隐藏技能类型</p>
+            <h1 class="mt-1 text-4xl font-black">${type.name}</h1>
+            <p class="mt-2 text-ink/80">${type.verdict}</p>
+          </div>
+        </div>
+        <div class="mt-4">
+          <h3 class="text-xl font-bold">别人都没发现的，你的天赋</h3>
+          <p class="mt-2 text-ink/80">${type.sting}</p>
+          <p class="mt-1 text-ink/70">${type.hidden}</p>
+        </div>
+      </section>
+      <section data-result-part class="paper-card rounded-lg p-4 sm:p-5 lg:col-span-5">
+        <div class="result-right-card">
+          <p class="text-xs font-bold uppercase text-moss">你的副业方向</p>
+          <h3 class="text-xl font-bold mt-1">${type.pathTitle}</h3>
+          <div class="mt-3 flex flex-wrap gap-2">
+            ${type.paths.map(p => `<span class="px-3 py-1 rounded-full bg-ink/10 text-sm">${p}</span>`).join('')}
+          </div>
+          <div class="mt-3">
+            <h4 class="font-bold">你的第一个可落地Small Product</h4>
+            <p class="mt-2 text-ink/80">${type.tinyOffer}</p>
+          </div>
+          <div class="feature-list">
+            <div class="feature-item">
+              <b>7天执行清单</b>
+              <small>第一天到第七天，每天做什么，没有鸡汤</small>
+            </div>
+            <div class="feature-item">
+              <b>AI 专属话术</b>
+              <small>帮你快速生成文案、交付内容的AI提示词</small>
+            </div>
+            <div class="feature-item">
+              <b>交付模板</b>
+              <small>直接能用的销售文案、交付模板</small>
+            </div>
+          </div>
+          <button class="primary-cta w-full mt-2 rounded-lg px-5 py-3 text-base font-bold" onclick="openPayModal()">查看完整报告和执行包 →</button>
+        </div>
+      </section>
+      <section data-result-part class="paper-card rounded-lg p-4 sm:p-5 col-span-12">
+        <p class="text-xs font-bold uppercase text-moss">分享你的结果</p>
+        <h3 class="text-xl font-bold mt-1">把你的天赋结果，分享给朋友</h3>
+        <p class="mt-2 text-ink/80" id="shareText">${type.shareLine}</p>
+        <div class="mt-3 flex flex-wrap gap-3 share-buttons">
+          <button class="share-btn" onclick="copyShareLine()">复制分享文案</button>
+          <button class="share-btn weibo" onclick="shareToWeibo()">分享到微博</button>
+          <button class="share-btn.xhs" onclick="shareToXiaohongshu()">分享到小红书</button>
+          <button class="share-btn.moments" onclick="shareToMoments()">分享到朋友圈</button>
+        </div>
+      </section>
+    </div>
+  `;
 }
-function rankTypes(){return Object.entries(scores).sort((a,b)=>(b[1]-a[1])||(TYPE_ORDER.indexOf(a[0])-TYPE_ORDER.indexOf(b[0]))).map(x=>x[0]);}
-function hmTrack(){}
+function copyShareLine() {
+  const type = TYPES[lastResult];
+  navigator.clipboard.writeText(type.shareLine);
+  toast("已复制分享文案");
+}
+function shareToWeibo() {
+  const type = TYPES[lastResult];
+  const url = encodeURIComponent(SITE_URL);
+  const title = encodeURIComponent(type.shareLine);
+  window.open(`https://service.weibo.com/share/share.php?url=${url}&title=${title}`, '_blank', 'width=600,height=400');
+  toast("已打开微博分享页");
+}
+function shareToXiaohongshu() {
+  const type = TYPES[lastResult];
+  navigator.clipboard.writeText(`${type.shareLine} ${SITE_URL}`);
+  toast("已复制链接和文案，去小红书发笔记粘贴即可");
+}
+function shareToMoments() {
+  const type = TYPES[lastResult];
+  navigator.clipboard.writeText(`${type.shareLine} ${SITE_URL}`);
+  toast("已复制链接和文案，去朋友圈粘贴即可");
+}
+function animateQuestion() {
+  const card = document.getElementById('questionCard');
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(10px)';
+  setTimeout(() => {
+    card.style.transition = 'all 300ms ease';
+    card.style.opacity = '1';
+    card.style.transform = 'translateY(0)';
+  }, 50);
+}
+function animateResult() {
+  const parts = document.querySelectorAll('[data-result-part]');
+  parts.forEach((part, i) => {
+    setTimeout(() => {
+      part.style.transition = 'all 400ms ease';
+      part.style.opacity = '1';
+      part.style.transform = 'translateY(0)';
+    }, i * 100);
+  }
+}
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.innerText = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+function closeModal() {
+  document.getElementById('kitModal').classList.remove('show');
+}
+function closePayModal() {
+  document.getElementById('payModal').classList.remove('show');
+}
+function openPayModal() {
+  document.getElementById('payModal').classList.add('show');
+}
+function openManualDelivery() {
+  window.location.href = DELIVERY_URL;
+}
 </script>
 </body>
 </html>
