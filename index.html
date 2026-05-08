@@ -8,8 +8,1030 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css">
-  <script src="assets/tracking.js" defer></script>
+  <style>
+:root {
+  --bg-dark: #0a0a0b;
+  --rock-gray: #1a1a1c;
+  --dim-text: #4a4a4c;
+  --readable-text: rgba(232, 232, 232, 0.86);
+  --soft-text: rgba(190, 190, 190, 0.72);
+  --hope-glow: #ffb300;
+  --hope-deep: #cc8e00;
+  --hope-soft: rgba(255, 179, 0, 0.15);
+  --glass: rgba(255, 255, 255, 0.018);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --card-shadow: 0 40px 100px rgba(0, 0, 0, 0.62);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--bg-dark);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-dark);
+  color: var(--readable-text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 38%, #171718 0%, #0a0a0b 70%);
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 100;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.mist-layer {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle at 50% 50%, #161618 0%, #0a0a0b 70%);
+  z-index: -1;
+  animation: drift 20s ease-in-out infinite alternate;
+}
+
+.site-shell {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(22px);
+  background: rgba(10, 10, 11, 0.78);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 179, 0, 0.34);
+  background: linear-gradient(145deg, rgba(255, 179, 0, 0.22), rgba(255, 255, 255, 0.02));
+  color: var(--hope-glow);
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 12px;
+  letter-spacing: -0.4px;
+  box-shadow: 0 0 28px rgba(255, 179, 0, 0.08);
+}
+
+.brand-name,
+.mono,
+.eyebrow,
+.nav-links,
+.kicker,
+.meta-line,
+.label,
+.micro,
+.price-note {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.brand-name {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--hope-glow);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(220, 220, 220, 0.62);
+}
+
+.nav-links a {
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--hope-glow);
+}
+
+.hero {
+  min-height: calc(100vh - 76px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: 56px;
+  align-items: center;
+  padding: 72px 0 84px;
+}
+
+.hero > * {
+  min-width: 0;
+}
+
+.eyebrow,
+.kicker,
+.label,
+.micro {
+  color: var(--hope-glow);
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  color: rgba(255, 179, 0, 0.9);
+}
+
+.signal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--hope-glow);
+  box-shadow: 0 0 18px var(--hope-deep);
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: -1.5px;
+  line-height: 1.04;
+  overflow-wrap: anywhere;
+}
+
+.hero-title {
+  font-size: clamp(46px, 6.4vw, 82px);
+  max-width: 760px;
+  margin-bottom: 28px;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.06);
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-copy,
+.section-copy,
+.card-copy,
+.body-copy {
+  color: var(--soft-text);
+  font-weight: 300;
+}
+
+.hero-copy {
+  max-width: 620px;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 36px;
+  overflow-wrap: break-word;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.panel-cta {
+  margin-top: 26px;
+}
+
+.hero-cta-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.btn-primary,
+.btn-secondary {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  border: 1px solid transparent;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--hope-glow);
+  color: #050505;
+  box-shadow: 0 20px 42px rgba(255, 179, 0, 0.18);
+}
+
+.btn-hero {
+  min-height: 68px;
+  padding: 20px 34px;
+  font-size: 15px;
+  box-shadow: 0 26px 56px rgba(255, 179, 0, 0.22);
+}
+
+.btn-secondary {
+  border-color: var(--glass-border);
+  color: rgba(230, 230, 230, 0.76);
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.btn-subtle {
+  min-height: 42px;
+  padding: 11px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-secondary:hover {
+  border-color: var(--hope-deep);
+  color: var(--hope-glow);
+}
+
+.terminal-card,
+.result-preview-card,
+.panel,
+.product-card,
+.delivery-card,
+.legal-block {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(20,20,22,0.82) 0%, rgba(10,10,11,0.95) 100%);
+  border: 1px solid var(--glass-border);
+  border-radius: 2px;
+  box-shadow: var(--card-shadow);
+}
+
+.terminal-card::before,
+.result-preview-card::before,
+.panel::before,
+.product-card::before,
+.delivery-card::before,
+.legal-block::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 170px;
+  height: 170px;
+  background: radial-gradient(circle, var(--hope-soft) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.terminal-card {
+  padding: 46px 40px;
+}
+
+.result-preview-card {
+  padding: 38px;
+}
+
+.preview-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--dim-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.preview-match {
+  display: grid;
+  gap: 8px;
+  padding: 28px 0 24px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.preview-role {
+  color: #fff;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(34px, 5vw, 52px);
+  letter-spacing: -1px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.preview-score {
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.preview-copy {
+  margin: 24px 0;
+  color: var(--soft-text);
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.resource-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.resource-preview-item {
+  min-height: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.resource-preview-item span {
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+
+.resource-preview-item strong {
+  color: #fff;
+  font-size: 13px;
+}
+
+.resource-preview-item small {
+  color: var(--dim-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.income-target-preview {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid rgba(255, 179, 0, 0.24);
+  background: rgba(255, 179, 0, 0.045);
+}
+
+.income-target-preview span {
+  color: var(--dim-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.income-target-preview strong {
+  color: var(--hope-glow);
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.preview-note {
+  margin-top: 18px;
+  color: var(--dim-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.terminal-stat {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  padding: 18px 0;
+  border-top: 1px solid var(--glass-border);
+}
+
+.terminal-stat:first-of-type {
+  border-top: 0;
+}
+
+.stat-name {
+  color: rgba(230, 230, 230, 0.82);
+  font-size: 14px;
+}
+
+.stat-value {
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.section {
+  padding: 88px 0;
+}
+
+.trust-strip {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 22px 24px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.012);
+  color: rgba(230, 230, 230, 0.78);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.section-head {
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+.section-title {
+  font-size: clamp(34px, 4.8vw, 62px);
+  margin: 12px 0 18px;
+}
+
+.section-copy {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-card,
+.delivery-card,
+.legal-block,
+.panel {
+  padding: 32px;
+}
+
+.product-card h3,
+.delivery-card h3,
+.legal-block h3,
+.panel h3 {
+  font-size: 24px;
+  margin: 16px 0 14px;
+}
+
+.card-copy {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.price {
+  margin: 26px 0 6px;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 36px;
+  color: #fff;
+}
+
+.price-note {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--dim-text);
+  text-transform: uppercase;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 179, 0, 0.28);
+  color: var(--hope-glow);
+  background: rgba(255, 179, 0, 0.04);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.18fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  position: relative;
+  padding: 32px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.012);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+}
+
+.pricing-card.featured {
+  border-color: rgba(255, 179, 0, 0.38);
+  background: linear-gradient(145deg, rgba(255, 179, 0, 0.06), rgba(255, 255, 255, 0.012));
+  box-shadow: 0 0 52px rgba(255, 179, 0, 0.08), 0 34px 100px rgba(0, 0, 0, 0.55);
+  animation: amber-breathe 3.6s ease-in-out infinite;
+}
+
+.pricing-card.muted {
+  opacity: 0.74;
+}
+
+.pricing-name {
+  margin: 16px 0 12px;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 28px;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.8px;
+}
+
+.pricing-price {
+  margin: 20px 0 8px;
+  font-family: 'Archivo Black', sans-serif;
+  color: #fff;
+  font-size: 44px;
+  line-height: 1;
+}
+
+.pricing-sub {
+  color: var(--dim-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.email-gate {
+  display: grid;
+  gap: 12px;
+  margin: 26px 0;
+}
+
+.email-input {
+  width: 100%;
+  min-height: 54px;
+  padding: 16px 18px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--readable-text);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+
+.email-input:focus {
+  border-color: rgba(255, 179, 0, 0.44);
+  box-shadow: 0 0 24px rgba(255, 179, 0, 0.08);
+}
+
+.fine-print {
+  color: var(--dim-text);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 20px;
+  padding: 18px 0;
+  border-top: 1px solid var(--glass-border);
+}
+
+.timeline-item:first-child {
+  border-top: 0;
+}
+
+.timeline-day {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--hope-glow);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.metric {
+  padding: 22px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.metric-value {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 36px;
+  color: #fff;
+  line-height: 1;
+}
+
+.metric-label {
+  margin-top: 10px;
+  color: var(--dim-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.list-item {
+  display: flex;
+  gap: 12px;
+  color: rgba(224, 224, 224, 0.76);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.list-item::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: 8px;
+  flex: 0 0 auto;
+  background: var(--hope-glow);
+  box-shadow: 0 0 12px var(--hope-deep);
+}
+
+.meta-line {
+  margin-top: 24px;
+  font-size: 10px;
+  color: var(--dim-text);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.page-hero {
+  padding: 86px 0 48px;
+  max-width: 860px;
+}
+
+.page-title {
+  font-size: clamp(42px, 7vw, 86px);
+  margin: 16px 0 22px;
+}
+
+.page-copy {
+  max-width: 720px;
+  color: var(--soft-text);
+  font-size: 17px;
+  line-height: 1.82;
+  font-weight: 300;
+}
+
+.matrix {
+  display: grid;
+  gap: 14px;
+}
+
+.matrix-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  padding: 18px 0;
+  border-top: 1px solid var(--glass-border);
+}
+
+.matrix-row:first-child {
+  border-top: 0;
+}
+
+.matrix-key {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--hope-glow);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.matrix-value {
+  color: var(--soft-text);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.footer {
+  border-top: 1px solid var(--glass-border);
+  padding: 34px 0;
+  color: var(--dim-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: inline-flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@keyframes drift {
+  from { transform: translate(-5%, -5%); }
+  to { transform: translate(5%, 5%); }
+}
+
+@keyframes amber-breathe {
+  0%, 100% { box-shadow: 0 0 34px rgba(255, 179, 0, 0.05), 0 34px 100px rgba(0, 0, 0, 0.55); }
+  50% { box-shadow: 0 0 72px rgba(255, 179, 0, 0.13), 0 34px 100px rgba(0, 0, 0, 0.55); }
+}
+
+@media (max-width: 860px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 18px 0;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero,
+  .grid-2,
+  .grid-3,
+  .pricing-grid,
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    display: block;
+    min-height: auto;
+    padding: 58px 0 72px;
+  }
+
+  .hero > * + * {
+    margin-top: 56px;
+  }
+
+  .hero-copy {
+    max-width: min(100%, 332px);
+  }
+
+  .terminal-card {
+    padding: 34px 28px;
+  }
+
+  .result-preview-card {
+    padding: 30px 26px;
+  }
+
+  .matrix-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-shell {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .hero-title,
+  .page-title {
+    letter-spacing: -1px;
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 10.6vw, 42px);
+    line-height: 1.05;
+  }
+
+  .hero-copy,
+  .meta-line {
+    max-width: min(100%, 332px);
+  }
+
+  .product-card,
+  .delivery-card,
+  .legal-block,
+  .panel {
+    padding: 24px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  .hero-cta-stack {
+    align-items: stretch;
+  }
+
+  .resource-preview-grid,
+  .income-target-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-topline {
+    justify-content: flex-start;
+  }
+
+  .preview-topline span:last-child {
+    display: none;
+  }
+
+  .preview-copy {
+    max-width: min(100%, 300px);
+    overflow-wrap: break-word;
+  }
+}
+
+  </style>
+  <script>
+(function () {
+  const storageKey = "hm_events_v1";
+  const visitorKey = "hm_visitor_id";
+  const sessionKey = "hm_session_id";
+  const memoryStore = {};
+
+  function storageGet(store, key) {
+    try {
+      return store.getItem(key);
+    } catch (error) {
+      return memoryStore[key] || null;
+    }
+  }
+
+  function storageSet(store, key, value) {
+    try {
+      store.setItem(key, value);
+    } catch (error) {
+      memoryStore[key] = String(value);
+    }
+  }
+
+  function id(prefix) {
+    return prefix + "_" + Math.random().toString(36).slice(2) + Date.now().toString(36);
+  }
+
+  function getOrCreate(key, prefix) {
+    let value = storageGet(localStorage, key);
+    if (!value) {
+      value = id(prefix);
+      storageSet(localStorage, key, value);
+    }
+    return value;
+  }
+
+  const visitorId = getOrCreate(visitorKey, "visitor");
+  const sessionId = storageGet(sessionStorage, sessionKey) || id("session");
+  storageSet(sessionStorage, sessionKey, sessionId);
+
+  window.dataLayer = window.dataLayer || [];
+
+  function readEvents() {
+    try {
+      return JSON.parse(storageGet(localStorage, storageKey) || "[]");
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function writeEvent(event) {
+    const events = readEvents();
+    events.push(event);
+    storageSet(localStorage, storageKey, JSON.stringify(events.slice(-100)));
+  }
+
+  function track(name, payload) {
+    const event = {
+      event: name,
+      visitor_id: visitorId,
+      session_id: sessionId,
+      path: window.location.pathname,
+      title: document.title,
+      timestamp: new Date().toISOString(),
+      payload: payload || {}
+    };
+    window.dataLayer.push(event);
+    writeEvent(event);
+    if (window.HUGOMOJO_DEBUG === true) console.log("[HugoMojo]", event);
+  }
+
+  window.HugoMojoTrack = {
+    track,
+    visitorId,
+    sessionId,
+    events: readEvents
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    track("page_view");
+    document.addEventListener("click", function (event) {
+      const el = event.target.closest("[data-event]");
+      if (!el) return;
+      track(el.getAttribute("data-event"), {
+        plan: el.getAttribute("data-plan") || null,
+        price: el.getAttribute("data-price") || null,
+        href: el.getAttribute("href") || null
+      });
+    });
+  });
+})();
+
+  </script>
 </head>
 <body>
   <div class="mist-layer"></div>
@@ -22,11 +1044,7 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a class="active" href="index.html">Home</a>
         <a href="scanner.html">Scanner</a>
-        <a href="delivery.html">Delivery</a>
-        <a href="membership.html">Membership</a>
-        <a href="creem-application.html">Creem</a>
-        <a href="data-system.html">Data</a>
-        <a href="compliance.html">Compliance</a>
+        <a href="#pricing">Pricing</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -36,40 +1054,55 @@
     <section class="site-shell hero">
       <div>
         <div class="eyebrow"><span class="signal-dot"></span> AI Income Path Finder</div>
-        <h1 class="hero-title">Find The Path Your Resources Can Actually Start.</h1>
+        <h1 class="hero-title"><span>AI Advice</span><span>Feels Off.</span></h1>
         <p class="hero-copy">
-          HugoMojo scans your real situation across time, tools, skills, budget, audience, and execution style. The result is a practical AI income direction with a focused starter blueprint.
+          You've seen 100 ways to make money with AI. Let's find the one your real situation can actually start across time, tools, skills, budget, and execution style.
         </p>
-        <div class="cta-row">
-          <a class="btn-primary" href="scanner.html" data-event="scanner_start">Start The Scanner</a>
-          <a class="btn-secondary" href="membership.html" data-event="membership_view">View Membership</a>
+        <div class="hero-cta-stack">
+          <a class="btn-primary btn-hero" href="scanner.html" data-event="scanner_start">Start Free Scanner</a>
+          <a class="btn-secondary btn-subtle" href="delivery.html" data-event="delivery_preview">Preview The Delivery</a>
         </div>
         <p class="meta-line">16 questions · English only · No income guarantees</p>
       </div>
 
-      <aside class="terminal-card" aria-label="System snapshot">
-        <div class="kicker">Vault v11 Signal</div>
-        <h2 style="font-size:34px; margin:18px 0 26px;">Resource Match Engine</h2>
-        <div class="terminal-stat">
-          <span class="stat-name">Scanner</span>
-          <span class="stat-value">16 inputs</span>
+      <aside class="result-preview-card" aria-label="Example scanner result preview">
+        <div class="preview-topline">
+          <span>Sample Result</span>
+          <span>Vault v11</span>
         </div>
-        <div class="terminal-stat">
-          <span class="stat-name">Result types</span>
-          <span class="stat-value">3 paths</span>
+        <div class="preview-match">
+          <div class="preview-role">🦊 Hunter</div>
+          <div class="preview-score">87% match</div>
         </div>
-        <div class="terminal-stat">
-          <span class="stat-name">Main offer</span>
-          <span class="stat-value">$19.90</span>
+        <p class="preview-copy">
+          Your resources favor fast client work, simple AI-assisted delivery, and a first proof-of-cash within 30 days.
+        </p>
+        <div class="resource-preview-grid">
+          <div class="resource-preview-item">
+            <span>✓</span>
+            <strong>Time</strong>
+            <small>1-2 hrs/day</small>
+          </div>
+          <div class="resource-preview-item">
+            <span>✓</span>
+            <strong>Device</strong>
+            <small>Laptop ready</small>
+          </div>
+          <div class="resource-preview-item">
+            <span>✓</span>
+            <strong>Budget</strong>
+            <small>Low cost path</small>
+          </div>
         </div>
-        <div class="terminal-stat">
-          <span class="stat-name">Delivery format</span>
-          <span class="stat-value">PDF + Notion</span>
+        <div class="income-target-preview">
+          <span>30-day income target</span>
+          <strong>$300-$800</strong>
         </div>
+        <div class="preview-note">Generated after 16 resource questions.</div>
       </aside>
     </section>
 
-    <section class="site-shell section">
+    <section class="site-shell section" id="pricing">
       <div class="section-head">
         <div class="kicker">The Three Paths</div>
         <h2 class="section-title">One scanner. Three products in the funnel.</h2>
@@ -119,6 +1152,13 @@
       </div>
     </section>
 
+    <section class="site-shell trust-strip" aria-label="Trust signals">
+      <span>🔒 No subscription</span>
+      <span>⚡ Instant PDF delivery</span>
+      <span>📄 Educational product only</span>
+      <span><a href="mailto:hi@hugomojo.com">✉ hi@hugomojo.com</a></span>
+    </section>
+
     <section class="site-shell section">
       <div class="grid-2">
         <div class="panel">
@@ -127,7 +1167,7 @@
           <p class="card-copy">
             Each blueprint is designed as a starter kit with prompts, operating steps, examples, templates, and a 30-day action sequence. The product is educational and operational. It does not promise or guarantee income.
           </p>
-          <div class="cta-row" style="margin-top:26px;">
+          <div class="cta-row panel-cta">
             <a class="btn-secondary" href="delivery.html">See Delivery Page</a>
           </div>
         </div>
@@ -137,7 +1177,7 @@
           <p class="card-copy">
             The site includes clear product descriptions, price disclosure, refund language, privacy information, terms of use, contact information, and a Creem readiness checklist for payment review.
           </p>
-          <div class="cta-row" style="margin-top:26px;">
+          <div class="cta-row panel-cta">
             <a class="btn-secondary" href="creem-application.html">View Creem Notes</a>
           </div>
         </div>
@@ -148,7 +1188,14 @@
   <footer class="footer">
     <div class="site-shell footer-inner">
       <span>HugoMojo · AI income path scanner</span>
-      <span><a href="mailto:hi@hugomojo.com">hi@hugomojo.com</a></span>
+      <span class="footer-links">
+        <a href="delivery.html">Delivery</a>
+        <a href="membership.html">Membership</a>
+        <a href="creem-application.html">Creem</a>
+        <a href="data-system.html">Data</a>
+        <a href="compliance.html">Compliance</a>
+        <a href="contact.html">Contact</a>
+      </span>
     </div>
   </footer>
 </body>
