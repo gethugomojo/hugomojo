@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HugoMojo — The Vault v11.0</title>
+<meta name="description" content="Complete the HugoMojo AI Income Scanner to find your best-fit AI income path and unlock the right blueprint.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script src="assets/tracking.js" defer></script>
+<style>
+:root {
+  --bg-dark: #0a0a0b;
+  --rock-gray: #1a1a1c;
+  --dim-text: #4a4a4c;
+  --readable-text: rgba(232, 232, 232, 0.86);
+  --soft-text: rgba(190, 190, 190, 0.72);
+  --hope-glow: #ffb300;
+  --hope-deep: #cc8e00;
+  --hope-soft: rgba(255, 179, 0, 0.15);
+  --glass: rgba(255, 255, 255, 0.01);
+  --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: crosshair;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #e0e0e0;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.mist-layer {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle at 50% 50%, #161618 0%, #0a0a0b 70%);
+  z-index: -1;
+  animation: drift 20s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  from { transform: translate(-5%, -5%); }
+  to { transform: translate(5%, 5%); }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 100;
+}
+
+#app {
+  width: 100%;
+  max-width: 440px;
+  padding: 20px;
+  z-index: 10;
+}
+
+.vault-link {
+  position: fixed;
+  top: 22px;
+  left: 24px;
+  z-index: 20;
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--dim-text);
+  letter-spacing: 2px;
+}
+
+.progress-track {
+  flex-grow: 1;
+  height: 2px;
+  background: rgba(255,255,255,0.03);
+  margin: 0 15px;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--hope-glow);
+  box-shadow: 0 0 10px var(--hope-deep);
+  transition: width 1s ease;
+}
+
+.card {
+  background: linear-gradient(145deg, rgba(20,20,22,0.8) 0%, rgba(10,10,11,0.95) 100%);
+  border: 1px solid var(--glass-border);
+  border-radius: 2px;
+  padding: 60px 45px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, var(--hope-soft) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 44px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(255,255,255,0.05);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+#q-h {
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.08;
+  letter-spacing: -0.8px;
+  max-width: 100%;
+}
+
+.sub-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 21px;
+  color: var(--soft-text);
+  margin-bottom: 45px;
+  line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+#q-t {
+  color: var(--readable-text);
+  font-size: 22px;
+  line-height: 1.45;
+  text-shadow: 0 0 18px rgba(255,255,255,0.04);
+}
+
+.btn-opt {
+  width: 100%;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: transparent;
+  color: rgba(218, 218, 218, 0.78);
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  position: relative;
+  white-space: normal;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.btn-opt:hover {
+  color: var(--hope-glow);
+  border-color: var(--hope-deep);
+  background: rgba(255, 179, 0, 0.02);
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 179, 0, 0.05);
+}
+
+.btn-opt::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: var(--hope-glow);
+  transform: scaleY(0);
+  transition: 0.3s;
+}
+
+.btn-opt:hover::after {
+  transform: scaleY(1);
+}
+
+.match-percent {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 100px;
+  color: #fff;
+  filter: drop-shadow(0 0 30px var(--hope-soft));
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.cta-buy {
+  width: 100%;
+  padding: 26px;
+  border: none;
+  border-radius: 2px;
+  background: var(--hope-glow);
+  color: #000;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 40px rgba(255, 179, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-buy:hover {
+  background: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 30px 60px rgba(255, 179, 0, 0.3);
+}
+
+.result-blueprint {
+  border-top: 1px solid var(--glass-border);
+  margin: 30px 0;
+  padding-top: 30px;
+}
+
+.email-gate {
+  display: grid;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.email-input {
+  width: 100%;
+  min-height: 56px;
+  padding: 16px 18px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--readable-text);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+
+.email-input:focus {
+  border-color: rgba(255, 179, 0, 0.44);
+  box-shadow: 0 0 24px rgba(255, 179, 0, 0.08);
+}
+
+.fine-print {
+  color: #444;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.pricing-stack {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.pay-option {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.012);
+  text-align: left;
+  color: var(--readable-text);
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.pay-option:hover {
+  transform: translateY(-2px);
+  border-color: var(--hope-deep);
+}
+
+.pay-option.featured {
+  border-color: rgba(255, 179, 0, 0.42);
+  background: rgba(255, 179, 0, 0.055);
+  box-shadow: 0 0 46px rgba(255, 179, 0, 0.09);
+  animation: amber-breathe 3.6s ease-in-out infinite;
+}
+
+.pay-tag,
+.pay-name,
+.pay-note {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+}
+
+.pay-tag {
+  color: var(--hope-glow);
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.pay-name {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+}
+
+.pay-price {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 28px;
+  color: #fff;
+}
+
+.pay-note {
+  margin-top: 9px;
+  color: #555;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.3; box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.4); }
+  70% { transform: scale(1); opacity: 1; box-shadow: 0 0 40px 20px rgba(255, 179, 0, 0); }
+  100% { transform: scale(0.9); opacity: 0.3; box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); }
+}
+
+@keyframes amber-breathe {
+  0%, 100% { box-shadow: 0 0 28px rgba(255, 179, 0, 0.05); }
+  50% { box-shadow: 0 0 62px rgba(255, 179, 0, 0.14); }
+}
+</style>
+</head>
+<body>
+
+<div class="mist-layer"></div>
+<a class="vault-link" href="index.html">HugoMojo</a>
+
+<div id="app">
+  <!--  Quiz  -->
+  <div id="step-quiz">
+    <div class="status">
+      <span style="color: var(--hope-glow)">●</span>
+      <div class="progress-track"><div id="p-bar" class="progress-fill"></div></div>
+      <span id="p-idx" style="width: 40px">01/16</span>
+    </div>
+    <div class="card">
+      <h1 id="q-h">Shadow Check.</h1>
+      <p class="sub-title" id="q-t">Evaluating your current position in the dark.</p>
+      <div id="q-options"></div>
+    </div>
+  </div>
+
+  <!--  Scanning  -->
+  <div id="step-scan" class="hidden">
+    <div class="card" style="text-align: center; padding: 100px 40px;">
+      <div id="scan-pulse" style="width:60px; height:60px; background: var(--hope-glow); border-radius: 50%; margin: 0 auto 40px; animation: pulse 1.5s infinite;"></div>
+      <h1 style="font-size: 16px; letter-spacing: 6px; color: var(--dim-text);">SEEKING THE PATH...</h1>
+      <div id="scan-log" style="font-family:'JetBrains Mono'; font-size:9px; color:#333; margin-top:30px; text-align:center; letter-spacing:1px;"></div>
+    </div>
+  </div>
+
+  <div id="step-email" class="hidden">
+    <div class="card" style="text-align: center;">
+      <h1 style="font-size: 30px; margin-bottom: 20px;">Your Wealth Credential Is Ready.</h1>
+      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to generate the private access key for your result.</p>
+      <form class="email-gate" id="email-form">
+        <input class="email-input" id="lead-email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        <button class="cta-buy" type="submit" style="font-size: 16px;">Generate Access Key</button>
+        <p class="fine-print">We use your email to deliver your result, product access, and related HugoMojo updates. No spam. No income guarantees. Support: hi@hugomojo.com.</p>
+      </form>
+    </div>
+  </div>
+
+  <!--  Result  -->
+  <div id="step-pay" class="hidden">
+    <div class="card" style="text-align: center;">
+      <div class="match-percent">98.8%</div>
+      <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Found your light</div>
+      
+      <h1 id="res-name" style="font-size: 32px; margin-bottom: 20px;">ARCHITECT</h1>
+      <p class="sub-title" style="margin-bottom: 40px; font-size: 16px;">The blueprint to your financial dawn is ready.</p>
+      
+      <div class="result-blueprint">
+        <div style="font-family: 'JetBrains Mono'; font-size: 9px; color: #444; text-align: left; line-height: 2;">
+          [SCAN_COMPLETE]<br>
+          RESOURCE_MATCH: OPTIMAL<br>
+          TIME_VECTOR: CALIBRATED<br>
+          REWARD_EST: HIGH_YIELD
+        </div>
+      </div>
+
+      <button id="pay-btn" class="cta-buy">Claim the Future</button>
+      <p style="margin-top: 30px; font-size: 9px; color: #333; letter-spacing: 4px; font-family: 'JetBrains Mono';">SECURE ACCESS · 9.90 USD</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const LAYERS = {
+  1: { name: "Step 1 of 4 · Your Income Goal", desc: "What you want to earn — we start here to find your perfect path." },
+  2: { name: "Step 2 of 4 · Your Resources", desc: "What you have right now — time, tools, budget, skills." },
+  3: { name: "Step 3 of 4 · How You Work", desc: "Your natural style — fast action, planning, building, or creating." },
+  4: { name: "Step 4 of 4 · Your Best Path", desc: "Final match — the income method that fits you best." },
+};
+
+const Qs = [
+
+  // ─────────────────────────────────────────────────────────
+  // LAYER 1: GOAL CALIBRATION (Q1-Q3)
+  // Purpose: Activate desire + set expectation anchor
+  // ─────────────────────────────────────────────────────────
+
+  { layer:1, dim:"Q1 · Income Target",
+    text:"What's your first real income goal with AI?",
+    sub:"Be honest — this shapes everything about which path is right for you.",
+    opts:[
+      { text:"$200–$500/mo — prove it works before going all-in",
+        scores:{H:3,A:1,C:1}, meta:"target:$200–500" },
+      { text:"$500–$1,500/mo — replace a bill or two, meaningful side income",
+        scores:{H:3,A:2,C:2}, meta:"target:$500–1500" },
+      { text:"$2,000–$5,000/mo — serious enough to change my life",
+        scores:{H:1,A:3,C:3}, meta:"target:$2000–5000" },
+      { text:"$5,000+/mo — I want to replace my job entirely",
+        scores:{H:0,A:3,C:4}, meta:"target:$5000+" },
+    ]},
+
+  { layer:1, dim:"Q2 · Timeline",
+    text:"How fast do you need to see the first dollar?",
+    sub:"Speed affects which niche is realistic for your situation.",
+    opts:[
+      { text:"This week — I need proof of concept fast",
+        scores:{H:4,A:1,C:0}, meta:"speed:urgent" },
+      { text:"Within 30 days — I'm patient but want momentum",
+        scores:{H:3,A:2,C:2}, meta:"speed:30days" },
+      { text:"2–3 months — I'm willing to build something properly",
+        scores:{H:1,A:3,C:3}, meta:"speed:90days" },
+      { text:"I care more about the ceiling than the speed",
+        scores:{H:0,A:2,C:4}, meta:"speed:longterm" },
+    ]},
+
+  { layer:1, dim:"Q3 · Motivation",
+    text:"If AI gave you your first $500, what would that mean to you?",
+    sub:"This reveals your real drive — and the best way to earn.",
+    opts:[
+      { text:"It proves I can do this — I'd feel unstoppable",
+        scores:{H:4,A:2,C:2}, meta:"motive:validation" },
+      { text:"It covers a real expense — electricity, groceries, a subscription",
+        scores:{H:3,A:2,C:2}, meta:"motive:survival" },
+      { text:"It's seed money — I'd reinvest it into growing faster",
+        scores:{H:1,A:3,C:4}, meta:"motive:reinvest" },
+      { text:"It's the start of a system — one step toward full independence",
+        scores:{H:0,A:3,C:4}, meta:"motive:independence" },
+    ]},
+
+  // ─────────────────────────────────────────────────────────
+  // LAYER 2: RESOURCE SCAN (Q4-Q9)
+  // Purpose: Objective inventory — what the user actually owns
+  // ─────────────────────────────────────────────────────────
+
+  { layer:2, dim:"Q4 · Time Budget",
+    text:"How many real, focused hours can you give this per day?",
+    sub:"Not \"I want to\" — how many hours will actually happen on a typical Tuesday.",
+    opts:[
+      { text:"Less than 1 hour — stolen moments, phone in breaks",
+        scores:{H:1,A:2,C:0}, meta:"time:<1hr" },
+      { text:"1–2 hours — consistent window, usually same time each day",
+        scores:{H:3,A:3,C:1}, meta:"time:1-2hrs" },
+      { text:"3–4 hours — real dedicated block, this is a priority",
+        scores:{H:4,A:3,C:3}, meta:"time:3-4hrs" },
+      { text:"4+ hours — basically a part-time job commitment",
+        scores:{H:4,A:4,C:4}, meta:"time:4+hrs" },
+    ]},
+
+  { layer:2, dim:"Q5 · Hardware",
+    text:"What's your primary work device right now?",
+    sub:"No judgment — we just need to know what you're actually working with.",
+    opts:[
+      { text:"Smartphone only — no laptop or desktop available",
+        scores:{H:1,A:2,C:0}, meta:"device:phone" },
+      { text:"Basic laptop — gets the job done but nothing special",
+        scores:{H:3,A:3,C:2}, meta:"device:basic_laptop" },
+      { text:"Decent laptop or desktop with stable internet",
+        scores:{H:4,A:4,C:4}, meta:"device:good_laptop" },
+      { text:"High-performance setup — good GPU, fast connection, multiple screens",
+        scores:{H:4,A:4,C:5}, meta:"device:pro_setup" },
+    ]},
+
+  { layer:2, dim:"Q6 · Budget",
+    text:"Can you invest $20–$50/month in AI subscriptions if it helps you earn more?",
+    sub:"ChatGPT Plus, MidJourney, Claude Pro — these are the tools that unlock the income.",
+    opts:[
+      { text:"Not right now — I need to earn before I spend",
+        scores:{H:2,A:1,C:0}, meta:"budget:zero" },
+      { text:"Yes, but only if I see results within the first month",
+        scores:{H:3,A:3,C:2}, meta:"budget:conditional" },
+      { text:"Absolutely — I already see this as an investment",
+        scores:{H:4,A:4,C:4}, meta:"budget:yes" },
+      { text:"I'm already paying for AI tools and not monetizing them yet",
+        scores:{H:5,A:5,C:5}, meta:"budget:already_paying" },
+    ]},
+
+  { layer:2, dim:"Q7 · English Level",
+    text:"When it comes to written English, you're most comfortable…",
+    sub:"Honest answer here = more accurate niche match. Most markets need at least B2.",
+    opts:[
+      { text:"Reading and understanding — but writing feels slow and unnatural",
+        scores:{H:1,A:2,C:1}, meta:"english:reader" },
+      { text:"Writing short things — captions, emails, prompts — it's okay",
+        scores:{H:3,A:3,C:2}, meta:"english:functional" },
+      { text:"Writing almost anything — I can sound professional with AI's help",
+        scores:{H:4,A:4,C:4}, meta:"english:good" },
+      { text:"Fluent or near-fluent — English is a real asset for me",
+        scores:{H:5,A:5,C:5}, meta:"english:fluent" },
+    ]},
+
+  { layer:2, dim:"Q8 · Existing Audience",
+    text:"Do you already have followers anywhere online?",
+    sub:"Doesn't matter where or how many — even 200 real followers changes your options.",
+    opts:[
+      { text:"Zero — starting completely from scratch",
+        scores:{H:3,A:2,C:3}, meta:"audience:zero" },
+      { text:"A few hundred — personal account, not built for business",
+        scores:{H:3,A:3,C:3}, meta:"audience:small" },
+      { text:"1,000–10,000 — some real engagement in at least one place",
+        scores:{H:2,A:5,C:3}, meta:"audience:medium" },
+      { text:"10,000+ — I have real reach and people actually listen",
+        scores:{H:1,A:6,C:2}, meta:"audience:large" },
+    ]},
+
+  { layer:2, dim:"Q9 · Specialized Knowledge",
+    text:"Is there a topic you know significantly more about than most people?",
+    sub:"Could be your job, a hobby, a niche obsession — anything with real depth.",
+    opts:[
+      { text:"No, I'm pretty general — nothing stands out",
+        scores:{H:4,A:0,C:2}, meta:"knowledge:none" },
+      { text:"Maybe — but I'm not sure it's valuable or sellable",
+        scores:{H:2,A:3,C:2}, meta:"knowledge:unsure" },
+      { text:"Yes — and people have actually asked me about it before",
+        scores:{H:1,A:5,C:3}, meta:"knowledge:yes" },
+      { text:"Definitely — it's my career or a deep passion with real expertise",
+        scores:{H:0,A:6,C:4}, meta:"knowledge:expert" },
+    ]},
+
+  // ─────────────────────────────────────────────────────────
+  // LAYER 3: CAPABILITY TEST (Q10-Q13)
+  // Purpose: Behavioral questions — revealed preferences over stated ones
+  // ─────────────────────────────────────────────────────────
+
+  { layer:3, dim:"Q10 · Visual Judgment",
+    text:"You see two product images side by side. One converts better. What do you notice?",
+    sub:"Pick the answer that most honestly describes your first reaction.",
+    opts:[
+      { text:"I see one looks nicer but couldn't explain why to anyone",
+        scores:{H:2,A:1,C:1}, meta:"visual:basic" },
+      { text:"I can name 2–3 specific things — lighting, spacing, color contrast",
+        scores:{H:2,A:4,C:2}, meta:"visual:good" },
+      { text:"I immediately know what to change and roughly how to do it",
+        scores:{H:1,A:5,C:2}, meta:"visual:strong" },
+      { text:"I'm already thinking about how to recreate or improve it",
+        scores:{H:1,A:5,C:3}, meta:"visual:pro" },
+    ]},
+
+  { layer:3, dim:"Q11 · Logical Patience",
+    text:"You paste a prompt into ChatGPT and the output is 70% good. You…",
+    sub:"This reveals your relationship with iteration — critical in any AI income path.",
+    opts:[
+      { text:"Use the 70% — edit it manually, move on fast",
+        scores:{H:5,A:2,C:2}, meta:"logic:executor" },
+      { text:"Tweak the prompt once, see if it gets better",
+        scores:{H:3,A:3,C:3}, meta:"logic:pragmatic" },
+      { text:"Spend 20 minutes testing different versions until it's right",
+        scores:{H:1,A:4,C:4}, meta:"logic:optimizer" },
+      { text:"Document what worked, build a template, systematize the whole thing",
+        scores:{H:0,A:3,C:6}, meta:"logic:builder" },
+    ]},
+
+  { layer:3, dim:"Q12 · Camera Comfort",
+    text:"Someone offers you $500 to post 10 videos on TikTok with your face. You…",
+    sub:"Be honest — this rules out or unlocks entire income paths.",
+    opts:[
+      { text:"Hard no — I won't put my face online for any amount",
+        scores:{H:3,A:4,C:4}, meta:"camera:no" },
+      { text:"Maybe — I'm not comfortable yet but would push through for the money",
+        scores:{H:4,A:3,C:3}, meta:"camera:reluctant" },
+      { text:"Yes — I'd be nervous but I could do it",
+        scores:{H:4,A:3,C:2}, meta:"camera:yes_nervous" },
+      { text:"Easily — I'm comfortable on camera, I might even enjoy it",
+        scores:{H:4,A:5,C:1}, meta:"camera:comfortable" },
+    ]},
+
+  { layer:3, dim:"Q13 · Execution Style",
+    text:"You get a new task you've never done before. Your natural approach is to…",
+    sub:"No right answer — this tells us how to format your roadmap.",
+    opts:[
+      { text:"Start immediately, figure it out as problems arise",
+        scores:{H:5,A:2,C:1}, meta:"style:executor" },
+      { text:"Watch one tutorial, then start — minimum viable research",
+        scores:{H:4,A:3,C:2}, meta:"style:pragmatic" },
+      { text:"Make a plan first — outline the steps before touching anything",
+        scores:{H:2,A:3,C:4}, meta:"style:planner" },
+      { text:"Find the best existing framework and adapt it",
+        scores:{H:1,A:3,C:5}, meta:"style:systems" },
+    ]},
+
+  // ─────────────────────────────────────────────────────────
+  // LAYER 4: NICHE VALIDATION (Q14-Q16)
+  // Purpose: Final confirmation — tiebreaker questions
+  // ─────────────────────────────────────────────────────────
+
+  { layer:4, dim:"Q14 · Client Comfort",
+    text:"Someone wants to pay you for work. The idea of having a client feels…",
+    sub:"Some income paths require clients. Others don't. This matters for your match.",
+    opts:[
+      { text:"Fine — I can handle communication, that's not the scary part",
+        scores:{H:5,A:2,C:4}, meta:"client:comfortable" },
+      { text:"A little anxious — I prefer systems where the product sells itself",
+        scores:{H:1,A:5,C:2}, meta:"client:avoidant" },
+      { text:"Actually exciting — I like understanding what people need",
+        scores:{H:3,A:2,C:5}, meta:"client:loves" },
+      { text:"Depends — one-off projects yes, ongoing relationships maybe not",
+        scores:{H:4,A:3,C:3}, meta:"client:project_only" },
+    ]},
+
+  { layer:4, dim:"Q15 · AI Fluency",
+    text:"How much have you actually used AI tools in the past 7 days?",
+    sub:"Real usage, not \"I have an account\" — opens Claude, types a prompt, gets output.",
+    opts:[
+      { text:"Zero — I've been meaning to start",
+        scores:{H:2,A:2,C:1}, meta:"ai_fluency:none" },
+      { text:"A few times — tried ChatGPT or Claude once or twice",
+        scores:{H:3,A:3,C:2}, meta:"ai_fluency:basic" },
+      { text:"Daily — it's part of how I work or learn right now",
+        scores:{H:4,A:4,C:4}, meta:"ai_fluency:regular" },
+      { text:"Heavily — I'm using multiple AI tools and exploring their limits",
+        scores:{H:4,A:5,C:5}, meta:"ai_fluency:power_user" },
+    ]},
+
+  { layer:4, dim:"Q16 · Long-term Vision",
+    text:"One year from now, what does success look like to you?",
+    sub:"The last question. Pick the one that genuinely excites you — not what sounds right.",
+    opts:[
+      { text:"I have a client roster. I get paid weekly for work I'm proud of.",
+        scores:{H:5,A:1,C:3}, meta:"vision:freelancer" },
+      { text:"I have products online earning while I sleep. My name means something in my niche.",
+        scores:{H:0,A:6,C:2}, meta:"vision:creator" },
+      { text:"I run a small AI consultancy. Businesses pay me to build their systems.",
+        scores:{H:1,A:1,C:6}, meta:"vision:consultant" },
+      { text:"Honestly, I just want the freedom — I don't care which path gets me there.",
+        scores:{H:3,A:3,C:3}, meta:"vision:freedom" },
+    ]},
+
+];
+
+// ═══════════════════════════════════════════════════════════════════
+// RESULT TEMPLATES
+// ═══════════════════════════════════════════════════════════════════
+
+const RESULTS = {
+  H: {
+    niche: "Hunter",
+    label: "AI Freelancing & Services",
+    badgeBg: "rgba(255,179,0,0.045)",
+    badgeColor: "#FFB300",
+    tagline: "Your resources are built for fast results. Here's your exact target.",
+    why: [
+      "You have enough time and tools to start this week — no waiting required.",
+      "Freelancing rewards speed over perfection, which matches your execution style.",
+      "This path has zero upfront cost and clients are hiring right now.",
+      "Your first client is your proof of success. After that, everything grows faster."
+    ],
+    paths: [
+      { name:"AI-assisted writing & editing on Upwork",
+        desc:"Use Claude to deliver client work 5× faster. Write proposals, landing pages, email sequences. Income range: $15–$80/hr." },
+      { name:"AI automation setup for small businesses",
+        desc:"Build Make or Zapier workflows for clients who have no idea AI can do this. No coding. Per project: $300–$2,000." },
+      { name:"AI image & visual asset delivery",
+        desc:"Midjourney commercial images for Etsy sellers, Amazon listings, and ad creatives. Income range: $200–$800 per client/month." },
+    ],
+    locked: ["30-Day Hunter SOP (daily task checklist)", "Upwork proposal templates that actually get replies", "Client pricing calculator + rate-setting guide"],
+    target30: "$300–$800",
+    targetLabel: "30-day income target",
+    bars: [
+      {n:"Execution speed",  v:90, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+      {n:"Market demand",    v:85, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+      {n:"Startup cost",     v:15, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+      {n:"Skill ceiling",    v:40, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+    ],
+  },
+
+  A: {
+    niche: "Artisan",
+    label: "Digital Products & Knowledge Assets",
+    badgeBg: "rgba(255,179,0,0.045)",
+    badgeColor: "#FFB300",
+    tagline: "You already have something to sell — you just haven’t packaged it yet.",
+    why: [
+      "Your knowledge or creative eye is rare — AI lets you build products in days, not months.",
+      "Digital products sell while you sleep. Once built, every sale is nearly pure profit.",
+      "Your existing expertise gives you a head start no beginner can match.",
+      "The only risk is overthinking. Your first product just needs to be useful, not perfect."
+    ],
+    paths: [
+      { name:"Ebook, guide, or prompt pack on Gumroad",
+        desc:"Use AI to write fast, Canva to design. Sell your expertise for $9–$49 a download. Income range: $500–$5,000/mo at scale." },
+      { name:"Digital products on Etsy (AI-generated)",
+        desc:"Printable planners, coloring books, wall art, Lightroom presets. Low competition, evergreen demand. Income range: $200–$3,000/mo." },
+      { name:"Paid newsletter or content subscription",
+        desc:"Weekly AI-enhanced deep dives in your niche. Beehiiv or Substack. Income range: $300–$8,000/mo with the right audience." },
+    ],
+    locked: ["30-Day Artisan SOP (from idea to first sale)", "Gumroad product page copy template", "Pricing psychology guide for digital products"],
+    target30: "$200–$1,200",
+    targetLabel: "30-day income target",
+    bars: [
+      {n:"Passive potential",v:95, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+      {n:"Compounding",      v:90, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+      {n:"Time to first $",  v:35, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+      {n:"Startup cost",     v:20, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+    ],
+  },
+
+  C: {
+    niche: "Architect",
+    label: "B2B AI Consulting & Automation",
+    badgeBg: "rgba(255,179,0,0.045)",
+    badgeColor: "#FFB300",
+    tagline: "You don’t need a big audience. You just need three good clients.",
+    why: [
+      "Businesses are paying top dollar to solve the exact problems you can fix with AI.",
+      "High-ticket, low-volume: one $500/month client beats 50 small buyers.",
+      "Your logical, systems-focused mind is the real skill — AI is just the tool.",
+      "You don’t need followers. You just need to send three good outreach messages."
+    ],
+    paths: [
+      { name:"AI workflow automation for small businesses",
+        desc:"Build Make.com or Zapier flows for service businesses. Invoice automation, CRM syncing, report generation. Per project: $500–$3,000." },
+      { name:"Custom GPT or AI tool setup for clients",
+        desc:"Build industry-specific chatbots or internal AI assistants. Retainer: $300–$800/mo ongoing maintenance." },
+      { name:"AI audit & strategy consulting",
+        desc:"Help businesses find where AI can save them 10+ hours/week. Charge $200–$500 for a 90-minute audit session." },
+    ],
+    locked: ["30-Day Architect SOP (from zero to first client)", "Cold email scripts that get replies from business owners", "Project proposal template + pricing framework"],
+    target30: "$500–$1,500",
+    targetLabel: "30-day income target",
+    bars: [
+      {n:"Client value",     v:92, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+      {n:"Barrier to entry", v:55, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+      {n:"Audience needed",  v:5,  c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+      {n:"Skill required",   v:60, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
+    ],
+  },
+};
+
+let curQ = 0;
+let answers = [];
+let scores = { H: 0, A: 0, C: 0 };
+let metaData = {};
+let activeResultType = null;
+
+const CHECKOUT_URLS = {
+  single: {
+    H: "https://creem.io/p/hugo-hunter-9.9",
+    A: "https://creem.io/p/hugo-artisan-9.9",
+    C: "https://creem.io/p/hugo-architect-9.9"
+  },
+  master: "https://creem.io/p/hugo-master-key-19.9",
+  annual: "https://creem.io/p/hugo-annual-vault-199"
+};
+
+function setStep(id) {
+  ['step-quiz', 'step-scan', 'step-email', 'step-pay'].forEach(stepId => {
+    document.getElementById(stepId).classList.toggle('hidden', stepId !== id);
+  });
+}
+
+function updateProgress(doneCount) {
+  const safeDone = Math.max(0, Math.min(Qs.length, doneCount));
+  document.getElementById('p-idx').innerText = String(safeDone).padStart(2, '0') + '/' + Qs.length;
+  document.getElementById('p-bar').style.width = ((safeDone / Qs.length) * 100) + '%';
+}
+
+function formatQuestionTitle(dim) {
+  const clean = dim.replace(/^Q\d+\s*·\s*/, '');
+  return clean;
+}
+
+function render() {
+  const q = Qs[curQ];
+  updateProgress(curQ + 1);
+  document.getElementById('q-h').textContent = formatQuestionTitle(q.dim);
+  document.getElementById('q-t').textContent = q.text;
+  const cont = document.getElementById('q-options');
+  cont.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const b = document.createElement('button');
+    b.className = 'btn-opt';
+    b.textContent = opt.text;
+    b.onclick = () => {
+      if (curQ === 0 && window.HugoMojoTrack) {
+        window.HugoMojoTrack.track("scanner_start");
+      }
+      answers[curQ] = i;
+      if (curQ < Qs.length - 1) {
+        curQ++;
+        render();
+      } else {
+        startScan();
+      }
+    };
+    cont.appendChild(b);
+  });
+}
+
+function startScan() {
+  setStep('step-scan');
+  scores = { H: 0, A: 0, C: 0 };
+  metaData = {};
+  answers.forEach((answerIndex, questionIndex) => {
+    const opt = Qs[questionIndex].opts[answerIndex];
+    scores.H += opt.scores.H || 0;
+    scores.A += opt.scores.A || 0;
+    scores.C += opt.scores.C || 0;
+    if (opt.meta) {
+      const splitAt = opt.meta.indexOf(':');
+      const key = opt.meta.slice(0, splitAt);
+      const value = opt.meta.slice(splitAt + 1);
+      metaData[key] = value;
+    }
+  });
+
+  const logs = [
+    'Reading all 16 answers...',
+    'Rebuilding resource profile...',
+    'Scoring Hunter / Artisan / Architect...',
+    'Locking highest-fit income path...'
+  ];
+  const lb = document.getElementById('scan-log');
+  lb.innerHTML = '';
+  logs.forEach((text, i) => {
+    setTimeout(() => {
+      lb.innerHTML += '<div style="margin-bottom:5px;">' + text + '</div>';
+      if (i === logs.length - 1) setTimeout(finish, 1200);
+    }, i * 800);
+  });
+}
+
+function finish() {
+  const winner = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+  activeResultType = winner;
+  if (window.HugoMojoTrack) {
+    window.HugoMojoTrack.track("scanner_complete", { result_type: winner, scores });
+  }
+  setStep('step-email');
+}
+
+function buildResourceLines() {
+  const lines = [];
+  if (metaData.target) lines.push('TARGET: $' + metaData.target + '/MO');
+  if (metaData.time) lines.push('TIME_VECTOR: ' + metaData.time.toUpperCase());
+  if (metaData.device) lines.push('DEVICE: ' + metaData.device.replace('_', ' ').toUpperCase());
+  if (metaData.budget) lines.push('BUDGET: ' + metaData.budget.toUpperCase());
+  if (metaData.english) lines.push('ENGLISH: ' + metaData.english.toUpperCase());
+  if (metaData.knowledge) lines.push('KNOWLEDGE: ' + metaData.knowledge.toUpperCase());
+  return lines.length ? lines : ['RESOURCE_MATCH: COMPLETE'];
+}
+
+function showResult(type) {
+  activeResultType = type;
+  const t = RESULTS[type];
+  const maxPossible = Qs.reduce((sum, q) => sum + Math.max(...q.opts.map(o => o.scores[type] || 0)), 0);
+  const rawPct = Math.round((scores[type] / maxPossible) * 100);
+  const matchPct = Math.max(88, Math.min(95, rawPct));
+  const scoreLine = 'SCORE_VECTOR: H=' + scores.H + ' / A=' + scores.A + ' / C=' + scores.C;
+  const resourceLines = buildResourceLines().map(line => '<div>' + line + '</div>').join('');
+  const paths = t.paths.map((p, i) => `
+    <div style="border-top:1px solid var(--glass-border); padding:18px 0; text-align:left;">
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:8px;">PATH ${i + 1}</div>
+      <div style="font-size:14px; color:#e0e0e0; font-weight:600; margin-bottom:6px;">${p.name}</div>
+      <div style="font-size:12px; color:#555; line-height:1.7;">${p.desc}</div>
+    </div>
+  `).join('');
+  const locked = t.locked.map(item => `
+    <div style="font-family:'JetBrains Mono'; font-size:9px; color:#444; letter-spacing:1px; margin-bottom:8px;">LOCKED: ${item}</div>
+  `).join('');
+  const singlePlan = `single_pass_${t.niche.toLowerCase()}`;
+
+  document.querySelector('#step-pay .card').innerHTML = `
+    <div class="match-percent">${matchPct}%</div>
+    <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Found your light</div>
+    <h1 id="res-name" style="font-size: 32px; margin-bottom: 16px;">THE ${t.niche.toUpperCase()}</h1>
+    <p class="sub-title" style="margin-bottom: 32px; font-size: 16px;">${t.tagline}</p>
+    <div class="result-blueprint">
+      <div style="font-family:'JetBrains Mono'; font-size: 9px; color: #444; text-align: left; line-height: 2;">
+        [SCAN_COMPLETE]<br>${scoreLine}${resourceLines}<div>30_DAY_TARGET: ${t.target30}</div>
+      </div>
+    </div>
+    <div style="margin: 28px 0; text-align:left;">
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:14px;">WHY THIS FITS</div>
+      ${t.why.map(w => `<div style="font-size:13px; color:#777; line-height:1.7; margin-bottom:10px;">${w}</div>`).join('')}
+    </div>
+    <div style="margin: 24px 0;">${paths}</div>
+    <div style="border-top:1px solid var(--glass-border); margin: 26px 0; padding-top:24px; text-align:left;">${locked}</div>
+    <div class="pricing-stack">
+      <a class="pay-option muted" href="${CHECKOUT_URLS.single[type]}" data-event="checkout_click" data-plan="${singlePlan}" data-price="9.90">
+        <div class="pay-tag">Single Pass</div>
+        <div class="pay-name"><span>One ${t.niche} report</span><span class="pay-price">$9.90</span></div>
+        <div class="pay-note">Role diagnosis + starter prompt + first 7 days</div>
+      </a>
+      <a class="pay-option featured" href="${CHECKOUT_URLS.master}" data-event="checkout_click" data-plan="master_key" data-price="19.90">
+        <div class="pay-tag">65% choose this</div>
+        <div class="pay-name"><span>Master Key · full result engine</span><span class="pay-price">$19.90</span></div>
+        <div class="pay-note">All 3 reports + Prompt Vault + 90-day roadmap + updates</div>
+      </a>
+      <a class="pay-option" href="${CHECKOUT_URLS.annual}" data-event="checkout_click" data-plan="annual_vault" data-price="199">
+        <div class="pay-tag">Annual Vault</div>
+        <div class="pay-name"><span>Monthly toolkits + private access</span><span class="pay-price">$199</span></div>
+        <div class="pay-note">Full Master Key + monthly toolkits + quarterly calibration</div>
+      </a>
+    </div>
+    <p style="margin-top: 20px; font-size: 9px; color: #333; letter-spacing: 4px; font-family: 'JetBrains Mono';">SECURE ACCESS · DIGITAL DELIVERY · hi@hugomojo.com</p>
+  `;
+
+  updateProgress(Qs.length);
+  setStep('step-pay');
+}
+
+document.getElementById('email-form').addEventListener('submit', event => {
+  event.preventDefault();
+  const email = document.getElementById('lead-email').value.trim();
+  if (!email) return;
+  try {
+    localStorage.setItem('hm_lead_email', email);
+  } catch (error) {
+    window.hmLeadEmail = email;
+  }
+  if (window.HugoMojoTrack) {
+    window.HugoMojoTrack.track("email_capture", {
+      email_domain: email.split('@')[1] || null,
+      result_type: activeResultType
+    });
+  }
+  showResult(activeResultType);
+});
+
+render();
+</script>
+</body>
+</html>

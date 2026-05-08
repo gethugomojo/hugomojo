@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Delivery Access — HugoMojo</title>
+  <meta name="description" content="Access your HugoMojo digital delivery package after checkout.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/tracking.js" defer></script>
+</head>
+<body>
+  <div class="mist-layer"></div>
+  <header class="topbar">
+    <div class="site-shell nav">
+      <a class="brand" href="index.html"><span class="brand-mark">HM</span><span class="brand-name">HugoMojo</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="scanner.html">Scanner</a>
+        <a href="delivery.html">Delivery</a>
+        <a href="membership.html">Membership</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-shell">
+    <section class="page-hero">
+      <div class="eyebrow"><span class="signal-dot"></span> Auto Delivery Node</div>
+      <h1 class="page-title" id="access-title">Your Package Is Ready.</h1>
+      <p class="page-copy" id="access-copy">
+        Your HugoMojo delivery package is assembled below. Save this page and download the included assets.
+      </p>
+      <p class="meta-line">Support: hi@hugomojo.com</p>
+    </section>
+
+    <section class="section" style="padding-top:24px;">
+      <div class="grid-2" id="delivery-grid"></div>
+    </section>
+
+    <section class="section" style="padding-top:20px;">
+      <div class="panel">
+        <div class="label">Execution Order</div>
+        <h3>Use the assets in this sequence.</h3>
+        <div class="timeline" id="delivery-sequence"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="site-shell footer-inner">
+      <span>Auto delivery · HugoMojo</span>
+      <span><a href="mailto:hi@hugomojo.com">hi@hugomojo.com</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const roles = {
+      H: {
+        name: "Hunter",
+        file: "downloads/hunter-single-pass.md",
+        title: "Hunter Single Pass",
+        copy: "Fast execution, client services, and direct offer testing.",
+        steps: ["Read the Hunter role signal.", "Build one service offer.", "Send the first 20 outreach messages.", "Convert feedback into one paid trial."]
+      },
+      A: {
+        name: "Artisan",
+        file: "downloads/artisan-single-pass.md",
+        title: "Artisan Single Pass",
+        copy: "Digital products, packaged knowledge, and creative asset monetization.",
+        steps: ["Read the Artisan role signal.", "Choose one product problem.", "Build the first small product.", "Publish and gather first feedback."]
+      },
+      C: {
+        name: "Architect",
+        file: "downloads/architect-single-pass.md",
+        title: "Architect Single Pass",
+        copy: "B2B automation, AI audits, and high-value system design.",
+        steps: ["Read the Architect role signal.", "Pick one business niche.", "Create the audit offer.", "Send the first 20 audit messages."]
+      }
+    };
+
+    const bundles = {
+      master: {
+        title: "Master Key Delivery",
+        copy: "All three role reports, the prompt vault, and the 90-day roadmap are unlocked.",
+        items: [
+          roles.H,
+          roles.A,
+          roles.C,
+          { title: "Master Key Prompt Vault", copy: "Reusable prompts for path selection, offers, products, audits, and weekly reviews.", file: "downloads/master-key-prompt-vault.md" },
+          { title: "90-Day Roadmap", copy: "Signal, system, and scale sequence for the first three months.", file: "downloads/master-key-90-day-roadmap.md" }
+        ],
+        steps: ["Read all three role reports.", "Pick your primary path and backup path.", "Use the Prompt Vault to build your first offer.", "Run the first 14-day signal test.", "Review the 90-day roadmap every week."]
+      },
+      vault: {
+        title: "Annual Vault Delivery",
+        copy: "Annual access starts with the full Master Key package plus the Annual Vault welcome kit.",
+        items: [
+          roles.H,
+          roles.A,
+          roles.C,
+          { title: "Master Key Prompt Vault", copy: "Reusable prompts for path selection, offers, products, audits, and weekly reviews.", file: "downloads/master-key-prompt-vault.md" },
+          { title: "90-Day Roadmap", copy: "Signal, system, and scale sequence for the first three months.", file: "downloads/master-key-90-day-roadmap.md" },
+          { title: "Annual Vault Welcome", copy: "Member orientation, monthly toolkit rhythm, and quarterly calibration workflow.", file: "downloads/annual-vault-welcome.md" }
+        ],
+        steps: ["Save every Master Key asset.", "Choose one primary path for 30 days.", "Read the Annual Vault welcome kit.", "Prepare your first quarterly calibration notes.", "Watch for monthly toolkit drops."]
+      }
+    };
+
+    function card(item) {
+      return `
+        <article class="delivery-card">
+          <div class="label">Unlocked Asset</div>
+          <h3>${item.title}</h3>
+          <p class="card-copy">${item.copy}</p>
+          <div class="cta-row" style="margin-top:26px;">
+            <a class="btn-primary" href="${item.file}" data-event="delivery_download" data-plan="${currentPlan}">Download Asset</a>
+          </div>
+        </article>
+      `;
+    }
+
+    function step(text, index) {
+      return `<div class="timeline-item"><div class="timeline-day">Step ${index + 1}</div><div class="card-copy">${text}</div></div>`;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get("plan") || "master";
+    const role = params.get("role") || "H";
+    const currentPlan = plan;
+    let delivery;
+
+    if (plan === "single") {
+      const selected = roles[role] || roles.H;
+      delivery = {
+        title: selected.title,
+        copy: selected.copy,
+        items: [selected],
+        steps: selected.steps
+      };
+    } else if (plan === "vault") {
+      delivery = bundles.vault;
+    } else {
+      delivery = bundles.master;
+    }
+
+    document.getElementById("access-title").textContent = delivery.title;
+    document.getElementById("access-copy").textContent = delivery.copy;
+    document.getElementById("delivery-grid").innerHTML = delivery.items.map(card).join("");
+    document.getElementById("delivery-sequence").innerHTML = delivery.steps.map(step).join("");
+
+    if (window.HugoMojoTrack) {
+      window.HugoMojoTrack.track("delivery_access", { plan, role });
+    }
+  </script>
+</body>
+</html>
