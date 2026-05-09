@@ -300,6 +300,13 @@ h1 {
   line-height: 1.7;
 }
 
+.assessment-disclaimer {
+  margin-top: 22px;
+  color: rgba(210, 210, 214, 0.58);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
 .pricing-stack {
   display: grid;
   gap: 12px;
@@ -504,6 +511,7 @@ h1 {
       <h1 id="q-h">Shadow Check.</h1>
       <p class="sub-title" id="q-t">Evaluating your current position in the dark.</p>
       <div id="q-options"></div>
+      <p class="assessment-disclaimer">Educational assessment only. Not financial advice or an income guarantee. Results depend on your effort, skills, market conditions, and individual circumstances.</p>
     </div>
   </div>
 
@@ -1057,7 +1065,7 @@ function showPreview(type) {
       </div>
     </div>
     <button class="cta-buy" id="unlock-full-result" type="button" style="font-size: 16px;">Unlock Full Report</button>
-    <p class="fine-print" style="margin-top: 18px;">No income guarantees. Educational product only. Support: hi@hugomojo.com.</p>
+    <p class="fine-print" style="margin-top: 18px;">Disclaimer: HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
   `;
   updateProgress(Qs.length);
   if (window.HugoMojoTrack) {
@@ -1127,6 +1135,7 @@ function showResult(type) {
         <div class="pay-note">Full Master Key + monthly toolkits + quarterly calibration</div>
       </a>
     </div>
+    <p class="fine-print" style="margin-top: 18px;">Disclaimer: HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
     <p style="margin-top: 20px; font-size: 9px; color: rgba(218,218,222,0.60); letter-spacing: 4px; font-family: 'JetBrains Mono';">SECURE ACCESS · DIGITAL DELIVERY · hi@hugomojo.com</p>
   `;
 
