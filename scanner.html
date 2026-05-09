@@ -76,6 +76,7 @@ body::after {
 #app {
   width: calc(100vw - 40px);
   max-width: 480px;
+  margin: 0 auto;
   padding: 0;
   z-index: 10;
 }
@@ -83,7 +84,10 @@ body::after {
 .vault-link {
   position: fixed;
   top: 22px;
-  left: 24px;
+  left: 50%;
+  width: calc(100vw - 40px);
+  max-width: 480px;
+  transform: translateX(-50%);
   z-index: 20;
   color: var(--hope-glow);
   font-family: 'JetBrains Mono', monospace;
@@ -446,7 +450,7 @@ h1 {
   #app {
     width: calc(100vw - 40px);
     max-width: 350px;
-    margin-left: 20px;
+    margin-left: auto;
     margin-right: auto;
     padding: 0;
   }
@@ -473,7 +477,8 @@ h1 {
 
   .vault-link {
     top: 20px;
-    left: 20px;
+    width: calc(100vw - 40px);
+    max-width: 350px;
   }
 }
 
@@ -481,7 +486,13 @@ h1 {
   #app {
     width: calc(100vw - 36px);
     max-width: 344px;
-    margin-left: 18px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vault-link {
+    width: calc(100vw - 36px);
+    max-width: 344px;
   }
 
   .card {
