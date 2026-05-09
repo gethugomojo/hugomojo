@@ -541,12 +541,12 @@ h1 {
 
   <div id="step-email" class="hidden">
     <div class="card" style="text-align: center;">
-      <h1 style="font-size: 30px; margin-bottom: 20px;">Your Wealth Credential Is Ready.</h1>
-      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to generate the private access key for your result.</p>
+      <h1 style="font-size: 30px; margin-bottom: 20px;">Your Fit Report Is Ready.</h1>
+      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to save your result and see the full report.</p>
       <form class="email-gate" id="email-form" novalidate>
         <input class="email-input" id="lead-email" type="email" inputmode="email" placeholder="you@example.com" autocomplete="email" aria-describedby="email-error" aria-invalid="false">
         <div class="email-error" id="email-error" role="alert" aria-live="polite"></div>
-        <button class="cta-buy" type="submit" style="font-size: 16px;">Generate Access Key</button>
+        <button class="cta-buy" type="submit" style="font-size: 16px;">See My Full Report</button>
         <p class="fine-print">We use your email to deliver your result, product access, and related HugoMojo updates. No spam. No income guarantees. Support: hi@hugomojo.com.</p>
       </form>
     </div>
@@ -556,10 +556,10 @@ h1 {
   <div id="step-pay" class="hidden">
     <div class="card" style="text-align: center;">
       <div class="match-percent">98.8%</div>
-      <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Found your light</div>
+      <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Best fit found</div>
       
       <h1 id="res-name" style="font-size: 32px; margin-bottom: 20px;">ARCHITECT</h1>
-      <p class="sub-title" style="margin-bottom: 40px; font-size: 16px;">The blueprint to your financial dawn is ready.</p>
+      <p class="sub-title" style="margin-bottom: 40px; font-size: 16px;">Your matched report is ready.</p>
       
       <div class="result-blueprint">
         <div style="font-family: 'JetBrains Mono'; font-size: 9px; color: rgba(218,218,222,0.66); text-align: left; line-height: 2;">
@@ -570,7 +570,7 @@ h1 {
         </div>
       </div>
 
-      <button id="pay-btn" class="cta-buy">Claim the Future</button>
+      <button id="pay-btn" class="cta-buy">Unlock Full Report</button>
       <p style="margin-top: 30px; font-size: 9px; color: rgba(218,218,222,0.60); letter-spacing: 4px; font-family: 'JetBrains Mono';">SECURE ACCESS · 9.90 USD</p>
     </div>
   </div>
@@ -1118,7 +1118,7 @@ function showResult(type) {
 
   document.querySelector('#step-pay .card').innerHTML = `
     <div class="match-percent">${matchPct}%</div>
-    <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Found your light</div>
+    <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Best fit found</div>
     <h1 id="res-name" style="font-size: 32px; margin-bottom: 16px;">THE ${t.niche.toUpperCase()}</h1>
     <p class="sub-title" style="margin-bottom: 32px; font-size: 16px;">${t.tagline}</p>
     <div class="result-blueprint">
