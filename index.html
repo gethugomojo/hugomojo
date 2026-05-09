@@ -207,6 +207,7 @@ h1 {
 .price-action {
   margin-top: 18px;
   width: 100%;
+  min-height: 72px;
 }
 
 .meta-line {
@@ -246,6 +247,12 @@ h1 {
 .preview-card,
 .price-card,
 .info-card { padding: 20px; }
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 302px;
+}
 
 .preview-card h4,
 .price-card h3,
@@ -322,7 +329,7 @@ h1 {
 }
 
 .price {
-  margin: 16px 0 4px;
+  margin: auto 0 4px;
   color: var(--hope-glow);
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -339,6 +346,7 @@ h1 {
   color: var(--dim-text);
   font-size: 9px;
   letter-spacing: 1.4px;
+  min-height: 30px;
 }
 
 .trust-strip {
@@ -409,6 +417,10 @@ h1 {
   .price-card,
   .info-card,
   .silhouette-box { min-width: 0; }
+  .price-card { min-height: 0; }
+  .price { margin-top: 16px; }
+  .price-note { min-height: 0; }
+  .price-action { min-height: 54px; }
   .preview-card p,
   .price-card p,
   .info-card p { overflow-wrap: break-word; }
