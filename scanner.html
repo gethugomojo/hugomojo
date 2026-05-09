@@ -1042,7 +1042,10 @@ function calculateMatchPct(type) {
 
 function buildResourceLines() {
   const lines = [];
-  if (metaData.target) lines.push('TARGET: $' + metaData.target + '/MO');
+  if (metaData.target) {
+    const targetValue = metaData.target.startsWith('$') ? metaData.target : '$' + metaData.target;
+    lines.push('TARGET: ' + targetValue + '/MO');
+  }
   if (metaData.time) lines.push('TIME_VECTOR: ' + metaData.time.toUpperCase());
   if (metaData.device) lines.push('DEVICE: ' + metaData.device.replace('_', ' ').toUpperCase());
   if (metaData.budget) lines.push('BUDGET: ' + metaData.budget.toUpperCase());
