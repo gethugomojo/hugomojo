@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HugoMojo — AI Income Scanner</title>
-  <meta name="description" content="HugoMojo helps independent builders find the AI income path that fits their time, skills, tools, and goals.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>HugoMojo — Personalized AI Income Assessment Service</title>
+<meta name="description" content="Complete the HugoMojo AI Income Assessment to identify your best-matched income path and access the corresponding implementation guide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
 :root {
   --bg-dark: #0a0a0b;
   --rock-gray: #1a1a1c;
-  --dim-text: #4a4a4c;
-  --readable-text: rgba(232, 232, 232, 0.86);
-  --soft-text: rgba(190, 190, 190, 0.72);
+  --dim-text: rgba(176, 176, 180, 0.74);
+  --readable-text: rgba(242, 242, 242, 0.92);
+  --soft-text: rgba(224, 224, 224, 0.82);
   --hope-glow: #ffb300;
   --hope-deep: #cc8e00;
-  --hope-soft: rgba(255, 179, 0, 0.15);
-  --glass: rgba(255, 255, 255, 0.018);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --card-shadow: 0 40px 100px rgba(0, 0, 0, 0.62);
+  --hope-soft: rgba(255, 179, 0, 0.14);
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.12);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-html {
-  background: var(--bg-dark);
-  scroll-behavior: smooth;
-}
+html { background: var(--bg-dark); scroll-behavior: smooth; }
 
 body {
   min-height: 100vh;
-  background: var(--bg-dark);
+  background-color: var(--bg-dark);
   color: var(--readable-text);
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.45;
   overflow-x: hidden;
   position: relative;
 }
@@ -48,61 +40,37 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 50% 38%, #171718 0%, #0a0a0b 70%);
+  background: radial-gradient(circle at 50% 18%, #171718 0%, #0a0a0b 68%);
   z-index: -2;
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.04;
-  pointer-events: none;
-  z-index: 100;
-}
+a { color: inherit; text-decoration: none; }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-a {
-  font: inherit;
-}
-
-.mist-layer {
-  position: fixed;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-  background: radial-gradient(circle at 50% 50%, #161618 0%, #0a0a0b 70%);
-  z-index: -1;
-  animation: drift 20s ease-in-out infinite alternate;
-}
-
-.site-shell {
-  width: min(1120px, calc(100% - 40px));
+.vault-shell {
+  width: calc(100vw - 40px);
+  max-width: 680px;
+  min-height: 100vh;
   margin: 0 auto;
+  padding: 0 0 36px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
-.topbar {
+.topline {
   position: sticky;
   top: 0;
-  z-index: 50;
-  backdrop-filter: blur(22px);
-  background: rgba(10, 10, 11, 0.78);
-  border-bottom: 1px solid var(--glass-border);
-}
-
-.nav {
-  min-height: 76px;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
+  margin: 0;
+  padding: 16px 0 12px;
+  border-bottom: 1px solid var(--glass-border);
+  background: rgba(10, 10, 11, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .brand {
@@ -112,833 +80,468 @@ a {
 }
 
 .brand-mark {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   display: grid;
   place-items: center;
   border: 1px solid rgba(255, 179, 0, 0.34);
-  background: linear-gradient(145deg, rgba(255, 179, 0, 0.22), rgba(255, 255, 255, 0.02));
+  background: rgba(255, 179, 0, 0.06);
   color: var(--hope-glow);
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 12px;
-  letter-spacing: -0.4px;
-  box-shadow: 0 0 28px rgba(255, 179, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
 }
 
 .brand-name,
-.mono,
-.eyebrow,
 .nav-links,
-.kicker,
+.mono,
 .meta-line,
-.label,
-.micro,
-.price-note {
-  font-family: 'JetBrains Mono', monospace;
+.price-note,
+.trust-strip,
+.footer-links {
+  font-family: 'Inter', sans-serif;
+  text-transform: none;
 }
 
 .brand-name {
+  color: var(--hope-glow);
   font-size: 10px;
   letter-spacing: 3px;
-  color: var(--hope-glow);
-  text-transform: uppercase;
 }
 
 .nav-links {
   display: flex;
-  align-items: center;
-  gap: 18px;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(220, 220, 220, 0.62);
-}
-
-.nav-links a {
-  transition: color 0.2s ease;
+  gap: 14px;
+  color: rgba(232, 232, 232, 0.76);
+  font-size: 9px;
+  letter-spacing: 1.8px;
 }
 
 .nav-links a:hover,
-.nav-links a.active {
-  color: var(--hope-glow);
-}
+.nav-links a.active { color: var(--hope-glow); }
 
-.hero {
-  min-height: calc(100vh - 76px);
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-  gap: 56px;
-  align-items: center;
-  padding: 72px 0 84px;
-}
-
-.hero > * {
-  min-width: 0;
-}
-
-.eyebrow,
-.kicker,
-.label,
-.micro {
-  color: var(--hope-glow);
-  letter-spacing: 2.4px;
-  text-transform: uppercase;
+.mono {
+  color: var(--dim-text);
   font-size: 10px;
+  letter-spacing: 2px;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 30px;
-  color: rgba(255, 179, 0, 0.9);
+.hero { padding: 38px 0 8px; }
+
+.hero-kicker {
+  color: var(--hope-glow);
+  margin-bottom: 14px;
 }
 
-.signal-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--hope-glow);
-  box-shadow: 0 0 18px var(--hope-deep);
-}
-
-h1,
-h2,
-h3,
-.display {
-  font-family: 'Archivo Black', sans-serif;
-  text-transform: uppercase;
+h1 {
+  max-width: 640px;
+  margin-bottom: 20px;
   color: #fff;
-  letter-spacing: -1.5px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(34px, 8vw, 54px);
   line-height: 1.04;
-  overflow-wrap: anywhere;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
 }
 
-.hero-title {
-  font-size: clamp(46px, 6.4vw, 82px);
-  max-width: 760px;
-  margin-bottom: 28px;
-  text-shadow: 0 0 40px rgba(255, 255, 255, 0.06);
+.title-line {
+  display: inline;
 }
 
-.hero-title span {
-  display: block;
-}
-
-.hero-copy,
-.section-copy,
-.card-copy,
-.body-copy {
+.hero-desc {
+  max-width: 600px;
+  margin-bottom: 26px;
   color: var(--soft-text);
+  font-size: 16px;
+  line-height: 1.7;
   font-weight: 300;
 }
 
-.hero-copy {
-  max-width: 620px;
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 36px;
-  overflow-wrap: break-word;
-}
-
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  align-items: center;
-}
-
-.panel-cta {
-  margin-top: 26px;
-}
-
-.hero-cta-stack {
+.action-stack {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 12px;
 }
 
 .btn-primary,
 .btn-secondary {
-  min-height: 54px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 24px;
+  min-height: 54px;
+  padding: 16px 28px;
   border: 1px solid transparent;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
-  letter-spacing: 1.6px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  text-align: center;
   text-transform: uppercase;
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-primary {
   background: var(--hope-glow);
   color: #050505;
-  box-shadow: 0 20px 42px rgba(255, 179, 0, 0.18);
-}
-
-.btn-hero {
-  min-height: 68px;
-  padding: 20px 34px;
-  font-size: 15px;
-  box-shadow: 0 26px 56px rgba(255, 179, 0, 0.22);
+  box-shadow: 0 24px 52px rgba(255, 179, 0, 0.18);
 }
 
 .btn-secondary {
-  border-color: var(--glass-border);
-  color: rgba(230, 230, 230, 0.76);
-  background: rgba(255, 255, 255, 0.015);
-}
-
-.btn-subtle {
   min-height: 42px;
   padding: 11px 16px;
-  font-family: 'JetBrains Mono', monospace;
+  border-color: var(--glass-border);
+  background: rgba(255, 255, 255, 0.012);
+  color: rgba(230, 230, 230, 0.72);
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
-  letter-spacing: 1.8px;
 }
 
 .btn-primary:hover,
-.btn-secondary:hover {
-  transform: translateY(-2px);
-}
+.btn-secondary:hover { transform: translateY(-2px); }
 
-.btn-secondary:hover {
-  border-color: var(--hope-deep);
-  color: var(--hope-glow);
-}
+.btn-primary:hover { background: #fff; }
+.btn-secondary:hover { color: var(--hope-glow); border-color: rgba(255, 179, 0, 0.32); }
 
-.terminal-card,
-.result-preview-card,
-.panel,
-.product-card,
-.delivery-card,
-.legal-block {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(145deg, rgba(20,20,22,0.82) 0%, rgba(10,10,11,0.95) 100%);
-  border: 1px solid var(--glass-border);
-  border-radius: 2px;
-  box-shadow: var(--card-shadow);
-}
-
-.terminal-card::before,
-.result-preview-card::before,
-.panel::before,
-.product-card::before,
-.delivery-card::before,
-.legal-block::before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 170px;
-  height: 170px;
-  background: radial-gradient(circle, var(--hope-soft) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.terminal-card {
-  padding: 46px 40px;
-}
-
-.result-preview-card {
-  padding: 38px;
-}
-
-.preview-topline {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  color: var(--dim-text);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.preview-match {
-  display: grid;
-  gap: 8px;
-  padding: 28px 0 24px;
-  border-bottom: 1px solid var(--glass-border);
-}
-
-.preview-role {
-  color: #fff;
-  font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(34px, 5vw, 52px);
-  letter-spacing: -1px;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.preview-score {
-  color: var(--hope-glow);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.preview-copy {
-  margin: 24px 0;
-  color: var(--soft-text);
-  font-size: 14px;
-  line-height: 1.75;
-  font-weight: 300;
-}
-
-.resource-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.resource-preview-item {
-  min-height: 112px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 14px;
-  border: 1px solid var(--glass-border);
-  background: rgba(255, 255, 255, 0.012);
-}
-
-.resource-preview-item span {
-  color: var(--hope-glow);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-}
-
-.resource-preview-item strong {
-  color: #fff;
-  font-size: 13px;
-}
-
-.resource-preview-item small {
-  color: var(--dim-text);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
-.income-target-preview {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 16px;
-  align-items: center;
+.price-action {
   margin-top: 18px;
-  padding: 20px;
-  border: 1px solid rgba(255, 179, 0, 0.24);
-  background: rgba(255, 179, 0, 0.045);
+  width: 100%;
 }
 
-.income-target-preview span {
-  color: var(--dim-text);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-}
-
-.income-target-preview strong {
-  color: var(--hope-glow);
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 28px;
-  line-height: 1;
-}
-
-.preview-note {
+.meta-line {
   margin-top: 18px;
   color: var(--dim-text);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.terminal-stat {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 18px;
-  padding: 18px 0;
-  border-top: 1px solid var(--glass-border);
-}
-
-.terminal-stat:first-of-type {
-  border-top: 0;
-}
-
-.stat-name {
-  color: rgba(230, 230, 230, 0.82);
-  font-size: 14px;
-}
-
-.stat-value {
-  color: var(--hope-glow);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-}
-
-.section {
-  padding: 88px 0;
-}
-
-.trust-strip {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
-  padding: 22px 24px;
-  border: 1px solid var(--glass-border);
-  background: rgba(255, 255, 255, 0.012);
-  color: rgba(230, 230, 230, 0.78);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-}
-
-.section-head {
-  max-width: 720px;
-  margin-bottom: 36px;
-}
-
-.section-title {
-  font-size: clamp(34px, 4.8vw, 62px);
-  margin: 12px 0 18px;
-}
-
-.section-copy {
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.product-card,
-.delivery-card,
-.legal-block,
-.panel {
-  padding: 32px;
-}
-
-.product-card h3,
-.delivery-card h3,
-.legal-block h3,
-.panel h3 {
-  font-size: 24px;
-  margin: 16px 0 14px;
-}
-
-.card-copy {
-  font-size: 14px;
-  line-height: 1.75;
-}
-
-.price {
-  margin: 26px 0 6px;
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 36px;
-  color: #fff;
-}
-
-.price-note {
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: var(--dim-text);
-  text-transform: uppercase;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7px 10px;
-  border: 1px solid rgba(255, 179, 0, 0.28);
-  color: var(--hope-glow);
-  background: rgba(255, 179, 0, 0.04);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.18fr 1fr;
-  gap: 18px;
-  align-items: stretch;
-}
-
-.pricing-card {
-  position: relative;
-  padding: 32px;
-  border: 1px solid var(--glass-border);
-  background: rgba(255, 255, 255, 0.012);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
-}
-
-.pricing-card.featured {
-  border-color: rgba(255, 179, 0, 0.38);
-  background: linear-gradient(145deg, rgba(255, 179, 0, 0.06), rgba(255, 255, 255, 0.012));
-  box-shadow: 0 0 52px rgba(255, 179, 0, 0.08), 0 34px 100px rgba(0, 0, 0, 0.55);
-  animation: amber-breathe 3.6s ease-in-out infinite;
-}
-
-.pricing-card.muted {
-  opacity: 0.74;
-}
-
-.pricing-name {
-  margin: 16px 0 12px;
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 28px;
-  line-height: 1;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -0.8px;
-}
-
-.pricing-price {
-  margin: 20px 0 8px;
-  font-family: 'Archivo Black', sans-serif;
-  color: #fff;
-  font-size: 44px;
-  line-height: 1;
-}
-
-.pricing-sub {
-  color: var(--dim-text);
-  font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
   letter-spacing: 1.8px;
-  text-transform: uppercase;
 }
 
-.email-gate {
-  display: grid;
-  gap: 12px;
-  margin: 26px 0;
-}
-
-.email-input {
-  width: 100%;
-  min-height: 54px;
-  padding: 16px 18px;
-  border: 1px solid var(--glass-border);
-  background: rgba(0, 0, 0, 0.28);
-  color: var(--readable-text);
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  outline: none;
-}
-
-.email-input:focus {
-  border-color: rgba(255, 179, 0, 0.44);
-  box-shadow: 0 0 24px rgba(255, 179, 0, 0.08);
-}
-
-.fine-print {
-  color: var(--dim-text);
-  font-size: 11px;
-  line-height: 1.7;
-}
-
-.timeline {
-  display: grid;
-  gap: 14px;
-}
-
-.timeline-item {
-  display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: 20px;
-  padding: 18px 0;
+.blueprint-preview,
+.pricing-section,
+.info-section,
+.trust-strip {
+  margin-top: 42px;
+  padding-top: 36px;
   border-top: 1px solid var(--glass-border);
 }
 
-.timeline-item:first-child {
-  border-top: 0;
-}
-
-.timeline-day {
-  font-family: 'JetBrains Mono', monospace;
-  color: var(--hope-glow);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.metric-grid {
+.preview-grid,
+.pricing-grid,
+.info-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.metric {
-  padding: 22px;
-  border: 1px solid var(--glass-border);
-  background: rgba(255, 255, 255, 0.012);
-}
-
-.metric-value {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 36px;
-  color: #fff;
-  line-height: 1;
-}
-
-.metric-label {
-  margin-top: 10px;
-  color: var(--dim-text);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-}
-
-.list {
-  display: grid;
+  grid-template-columns: 1fr;
   gap: 12px;
   margin-top: 22px;
 }
 
-.list-item {
-  display: flex;
-  gap: 12px;
-  color: rgba(224, 224, 224, 0.76);
+.preview-card,
+.price-card,
+.info-card,
+.silhouette-box {
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  border-radius: 4px;
+}
+
+.preview-card,
+.price-card,
+.info-card { padding: 20px; }
+
+.preview-card h4,
+.price-card h3,
+.info-card h3 {
+  margin-bottom: 8px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: 14px;
-  line-height: 1.65;
-}
-
-.list-item::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  margin-top: 8px;
-  flex: 0 0 auto;
-  background: var(--hope-glow);
-  box-shadow: 0 0 12px var(--hope-deep);
-}
-
-.meta-line {
-  margin-top: 24px;
-  font-size: 10px;
-  color: var(--dim-text);
-  letter-spacing: 2px;
+  line-height: 1.1;
   text-transform: uppercase;
 }
 
-.page-hero {
-  padding: 86px 0 48px;
-  max-width: 860px;
-}
-
-.page-title {
-  font-size: clamp(42px, 7vw, 86px);
-  margin: 16px 0 22px;
-}
-
-.page-copy {
-  max-width: 720px;
+.preview-card p,
+.price-card p,
+.info-card p {
   color: var(--soft-text);
-  font-size: 17px;
-  line-height: 1.82;
+  font-size: 14px;
+  line-height: 1.62;
   font-weight: 300;
 }
 
-.matrix {
+.silhouette-box {
+  margin-top: 18px;
+  padding: 24px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
+}
+
+.archetype-row {
   display: grid;
-  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 18px 0;
 }
 
-.matrix-row {
+.archetype {
+  min-height: 128px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.18);
+  color: var(--soft-text);
+}
+
+.archetype-mark {
+  width: 30px;
+  height: 30px;
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 20px;
-  padding: 18px 0;
-  border-top: 1px solid var(--glass-border);
-}
-
-.matrix-row:first-child {
-  border-top: 0;
-}
-
-.matrix-key {
-  font-family: 'JetBrains Mono', monospace;
+  place-items: center;
+  border: 1px solid rgba(255, 179, 0, 0.28);
   color: var(--hope-glow);
-  font-size: 10px;
-  letter-spacing: 2px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.archetype-title {
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-.matrix-value {
+.archetype-copy {
   color: var(--soft-text);
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.price {
+  margin: 16px 0 4px;
+  color: var(--hope-glow);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.price-card.featured {
+  border-color: rgba(255, 179, 0, 0.34);
+  background: linear-gradient(180deg, rgba(255, 179, 0, 0.07), rgba(255,255,255,0.018));
+}
+
+.price-note {
+  color: var(--dim-text);
+  font-size: 9px;
+  letter-spacing: 1.4px;
+}
+
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: rgba(230, 230, 230, 0.76);
+  font-size: 9px;
+  letter-spacing: 1.2px;
 }
 
 .footer {
-  border-top: 1px solid var(--glass-border);
-  padding: 34px 0;
+  margin-top: auto;
+  padding-top: 34px;
   color: var(--dim-text);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
 }
 
 .footer-links {
-  display: inline-flex;
-  gap: 14px;
+  display: flex;
   flex-wrap: wrap;
+  gap: 12px;
+  font-size: 9px;
+  letter-spacing: 1.6px;
 }
 
-@keyframes drift {
-  from { transform: translate(-5%, -5%); }
-  to { transform: translate(5%, 5%); }
-}
+.footer-links a:hover { color: var(--hope-glow); }
 
-@keyframes amber-breathe {
-  0%, 100% { box-shadow: 0 0 34px rgba(255, 179, 0, 0.05), 0 34px 100px rgba(0, 0, 0, 0.55); }
-  50% { box-shadow: 0 0 72px rgba(255, 179, 0, 0.13), 0 34px 100px rgba(0, 0, 0, 0.55); }
-}
-
-@media (max-width: 860px) {
-  .nav {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 18px 0;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .hero,
-  .grid-2,
-  .grid-3,
+@media (min-width: 480px) {
+  .preview-grid,
   .pricing-grid,
-  .metric-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    display: block;
-    min-height: auto;
-    padding: 58px 0 72px;
-  }
-
-  .hero > * + * {
-    margin-top: 56px;
-  }
-
-  .hero-copy {
-    max-width: min(100%, 332px);
-  }
-
-  .terminal-card {
-    padding: 34px 28px;
-  }
-
-  .result-preview-card {
-    padding: 30px 26px;
-  }
-
-  .matrix-row {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
+  .info-grid { grid-template-columns: 1fr 1fr; }
+  .pricing-grid { grid-template-columns: 0.9fr 1.1fr 1fr; }
+  .btn-primary { width: auto; }
 }
 
-@media (max-width: 520px) {
-  .site-shell {
-    width: min(100% - 28px, 1120px);
+@media (max-width: 640px) {
+  body { width: 100%; }
+  .vault-shell {
+    width: calc(100vw - 40px);
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0 36px;
   }
-
-  .hero-title,
-  .page-title {
-    letter-spacing: -1px;
+  .topline { align-items: center; flex-direction: row; flex-wrap: wrap; gap: 12px; }
+  .nav-links {
+    width: auto;
+    margin-left: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 10px;
   }
-
-  .hero-title {
-    font-size: clamp(36px, 10.6vw, 42px);
-    line-height: 1.05;
-  }
-
-  .hero-copy,
-  .meta-line {
-    max-width: min(100%, 332px);
-  }
-
-  .product-card,
-  .delivery-card,
-  .legal-block,
-  .panel {
-    padding: 24px;
-  }
-
+  .nav-links a[href="#pricing"] { display: none; }
+  .hero { padding-top: 30px; }
+  h1 { max-width: 100%; font-size: clamp(30px, 9.1vw, 35px); overflow-wrap: normal; }
+  .title-line { display: block; }
+  .hero-desc { font-size: 15px; }
+  .hero-desc,
+  .meta-line { max-width: min(100%, 340px); }
+  .vault-shell { overflow-x: hidden; }
   .btn-primary,
-  .btn-secondary {
-    width: 100%;
-  }
-
-  .hero-cta-stack {
-    align-items: stretch;
-  }
-
-  .resource-preview-grid,
-  .income-target-preview {
-    grid-template-columns: 1fr;
-  }
-
-  .preview-topline {
-    justify-content: flex-start;
-  }
-
-  .preview-topline span:last-child {
-    display: none;
-  }
-
-  .preview-copy {
-    max-width: min(100%, 300px);
-    overflow-wrap: break-word;
-  }
+  .btn-secondary { width: 100%; }
+  .preview-grid,
+  .pricing-grid,
+  .info-grid,
+  .archetype-row { grid-template-columns: 1fr !important; }
+  .preview-card,
+  .price-card,
+  .info-card,
+  .silhouette-box { min-width: 0; }
+  .preview-card p,
+  .price-card p,
+  .info-card p { overflow-wrap: break-word; }
 }
+</style>
+</head>
+<body>
+  <main class="vault-shell">
+    <header class="topline">
+      <a class="brand" href="index.html" aria-label="HugoMojo home">
+        <span class="brand-mark">HM</span>
+        <span class="brand-name">HugoMojo</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="scanner.html">Assessment</a>
+        <a href="#pricing">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  </style>
+    <section class="hero">
+      <div class="mono hero-kicker">Version 11.0 - Resource Assessment System</div>
+      <h1><span class="title-line">You've Tried</span> <span class="title-line">AI Side Hustles.</span> <span class="title-line">None Felt Right.</span> <span class="title-line">Here's Why.</span></h1>
+      <p class="hero-desc">Most AI side-hustle advice sounds useful until you try to apply it to your own time, skills, tools, and budget. HugoMojo helps you identify the path that fits your real situation.</p>
+      <div class="action-stack">
+        <a class="btn-primary" href="scanner.html" data-event="scanner_start">Start Assessment</a>
+        <a class="btn-secondary" href="#pricing" data-event="pricing_anchor">See Pricing</a>
+      </div>
+      <p class="meta-line">16 assessment questions · confidential results · educational service only</p>
+    </section>
+
+    <section class="blueprint-preview" aria-label="Report dimensions">
+      <div class="mono">Assessment Dimensions</div>
+      <div class="preview-grid">
+        <article class="preview-card">
+          <h4>01. Operation Style Assessment</h4>
+          <p>Identify whether your work behavior aligns with the Hunter, Artisan, or Architect work pattern.</p>
+        </article>
+        <article class="preview-card">
+          <h4>02. Resource Matching</h4>
+          <p>Align your available time, devices, budget, audience and skills to a practical initial income path.</p>
+        </article>
+        <article class="preview-card">
+          <h4>03. 30-Day Target</h4>
+          <p>Receive a targeted initial goal and the optimized path to complete a reliable feasibility validation.</p>
+        </article>
+        <article class="preview-card">
+          <h4>04. Solution Matching</h4>
+          <p>Preview which paid implementation guide best matches your assessment result prior to purchase.</p>
+        </article>
+      </div>
+
+      <div class="silhouette-box">
+        <div class="mono">Available Work Archetypes</div>
+        <div class="archetype-row" aria-label="HugoMojo archetypes">
+          <div class="archetype">
+            <span class="archetype-mark">H</span>
+            <span class="archetype-title">Hunter</span>
+            <span class="archetype-copy">Fast client revenue solutions.</span>
+          </div>
+          <div class="archetype">
+            <span class="archetype-mark">A</span>
+            <span class="archetype-title">Artisan</span>
+            <span class="archetype-copy">Packaged expertise services.</span>
+          </div>
+          <div class="archetype">
+            <span class="archetype-mark">C</span>
+            <span class="archetype-title">Architect</span>
+            <span class="archetype-copy">Scalable business systems.</span>
+          </div>
+        </div>
+        <p class="price-note">Your assessment responses will be matched against the HugoMojo income solution matching engine.</p>
+      </div>
+    </section>
+
+    <section class="pricing-section" id="pricing" aria-label="Pricing">
+      <div class="mono">Service Access Tiers</div>
+      <div class="pricing-grid">
+        <article class="price-card">
+          <h3>Single Pass</h3>
+          <p>A personalized role report based on your assessment result.</p>
+          <div class="price">$9.90</div>
+          <div class="price-note">One role report</div>
+          <a class="btn-secondary price-action" href="scanner.html" data-event="pricing_single_scan" data-plan="single_pass">Unlock Post-Assessment</a>
+        </article>
+        <article class="price-card featured">
+          <h3>Master Key</h3>
+          <p>All three role reports, prompt resource library, and 90-day implementation roadmap.</p>
+          <div class="price">$19.90</div>
+          <div class="price-note">Complete the scanner first to get your matched report.</div>
+          <a class="btn-primary price-action" href="scanner.html" data-event="pricing_master_scan" data-plan="master_key">Unlock Post-Assessment</a>
+        </article>
+        <article class="price-card">
+          <h3>Annual Vault</h3>
+          <p>Yearly access to monthly resource toolkits and quarterly assessment recalibration.</p>
+          <div class="price">$199</div>
+          <div class="price-note">Best after your result is locked.</div>
+          <a class="btn-secondary price-action" href="scanner.html" data-event="pricing_annual_scan" data-plan="annual_vault">Start Assessment First</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="info-section" aria-label="Delivery and compliance">
+      <div class="info-grid">
+        <article class="info-card">
+          <h3>Service Deliverables</h3>
+          <p>Assessment reports, prompt resources, operational steps, templates, and a 30-day execution plan. This is an educational service only.</p>
+        </article>
+        <article class="info-card">
+          <h3>Service Process</h3>
+          <p>Complete 16 assessment questions, preview your best-matched path, then unlock the report or resource toolkit that aligns with your current resources.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Trust signals">
+      <span>No subscription on reports</span>
+      <span>Instant PDF delivery</span>
+      <span>Educational product only</span>
+      <span><a href="mailto:hi@hugomojo.com">hi@hugomojo.com</a></span>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="delivery.html" data-event="footer_delivery">Delivery</a>
+        <a href="contact.html" data-event="footer_contact">Contact</a>
+        <a href="privacy.html" data-event="footer_privacy">Privacy</a>
+        <a href="terms.html" data-event="footer_terms">Terms</a>
+        <a href="refund.html" data-event="footer_refund">Refund</a>
+      </div>
+    </footer>
+  </main>
   <script>
 (function () {
   const storageKey = "hm_events_v1";
@@ -947,19 +550,11 @@ h3,
   const memoryStore = {};
 
   function storageGet(store, key) {
-    try {
-      return store.getItem(key);
-    } catch (error) {
-      return memoryStore[key] || null;
-    }
+    try { return store.getItem(key); } catch (error) { return memoryStore[key] || null; }
   }
 
   function storageSet(store, key, value) {
-    try {
-      store.setItem(key, value);
-    } catch (error) {
-      memoryStore[key] = String(value);
-    }
+    try { store.setItem(key, value); } catch (error) { memoryStore[key] = String(value); }
   }
 
   function id(prefix) {
@@ -978,15 +573,10 @@ h3,
   const visitorId = getOrCreate(visitorKey, "visitor");
   const sessionId = storageGet(sessionStorage, sessionKey) || id("session");
   storageSet(sessionStorage, sessionKey, sessionId);
-
   window.dataLayer = window.dataLayer || [];
 
   function readEvents() {
-    try {
-      return JSON.parse(storageGet(localStorage, storageKey) || "[]");
-    } catch (error) {
-      return [];
-    }
+    try { return JSON.parse(storageGet(localStorage, storageKey) || "[]"); } catch (error) { return []; }
   }
 
   function writeEvent(event) {
@@ -1007,196 +597,18 @@ h3,
     };
     window.dataLayer.push(event);
     writeEvent(event);
-    if (window.HUGOMOJO_DEBUG === true) console.log("[HugoMojo]", event);
   }
 
-  window.HugoMojoTrack = {
-    track,
-    visitorId,
-    sessionId,
-    events: readEvents
-  };
-
+  window.HugoMojoTrack = { track, visitorId, sessionId, events: readEvents };
   document.addEventListener("DOMContentLoaded", function () {
     track("page_view");
     document.addEventListener("click", function (event) {
       const el = event.target.closest("[data-event]");
       if (!el) return;
-      track(el.getAttribute("data-event"), {
-        plan: el.getAttribute("data-plan") || null,
-        price: el.getAttribute("data-price") || null,
-        href: el.getAttribute("href") || null
-      });
+      track(el.getAttribute("data-event"), { href: el.getAttribute("href") || null });
     });
   });
 })();
-
   </script>
-</head>
-<body>
-  <div class="mist-layer"></div>
-  <header class="topbar">
-    <div class="site-shell nav">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">HM</span>
-        <span class="brand-name">HugoMojo</span>
-      </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a class="active" href="index.html">Home</a>
-        <a href="scanner.html">Scanner</a>
-        <a href="#pricing">Pricing</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="site-shell hero">
-      <div>
-        <div class="eyebrow"><span class="signal-dot"></span> AI Income Path Finder</div>
-        <h1 class="hero-title"><span>AI Advice</span><span>Feels Off.</span></h1>
-        <p class="hero-copy">
-          You've seen 100 ways to make money with AI. Let's find the one your real situation can actually start across time, tools, skills, budget, and execution style.
-        </p>
-        <div class="hero-cta-stack">
-          <a class="btn-primary btn-hero" href="scanner.html" data-event="scanner_start">Start Free Scanner</a>
-          <a class="btn-secondary btn-subtle" href="delivery.html" data-event="delivery_preview">Preview The Delivery</a>
-        </div>
-        <p class="meta-line">16 questions · English only · No income guarantees</p>
-      </div>
-
-      <aside class="result-preview-card" aria-label="Example scanner result preview">
-        <div class="preview-topline">
-          <span>Sample Result</span>
-          <span>Vault v11</span>
-        </div>
-        <div class="preview-match">
-          <div class="preview-role">🦊 Hunter</div>
-          <div class="preview-score">87% match</div>
-        </div>
-        <p class="preview-copy">
-          Your resources favor fast client work, simple AI-assisted delivery, and a first proof-of-cash within 30 days.
-        </p>
-        <div class="resource-preview-grid">
-          <div class="resource-preview-item">
-            <span>✓</span>
-            <strong>Time</strong>
-            <small>1-2 hrs/day</small>
-          </div>
-          <div class="resource-preview-item">
-            <span>✓</span>
-            <strong>Device</strong>
-            <small>Laptop ready</small>
-          </div>
-          <div class="resource-preview-item">
-            <span>✓</span>
-            <strong>Budget</strong>
-            <small>Low cost path</small>
-          </div>
-        </div>
-        <div class="income-target-preview">
-          <span>30-day income target</span>
-          <strong>$300-$800</strong>
-        </div>
-        <div class="preview-note">Generated after 16 resource questions.</div>
-      </aside>
-    </section>
-
-    <section class="site-shell section" id="pricing">
-      <div class="section-head">
-        <div class="kicker">The Three Paths</div>
-        <h2 class="section-title">One scanner. Three products in the funnel.</h2>
-        <p class="section-copy">
-          The scanner maps your answers to a practical income path, then routes you through a clear pricing ladder from Single Pass to Master Key to Annual Vault.
-        </p>
-      </div>
-      <div class="pricing-grid">
-        <article class="pricing-card muted">
-          <span class="badge">Entry</span>
-          <div class="pricing-name">Single Pass</div>
-          <p class="card-copy">One matched role report for the user's scanner result.</p>
-          <div class="price">$9.90</div>
-          <p class="price-note">One role report</p>
-          <div class="list">
-            <div class="list-item">One PDF diagnostic report.</div>
-            <div class="list-item">One matched role path.</div>
-            <div class="list-item">Designed as the low-friction entry point.</div>
-          </div>
-        </article>
-
-        <article class="pricing-card featured">
-          <span class="badge">65% Choose This</span>
-          <div class="pricing-name">Master Key</div>
-          <p class="card-copy">All three role reports plus 90 days of monthly AI income gap updates.</p>
-          <div class="price">$19.90</div>
-          <p class="price-note">Main offer</p>
-          <div class="list">
-            <div class="list-item">Hunter, Artisan, and Architect reports.</div>
-            <div class="list-item">Three complete blueprint paths.</div>
-            <div class="list-item">90-day bonus update sequence.</div>
-          </div>
-        </article>
-
-        <article class="pricing-card">
-          <span class="badge">Flagship</span>
-          <div class="pricing-name">Annual Vault</div>
-          <p class="card-copy">Private access for users who want HugoMojo to filter noise and deliver high-signal AI opportunities.</p>
-          <div class="price">$199</div>
-          <p class="price-note">Annual membership</p>
-          <div class="list">
-            <div class="list-item">Private Vault community.</div>
-            <div class="list-item">Two AI toolkits each month.</div>
-            <div class="list-item">Quarterly path calibration.</div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="site-shell trust-strip" aria-label="Trust signals">
-      <span>🔒 No subscription</span>
-      <span>⚡ Instant PDF delivery</span>
-      <span>📄 Educational product only</span>
-      <span><a href="mailto:hi@hugomojo.com">✉ hi@hugomojo.com</a></span>
-    </section>
-
-    <section class="site-shell section">
-      <div class="grid-2">
-        <div class="panel">
-          <div class="label">What Customers Receive</div>
-          <h3>Focused execution, not vague motivation.</h3>
-          <p class="card-copy">
-            Each blueprint is designed as a starter kit with prompts, operating steps, examples, templates, and a 30-day action sequence. The product is educational and operational. It does not promise or guarantee income.
-          </p>
-          <div class="cta-row panel-cta">
-            <a class="btn-secondary" href="delivery.html">See Delivery Page</a>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="label">Payment Readiness</div>
-          <h3>Built for review and clarity.</h3>
-          <p class="card-copy">
-            The site includes clear product descriptions, price disclosure, refund language, privacy information, terms of use, contact information, and a Creem readiness checklist for payment review.
-          </p>
-          <div class="cta-row panel-cta">
-            <a class="btn-secondary" href="creem-application.html">View Creem Notes</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="site-shell footer-inner">
-      <span>HugoMojo · AI income path scanner</span>
-      <span class="footer-links">
-        <a href="delivery.html">Delivery</a>
-        <a href="membership.html">Membership</a>
-        <a href="creem-application.html">Creem</a>
-        <a href="data-system.html">Data</a>
-        <a href="compliance.html">Compliance</a>
-        <a href="contact.html">Contact</a>
-      </span>
-    </div>
-  </footer>
 </body>
 </html>

@@ -18,8 +18,8 @@
       <a class="brand" href="index.html"><span class="brand-mark">HM</span><span class="brand-name">HugoMojo</span></a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="delivery.html">Delivery</a>
-        <a href="membership.html">Membership</a>
+        <a href="scanner.html">Assessment</a>
+        <a href="index.html#pricing">Pricing</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -27,33 +27,49 @@
   <main class="site-shell">
     <section class="hero" style="grid-template-columns:1fr minmax(320px, 0.75fr);">
       <div>
-        <div class="eyebrow"><span class="signal-dot"></span> Master Key Confirmed</div>
+        <div class="eyebrow"><span class="signal-dot"></span> Purchase Confirmed</div>
         <h1 class="hero-title">Your Vault Upgrade Window Is Open.</h1>
         <p class="hero-copy">
-          Your resource match shows strong execution potential. For the next 10 minutes, you can upgrade from Master Key to Annual Vault by paying the difference.
+          Your access is ready. Before you continue to the delivery page, you can enter the Annual Vault for yearly access to monthly toolkits, private access, and quarterly calibration.
         </p>
         <div class="cta-row">
-          <a class="btn-primary" href="https://creem.io/p/hugo-annual-vault-upgrade-179" data-event="upsell_click" data-plan="annual_vault_upgrade" data-price="179">Upgrade For $179</a>
-          <a class="btn-secondary" href="delivery.html" data-event="upsell_skip" data-plan="master_key">Keep Master Key</a>
+          <a class="btn-primary" href="https://www.creem.io/payment/prod_3BtB5cRkL48ynkqCFPfssW" data-event="upsell_click" data-plan="annual_vault" data-price="199">Enter Annual Vault</a>
+          <a class="btn-secondary" id="continue-delivery" href="access.html?plan=master" data-event="upsell_skip" data-plan="master_key">Continue To Delivery</a>
         </div>
         <p class="meta-line">Limited upgrade window · one-time annual access</p>
       </div>
       <aside class="terminal-card">
         <div class="label">Upgrade Math</div>
         <h2 style="font-size:34px; margin:18px 0 24px;">Annual Vault</h2>
-        <div class="terminal-stat"><span class="stat-name">Standard annual value</span><span class="stat-value">$299</span></div>
-        <div class="terminal-stat"><span class="stat-name">Limited upgrade price</span><span class="stat-value">$199</span></div>
-        <div class="terminal-stat"><span class="stat-name">Master Key credit</span><span class="stat-value">$20</span></div>
-        <div class="terminal-stat"><span class="stat-name">Upgrade due now</span><span class="stat-value">$179</span></div>
-        <div class="terminal-stat"><span class="stat-name">Window</span><span class="stat-value">10 minutes</span></div>
+        <div class="terminal-stat"><span class="stat-name">Annual access</span><span class="stat-value">$199</span></div>
+        <div class="terminal-stat"><span class="stat-name">Billing</span><span class="stat-value">Yearly</span></div>
+        <div class="terminal-stat"><span class="stat-name">Master Key package</span><span class="stat-value">Included</span></div>
+        <div class="terminal-stat"><span class="stat-name">Monthly toolkits</span><span class="stat-value">Included</span></div>
+        <div class="terminal-stat"><span class="stat-name">Quarterly calibration</span><span class="stat-value">Included</span></div>
       </aside>
     </section>
   </main>
   <footer class="footer">
     <div class="site-shell footer-inner">
-      <span>Upgrade window · HugoMojo</span>
-      <span><a href="mailto:hi@hugomojo.com">hi@hugomojo.com</a></span>
+      <span><a href="delivery.html">Delivery</a></span>
+      <span><a href="contact.html">Contact</a></span>
+      <span><a href="privacy.html">Privacy</a></span>
+      <span><a href="terms.html">Terms</a></span>
+      <span><a href="refund.html">Refund</a></span>
     </div>
   </footer>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get("plan") || "master";
+    const role = params.get("role") || "H";
+    const deliveryHref = plan === "single"
+      ? "access.html?plan=single&role=" + encodeURIComponent(role)
+      : plan === "vault"
+        ? "access.html?plan=vault"
+        : "access.html?plan=master";
+    const continueLink = document.getElementById("continue-delivery");
+    continueLink.href = deliveryHref;
+    continueLink.dataset.plan = plan;
+  </script>
 </body>
 </html>

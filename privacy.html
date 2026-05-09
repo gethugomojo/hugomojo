@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Contact — HugoMojo</title>
-<meta name="description" content="Contact HugoMojo for support, product access, billing questions, and compliance inquiries.">
+<title>Privacy — HugoMojo</title>
+<meta name="description" content="HugoMojo privacy notice for email capture, digital delivery, analytics, and payment processing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -16,15 +16,12 @@
   --readable-text: rgba(242, 242, 242, 0.92);
   --soft-text: rgba(224, 224, 224, 0.82);
   --hope-glow: #ffb300;
-  --hope-deep: #cc8e00;
   --glass: rgba(255, 255, 255, 0.04);
   --glass-border: rgba(255, 255, 255, 0.12);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
 html { background: var(--bg-dark); scroll-behavior: smooth; }
-
 body {
   min-height: 100vh;
   background-color: var(--bg-dark);
@@ -34,7 +31,6 @@ body {
   overflow-x: hidden;
   position: relative;
 }
-
 body::before {
   content: "";
   position: fixed;
@@ -42,7 +38,6 @@ body::before {
   background: radial-gradient(circle at 50% 18%, #171718 0%, #0a0a0b 68%);
   z-index: -2;
 }
-
 body::after {
   content: "";
   position: fixed;
@@ -52,9 +47,7 @@ body::after {
   pointer-events: none;
   z-index: 10;
 }
-
 a { color: inherit; text-decoration: none; }
-
 .vault-shell {
   width: calc(100vw - 40px);
   max-width: 680px;
@@ -65,7 +58,6 @@ a { color: inherit; text-decoration: none; }
   flex-direction: column;
   overflow-x: hidden;
 }
-
 .topline {
   position: sticky;
   top: 0;
@@ -80,13 +72,7 @@ a { color: inherit; text-decoration: none; }
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-
+.brand { display: inline-flex; align-items: center; gap: 12px; }
 .brand-mark {
   width: 32px;
   height: 32px;
@@ -98,24 +84,16 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Archivo Black', sans-serif;
   font-size: 11px;
 }
-
 .brand-name,
 .nav-links,
 .mono,
-.price-note,
 .trust-strip,
 .footer-links,
-.contact-label {
+.privacy-label {
   font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;
 }
-
-.brand-name {
-  color: var(--hope-glow);
-  font-size: 10px;
-  letter-spacing: 3px;
-}
-
+.brand-name { color: var(--hope-glow); font-size: 10px; letter-spacing: 3px; }
 .nav-links {
   display: flex;
   gap: 14px;
@@ -123,23 +101,11 @@ a { color: inherit; text-decoration: none; }
   font-size: 9px;
   letter-spacing: 1.8px;
 }
-
 .nav-links a:hover,
 .nav-links a.active { color: var(--hope-glow); }
-
-.mono {
-  color: var(--dim-text);
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
+.mono { color: var(--dim-text); font-size: 10px; letter-spacing: 2px; }
 .hero { padding: 38px 0 8px; }
-
-.hero-kicker {
-  color: var(--hope-glow);
-  margin-bottom: 14px;
-}
-
+.hero-kicker { color: var(--hope-glow); margin-bottom: 14px; }
 h1 {
   max-width: 640px;
   margin-bottom: 20px;
@@ -150,7 +116,6 @@ h1 {
   letter-spacing: -0.04em;
   text-transform: uppercase;
 }
-
 .accent-serif {
   color: var(--hope-glow);
   font-family: 'Cormorant Garamond', serif;
@@ -158,84 +123,37 @@ h1 {
   font-weight: 600;
   text-transform: none;
 }
-
 .hero-desc {
   max-width: 600px;
-  margin-bottom: 26px;
   color: var(--soft-text);
   font-size: 16px;
   line-height: 1.7;
   font-weight: 300;
 }
-
-.btn-primary,
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 54px;
-  padding: 16px 28px;
-  border: 1px solid transparent;
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 1.4px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.btn-primary {
-  background: var(--hope-glow);
-  color: #050505;
-  box-shadow: 0 24px 52px rgba(255, 179, 0, 0.18);
-}
-
-.btn-secondary {
-  min-height: 42px;
-  padding: 11px 16px;
-  border-color: var(--glass-border);
-  background: rgba(255, 255, 255, 0.012);
-  color: rgba(230, 230, 230, 0.72);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-}
-
-.btn-primary:hover,
-.btn-secondary:hover { transform: translateY(-2px); }
-
-.btn-primary:hover { background: #fff; }
-.btn-secondary:hover { color: var(--hope-glow); border-color: rgba(255, 179, 0, 0.32); }
-
-.contact-section,
+.privacy-section,
 .trust-strip {
   margin-top: 42px;
   padding-top: 36px;
   border-top: 1px solid var(--glass-border);
 }
-
-.contact-grid {
+.privacy-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
 }
-
-.contact-card {
+.privacy-card {
   padding: 20px;
   border: 1px solid var(--glass-border);
   background: var(--glass);
   border-radius: 4px;
 }
-
-.contact-label {
+.privacy-label {
   margin-bottom: 12px;
   color: var(--hope-glow);
   font-size: 10px;
   letter-spacing: 2px;
 }
-
-.contact-card h2,
-.contact-card h3 {
+.privacy-card h2 {
   margin-bottom: 10px;
   color: #fff;
   font-family: 'Archivo Black', sans-serif;
@@ -243,44 +161,12 @@ h1 {
   line-height: 1.1;
   text-transform: uppercase;
 }
-
-.contact-card p,
-.list-item {
+.privacy-card p {
   color: var(--soft-text);
   font-size: 14px;
   line-height: 1.62;
   font-weight: 300;
 }
-
-.email-line {
-  margin: 12px 0 18px;
-  color: var(--hope-glow);
-  font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(24px, 7vw, 38px);
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.list {
-  display: grid;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-.list-item {
-  padding: 14px;
-  border: 1px solid rgba(255,255,255,0.06);
-  background: rgba(0,0,0,0.18);
-}
-
-.action-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  margin-top: 24px;
-}
-
 .trust-strip {
   display: flex;
   flex-wrap: wrap;
@@ -289,13 +175,11 @@ h1 {
   font-size: 9px;
   letter-spacing: 1.2px;
 }
-
 .footer {
   margin-top: auto;
   padding-top: 34px;
   color: var(--dim-text);
 }
-
 .footer-links {
   display: flex;
   flex-wrap: wrap;
@@ -303,14 +187,10 @@ h1 {
   font-size: 9px;
   letter-spacing: 1.6px;
 }
-
 .footer-links a:hover { color: var(--hope-glow); }
-
 @media (min-width: 560px) {
-  .contact-grid { grid-template-columns: 1fr 1fr; }
-  .btn-primary { width: auto; }
+  .privacy-grid { grid-template-columns: 1fr 1fr; }
 }
-
 @media (max-width: 640px) {
   .vault-shell {
     width: calc(100vw - 40px);
@@ -324,9 +204,7 @@ h1 {
   .hero { padding-top: 30px; }
   h1 { font-size: clamp(30px, 9.1vw, 35px); overflow-wrap: normal; }
   .hero-desc { font-size: 15px; }
-  .btn-primary,
-  .btn-secondary { width: 100%; }
-  .contact-grid { grid-template-columns: 1fr; }
+  .privacy-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -341,41 +219,37 @@ h1 {
         <a href="index.html">Home</a>
         <a href="scanner.html">Assessment</a>
         <a href="index.html#pricing">Pricing</a>
-        <a class="active" href="contact.html">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </header>
 
     <section class="hero">
-      <div class="mono hero-kicker">Support // Product Access</div>
-      <h1>Support, Billing, And <span class="accent-serif">Access</span>.</h1>
-      <p class="hero-desc">
-        For product access, payment, refund, partnership, or compliance questions, contact HugoMojo by email.
-      </p>
+      <div class="mono hero-kicker">Privacy // Customer Data</div>
+      <h1>Simple <span class="accent-serif">Privacy</span> Notice.</h1>
+      <p class="hero-desc">HugoMojo collects only the information needed to run the scanner, deliver digital products, and answer support requests.</p>
     </section>
 
-    <section class="contact-section" aria-label="Contact details">
-      <div class="contact-grid">
-        <article class="contact-card">
-          <div class="contact-label">Primary Email</div>
-          <h2>Use This Address</h2>
-          <div class="email-line">hi@hugomojo.com</div>
-          <p>Send product access questions, billing requests, delivery issues, refund requests, and general support messages here.</p>
-          <div class="action-stack">
-            <a class="btn-primary" href="mailto:hi@hugomojo.com" data-event="contact_email">Email HugoMojo</a>
-            <a class="btn-secondary" href="delivery.html" data-event="contact_delivery">View Delivery</a>
-          </div>
+    <section class="privacy-section" aria-label="Privacy notice">
+      <div class="privacy-grid">
+        <article class="privacy-card">
+          <div class="privacy-label">Data We Collect</div>
+          <h2>Email And Assessment Inputs</h2>
+          <p>We may collect your email address, scanner answers, result type, checkout plan, and basic event data such as page views and CTA clicks.</p>
         </article>
-
-        <article class="contact-card">
-          <div class="contact-label">Support Details</div>
-          <h3>What To Include</h3>
-          <p>Short, specific messages are easiest to resolve. Include the details below when relevant.</p>
-          <div class="list">
-            <div class="list-item">The email used for purchase.</div>
-            <div class="list-item">The product name or scanner result path.</div>
-            <div class="list-item">A short description of the issue.</div>
-            <div class="list-item">Any order or payment reference available.</div>
-          </div>
+        <article class="privacy-card">
+          <div class="privacy-label">How We Use It</div>
+          <h2>Delivery And Support</h2>
+          <p>We use this information to show your result, deliver purchased products, provide updates, answer support questions, and improve the product experience.</p>
+        </article>
+        <article class="privacy-card">
+          <div class="privacy-label">Payments</div>
+          <h2>Processed By Creem</h2>
+          <p>Payment details are handled by Creem or its payment partners. HugoMojo does not store full card or bank details on this site.</p>
+        </article>
+        <article class="privacy-card">
+          <div class="privacy-label">Contact</div>
+          <h2>Request Support</h2>
+          <p>For access, billing, refund, privacy, or product questions, email hi@hugomojo.com. Include the email used for purchase when possible.</p>
         </article>
       </div>
     </section>
@@ -391,79 +265,11 @@ h1 {
       <div class="footer-links">
         <a href="delivery.html" data-event="footer_delivery">Delivery</a>
         <a href="contact.html" data-event="footer_contact">Contact</a>
-        <a href="privacy.html" data-event="footer_privacy">Privacy</a>
+        <a class="active" href="privacy.html" data-event="footer_privacy">Privacy</a>
         <a href="terms.html" data-event="footer_terms">Terms</a>
         <a href="refund.html" data-event="footer_refund">Refund</a>
       </div>
     </footer>
   </main>
-  <script>
-(function () {
-  const storageKey = "hm_events_v1";
-  const visitorKey = "hm_visitor_id";
-  const sessionKey = "hm_session_id";
-  const memoryStore = {};
-
-  function storageGet(store, key) {
-    try { return store.getItem(key); } catch (error) { return memoryStore[key] || null; }
-  }
-
-  function storageSet(store, key, value) {
-    try { store.setItem(key, value); } catch (error) { memoryStore[key] = String(value); }
-  }
-
-  function id(prefix) {
-    return prefix + "_" + Math.random().toString(36).slice(2) + Date.now().toString(36);
-  }
-
-  function getOrCreate(key, prefix) {
-    let value = storageGet(localStorage, key);
-    if (!value) {
-      value = id(prefix);
-      storageSet(localStorage, key, value);
-    }
-    return value;
-  }
-
-  const visitorId = getOrCreate(visitorKey, "visitor");
-  const sessionId = storageGet(sessionStorage, sessionKey) || id("session");
-  storageSet(sessionStorage, sessionKey, sessionId);
-  window.dataLayer = window.dataLayer || [];
-
-  function readEvents() {
-    try { return JSON.parse(storageGet(localStorage, storageKey) || "[]"); } catch (error) { return []; }
-  }
-
-  function writeEvent(event) {
-    const events = readEvents();
-    events.push(event);
-    storageSet(localStorage, storageKey, JSON.stringify(events.slice(-100)));
-  }
-
-  function track(name, payload) {
-    const event = {
-      event: name,
-      visitor_id: visitorId,
-      session_id: sessionId,
-      path: window.location.pathname,
-      title: document.title,
-      timestamp: new Date().toISOString(),
-      payload: payload || {}
-    };
-    window.dataLayer.push(event);
-    writeEvent(event);
-  }
-
-  window.HugoMojoTrack = { track, visitorId, sessionId, events: readEvents };
-  document.addEventListener("DOMContentLoaded", function () {
-    track("page_view");
-    document.addEventListener("click", function (event) {
-      const el = event.target.closest("[data-event]");
-      if (!el) return;
-      track(el.getAttribute("data-event"), { href: el.getAttribute("href") || null });
-    });
-  });
-})();
-  </script>
 </body>
 </html>

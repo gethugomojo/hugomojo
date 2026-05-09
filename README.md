@@ -7,12 +7,15 @@ Static website for HugoMojo, built for GitHub deployment.
 - `index.html` — homepage
 - `scanner.html` — 16-question AI Income Scanner
 - `delivery.html` — product delivery and kit overview
-- `membership.html` — pricing ladder and Annual Vault membership page
+- `terms.html` — public terms of service
+- `refund.html` — public refund policy
+- `privacy.html` — public privacy notice
+- `membership.html` — pricing ladder and Annual Vault membership page, not linked from public navigation
 - `access.html` — automatic delivery page after checkout
 - `success.html` — post-purchase Annual Vault upgrade window
-- `data-system.html` — event taxonomy and KPI dashboard design
-- `creem-application.html` — payment review readiness notes
-- `compliance.html` — compliance, privacy, refund, and responsible use information
+- `data-system.html` — internal event taxonomy and KPI dashboard design
+- `creem-application.html` — internal payment review readiness notes
+- `compliance.html` — internal compliance and responsible-use checklist
 - `contact.html` — support and contact page
 - `404.html` — GitHub Pages not-found page
 - `robots.txt` — crawler access file
@@ -30,7 +33,21 @@ Support email: hi@hugomojo.com
 
 ## Automatic Delivery URLs
 
-Configure these as checkout success URLs in Creem or your payment processor:
+Configure these as checkout success URLs in Creem or your payment processor.
+
+Use `success.html` for Single Pass and Master Key purchases so the customer sees the Annual Vault upgrade window first, then clicks through to `access.html` for delivery:
+
+- Hunter Single Pass success URL: `https://hugomojo.com/success.html?plan=single&role=H`
+- Artisan Single Pass success URL: `https://hugomojo.com/success.html?plan=single&role=A`
+- Architect Single Pass success URL: `https://hugomojo.com/success.html?plan=single&role=C`
+- Master Key success URL: `https://hugomojo.com/success.html?plan=master`
+
+Use `access.html` for Annual Vault and Annual Vault upgrade purchases because no further upgrade offer is needed:
+
+- Annual Vault success URL: `https://hugomojo.com/access.html?plan=vault`
+- Annual Vault Upgrade success URL: `https://hugomojo.com/access.html?plan=vault&upgrade=1`
+
+The final delivery URLs are:
 
 - Hunter Single Pass: `https://hugomojo.com/access.html?plan=single&role=H`
 - Artisan Single Pass: `https://hugomojo.com/access.html?plan=single&role=A`
@@ -38,6 +55,13 @@ Configure these as checkout success URLs in Creem or your payment processor:
 - Master Key: `https://hugomojo.com/access.html?plan=master`
 - Annual Vault: `https://hugomojo.com/access.html?plan=vault`
 - Annual Vault Upgrade: `https://hugomojo.com/access.html?plan=vault&upgrade=1`
+
+Public navigation should only expose:
+
+- Header: Home, Assessment, Pricing, Contact
+- Footer: Delivery, Contact, Privacy, Terms, Refund
+
+Internal pages such as Creem readiness, data system, and compliance checklist should not be linked from public navigation.
 
 ## Data Layer
 

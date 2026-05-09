@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>HugoMojo — The Vault v11.0</title>
 <meta name="description" content="Complete the HugoMojo AI Income Scanner to find your best-fit AI income path and unlock the right blueprint.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,14 +13,14 @@
 :root {
   --bg-dark: #0a0a0b;
   --rock-gray: #1a1a1c;
-  --dim-text: #4a4a4c;
-  --readable-text: rgba(232, 232, 232, 0.86);
-  --soft-text: rgba(190, 190, 190, 0.72);
+  --dim-text: rgba(176, 176, 180, 0.74);
+  --readable-text: rgba(242, 242, 242, 0.92);
+  --soft-text: rgba(224, 224, 224, 0.82);
   --hope-glow: #ffb300;
   --hope-deep: #cc8e00;
   --hope-soft: rgba(255, 179, 0, 0.15);
-  --glass: rgba(255, 255, 255, 0.01);
-  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass: rgba(255, 255, 255, 0.025);
+  --glass-border: rgba(255, 255, 255, 0.10);
 }
 
 * {
@@ -28,18 +28,20 @@
   margin: 0;
   padding: 0;
   cursor: crosshair;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   background-color: var(--bg-dark);
-  color: #e0e0e0;
+  color: var(--readable-text);
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: relative;
   overflow-x: hidden;
+  padding-top: 72px;
 }
 
 .mist-layer {
@@ -72,9 +74,9 @@ body::after {
 }
 
 #app {
-  width: 100%;
-  max-width: 440px;
-  padding: 20px;
+  width: calc(100vw - 40px);
+  max-width: 480px;
+  padding: 0;
   z-index: 10;
 }
 
@@ -121,7 +123,7 @@ body::after {
   background: linear-gradient(145deg, rgba(20,20,22,0.8) 0%, rgba(10,10,11,0.95) 100%);
   border: 1px solid var(--glass-border);
   border-radius: 2px;
-  padding: 60px 45px;
+  padding: 56px 42px;
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
   position: relative;
   overflow: hidden;
@@ -183,7 +185,7 @@ h1 {
   margin-bottom: 12px;
   border: 1px solid rgba(255,255,255,0.04);
   background: transparent;
-  color: rgba(218, 218, 218, 0.78);
+  color: rgba(234, 234, 234, 0.82);
   text-align: left;
   font-size: 14px;
   font-weight: 500;
@@ -281,8 +283,19 @@ h1 {
   box-shadow: 0 0 24px rgba(255, 179, 0, 0.08);
 }
 
+.email-error {
+  min-height: 18px;
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: uppercase;
+}
+
 .fine-print {
-  color: #444;
+  color: rgba(210, 210, 214, 0.66);
   font-size: 11px;
   line-height: 1.7;
 }
@@ -349,9 +362,58 @@ h1 {
 
 .pay-note {
   margin-top: 9px;
-  color: #555;
+  color: rgba(210, 210, 214, 0.68);
   font-size: 9px;
   letter-spacing: 1px;
+}
+
+.preview-score {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(70px, 20vw, 96px);
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 0 30px var(--hope-soft));
+}
+
+.preview-pill {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 179, 0, 0.34);
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.preview-proof {
+  display: grid;
+  gap: 10px;
+  margin: 26px 0;
+  text-align: left;
+}
+
+.preview-proof-item {
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.018);
+  padding: 16px;
+}
+
+.preview-proof-k {
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.preview-proof-v {
+  color: var(--readable-text);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .hidden {
@@ -367,6 +429,61 @@ h1 {
 @keyframes amber-breathe {
   0%, 100% { box-shadow: 0 0 28px rgba(255, 179, 0, 0.05); }
   50% { box-shadow: 0 0 62px rgba(255, 179, 0, 0.14); }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding-top: 66px;
+  }
+
+  #app {
+    width: calc(100vw - 40px);
+    max-width: 350px;
+    margin-left: 20px;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  .card {
+    padding: 42px 28px;
+  }
+
+  .status {
+    margin-bottom: 22px;
+  }
+
+  #q-h {
+    font-size: clamp(28px, 8vw, 34px);
+  }
+
+  #q-t {
+    font-size: 20px;
+  }
+
+  .btn-opt {
+    padding: 18px 20px;
+  }
+
+  .vault-link {
+    top: 20px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 390px) {
+  #app {
+    width: calc(100vw - 36px);
+    max-width: 344px;
+    margin-left: 18px;
+  }
+
+  .card {
+    padding: 38px 24px;
+  }
+
+  .match-percent {
+    font-size: clamp(64px, 22vw, 90px);
+  }
 }
 </style>
 </head>
@@ -395,16 +512,21 @@ h1 {
     <div class="card" style="text-align: center; padding: 100px 40px;">
       <div id="scan-pulse" style="width:60px; height:60px; background: var(--hope-glow); border-radius: 50%; margin: 0 auto 40px; animation: pulse 1.5s infinite;"></div>
       <h1 style="font-size: 16px; letter-spacing: 6px; color: var(--dim-text);">SEEKING THE PATH...</h1>
-      <div id="scan-log" style="font-family:'JetBrains Mono'; font-size:9px; color:#333; margin-top:30px; text-align:center; letter-spacing:1px;"></div>
+      <div id="scan-log" style="font-family:'JetBrains Mono'; font-size:9px; color:rgba(218,218,222,0.66); margin-top:30px; text-align:center; letter-spacing:1px;"></div>
     </div>
+  </div>
+
+  <div id="step-preview" class="hidden">
+    <div class="card" id="preview-card" style="text-align: center;"></div>
   </div>
 
   <div id="step-email" class="hidden">
     <div class="card" style="text-align: center;">
       <h1 style="font-size: 30px; margin-bottom: 20px;">Your Wealth Credential Is Ready.</h1>
       <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to generate the private access key for your result.</p>
-      <form class="email-gate" id="email-form">
-        <input class="email-input" id="lead-email" type="email" placeholder="you@example.com" autocomplete="email" required>
+      <form class="email-gate" id="email-form" novalidate>
+        <input class="email-input" id="lead-email" type="email" inputmode="email" placeholder="you@example.com" autocomplete="email" aria-describedby="email-error" aria-invalid="false">
+        <div class="email-error" id="email-error" role="alert" aria-live="polite"></div>
         <button class="cta-buy" type="submit" style="font-size: 16px;">Generate Access Key</button>
         <p class="fine-print">We use your email to deliver your result, product access, and related HugoMojo updates. No spam. No income guarantees. Support: hi@hugomojo.com.</p>
       </form>
@@ -421,7 +543,7 @@ h1 {
       <p class="sub-title" style="margin-bottom: 40px; font-size: 16px;">The blueprint to your financial dawn is ready.</p>
       
       <div class="result-blueprint">
-        <div style="font-family: 'JetBrains Mono'; font-size: 9px; color: #444; text-align: left; line-height: 2;">
+        <div style="font-family: 'JetBrains Mono'; font-size: 9px; color: rgba(218,218,222,0.66); text-align: left; line-height: 2;">
           [SCAN_COMPLETE]<br>
           RESOURCE_MATCH: OPTIMAL<br>
           TIME_VECTOR: CALIBRATED<br>
@@ -430,7 +552,7 @@ h1 {
       </div>
 
       <button id="pay-btn" class="cta-buy">Claim the Future</button>
-      <p style="margin-top: 30px; font-size: 9px; color: #333; letter-spacing: 4px; font-family: 'JetBrains Mono';">SECURE ACCESS · 9.90 USD</p>
+      <p style="margin-top: 30px; font-size: 9px; color: rgba(218,218,222,0.60); letter-spacing: 4px; font-family: 'JetBrains Mono';">SECURE ACCESS · 9.90 USD</p>
     </div>
   </div>
 </div>
@@ -798,18 +920,19 @@ let activeResultType = null;
 
 const CHECKOUT_URLS = {
   single: {
-    H: "https://creem.io/p/hugo-hunter-9.9",
-    A: "https://creem.io/p/hugo-artisan-9.9",
-    C: "https://creem.io/p/hugo-architect-9.9"
+    H: "https://www.creem.io/payment/prod_3dQ4cdQv9QIsFHMkSZY9ri",
+    A: "https://www.creem.io/payment/prod_2VyxgT1eeHu9Nokbmofllr",
+    C: "https://www.creem.io/payment/prod_1Aw6eVLwOgt079NyQvp0YC"
   },
-  master: "https://creem.io/p/hugo-master-key-19.9",
-  annual: "https://creem.io/p/hugo-annual-vault-199"
+  master: "https://www.creem.io/payment/prod_1NVYOf74S8hagBCrBLgSoi",
+  annual: "https://www.creem.io/payment/prod_3BtB5cRkL48ynkqCFPfssW"
 };
 
 function setStep(id) {
-  ['step-quiz', 'step-scan', 'step-email', 'step-pay'].forEach(stepId => {
+  ['step-quiz', 'step-scan', 'step-preview', 'step-email', 'step-pay'].forEach(stepId => {
     document.getElementById(stepId).classList.toggle('hidden', stepId !== id);
   });
+  window.scrollTo(0, 0);
 }
 
 function updateProgress(doneCount) {
@@ -889,7 +1012,13 @@ function finish() {
   if (window.HugoMojoTrack) {
     window.HugoMojoTrack.track("scanner_complete", { result_type: winner, scores });
   }
-  setStep('step-email');
+  showPreview(winner);
+}
+
+function calculateMatchPct(type) {
+  const maxPossible = Qs.reduce((sum, q) => sum + Math.max(...q.opts.map(o => o.scores[type] || 0)), 0);
+  const rawPct = Math.round((scores[type] / maxPossible) * 100);
+  return Math.max(88, Math.min(95, rawPct));
 }
 
 function buildResourceLines() {
@@ -903,23 +1032,65 @@ function buildResourceLines() {
   return lines.length ? lines : ['RESOURCE_MATCH: COMPLETE'];
 }
 
+function showPreview(type) {
+  activeResultType = type;
+  const t = RESULTS[type];
+  const matchPct = calculateMatchPct(type);
+  const resourcePreview = buildResourceLines().slice(0, 3).join(' · ');
+  document.getElementById('preview-card').innerHTML = `
+    <div class="preview-score">${matchPct}%</div>
+    <div class="preview-pill">Free result preview</div>
+    <h1 style="font-size: 32px; margin-bottom: 16px;">THE ${t.niche.toUpperCase()}</h1>
+    <p class="sub-title" style="margin-bottom: 28px; font-size: 16px;">${t.tagline}</p>
+    <div class="preview-proof">
+      <div class="preview-proof-item">
+        <div class="preview-proof-k">Unlocked now</div>
+        <div class="preview-proof-v">Your highest-fit AI income role and match score.</div>
+      </div>
+      <div class="preview-proof-item">
+        <div class="preview-proof-k">Based on your resources</div>
+        <div class="preview-proof-v">${resourcePreview || 'Your time, tools, budget, and skill signals.'}</div>
+      </div>
+      <div class="preview-proof-item">
+        <div class="preview-proof-k">Full report includes</div>
+        <div class="preview-proof-v">3 best income paths, resource gap warnings, 30-day target, prompts, SOP, and checkout options.</div>
+      </div>
+    </div>
+    <button class="cta-buy" id="unlock-full-result" type="button" style="font-size: 16px;">Unlock Full Report</button>
+    <p class="fine-print" style="margin-top: 18px;">No income guarantees. Educational product only. Support: hi@hugomojo.com.</p>
+  `;
+  updateProgress(Qs.length);
+  if (window.HugoMojoTrack) {
+    window.HugoMojoTrack.track("result_preview_seen", {
+      result_type: type,
+      match_pct: matchPct,
+      scores
+    });
+  }
+  setStep('step-preview');
+  document.getElementById('unlock-full-result').addEventListener('click', () => {
+    if (window.HugoMojoTrack) {
+      window.HugoMojoTrack.track("email_gate_seen", { result_type: activeResultType });
+    }
+    setStep('step-email');
+  });
+}
+
 function showResult(type) {
   activeResultType = type;
   const t = RESULTS[type];
-  const maxPossible = Qs.reduce((sum, q) => sum + Math.max(...q.opts.map(o => o.scores[type] || 0)), 0);
-  const rawPct = Math.round((scores[type] / maxPossible) * 100);
-  const matchPct = Math.max(88, Math.min(95, rawPct));
+  const matchPct = calculateMatchPct(type);
   const scoreLine = 'SCORE_VECTOR: H=' + scores.H + ' / A=' + scores.A + ' / C=' + scores.C;
   const resourceLines = buildResourceLines().map(line => '<div>' + line + '</div>').join('');
   const paths = t.paths.map((p, i) => `
     <div style="border-top:1px solid var(--glass-border); padding:18px 0; text-align:left;">
       <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:8px;">PATH ${i + 1}</div>
       <div style="font-size:14px; color:#e0e0e0; font-weight:600; margin-bottom:6px;">${p.name}</div>
-      <div style="font-size:12px; color:#555; line-height:1.7;">${p.desc}</div>
+      <div style="font-size:12px; color:rgba(224,224,228,0.72); line-height:1.7;">${p.desc}</div>
     </div>
   `).join('');
   const locked = t.locked.map(item => `
-    <div style="font-family:'JetBrains Mono'; font-size:9px; color:#444; letter-spacing:1px; margin-bottom:8px;">LOCKED: ${item}</div>
+    <div style="font-family:'JetBrains Mono'; font-size:9px; color:rgba(218,218,222,0.66); letter-spacing:1px; margin-bottom:8px;">LOCKED: ${item}</div>
   `).join('');
   const singlePlan = `single_pass_${t.niche.toLowerCase()}`;
 
@@ -929,13 +1100,13 @@ function showResult(type) {
     <h1 id="res-name" style="font-size: 32px; margin-bottom: 16px;">THE ${t.niche.toUpperCase()}</h1>
     <p class="sub-title" style="margin-bottom: 32px; font-size: 16px;">${t.tagline}</p>
     <div class="result-blueprint">
-      <div style="font-family:'JetBrains Mono'; font-size: 9px; color: #444; text-align: left; line-height: 2;">
+      <div style="font-family:'JetBrains Mono'; font-size: 9px; color: rgba(218,218,222,0.66); text-align: left; line-height: 2;">
         [SCAN_COMPLETE]<br>${scoreLine}${resourceLines}<div>30_DAY_TARGET: ${t.target30}</div>
       </div>
     </div>
     <div style="margin: 28px 0; text-align:left;">
       <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:14px;">WHY THIS FITS</div>
-      ${t.why.map(w => `<div style="font-size:13px; color:#777; line-height:1.7; margin-bottom:10px;">${w}</div>`).join('')}
+      ${t.why.map(w => `<div style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7; margin-bottom:10px;">${w}</div>`).join('')}
     </div>
     <div style="margin: 24px 0;">${paths}</div>
     <div style="border-top:1px solid var(--glass-border); margin: 26px 0; padding-top:24px; text-align:left;">${locked}</div>
@@ -956,17 +1127,43 @@ function showResult(type) {
         <div class="pay-note">Full Master Key + monthly toolkits + quarterly calibration</div>
       </a>
     </div>
-    <p style="margin-top: 20px; font-size: 9px; color: #333; letter-spacing: 4px; font-family: 'JetBrains Mono';">SECURE ACCESS · DIGITAL DELIVERY · hi@hugomojo.com</p>
+    <p style="margin-top: 20px; font-size: 9px; color: rgba(218,218,222,0.60); letter-spacing: 4px; font-family: 'JetBrains Mono';">SECURE ACCESS · DIGITAL DELIVERY · hi@hugomojo.com</p>
   `;
 
+  if (window.HugoMojoTrack) {
+    window.HugoMojoTrack.track("paywall_seen", {
+      result_type: type,
+      match_pct: matchPct,
+      scores
+    });
+  }
   updateProgress(Qs.length);
   setStep('step-pay');
 }
 
 document.getElementById('email-form').addEventListener('submit', event => {
   event.preventDefault();
-  const email = document.getElementById('lead-email').value.trim();
-  if (!email) return;
+  const emailInput = document.getElementById('lead-email');
+  const emailError = document.getElementById('email-error');
+  const email = emailInput.value.trim();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!email) {
+    emailError.textContent = 'Enter your email to continue.';
+    emailInput.setAttribute('aria-invalid', 'true');
+    emailInput.focus();
+    return;
+  }
+
+  if (!emailPattern.test(email)) {
+    emailError.textContent = 'Enter a valid email address.';
+    emailInput.setAttribute('aria-invalid', 'true');
+    emailInput.focus();
+    return;
+  }
+
+  emailError.textContent = '';
+  emailInput.setAttribute('aria-invalid', 'false');
   try {
     localStorage.setItem('hm_lead_email', email);
   } catch (error) {
@@ -979,6 +1176,18 @@ document.getElementById('email-form').addEventListener('submit', event => {
     });
   }
   showResult(activeResultType);
+});
+
+document.getElementById('lead-email').addEventListener('input', event => {
+  if (!event.target.value.trim()) return;
+  document.getElementById('email-error').textContent = '';
+  event.target.setAttribute('aria-invalid', 'false');
+});
+
+document.getElementById('lead-email').addEventListener('focus', () => {
+  setTimeout(() => {
+    document.getElementById('step-email').scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }, 120);
 });
 
 render();
