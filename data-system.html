@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data System — HugoMojo</title>
-  <meta name="description" content="HugoMojo funnel metrics, event taxonomy, and membership data system design.">
+  <meta name="description" content="HugoMojo product analytics, event taxonomy, and membership data system design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
 
   <main class="site-shell">
     <section class="page-hero">
-      <div class="eyebrow"><span class="signal-dot"></span> Funnel Intelligence</div>
+      <div class="eyebrow"><span class="signal-dot"></span> Product Analytics</div>
       <h1 class="page-title">Data System And Member Landing.</h1>
       <p class="page-copy">
         HugoMojo uses a lightweight event layer for static deployment. Events are pushed to dataLayer and stored locally until connected to an analytics or CRM endpoint.
@@ -39,14 +39,14 @@
     <section class="section" style="padding-top:24px;">
       <div class="grid-2">
         <article class="panel">
-          <div class="label">Core Funnel Events</div>
+          <div class="label">Core Product Events</div>
           <h3>Track the anchor path.</h3>
           <div class="matrix">
             <div class="matrix-row"><div class="matrix-key">page_view</div><div class="matrix-value">Every page load with anonymous visitor and session id.</div></div>
             <div class="matrix-row"><div class="matrix-key">scanner_start</div><div class="matrix-value">User begins the 16-question scan.</div></div>
             <div class="matrix-row"><div class="matrix-key">scanner_complete</div><div class="matrix-value">All answers submitted and winning result calculated.</div></div>
             <div class="matrix-row"><div class="matrix-key">email_capture</div><div class="matrix-value">Email submitted before showing the paid result wall.</div></div>
-            <div class="matrix-row"><div class="matrix-key">checkout_click</div><div class="matrix-value">User clicks Single Pass, Master Key, Annual Vault, or upgrade checkout.</div></div>
+            <div class="matrix-row"><div class="matrix-key">checkout_click</div><div class="matrix-value">User clicks Single Pass, Master Key, Annual Access, or upgrade checkout.</div></div>
             <div class="matrix-row"><div class="matrix-key">upsell_click</div><div class="matrix-value">User accepts the post-purchase annual upgrade.</div></div>
           </div>
         </article>

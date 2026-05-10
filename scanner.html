@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>HugoMojo — The Vault v11.0</title>
-<meta name="description" content="Complete the HugoMojo AI Income Scanner to find your best-fit AI income path and unlock the right blueprint.">
+<title>HugoMojo — AI Income Assessment</title>
+<meta name="description" content="Complete the HugoMojo AI Income Assessment to find your best-fit AI income path and unlock the right guide.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -563,10 +563,10 @@ h1 {
       
       <div class="result-blueprint">
         <div style="font-family: 'JetBrains Mono'; font-size: 9px; color: rgba(218,218,222,0.66); text-align: left; line-height: 2;">
-          [SCAN_COMPLETE]<br>
-          RESOURCE_MATCH: OPTIMAL<br>
-          TIME_VECTOR: CALIBRATED<br>
-          REWARD_EST: HIGH_YIELD
+          RESULT SUMMARY<br>
+          MATCH: READY<br>
+          RESOURCES: REVIEWED<br>
+          NEXT STEP: FULL REPORT
         </div>
       </div>
 
@@ -1046,12 +1046,12 @@ function buildResourceLines() {
     const targetValue = metaData.target.startsWith('$') ? metaData.target : '$' + metaData.target;
     lines.push('TARGET: ' + targetValue + '/MO');
   }
-  if (metaData.time) lines.push('TIME_VECTOR: ' + metaData.time.toUpperCase());
+  if (metaData.time) lines.push('DAILY TIME: ' + metaData.time.toUpperCase());
   if (metaData.device) lines.push('DEVICE: ' + metaData.device.replace('_', ' ').toUpperCase());
   if (metaData.budget) lines.push('BUDGET: ' + metaData.budget.toUpperCase());
   if (metaData.english) lines.push('ENGLISH: ' + metaData.english.toUpperCase());
   if (metaData.knowledge) lines.push('KNOWLEDGE: ' + metaData.knowledge.toUpperCase());
-  return lines.length ? lines : ['RESOURCE_MATCH: COMPLETE'];
+  return lines.length ? lines : ['RESOURCE SUMMARY: COMPLETE'];
 }
 
 function showPreview(type) {
@@ -1102,7 +1102,6 @@ function showResult(type) {
   activeResultType = type;
   const t = RESULTS[type];
   const matchPct = calculateMatchPct(type);
-  const scoreLine = 'SCORE_VECTOR: H=' + scores.H + ' / A=' + scores.A + ' / C=' + scores.C;
   const resourceLines = buildResourceLines().map(line => '<div>' + line + '</div>').join('');
   const paths = t.paths.map((p, i) => `
     <div style="border-top:1px solid var(--glass-border); padding:18px 0; text-align:left;">
@@ -1123,7 +1122,7 @@ function showResult(type) {
     <p class="sub-title" style="margin-bottom: 32px; font-size: 16px;">${t.tagline}</p>
     <div class="result-blueprint">
       <div style="font-family:'JetBrains Mono'; font-size: 9px; color: rgba(218,218,222,0.66); text-align: left; line-height: 2;">
-        [SCAN_COMPLETE]<br>${scoreLine}${resourceLines}<div>30_DAY_TARGET: ${t.target30}</div>
+        RESULT SUMMARY<br>${resourceLines}<div>30-DAY TARGET: ${t.target30}</div>
       </div>
     </div>
     <div style="margin: 28px 0; text-align:left;">
@@ -1141,10 +1140,10 @@ function showResult(type) {
       <a class="pay-option featured" href="${CHECKOUT_URLS.master}" data-event="checkout_click" data-plan="master_key" data-price="19.90">
         <div class="pay-tag">65% choose this</div>
         <div class="pay-name"><span>Master Key · full result engine</span><span class="pay-price">$19.90</span></div>
-        <div class="pay-note">All 3 reports + Prompt Vault + 90-day roadmap + updates</div>
+        <div class="pay-note">All 3 reports + prompt library + 90-day roadmap + updates</div>
       </a>
       <a class="pay-option" href="${CHECKOUT_URLS.annual}" data-event="checkout_click" data-plan="annual_vault" data-price="199">
-        <div class="pay-tag">Annual Vault</div>
+        <div class="pay-tag">Annual Access</div>
         <div class="pay-name"><span>Monthly toolkits + private access</span><span class="pay-price">$199</span></div>
         <div class="pay-note">Full Master Key + monthly toolkits + quarterly calibration</div>
       </a>
