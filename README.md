@@ -10,9 +10,9 @@ Static website for HugoMojo, built for GitHub deployment.
 - `terms.html` — public terms of service
 - `refund.html` — public refund policy
 - `privacy.html` — public privacy notice
-- `membership.html` — pricing ladder and Annual Vault membership page, not linked from public navigation
+- `membership.html` — pricing ladder and Annual Access membership page, not linked from public navigation
 - `access.html` — automatic delivery page after checkout
-- `success.html` — post-purchase Annual Vault upgrade window
+- `success.html` — post-purchase Annual Access upgrade window
 - `data-system.html` — internal event taxonomy and KPI dashboard design
 - `creem-application.html` — internal payment review readiness notes
 - `compliance.html` — internal compliance and responsible-use checklist
@@ -28,24 +28,24 @@ Support email: hi@hugomojo.com
 ## Pricing Model
 
 - Single Pass: $9.90, one matched role report.
-- Master Key: $19.90, all three role reports, Prompt Vault, 90-day roadmap, and 90-day updates.
-- Annual Vault: $199 per year, full Master Key package, private access, monthly toolkits, and quarterly path calibration.
+- Master Key: $19.90, all three role reports, prompt library, 90-day roadmap, and 90-day updates.
+- Annual Access: $199 per year, full Master Key package, private access, monthly toolkits, and quarterly path calibration.
 
 ## Automatic Delivery URLs
 
 Configure these as checkout success URLs in Creem or your payment processor.
 
-Use `success.html` for Single Pass and Master Key purchases so the customer sees the Annual Vault upgrade window first, then clicks through to `access.html` for delivery:
+Use `success.html` for Single Pass and Master Key purchases so the customer sees the Annual Access upgrade window first, then clicks through to `access.html` for delivery:
 
 - Hunter Single Pass success URL: `https://hugomojo.com/success.html?plan=single&role=H`
 - Artisan Single Pass success URL: `https://hugomojo.com/success.html?plan=single&role=A`
 - Architect Single Pass success URL: `https://hugomojo.com/success.html?plan=single&role=C`
 - Master Key success URL: `https://hugomojo.com/success.html?plan=master`
 
-Use `access.html` for Annual Vault and Annual Vault upgrade purchases because no further upgrade offer is needed:
+Use `access.html` for Annual Access and Annual Access upgrade purchases because no further upgrade offer is needed:
 
-- Annual Vault success URL: `https://hugomojo.com/access.html?plan=vault`
-- Annual Vault Upgrade success URL: `https://hugomojo.com/access.html?plan=vault&upgrade=1`
+- Annual Access success URL: `https://hugomojo.com/access.html?plan=annual`
+- Annual Access Upgrade success URL: `https://hugomojo.com/access.html?plan=annual&upgrade=1`
 
 The final delivery URLs are:
 
@@ -53,8 +53,8 @@ The final delivery URLs are:
 - Artisan Single Pass: `https://hugomojo.com/access.html?plan=single&role=A`
 - Architect Single Pass: `https://hugomojo.com/access.html?plan=single&role=C`
 - Master Key: `https://hugomojo.com/access.html?plan=master`
-- Annual Vault: `https://hugomojo.com/access.html?plan=vault`
-- Annual Vault Upgrade: `https://hugomojo.com/access.html?plan=vault&upgrade=1`
+- Annual Access: `https://hugomojo.com/access.html?plan=annual`
+- Annual Access Upgrade: `https://hugomojo.com/access.html?plan=annual&upgrade=1`
 
 Public navigation should only expose:
 

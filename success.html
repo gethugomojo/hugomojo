@@ -33,7 +33,7 @@
           Your access is ready. Before you continue to the delivery page, you can upgrade to annual access for monthly toolkits, private access, and quarterly calibration.
         </p>
         <div class="cta-row">
-          <a class="btn-primary" href="https://www.creem.io/payment/prod_3BtB5cRkL48ynkqCFPfssW" data-event="upsell_click" data-plan="annual_vault" data-price="199">Upgrade To Annual Access</a>
+          <a class="btn-primary" href="https://www.creem.io/payment/prod_3BtB5cRkL48ynkqCFPfssW" data-event="upsell_click" data-plan="annual_access" data-price="199">Upgrade To Annual Access</a>
           <a class="btn-secondary" id="continue-delivery" href="access.html?plan=master" data-event="upsell_skip" data-plan="master_key">Continue To Delivery</a>
         </div>
         <p class="meta-line">Limited upgrade window · one-time annual access</p>
@@ -64,8 +64,8 @@
     const role = params.get("role") || "H";
     const deliveryHref = plan === "single"
       ? "access.html?plan=single&role=" + encodeURIComponent(role)
-      : plan === "vault"
-        ? "access.html?plan=vault"
+      : plan === "annual" || plan === "vault"
+        ? "access.html?plan=annual"
         : "access.html?plan=master";
     const continueLink = document.getElementById("continue-delivery");
     continueLink.href = deliveryHref;

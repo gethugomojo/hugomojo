@@ -92,21 +92,21 @@
           roles.H,
           roles.A,
           roles.C,
-          { title: "Master Key Prompt Library", copy: "Reusable prompts for path selection, offers, products, audits, and weekly reviews.", file: "downloads/master-key-prompt-vault.md" },
+          { title: "Master Key Prompt Library", copy: "Reusable prompts for path selection, offers, products, audits, and weekly reviews.", file: "downloads/master-key-prompt-library.md" },
           { title: "90-Day Roadmap", copy: "Signal, system, and scale sequence for the first three months.", file: "downloads/master-key-90-day-roadmap.md" }
         ],
         steps: ["Read all three role reports.", "Pick your primary path and backup path.", "Use the prompt library to build your first offer.", "Run the first 14-day signal test.", "Review the 90-day roadmap every week."]
       },
-      vault: {
+      annual: {
         title: "Annual Access Delivery",
         copy: "Annual access starts with the full Master Key package plus the annual access welcome kit.",
         items: [
           roles.H,
           roles.A,
           roles.C,
-          { title: "Master Key Prompt Library", copy: "Reusable prompts for path selection, offers, products, audits, and weekly reviews.", file: "downloads/master-key-prompt-vault.md" },
+          { title: "Master Key Prompt Library", copy: "Reusable prompts for path selection, offers, products, audits, and weekly reviews.", file: "downloads/master-key-prompt-library.md" },
           { title: "90-Day Roadmap", copy: "Signal, system, and scale sequence for the first three months.", file: "downloads/master-key-90-day-roadmap.md" },
-          { title: "Annual Access Welcome", copy: "Member orientation, monthly toolkit rhythm, and quarterly calibration workflow.", file: "downloads/annual-vault-welcome.md" }
+          { title: "Annual Access Welcome", copy: "Member orientation, monthly toolkit rhythm, and quarterly calibration workflow.", file: "downloads/annual-access-welcome.md" }
         ],
         steps: ["Save every Master Key asset.", "Choose one primary path for 30 days.", "Read the annual access welcome kit.", "Prepare your first quarterly calibration notes.", "Watch for monthly toolkit drops."]
       }
@@ -143,8 +143,8 @@
         items: [selected],
         steps: selected.steps
       };
-    } else if (plan === "vault") {
-      delivery = bundles.vault;
+    } else if (plan === "annual" || plan === "vault") {
+      delivery = bundles.annual;
     } else {
       delivery = bundles.master;
     }

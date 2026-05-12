@@ -25,7 +25,7 @@ Days 46 to 90 focus on compounding the best signal.
 - Double down on the path with real response.
 - Cut paths with no signal.
 - Package proof into a case study.
-- Decide whether to stay at single product, Master Key path, or Annual Vault support.
+- Decide whether to stay at a single report, continue with the Master Key path, or use Annual Access support.
 
 ## Monthly Update Slots
 

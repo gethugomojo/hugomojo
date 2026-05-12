@@ -1,8 +1,8 @@
-# HugoMojo Annual Vault Welcome
+# HugoMojo Annual Access Welcome
 
-## What The Annual Vault Provides
+## What Annual Access Provides
 
-- Private Vault access.
+- Private member access.
 - Two plug-and-play AI toolkits every month.
 - Monthly opportunity briefings.
 - Quarterly path calibration.
@@ -18,4 +18,4 @@
 
 ## Operating Rule
 
-The Annual Vault is not a promise of income. It is a filter for high-signal AI opportunities, practical toolkits, and structured execution support.
+Annual Access is not a promise of income. It is a filter for high-signal AI opportunities, practical toolkits, and structured execution support.

@@ -1,4 +1,4 @@
-# HugoMojo Master Key Prompt Vault
+# HugoMojo Master Key Prompt Library
 
 ## Universal Path Selector
 
