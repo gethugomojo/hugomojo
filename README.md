@@ -29,7 +29,7 @@ Support email: hi@hugomojo.com
 
 - Single Pass: $9.90, one matched role report.
 - Master Key: $19.90, all three role reports, prompt library, 90-day roadmap, and 90-day updates.
-- Annual Access: $199 per year, full Master Key package, private access, monthly toolkits, and quarterly path calibration.
+- Annual Access: $199 per year, full Master Key package, Annual Member System PDF, monthly ecosystem signal reports, versioned Prompt Vault updates, weekly signal digest, execution tracker, and quarterly path calibration.
 
 ## Automatic Delivery URLs
 
@@ -55,6 +55,17 @@ The final delivery URLs are:
 - Master Key: `https://hugomojo.com/access.html?plan=master`
 - Annual Access: `https://hugomojo.com/access.html?plan=annual`
 - Annual Access Upgrade: `https://hugomojo.com/access.html?plan=annual&upgrade=1`
+
+Annual Access delivery includes:
+
+- `downloads/annual-access-member-system.pdf`
+- `downloads/annual-access-welcome.md`
+- `downloads/quarterly-calibration-form.md`
+- `downloads/annual-execution-tracker.csv`
+- `downloads/prompt-vault-index.md`
+- `downloads/monthly-signal-report-template.md`
+- `downloads/weekly-signal-digest-template.md`
+- all Master Key assets
 
 Public navigation should only expose:
 
