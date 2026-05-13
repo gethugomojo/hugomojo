@@ -82,7 +82,7 @@ The longer you use it, the more valuable your own record becomes.
 
 - Annual Member System PDF.
 - Quarterly Calibration Form.
-- Annual Execution Tracker CSV.
+- Annual Execution Tracker Workbook.
 - Monthly Signal Report Template.
 - Weekly Signal Digest Template.
 - Prompt Vault Index.

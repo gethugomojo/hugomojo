@@ -61,11 +61,18 @@ Annual Access delivery includes:
 - `downloads/annual-access-member-system.pdf`
 - `downloads/annual-access-welcome.md`
 - `downloads/quarterly-calibration-form.md`
-- `downloads/annual-execution-tracker.csv`
+- `downloads/hugomojo-annual-execution-tracker.xlsx`
 - `downloads/prompt-vault-index.md`
 - `downloads/monthly-signal-report-template.md`
 - `downloads/weekly-signal-digest-template.md`
 - all Master Key assets
+
+Master Key delivery includes:
+
+- all three upgraded Single Pass role reports
+- `downloads/hugomojo-market-fit-model.md`
+- `downloads/master-key-prompt-library.md`
+- `downloads/master-key-90-day-roadmap.md`
 
 Public navigation should only expose:
 
