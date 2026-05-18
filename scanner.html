@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>HugoMojo — AI Income Assessment</title>
+<title>HugoMojo — AI Income Path Assessment</title>
 <meta name="description" content="Complete the HugoMojo AI Income Assessment to find your best-fit AI income path and unlock the right guide.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +27,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  cursor: crosshair;
+  cursor: default;
   -webkit-tap-highlight-color: transparent;
+}
+
+.btn-opt,
+.cta-buy,
+.pay-option,
+.vault-link {
+  cursor: pointer;
 }
 
 body {
@@ -311,6 +318,41 @@ h1 {
   line-height: 1.6;
 }
 
+.locked-preview {
+  position: relative;
+  margin: 24px 0;
+  padding: 18px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.018);
+  text-align: left;
+  overflow: hidden;
+}
+
+.locked-line {
+  margin-top: 10px;
+  color: rgba(224,224,228,0.72);
+  font-size: 13px;
+  line-height: 1.6;
+  filter: blur(2.5px);
+  user-select: none;
+}
+
+.locked-preview::after {
+  content: "Unlock after entering email";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(10,10,11,0.48);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 .pricing-stack {
   display: grid;
   gap: 12px;
@@ -530,7 +572,7 @@ h1 {
   <div id="step-scan" class="hidden">
     <div class="card" style="text-align: center; padding: 100px 40px;">
       <div id="scan-pulse" style="width:60px; height:60px; background: var(--hope-glow); border-radius: 50%; margin: 0 auto 40px; animation: pulse 1.5s infinite;"></div>
-      <h1 style="font-size: 16px; letter-spacing: 6px; color: var(--dim-text);">SEEKING THE PATH...</h1>
+      <h1 style="font-size: 16px; letter-spacing: 6px; color: var(--dim-text);">MATCHING YOUR BEST-FIT PATH...</h1>
       <div id="scan-log" style="font-family:'JetBrains Mono'; font-size:9px; color:rgba(218,218,222,0.66); margin-top:30px; text-align:center; letter-spacing:1px;"></div>
     </div>
   </div>
@@ -541,12 +583,12 @@ h1 {
 
   <div id="step-email" class="hidden">
     <div class="card" style="text-align: center;">
-      <h1 style="font-size: 30px; margin-bottom: 20px;">Your Fit Report Is Ready.</h1>
-      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to save your result and see the full report.</p>
+      <h1 style="font-size: 30px; margin-bottom: 20px;">Your AI Income Path Is Ready.</h1>
+      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to save your result and unlock your full action guide.</p>
       <form class="email-gate" id="email-form" novalidate>
         <input class="email-input" id="lead-email" type="email" inputmode="email" placeholder="you@example.com" autocomplete="email" aria-describedby="email-error" aria-invalid="false">
         <div class="email-error" id="email-error" role="alert" aria-live="polite"></div>
-        <button class="cta-buy" type="submit" style="font-size: 16px;">See My Full Report</button>
+        <button class="cta-buy" type="submit" style="font-size: 16px;">Continue to My Result</button>
         <p class="fine-print">We use your email to deliver your result, product access, and related HugoMojo updates. No spam. No income guarantees. Support: hi@hugomojo.com.</p>
       </form>
     </div>
@@ -556,21 +598,21 @@ h1 {
   <div id="step-pay" class="hidden">
     <div class="card" style="text-align: center;">
       <div class="match-percent">98.8%</div>
-      <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Best fit found</div>
+      <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Your best-fit path</div>
       
       <h1 id="res-name" style="font-size: 32px; margin-bottom: 20px;">ARCHITECT</h1>
-      <p class="sub-title" style="margin-bottom: 40px; font-size: 16px;">Your matched report is ready.</p>
+      <p class="sub-title" style="margin-bottom: 40px; font-size: 16px;">Your matched action guide is ready.</p>
       
       <div class="result-blueprint">
         <div style="font-family: 'JetBrains Mono'; font-size: 9px; color: rgba(218,218,222,0.66); text-align: left; line-height: 2;">
-          RESULT SUMMARY<br>
-          MATCH: READY<br>
-          RESOURCES: REVIEWED<br>
-          NEXT STEP: FULL REPORT
+          [SCAN_COMPLETE]<br>
+          RESOURCE_MATCH: OPTIMAL<br>
+          TIME_VECTOR: CALIBRATED<br>
+          REWARD_EST: HIGH_YIELD
         </div>
       </div>
 
-      <button id="pay-btn" class="cta-buy">Unlock Full Report</button>
+      <button id="pay-btn" class="cta-buy">Unlock My Full Action Guide</button>
       <p style="margin-top: 30px; font-size: 9px; color: rgba(218,218,222,0.60); letter-spacing: 4px; font-family: 'JetBrains Mono';">SECURE ACCESS · 9.90 USD</p>
     </div>
   </div>
@@ -849,6 +891,16 @@ const RESULTS = {
       "This path has zero upfront cost and clients are hiring right now.",
       "Your first client is your proof of success. After that, everything grows faster."
     ],
+    firstAction: {
+      title: "Your First Action",
+      text: "Do not start with content. Start by offering a small AI-assisted service to a real person or business.",
+      bullets: [
+        "Pick one simple service",
+        "Send 10 direct messages or proposals",
+        "Aim for one real conversation, not a perfect brand"
+      ]
+    },
+    avoid: "Avoid spending weeks building an audience before testing service demand.",
     paths: [
       { name:"AI-assisted writing & editing on Upwork",
         desc:"Use Claude to deliver client work 5× faster. Write proposals, landing pages, email sequences. Income range: $15–$80/hr." },
@@ -880,6 +932,16 @@ const RESULTS = {
       "Your existing expertise gives you a head start no beginner can match.",
       "The only risk is overthinking. Your first product just needs to be useful, not perfect."
     ],
+    firstAction: {
+      title: "Your First Action",
+      text: "Do not chase clients if that drains you. Start by packaging one piece of knowledge into a small digital asset.",
+      bullets: [
+        "Choose one narrow problem",
+        "Turn it into a checklist, template, or mini-guide",
+        "Publish a simple offer before overbuilding"
+      ]
+    },
+    avoid: "Avoid freelancing paths that require constant calls and cold outreach.",
     paths: [
       { name:"Ebook, guide, or prompt pack on Gumroad",
         desc:"Use AI to write fast, Canva to design. Sell your expertise for $9–$49 a download. Income range: $500–$5,000/mo at scale." },
@@ -911,6 +973,16 @@ const RESULTS = {
       "Your logical, systems-focused mind is the real skill — AI is just the tool.",
       "You don’t need followers. You just need to send three good outreach messages."
     ],
+    firstAction: {
+      title: "Your First Action",
+      text: "Do not sell prompts. Sell clarity around messy workflows and AI implementation.",
+      bullets: [
+        "Identify one inefficient workflow",
+        "Write a simple audit offer",
+        "Start with one business conversation"
+      ]
+    },
+    avoid: "Avoid low-value prompt packs when your value is systems thinking.",
     paths: [
       { name:"AI workflow automation for small businesses",
         desc:"Build Make.com or Zapier flows for service businesses. Invoice automation, CRM syncing, report generation. Per project: $500–$3,000." },
@@ -1010,10 +1082,10 @@ function startScan() {
   });
 
   const logs = [
-    'Reading all 16 answers...',
-    'Rebuilding resource profile...',
-    'Scoring Hunter / Artisan / Architect...',
-    'Locking highest-fit income path...'
+    'Analyzing your resource profile...',
+    'Matching time, tools, and skill signals...',
+    'Scoring Hunter / Artisan / Architect fit...',
+    'Building your action roadmap...'
   ];
   const lb = document.getElementById('scan-log');
   lb.innerHTML = '';
@@ -1075,11 +1147,17 @@ function showPreview(type) {
       </div>
       <div class="preview-proof-item">
         <div class="preview-proof-k">Full report includes</div>
-        <div class="preview-proof-v">3 best income paths, resource gap warnings, 30-day target, prompts, SOP, and checkout options.</div>
+        <div class="preview-proof-v">Your first action, what to avoid, matched prompts, templates, 7-day checklist, and 30-day target.</div>
       </div>
     </div>
-    <button class="cta-buy" id="unlock-full-result" type="button" style="font-size: 16px;">Unlock Full Report</button>
-    <p class="fine-print" style="margin-top: 18px;">Disclaimer: HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
+    <div class="locked-preview">
+      <div class="preview-proof-k">Locked inside your full guide</div>
+      <div class="locked-line">First offer: locked</div>
+      <div class="locked-line">Exact starter prompt: locked</div>
+      <div class="locked-line">7-day execution checklist: locked</div>
+    </div>
+    <button class="cta-buy" id="unlock-full-result" type="button" style="font-size: 16px;">Unlock My Full Action Guide</button>
+    <p class="fine-print" style="margin-top: 18px;">No income guarantees. Educational product only. Support: hi@hugomojo.com.</p>
   `;
   updateProgress(Qs.length);
   if (window.HugoMojoTrack) {
@@ -1102,6 +1180,7 @@ function showResult(type) {
   activeResultType = type;
   const t = RESULTS[type];
   const matchPct = calculateMatchPct(type);
+  const scoreLine = 'SCORE_VECTOR: H=' + scores.H + ' / A=' + scores.A + ' / C=' + scores.C;
   const resourceLines = buildResourceLines().map(line => '<div>' + line + '</div>').join('');
   const paths = t.paths.map((p, i) => `
     <div style="border-top:1px solid var(--glass-border); padding:18px 0; text-align:left;">
@@ -1113,43 +1192,63 @@ function showResult(type) {
   const locked = t.locked.map(item => `
     <div style="font-family:'JetBrains Mono'; font-size:9px; color:rgba(218,218,222,0.66); letter-spacing:1px; margin-bottom:8px;">LOCKED: ${item}</div>
   `).join('');
+  const firstActionBullets = t.firstAction.bullets.map(item => `
+    <li style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7; margin-bottom:6px;">${item}</li>
+  `).join('');
   const singlePlan = `single_pass_${t.niche.toLowerCase()}`;
 
   document.querySelector('#step-pay .card').innerHTML = `
     <div class="match-percent">${matchPct}%</div>
-    <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Best fit found</div>
+    <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Your best-fit path</div>
     <h1 id="res-name" style="font-size: 32px; margin-bottom: 16px;">THE ${t.niche.toUpperCase()}</h1>
-    <p class="sub-title" style="margin-bottom: 32px; font-size: 16px;">${t.tagline}</p>
+    <p class="sub-title" style="margin-bottom: 32px; font-size: 16px;">Your matched action guide is ready.</p>
     <div class="result-blueprint">
       <div style="font-family:'JetBrains Mono'; font-size: 9px; color: rgba(218,218,222,0.66); text-align: left; line-height: 2;">
-        RESULT SUMMARY<br>${resourceLines}<div>30-DAY TARGET: ${t.target30}</div>
+        [SCAN_COMPLETE]<br>${scoreLine}<br>${resourceLines}<div>30_DAY_TARGET: ${t.target30}</div>
       </div>
     </div>
+    <div style="margin: 28px 0; text-align:left; border-left:2px solid rgba(255,179,0,0.45); padding-left:16px; background:rgba(255,179,0,0.03); padding-top:14px; padding-bottom:14px;">
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:14px;">FIRST ACTION</div>
+      <div style="font-size:14px; color:#e0e0e0; font-weight:600; margin-bottom:8px;">${t.firstAction.title}</div>
+      <div style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7; margin-bottom:10px;">${t.firstAction.text}</div>
+      <ul style="margin: 0 0 0 18px; padding: 0;">${firstActionBullets}</ul>
+    </div>
+    <div style="margin: 28px 0; text-align:left;">
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:14px;">WHAT TO AVOID</div>
+      <div style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7;">${t.avoid}</div>
+    </div>
+    <button class="cta-buy" type="button" id="early-unlock-cta" style="font-size:16px; margin: 8px 0 24px;">Unlock My Full Action Guide</button>
     <div style="margin: 28px 0; text-align:left;">
       <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:14px;">WHY THIS FITS</div>
       ${t.why.map(w => `<div style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7; margin-bottom:10px;">${w}</div>`).join('')}
     </div>
     <div style="margin: 24px 0;">${paths}</div>
     <div style="border-top:1px solid var(--glass-border); margin: 26px 0; padding-top:24px; text-align:left;">${locked}</div>
-    <div class="pricing-stack">
+    <p style="font-size:10px; color:rgba(218,218,222,0.62); line-height:1.7; margin: 20px 0; text-align:left;">Reference income ranges only. HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
+    <div style="border:1px solid rgba(255,179,0,0.22); background:rgba(255,179,0,0.04); padding:16px; margin:20px 0; text-align:left;">
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:8px;">MOMENTUM WARNING</div>
+      <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.7;">
+        Most people lose momentum because they keep switching paths. Your full guide is designed to help you take one clear next step today.
+      </div>
+    </div>
+    <div class="pricing-stack" id="pricing-options">
       <a class="pay-option muted" href="${CHECKOUT_URLS.single[type]}" data-event="checkout_click" data-plan="${singlePlan}" data-price="9.90">
         <div class="pay-tag">Single Pass</div>
         <div class="pay-name"><span>One ${t.niche} report</span><span class="pay-price">$9.90</span></div>
-        <div class="pay-note">Role diagnosis + starter prompt + first 7 days</div>
+        <div class="pay-note">Matched role report + first action checklist + starter prompt</div>
       </a>
       <a class="pay-option featured" href="${CHECKOUT_URLS.master}" data-event="checkout_click" data-plan="master_key" data-price="19.90">
-        <div class="pay-tag">65% choose this</div>
-        <div class="pay-name"><span>Master Key · full result engine</span><span class="pay-price">$19.90</span></div>
-        <div class="pay-note">All 3 reports + prompt library + 90-day roadmap + updates</div>
+        <div class="pay-tag">Recommended</div>
+        <div class="pay-name"><span>Master Key · full action system</span><span class="pay-price">$19.90</span></div>
+        <div class="pay-note">All 3 paths + prompts + templates + 90-day implementation roadmap</div>
       </a>
-      <a class="pay-option" href="${CHECKOUT_URLS.annual}" data-event="checkout_click" data-plan="annual_access" data-price="199">
-        <div class="pay-tag">Annual Access</div>
-        <div class="pay-name"><span>Signals + prompts + calibration</span><span class="pay-price">$199</span></div>
-        <div class="pay-note">Full Master Key + member system + weekly signals + quarterly calibration</div>
+      <a class="pay-option" href="${CHECKOUT_URLS.annual}" data-event="checkout_click" data-plan="annual_vault" data-price="199">
+        <div class="pay-tag">Annual Vault</div>
+        <div class="pay-name"><span>Monthly toolkits + private access</span><span class="pay-price">$199</span></div>
+        <div class="pay-note">Full Master Key + monthly progress review + quarterly recalibration</div>
       </a>
     </div>
-    <p class="fine-print" style="margin-top: 18px;">Disclaimer: HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
-    <p style="margin-top: 20px; font-size: 9px; color: rgba(218,218,222,0.60); letter-spacing: 4px; font-family: 'JetBrains Mono';">SECURE ACCESS · DIGITAL DELIVERY · hi@hugomojo.com</p>
+    <p style="margin-top: 20px; font-size: 9px; color: rgba(218,218,222,0.60); letter-spacing: 4px; font-family: 'JetBrains Mono';">Secure digital delivery · Access available immediately · hi@hugomojo.com</p>
   `;
 
   if (window.HugoMojoTrack) {
@@ -1159,8 +1258,49 @@ function showResult(type) {
       scores
     });
   }
+  document.getElementById("early-unlock-cta").addEventListener("click", () => {
+    if (window.HugoMojoTrack) {
+      window.HugoMojoTrack.track("early_unlock_click", { result_type: type });
+    }
+    document.getElementById("pricing-options").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
   updateProgress(Qs.length);
   setStep('step-pay');
+}
+
+async function sendLeadCapture(email, resultType) {
+  try {
+    const response = await fetch('/api/lead-capture', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email,
+        result_type: resultType,
+        scores,
+        meta_data: metaData,
+        source: 'scanner'
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('Lead capture failed: ' + response.status);
+    }
+
+    if (window.HugoMojoTrack) {
+      window.HugoMojoTrack.track('lead_capture_success', {
+        result_type: resultType,
+        email_domain: email.split('@')[1] || null
+      });
+    }
+  } catch (error) {
+    console.warn('Lead capture failed:', error);
+    if (window.HugoMojoTrack) {
+      window.HugoMojoTrack.track('lead_capture_failed', {
+        result_type: resultType,
+        reason: error.message || 'unknown'
+      });
+    }
+  }
 }
 
 document.getElementById('email-form').addEventListener('submit', event => {
@@ -1197,6 +1337,7 @@ document.getElementById('email-form').addEventListener('submit', event => {
       result_type: activeResultType
     });
   }
+  sendLeadCapture(email, activeResultType);
   showResult(activeResultType);
 });
 
