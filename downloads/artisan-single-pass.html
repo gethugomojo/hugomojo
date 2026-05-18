@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>HugoMojo Artisan Single Pass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0a0a0b; --panel:#111114; --panel2:#151518; --line:rgba(255,255,255,.1); --text:#ececef; --muted:rgba(236,236,239,.68); --soft:rgba(236,236,239,.48); --amber:#ffb300; --amber2:rgba(255,179,0,.12); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,sans-serif; line-height:1.65; }
+    .page { max-width:1040px; margin:0 auto; padding:40px 22px 72px; }
+    .cover { min-height:72vh; display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--line); background:linear-gradient(135deg, rgba(255,179,0,.08), transparent 38%), #0d0d0f; padding:42px; margin-bottom:56px; }
+    .brand, .section-kicker, .tag, footer { font-family:"JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.18em; }
+    .brand { color:var(--amber); font-size:12px; }
+    h1 { font-size:clamp(44px,8vw,92px); line-height:.92; letter-spacing:-.04em; margin:36px 0 18px; }
+    .subtitle { color:var(--muted); max-width:620px; font-size:18px; }
+    .role { color:var(--amber); font-family:"JetBrains Mono",monospace; letter-spacing:.2em; font-size:13px; margin-top:44px; }
+    section { margin:44px 0; }
+    .section-kicker { color:var(--amber); font-size:12px; margin-bottom:16px; }
+    h2 { font-size:28px; line-height:1.15; margin:0 0 14px; }
+    p { color:var(--muted); margin:0 0 14px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .cards-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .card, .action, .priority, .offer { border:1px solid var(--line); background:var(--panel); padding:20px; }
+    .signal { display:flex; gap:10px; color:var(--muted); border:1px solid var(--line); background:rgba(255,255,255,.018); padding:14px; }
+    .check { color:var(--amber); flex:0 0 auto; }
+    .tag { color:var(--amber); font-size:10px; margin-bottom:10px; }
+    ul { margin:10px 0 0; padding-left:18px; color:var(--muted); }
+    li { margin:7px 0; }
+    .priority { background:var(--amber2); border-color:rgba(255,179,0,.28); }
+    .priority strong, .offer strong { display:block; color:var(--text); font-size:22px; line-height:1.25; margin-top:6px; }
+    .sprint { display:grid; gap:10px; }
+    .day { border:1px solid var(--line); padding:14px 16px; color:var(--muted); background:rgba(255,255,255,.018); }
+    pre { white-space:pre-wrap; background:#070708; border:1px solid var(--line); padding:18px; overflow:auto; color:rgba(236,236,239,.82); }
+    footer { border-top:1px solid var(--line); margin-top:64px; padding-top:22px; color:var(--soft); font-size:10px; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+    @media (max-width:760px) { .cover { padding:28px; min-height:62vh; } .grid, .cards-3 { grid-template-columns:1fr; } h1 { font-size:48px; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="cover">
+      <div>
+        <div class="brand">HugoMojo</div>
+        <h1>AI Income Path Report</h1>
+        <p class="subtitle">A focused action system for turning your current resources into a clear first market test.</p>
+      </div>
+      <div>
+        <div class="role">THE ARTISAN</div>
+        <p class="subtitle">Packaging knowledge, taste, creative judgment, or niche experience into a sellable digital asset.</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-kicker">01 · YOUR MATCH</div>
+      <h2>You matched as an Artisan.</h2>
+      <div class="grid">
+        <div class="card"><div class="tag">PATH LOGIC</div><p>The Artisan path is for people who are better at packaging knowledge, taste, creative judgment, or niche experience into a sellable digital asset.</p></div>
+        <div class="card"><div class="tag">CORE DIAGNOSIS</div><p>Your fastest path is not doing random AI tasks. It is turning what you already know into a small paid asset.</p></div>
+      </div>
+    </section>
+
+    <section class="priority">
+      <div class="section-kicker">02 · TODAY'S PRIORITY</div>
+      <strong>Ask 10 people if the problem is real. Not a brand launch. Just signal.</strong>
+      <p>The Artisan path starts with a useful asset, not a perfect brand.</p>
+    </section>
+
+    <section>
+      <div class="section-kicker">03 · SIGNALS DETECTED</div>
+      <div class="grid">
+        <div class="signal"><span class="check">✓</span><span>You have a topic, skill, taste, or experience base that can be packaged.</span></div>
+        <div class="signal"><span class="check">✓</span><span>You prefer assets over constant client communication.</span></div>
+        <div class="signal"><span class="check">✓</span><span>You may already have some audience, expertise, or creative judgment.</span></div>
+        <div class="signal"><span class="check">✓</span><span>You are willing to build before the first sale.</span></div>
+        <div class="signal"><span class="check">✓</span><span>You are more patient than a Hunter, but still need a focused first product.</span></div>
+        <div class="signal"><span class="check">✓</span><span>You can use AI to speed up writing, structuring, design, and packaging.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-kicker">04 · MARKET FIT MODEL</div>
+      <div class="cards-3">
+        <div class="card"><div class="tag">SHORTCUT</div><p>People buy when a product helps them complete a task faster.</p></div>
+        <div class="card"><div class="tag">TEMPLATE</div><p>They buy a reusable structure when they repeat the same problem often.</p></div>
+        <div class="card"><div class="tag">SPECIFIC ANSWER</div><p>The market does not need another broad ebook. It needs a specific product for a specific person.</p></div>
+      </div>
+      <p>Good Artisan products are usually small: a prompt pack, checklist, guide, Notion template, spreadsheet calculator, swipe file, mini SOP, or Canva template pack.</p>
+    </section>
+
+    <section class="offer">
+      <div class="section-kicker">05 · YOUR FIRST OFFER</div>
+      <div class="tag">OFFER NAME</div>
+      <strong>Small Useful Asset</strong>
+      <div class="grid" style="margin-top:16px;">
+        <div class="card">
+          <div class="tag">DELIVERABLES</div>
+          <ul>
+            <li>One checklist, template, mini-guide, prompt pack, or niche asset pack.</li>
+            <li>Simple PDF, Notion page, spreadsheet, or Canva file.</li>
+            <li>One product page with a clear promise and access note.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="tag">SUGGESTED STARTER PRICING</div>
+          <p>$9-$29 for version 1, depending on usefulness and audience. This is a starting reference, not an income promise.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-kicker">06 · PRODUCT OPTIONS</div>
+      <div class="cards-3">
+        <div class="card"><div class="tag">OPTION A</div><h2>Prompt Pack</h2><p>Best if your topic involves repeatable thinking, writing, planning, or decision-making.</p></div>
+        <div class="card"><div class="tag">OPTION B</div><h2>Practical Guide</h2><p>Best if you can explain a process clearly and turn it into a 7-day path.</p></div>
+        <div class="card"><div class="tag">OPTION C</div><h2>Template</h2><p>Best if your audience repeats the same task often and needs a usable structure.</p></div>
+      </div>
+      <p>Pick a product that can be built in 7 days. If it takes longer, the scope is too large.</p>
+    </section>
+
+    <section>
+      <div class="section-kicker">07 · TOOL STACK</div>
+      <div class="grid">
+        <div class="card"><div class="tag">CREATE</div><ul><li>Claude or ChatGPT for outlines, drafting, prompt creation, and product copy.</li><li>Canva for PDF layout, cover, product mockups, and simple templates.</li><li>Google Docs or Notion for drafting and internal structure.</li></ul></div>
+        <div class="card"><div class="tag">TEST</div><ul><li>Gumroad, Lemon Squeezy, or Creem for simple checkout.</li><li>X, Reddit, LinkedIn, Etsy, or niche communities for first feedback.</li><li>Do not build a website first. Build the asset and one clear product page.</li></ul></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-kicker">08 · 7-DAY SPRINT</div>
+      <div class="sprint">
+        <div class="day">□ Day 1 · Pick one audience and one repeated problem.</div>
+        <div class="day">□ Day 2 · Outline the smallest useful asset.</div>
+        <div class="day">□ Day 3 · Draft version 1 with AI assistance.</div>
+        <div class="day">□ Day 4 · Add examples, instructions, and a clear use case.</div>
+        <div class="day">□ Day 5 · Create one simple product page.</div>
+        <div class="day">□ Day 6 · Ask 10 relevant people for feedback.</div>
+        <div class="day">□ Day 7 · Revise the title, promise, and first section based on feedback.</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-kicker">09 · 30-DAY ACTION PLAN</div>
+      <div class="grid">
+        <div class="action"><div class="tag">WEEK 1</div><p>Find the product problem: pick one audience, list 10 annoying tasks, choose one task, and write the product promise in one sentence.</p></div>
+        <div class="action"><div class="tag">WEEK 2</div><p>Build version 1: draft the outline, use AI to create the first version, add examples, and package it simply.</p></div>
+        <div class="action"><div class="tag">WEEK 3</div><p>Publish and test: create one product page, share it in one channel, and ask for feedback from 10 relevant people.</p></div>
+        <div class="action"><div class="tag">WEEK 4</div><p>Improve the asset: fix unclear sections, add one missing example, and decide whether to keep, repackage, or start a new asset.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-kicker">10 · PROMPTS AND TEMPLATES</div>
+      <div class="tag">PRODUCT IDEA PROMPT</div>
+      <pre>Act as a digital product strategist.
+
+I know about:
+[TOPIC]
+
+My likely audience:
+[AUDIENCE]
+
+Generate 10 small digital product ideas.
+
+For each idea include:
+1. Product title
+2. Specific audience
+3. Painful problem solved
+4. Product format
+5. What is included
+6. Price range
+7. First place to test it</pre>
+      <div class="tag">FEEDBACK REQUEST TEMPLATE</div>
+      <pre>Hi [NAME] - I made a small resource for [AUDIENCE] who struggle with [PROBLEM].
+
+It is a [FORMAT] that helps them [OUTCOME].
+
+Could I send you the page and ask one question: does the promise feel useful, or is it too vague?</pre>
+    </section>
+
+    <section>
+      <div class="section-kicker">11 · RESOURCE GAP WARNINGS</div>
+      <div class="grid">
+        <div class="signal"><span class="check">✓</span><span>Product too broad. A product for everyone is usually bought by no one.</span></div>
+        <div class="signal"><span class="check">✓</span><span>Building for months without feedback.</span></div>
+        <div class="signal"><span class="check">✓</span><span>Over-designing before proving demand.</span></div>
+        <div class="signal"><span class="check">✓</span><span>Avoiding distribution. Products do not sell just because they exist.</span></div>
+      </div>
+    </section>
+
+    <footer>
+      <span>hugomojo.com</span>
+      <span>Educational use only · No income guarantee</span>
+    </footer>
+  </main>
+</body>
+</html>
