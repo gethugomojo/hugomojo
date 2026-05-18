@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>HugoMojo — AI Income Path Assessment</title>
-<meta name="description" content="Complete the HugoMojo AI Income Assessment to find your best-fit AI income path and unlock the right guide.">
+<meta name="description" content="Complete the HugoMojo AI Income Assessment to find your best-fit AI income path and unlock your action system.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -583,12 +583,12 @@ h1 {
 
   <div id="step-email" class="hidden">
     <div class="card" style="text-align: center;">
-      <h1 style="font-size: 30px; margin-bottom: 20px;">Your AI Income Path Is Ready.</h1>
-      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to save your result and unlock your full action guide.</p>
+      <h1 style="font-size: 30px; margin-bottom: 20px;">You're closer than you think.</h1>
+      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to save your result and unlock the action system built for your path.</p>
       <form class="email-gate" id="email-form" novalidate>
         <input class="email-input" id="lead-email" type="email" inputmode="email" placeholder="you@example.com" autocomplete="email" aria-describedby="email-error" aria-invalid="false">
         <div class="email-error" id="email-error" role="alert" aria-live="polite"></div>
-        <button class="cta-buy" type="submit" style="font-size: 16px;">Continue to My Result</button>
+        <button class="cta-buy" type="submit" style="font-size: 16px;">Unlock My Action System</button>
         <p class="fine-print">We use your email to deliver your result, product access, and related HugoMojo updates. No spam. No income guarantees. Support: hi@hugomojo.com.</p>
       </form>
     </div>
@@ -612,7 +612,7 @@ h1 {
         </div>
       </div>
 
-      <button id="pay-btn" class="cta-buy">Unlock My Full Action Guide</button>
+      <button id="pay-btn" class="cta-buy">Unlock My Action System</button>
       <p style="margin-top: 30px; font-size: 9px; color: rgba(218,218,222,0.60); letter-spacing: 4px; font-family: 'JetBrains Mono';">SECURE ACCESS · 9.90 USD</p>
     </div>
   </div>
@@ -885,6 +885,9 @@ const RESULTS = {
     badgeBg: "rgba(255,179,0,0.045)",
     badgeColor: "#FFB300",
     tagline: "Your resources are built for fast results. Here's your exact target.",
+    stuck: "You don't need another course.<br>You needed a path that rewards action before perfection.",
+    actionLine: "Send 10 proposals.",
+    fitLine: "Your resources favor speed over perfection.",
     why: [
       "You have enough time and tools to start this week — no waiting required.",
       "Freelancing rewards speed over perfection, which matches your execution style.",
@@ -926,6 +929,9 @@ const RESULTS = {
     badgeBg: "rgba(255,179,0,0.045)",
     badgeColor: "#FFB300",
     tagline: "You already have something to sell — you just haven’t packaged it yet.",
+    stuck: "Your problem was never talent.<br>You stayed trapped consuming instead of publishing.",
+    actionLine: "Publish one small digital product.",
+    fitLine: "You already have something valuable to package.",
     why: [
       "Your knowledge or creative eye is rare — AI lets you build products in days, not months.",
       "Digital products sell while you sleep. Once built, every sale is nearly pure profit.",
@@ -967,6 +973,9 @@ const RESULTS = {
     badgeBg: "rgba(255,179,0,0.045)",
     badgeColor: "#FFB300",
     tagline: "You don’t need a big audience. You just need three good clients.",
+    stuck: "You think like a systems builder.<br>But you've been trying to monetize like a creator.",
+    actionLine: "Start one business conversation.",
+    fitLine: "You are optimized for systems, not content volume.",
     why: [
       "Businesses are paying top dollar to solve the exact problems you can fix with AI.",
       "High-ticket, low-volume: one $500/month client beats 50 small buyers.",
@@ -1133,30 +1142,31 @@ function showPreview(type) {
   const resourcePreview = buildResourceLines().slice(0, 3).join(' · ');
   document.getElementById('preview-card').innerHTML = `
     <div class="preview-score">${matchPct}%</div>
-    <div class="preview-pill">Free result preview</div>
+    <div class="preview-pill">Your path is already visible</div>
     <h1 style="font-size: 32px; margin-bottom: 16px;">THE ${t.niche.toUpperCase()}</h1>
     <p class="sub-title" style="margin-bottom: 28px; font-size: 16px;">${t.tagline}</p>
     <div class="preview-proof">
       <div class="preview-proof-item">
         <div class="preview-proof-k">Unlocked now</div>
-        <div class="preview-proof-v">Your highest-fit AI income role and match score.</div>
+        <div class="preview-proof-v">Your highest-fit AI income role is clear. The next step is the action system.</div>
       </div>
       <div class="preview-proof-item">
         <div class="preview-proof-k">Based on your resources</div>
         <div class="preview-proof-v">${resourcePreview || 'Your time, tools, budget, and skill signals.'}</div>
       </div>
       <div class="preview-proof-item">
-        <div class="preview-proof-k">Full report includes</div>
+        <div class="preview-proof-k">Locked action system includes</div>
         <div class="preview-proof-v">Your first action, what to avoid, matched prompts, templates, 7-day checklist, and 30-day target.</div>
       </div>
     </div>
     <div class="locked-preview">
-      <div class="preview-proof-k">Locked inside your full guide</div>
-      <div class="locked-line">First offer: locked</div>
-      <div class="locked-line">Exact starter prompt: locked</div>
-      <div class="locked-line">7-day execution checklist: locked</div>
+      <div class="preview-proof-k">Locked inside your action system</div>
+      <div class="locked-line">✓ Exact starter offer</div>
+      <div class="locked-line">✓ First outreach script</div>
+      <div class="locked-line">✓ 7-day sprint</div>
+      <div class="locked-line">✓ Pricing framework</div>
     </div>
-    <button class="cta-buy" id="unlock-full-result" type="button" style="font-size: 16px;">Unlock My Full Action Guide</button>
+    <button class="cta-buy" id="unlock-full-result" type="button" style="font-size: 16px;">Unlock My Action System</button>
     <p class="fine-print" style="margin-top: 18px;">No income guarantees. Educational product only. Support: hi@hugomojo.com.</p>
   `;
   updateProgress(Qs.length);
@@ -1180,74 +1190,59 @@ function showResult(type) {
   activeResultType = type;
   const t = RESULTS[type];
   const matchPct = calculateMatchPct(type);
-  const scoreLine = 'SCORE_VECTOR: H=' + scores.H + ' / A=' + scores.A + ' / C=' + scores.C;
-  const resourceLines = buildResourceLines().map(line => '<div>' + line + '</div>').join('');
-  const paths = t.paths.map((p, i) => `
-    <div style="border-top:1px solid var(--glass-border); padding:18px 0; text-align:left;">
-      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:8px;">PATH ${i + 1}</div>
-      <div style="font-size:14px; color:#e0e0e0; font-weight:600; margin-bottom:6px;">${p.name}</div>
-      <div style="font-size:12px; color:rgba(224,224,228,0.72); line-height:1.7;">${p.desc}</div>
-    </div>
-  `).join('');
-  const locked = t.locked.map(item => `
-    <div style="font-family:'JetBrains Mono'; font-size:9px; color:rgba(218,218,222,0.66); letter-spacing:1px; margin-bottom:8px;">LOCKED: ${item}</div>
-  `).join('');
-  const firstActionBullets = t.firstAction.bullets.map(item => `
-    <li style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7; margin-bottom:6px;">${item}</li>
-  `).join('');
   const singlePlan = `single_pass_${t.niche.toLowerCase()}`;
 
   document.querySelector('#step-pay .card').innerHTML = `
     <div class="match-percent">${matchPct}%</div>
-    <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Your best-fit path</div>
-    <h1 id="res-name" style="font-size: 32px; margin-bottom: 16px;">THE ${t.niche.toUpperCase()}</h1>
-    <p class="sub-title" style="margin-bottom: 32px; font-size: 16px;">Your matched action guide is ready.</p>
-    <div class="result-blueprint">
-      <div style="font-family:'JetBrains Mono'; font-size: 9px; color: rgba(218,218,222,0.66); text-align: left; line-height: 2;">
-        [SCAN_COMPLETE]<br>${scoreLine}<br>${resourceLines}<div>30_DAY_TARGET: ${t.target30}</div>
-      </div>
+    <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:22px; text-transform: uppercase;">Your best-fit path</div>
+    <h1 id="res-name" style="font-size: 32px; margin-bottom: 20px;">THE ${t.niche.toUpperCase()}</h1>
+    <div style="margin: 18px 0 22px; text-align:left; border-left:2px solid rgba(255,179,0,0.50); padding:18px 0 18px 16px; background:rgba(255,179,0,0.035); box-shadow:0 0 28px rgba(255,179,0,0.06);">
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:12px;">WHY YOU'VE BEEN STUCK</div>
+      <div style="font-size:16px; color:#f0f0f0; line-height:1.8;">${t.stuck}</div>
     </div>
-    <div style="margin: 28px 0; text-align:left; border-left:2px solid rgba(255,179,0,0.45); padding-left:16px; background:rgba(255,179,0,0.03); padding-top:14px; padding-bottom:14px;">
-      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:14px;">FIRST ACTION</div>
-      <div style="font-size:14px; color:#e0e0e0; font-weight:600; margin-bottom:8px;">${t.firstAction.title}</div>
-      <div style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7; margin-bottom:10px;">${t.firstAction.text}</div>
-      <ul style="margin: 0 0 0 18px; padding: 0;">${firstActionBullets}</ul>
+    <div style="margin: 18px 0 20px; text-align:left;">
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:10px;">FIRST ACTION</div>
+      <div style="font-size:22px; color:#fff; font-weight:800; line-height:1.25;">${t.actionLine}</div>
+      <div style="font-size:12px; color:rgba(224,224,228,0.66); line-height:1.6; margin-top:8px;">Not next month. Today.</div>
     </div>
-    <div style="margin: 28px 0; text-align:left;">
-      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:14px;">WHAT TO AVOID</div>
-      <div style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7;">${t.avoid}</div>
+    <div style="border:1px solid var(--glass-border); background:rgba(255,255,255,0.018); padding:16px; margin:18px 0; text-align:left;">
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:12px;">LOCKED INSIDE YOUR ACTION SYSTEM</div>
+      <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ Exact starter offer</div>
+      <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ First outreach script</div>
+      <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ 7-day sprint</div>
+      <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ Pricing framework</div>
     </div>
-    <button class="cta-buy" type="button" id="early-unlock-cta" style="font-size:16px; margin: 8px 0 24px;">Unlock My Full Action Guide</button>
-    <div style="margin: 28px 0; text-align:left;">
-      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:14px;">WHY THIS FITS</div>
-      ${t.why.map(w => `<div style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7; margin-bottom:10px;">${w}</div>`).join('')}
-    </div>
-    <div style="margin: 24px 0;">${paths}</div>
-    <div style="border-top:1px solid var(--glass-border); margin: 26px 0; padding-top:24px; text-align:left;">${locked}</div>
-    <p style="font-size:10px; color:rgba(218,218,222,0.62); line-height:1.7; margin: 20px 0; text-align:left;">Reference income ranges only. HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
+    <button class="cta-buy" type="button" id="early-unlock-cta" style="font-size:16px; margin: 8px 0 18px;">Unlock My Action System</button>
     <div style="border:1px solid rgba(255,179,0,0.22); background:rgba(255,179,0,0.04); padding:16px; margin:20px 0; text-align:left;">
-      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:8px;">MOMENTUM WARNING</div>
+      <div style="font-size:14px; color:#e8e8e8; line-height:1.7; margin-bottom:12px;">
+        You probably already had enough tools.<br>What you lacked was one clear path.
+      </div>
       <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.7;">
-        Most people lose momentum because they keep switching paths. Your full guide is designed to help you take one clear next step today.
+        Most people stay stuck because they restart every week.
       </div>
     </div>
+    <p style="font-size:11px; color:rgba(218,218,222,0.70); line-height:1.6; margin: 14px 0; text-align:left;">Instant digital delivery. No subscription required.</p>
     <div class="pricing-stack" id="pricing-options">
       <a class="pay-option muted" href="${CHECKOUT_URLS.single[type]}" data-event="checkout_click" data-plan="${singlePlan}" data-price="9.90">
         <div class="pay-tag">Single Pass</div>
-        <div class="pay-name"><span>One ${t.niche} report</span><span class="pay-price">$9.90</span></div>
-        <div class="pay-note">Matched role report + first action checklist + starter prompt</div>
+        <div class="pay-name"><span>One ${t.niche} action system</span><span class="pay-price">$9.90</span></div>
+        <div class="pay-note">Matched action system + starter offer + 7-day sprint</div>
       </a>
       <a class="pay-option featured" href="${CHECKOUT_URLS.master}" data-event="checkout_click" data-plan="master_key" data-price="19.90">
         <div class="pay-tag">Recommended</div>
         <div class="pay-name"><span>Master Key · full action system</span><span class="pay-price">$19.90</span></div>
         <div class="pay-note">All 3 paths + prompts + templates + 90-day implementation roadmap</div>
       </a>
+      <!-- Annual option hidden for launch focus. Keep checkout code and data attributes intact.
       <a class="pay-option" href="${CHECKOUT_URLS.annual}" data-event="checkout_click" data-plan="annual_vault" data-price="199">
         <div class="pay-tag">Annual Vault</div>
         <div class="pay-name"><span>Monthly toolkits + private access</span><span class="pay-price">$199</span></div>
         <div class="pay-note">Full Master Key + monthly progress review + quarterly recalibration</div>
       </a>
+      -->
     </div>
+    <p style="font-size:10px; color:rgba(218,218,222,0.62); line-height:1.7; margin: 18px 0 0; text-align:left;">Reference income ranges only. HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
+    <p style="margin-top: 20px; font-size: 9px; color: var(--hope-glow); letter-spacing: 3px; font-family: 'JetBrains Mono'; text-transform: uppercase;">Start before you overthink again.</p>
     <p style="margin-top: 20px; font-size: 9px; color: rgba(218,218,222,0.60); letter-spacing: 4px; font-family: 'JetBrains Mono';">Secure digital delivery · Access available immediately · hi@hugomojo.com</p>
   `;
 

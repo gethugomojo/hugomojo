@@ -36,6 +36,13 @@
       <p class="meta-line">Support: hi@hugomojo.com</p>
     </section>
 
+    <section class="section" style="padding-top:0;">
+      <div class="panel" style="border-left:2px solid rgba(255,179,0,0.45);">
+        <div class="label">Today's Move</div>
+        <h3 id="today-move">Take one visible action today.</h3>
+      </div>
+    </section>
+
     <section class="section" style="padding-top:24px;">
       <div class="grid-2" id="delivery-grid"></div>
     </section>
@@ -120,6 +127,14 @@
       }
     };
 
+    const todayMoves = {
+      H: "Send 10 proposals before editing your bio again.",
+      A: "Publish one small offer before building a full brand.",
+      C: "Start one business conversation before building another workflow.",
+      master: "Pick one path and execute today's first move.",
+      annual: "Review your path, then take one visible action today."
+    };
+
     function card(item) {
       return `
         <article class="delivery-card">
@@ -149,16 +164,18 @@
         title: selected.title,
         copy: selected.copy,
         items: [selected],
-        steps: selected.steps
+        steps: selected.steps,
+        todayMove: todayMoves[role] || todayMoves.H
       };
     } else if (plan === "annual" || plan === "vault") {
-      delivery = bundles.annual;
+      delivery = { ...bundles.annual, todayMove: todayMoves.annual };
     } else {
-      delivery = bundles.master;
+      delivery = { ...bundles.master, todayMove: todayMoves.master };
     }
 
     document.getElementById("access-title").textContent = delivery.title;
     document.getElementById("access-copy").textContent = delivery.copy;
+    document.getElementById("today-move").textContent = delivery.todayMove;
     document.getElementById("delivery-grid").innerHTML = delivery.items.map(card).join("");
     document.getElementById("delivery-sequence").innerHTML = delivery.steps.map(step).join("");
 
