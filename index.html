@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>HugoMojo — Personalized AI Income Assessment Service</title>
-<meta name="description" content="Complete the HugoMojo AI Income Assessment to identify your best-matched income path and access the corresponding implementation guide.">
+<title>HugoMojo — Find Your AI Income Path</title>
+<meta name="description" content="HugoMojo helps AI tool users find the AI income path that fits their time, skills, energy, and resources.">
+<script src="assets/tracking.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -443,17 +444,40 @@ h1 {
     </header>
 
     <section class="hero">
-      <h1><span class="title-line">You've Tried</span> <span class="title-line">AI Side Hustles.</span> <span class="title-line">None Felt Right.</span> <span class="title-line">Here's Why.</span></h1>
-      <p class="hero-desc">Most AI side-hustle advice sounds useful until you try to apply it to your own time, skills, tools, and budget. HugoMojo helps you identify the path that fits your real situation.</p>
+      <div class="hero-kicker mono">AI Path Diagnosis</div>
+      <h1><span class="title-line">You don't need</span> <span class="title-line">another AI tool.</span></h1>
+      <p class="hero-desc">You need the AI income path that actually fits how you work.</p>
+      <p class="hero-desc">ChatGPT, Claude, and automation tools can help you move faster. But faster in the wrong direction is still the wrong direction. HugoMojo helps you find whether you are a Hunter, Artisan, or Architect — then gives you the action system to start from there.</p>
       <div class="action-stack">
-        <a class="btn-primary" href="scanner.html" data-event="scanner_start">Start Assessment</a>
-        <a class="btn-secondary" href="#pricing" data-event="pricing_anchor">See Pricing</a>
+        <a class="btn-primary" href="scanner.html" data-event="scanner_start">Find My AI Income Path</a>
+        <a class="btn-secondary" href="scanner.html" data-event="scanner_secondary">Take the Free Scanner</a>
       </div>
       <p class="meta-line">16 assessment questions · confidential results · educational service only</p>
     </section>
 
+    <section class="info-section" aria-label="AI tool users who still feel stuck">
+      <div class="mono">For AI tool users who still feel stuck</div>
+      <h2 style="margin-top:14px;">Using AI tools but still stuck?</h2>
+      <div class="info-grid">
+        <article class="info-card">
+          <h3>ChatGPT is not a business model.</h3>
+          <p>A tool can help you move faster, but it cannot choose the right path for your resources.</p>
+        </article>
+        <article class="info-card">
+          <h3>More tools will not fix a path problem.</h3>
+          <p>If the path is wrong, every new tool just gives you another way to restart.</p>
+        </article>
+        <article class="info-card">
+          <h3>The same AI tool creates different outcomes for different people.</h3>
+          <p>Same AI tool. Different path.</p>
+        </article>
+      </div>
+      <p class="hero-desc" style="margin-top:22px; margin-bottom:18px;">Hunter sells faster. Artisan builds assets. Architect designs systems.</p>
+      <a class="btn-primary" href="scanner.html" data-event="pain_cta">Find your type first</a>
+    </section>
+
     <section class="blueprint-preview" aria-label="Report dimensions">
-      <div class="mono">What The Assessment Checks</div>
+      <div class="mono">AI Path Diagnosis</div>
       <div class="preview-grid">
         <article class="preview-card">
           <h4>01. Operation Style Assessment</h4>
@@ -492,7 +516,7 @@ h1 {
             <span class="archetype-copy">Scalable business systems.</span>
           </div>
         </div>
-        <p class="price-note">Your assessment responses will be matched against the HugoMojo income solution matching engine.</p>
+        <p class="price-note">Your assessment responses will be matched to the Hunter, Artisan, or Architect path.</p>
       </div>
     </section>
 
@@ -504,21 +528,21 @@ h1 {
           <p>A personalized role report based on your assessment result.</p>
           <div class="price">$9.90</div>
           <div class="price-note">One role report</div>
-          <a class="btn-secondary price-action" href="scanner.html" data-event="pricing_single_scan" data-plan="single_pass">Unlock Post-Assessment</a>
+          <a class="btn-secondary price-action" href="scanner.html" data-event="pricing_single_scan" data-plan="single_pass">Find My AI Income Path</a>
         </article>
         <article class="price-card featured">
           <h3>Master Key</h3>
           <p>All three role reports, prompt resource library, and 90-day implementation roadmap.</p>
           <div class="price">$19.90</div>
           <div class="price-note">Complete the scanner first to get your matched report.</div>
-          <a class="btn-primary price-action" href="scanner.html" data-event="pricing_master_scan" data-plan="master_key">Unlock Post-Assessment</a>
+          <a class="btn-primary price-action" href="scanner.html" data-event="pricing_master_scan" data-plan="master_key">Find My AI Income Path</a>
         </article>
         <article class="price-card">
           <h3>Annual Access</h3>
           <p>Yearly operating system with monthly signal reports, Prompt Vault updates, weekly digest, execution tracking, and quarterly calibration.</p>
           <div class="price">$199</div>
           <div class="price-note">Best after your result is locked.</div>
-          <a class="btn-secondary price-action" href="scanner.html" data-event="pricing_annual_scan" data-plan="annual_access">Start Assessment First</a>
+          <a class="btn-secondary price-action" href="scanner.html" data-event="pricing_annual_scan" data-plan="annual_access">Take the Free Scanner</a>
         </article>
       </div>
     </section>
@@ -553,73 +577,5 @@ h1 {
       </div>
     </footer>
   </main>
-  <script>
-(function () {
-  const storageKey = "hm_events_v1";
-  const visitorKey = "hm_visitor_id";
-  const sessionKey = "hm_session_id";
-  const memoryStore = {};
-
-  function storageGet(store, key) {
-    try { return store.getItem(key); } catch (error) { return memoryStore[key] || null; }
-  }
-
-  function storageSet(store, key, value) {
-    try { store.setItem(key, value); } catch (error) { memoryStore[key] = String(value); }
-  }
-
-  function id(prefix) {
-    return prefix + "_" + Math.random().toString(36).slice(2) + Date.now().toString(36);
-  }
-
-  function getOrCreate(key, prefix) {
-    let value = storageGet(localStorage, key);
-    if (!value) {
-      value = id(prefix);
-      storageSet(localStorage, key, value);
-    }
-    return value;
-  }
-
-  const visitorId = getOrCreate(visitorKey, "visitor");
-  const sessionId = storageGet(sessionStorage, sessionKey) || id("session");
-  storageSet(sessionStorage, sessionKey, sessionId);
-  window.dataLayer = window.dataLayer || [];
-
-  function readEvents() {
-    try { return JSON.parse(storageGet(localStorage, storageKey) || "[]"); } catch (error) { return []; }
-  }
-
-  function writeEvent(event) {
-    const events = readEvents();
-    events.push(event);
-    storageSet(localStorage, storageKey, JSON.stringify(events.slice(-100)));
-  }
-
-  function track(name, payload) {
-    const event = {
-      event: name,
-      visitor_id: visitorId,
-      session_id: sessionId,
-      path: window.location.pathname,
-      title: document.title,
-      timestamp: new Date().toISOString(),
-      payload: payload || {}
-    };
-    window.dataLayer.push(event);
-    writeEvent(event);
-  }
-
-  window.HugoMojoTrack = { track, visitorId, sessionId, events: readEvents };
-  document.addEventListener("DOMContentLoaded", function () {
-    track("page_view");
-    document.addEventListener("click", function (event) {
-      const el = event.target.closest("[data-event]");
-      if (!el) return;
-      track(el.getAttribute("data-event"), { href: el.getAttribute("href") || null });
-    });
-  });
-})();
-  </script>
 </body>
 </html>

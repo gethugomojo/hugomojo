@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>HugoMojo — AI Income Path Assessment</title>
-<meta name="description" content="Complete the HugoMojo AI Income Assessment to find your best-fit AI income path and unlock your action system.">
+<meta name="description" content="Find the AI income path that fits how you actually work, then unlock the action system for your path.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -86,6 +86,31 @@ body::after {
   margin: 0 auto;
   padding: 0;
   z-index: 10;
+}
+
+.scanner-intro {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.scanner-intro h1 {
+  font-size: clamp(30px, 8vw, 42px);
+  margin-bottom: 14px;
+}
+
+.scanner-intro p {
+  color: var(--soft-text);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.scanner-intro-kicker {
+  margin-bottom: 12px;
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .vault-link {
@@ -555,6 +580,11 @@ h1 {
 <div id="app">
   <!--  Quiz  -->
   <div id="step-quiz">
+    <div class="scanner-intro">
+      <div class="scanner-intro-kicker">Start the Free Scanner</div>
+      <h1>Find the AI income path that fits how you actually work.</h1>
+      <p>You already have access to powerful AI tools. HugoMojo shows whether your fastest path is clients, assets, or systems.</p>
+    </div>
     <div class="status">
       <span style="color: var(--hope-glow)">●</span>
       <div class="progress-track"><div id="p-bar" class="progress-fill"></div></div>
@@ -584,7 +614,7 @@ h1 {
   <div id="step-email" class="hidden">
     <div class="card" style="text-align: center;">
       <h1 style="font-size: 30px; margin-bottom: 20px;">You're closer than you think.</h1>
-      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to save your result and unlock the action system built for your path.</p>
+      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to save your result and unlock the action system built for your AI income path.</p>
       <form class="email-gate" id="email-form" novalidate>
         <input class="email-input" id="lead-email" type="email" inputmode="email" placeholder="you@example.com" autocomplete="email" aria-describedby="email-error" aria-invalid="false">
         <div class="email-error" id="email-error" role="alert" aria-live="polite"></div>
@@ -1142,13 +1172,13 @@ function showPreview(type) {
   const resourcePreview = buildResourceLines().slice(0, 3).join(' · ');
   document.getElementById('preview-card').innerHTML = `
     <div class="preview-score">${matchPct}%</div>
-    <div class="preview-pill">Your path is already visible</div>
+    <div class="preview-pill">Your path is becoming clear</div>
     <h1 style="font-size: 32px; margin-bottom: 16px;">THE ${t.niche.toUpperCase()}</h1>
     <p class="sub-title" style="margin-bottom: 28px; font-size: 16px;">${t.tagline}</p>
     <div class="preview-proof">
       <div class="preview-proof-item">
         <div class="preview-proof-k">Unlocked now</div>
-        <div class="preview-proof-v">Your highest-fit AI income role is clear. The next step is the action system.</div>
+        <div class="preview-proof-v">Your highest-fit AI income path is visible. Unlock the action system to see what to do first.</div>
       </div>
       <div class="preview-proof-item">
         <div class="preview-proof-k">Based on your resources</div>
@@ -1215,7 +1245,7 @@ function showResult(type) {
     <button class="cta-buy" type="button" id="early-unlock-cta" style="font-size:16px; margin: 8px 0 18px;">Unlock My Action System</button>
     <div style="border:1px solid rgba(255,179,0,0.22); background:rgba(255,179,0,0.04); padding:16px; margin:20px 0; text-align:left;">
       <div style="font-size:14px; color:#e8e8e8; line-height:1.7; margin-bottom:12px;">
-        You probably already had enough tools.<br>What you lacked was one clear path.
+        The tool was never the missing piece. The path was.<br><br>You probably already had enough tools.<br>What you lacked was one clear path.
       </div>
       <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.7;">
         Most people stay stuck because they restart every week.
@@ -1329,6 +1359,12 @@ document.getElementById('email-form').addEventListener('submit', event => {
   if (window.HugoMojoTrack) {
     window.HugoMojoTrack.track("email_capture", {
       email_domain: email.split('@')[1] || null,
+      result_type: activeResultType
+    });
+  }
+  if (window.posthog && typeof window.posthog.identify === "function") {
+    window.posthog.identify(email, {
+      email,
       result_type: activeResultType
     });
   }
