@@ -35,7 +35,7 @@ This month, the highest-signal opportunity is:
 - Why now:
 - First test:
 
-## Prompt Vault Updates Needed
+## Prompt Library Updates Needed
 
 - Prompt to update:
 - Reason:

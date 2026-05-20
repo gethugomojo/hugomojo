@@ -1,4 +1,4 @@
-# HugoMojo Artisan Single Pass
+# HugoMojo Artisan AI Income Path & Niche Action System
 
 ## 1. Your Match
 
@@ -48,7 +48,31 @@ Good Artisan products are usually small:
 
 The first product should be useful before it is beautiful.
 
-## 4. Best First Product
+## 4. Niche Direction
+
+Start with a niche where the problem is repeated, the buyer understands the value quickly, and AI can help you deliver faster.
+
+Best starter niche directions:
+
+1. Job-specific templates or checklists
+2. Niche creator or seller asset packs
+3. Small how-to guides for repeated problems
+
+For Artisan, the best niche is a repeated problem that can become a small asset, template, checklist, guide, or digital product.
+
+## 5. Niche Filter
+
+Before choosing a niche, run it through this filter:
+
+1. Can you reach 20 people in this niche?
+2. Do they repeat this problem often?
+3. Can AI help you deliver faster?
+4. Can you create a small first offer in 7 days?
+5. Would this buyer understand the value quickly?
+
+If the answer is no to most of these, do not start there yet. Pick a narrower niche.
+
+## 6. Best First Product
 
 Start with one of these formats:
 
@@ -86,7 +110,7 @@ Example:
 
 Pick a product that can be built in 7 days. If it takes longer, the scope is too large.
 
-## 5. Tool Stack
+## 7. Tool Stack
 
 Use a practical creation stack:
 
@@ -98,7 +122,7 @@ Use a practical creation stack:
 
 Do not build a website first. Build the asset and one clear product page.
 
-## 6. 30-Day Action Plan
+## 8. 30-Day Action Plan
 
 ### Week 1: Find The Product Problem
 
@@ -128,7 +152,7 @@ Do not build a website first. Build the asset and one clear product page.
 - Improve the title and product promise.
 - Decide whether to keep, repackage, or start a new asset.
 
-## 7. Copy-Paste Prompts And Templates
+## 9. Copy-Paste Prompts And Templates
 
 ### Product Idea Prompt
 
@@ -188,7 +212,7 @@ It is a [FORMAT] that helps them [OUTCOME].
 Could I send you the page and ask one question: does the promise feel useful, or is it too vague?
 ```
 
-## 8. Resource Gap Warnings
+## 10. Resource Gap Warnings
 
 Watch these failure points:
 
@@ -198,7 +222,7 @@ Watch these failure points:
 - Pricing based on effort instead of usefulness.
 - Avoiding distribution. Products do not sell just because they exist.
 
-## 9. Your Next Step Today
+## 11. Your Next Step Today
 
 Write this sentence:
 

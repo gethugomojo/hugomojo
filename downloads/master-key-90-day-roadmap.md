@@ -1,6 +1,6 @@
 # HugoMojo Master Key 90-Day Roadmap
 
-The Master Key is not just three role reports. It is a way to compare the three income paths, choose one primary path, keep one backup path, and run a 90-day signal test without getting distracted by every new AI tactic.
+The Master Key is not just three Action Systems. It is a way to compare the three income paths, choose one primary path, keep one backup path, and run a 90-day signal test without getting distracted by every new AI tactic.
 
 ## 1. The Three-Path Decision Model
 

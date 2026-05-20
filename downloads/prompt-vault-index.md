@@ -1,8 +1,8 @@
-# HugoMojo Prompt Vault Index
+# HugoMojo Prompt Library Index
 
-The Prompt Vault is organized by path and versioned over time.
+The prompt library is organized by path and versioned over time.
 
-## Hunter Vault
+## Hunter Library
 
 ### Offer And Outreach
 
@@ -15,7 +15,7 @@ The Prompt Vault is organized by path and versioned over time.
 - Hunter-Delivery-v1: Turn client input into a fast first draft.
 - Hunter-Review-v1: Prepare a client update and next-step email.
 
-## Artisan Vault
+## Artisan Library
 
 ### Product Creation
 
@@ -28,7 +28,7 @@ The Prompt Vault is organized by path and versioned over time.
 - Artisan-Content-v1: Write posts that explain the product problem.
 - Artisan-Feedback-v1: Turn buyer feedback into product changes.
 
-## Architect Vault
+## Architect Library
 
 ### Discovery And Audit
 

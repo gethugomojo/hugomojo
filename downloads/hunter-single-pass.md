@@ -1,4 +1,4 @@
-# HugoMojo Hunter Single Pass
+# HugoMojo Hunter AI Income Path & Niche Action System
 
 ## 1. Your Match
 
@@ -34,7 +34,31 @@ Demand usually comes from:
 
 The Hunter wins by being specific, fast, and reliable. The market does not need another vague "AI freelancer." It needs a person who can solve one painful task this week.
 
-## 4. Best First Offer
+## 4. Niche Direction
+
+Start with a niche where the problem is repeated, the buyer understands the value quickly, and AI can help you deliver faster.
+
+Best starter niche directions:
+
+1. Small business content, email, or landing page help
+2. Local service admin or simple automation support
+3. Ecommerce listing, product description, or product asset support
+
+For Hunter, the best niche is not the most interesting market. It is the market where you can reach buyers quickly, explain the value simply, and get feedback fast.
+
+## 5. Niche Filter
+
+Before choosing a niche, run it through this filter:
+
+1. Can you reach 20 people in this niche?
+2. Do they repeat this problem often?
+3. Can AI help you deliver faster?
+4. Can you create a small first offer in 7 days?
+5. Would this buyer understand the value quickly?
+
+If the answer is no to most of these, do not start there yet. Pick a narrower niche.
+
+## 6. Best First Offer
 
 Start with one of these offers:
 
@@ -82,7 +106,7 @@ Simple offer:
 
 Pick only one offer for the first 14 days. Do not sell all three at once.
 
-## 5. Tool Stack
+## 7. Tool Stack
 
 Use the smallest stack that can deliver the offer:
 
@@ -94,7 +118,7 @@ Use the smallest stack that can deliver the offer:
 
 Avoid spending the first week comparing tools. A Hunter needs market signal, not a perfect stack.
 
-## 6. 30-Day Action Plan
+## 8. 30-Day Action Plan
 
 ### Week 1: Build The Offer
 
@@ -125,7 +149,7 @@ Avoid spending the first week comparing tools. A Hunter needs market signal, not
 - Add a revision rule.
 - Raise the price only after the offer is clear.
 
-## 7. Copy-Paste Prompts And Templates
+## 9. Copy-Paste Prompts And Templates
 
 ### Offer Builder Prompt
 
@@ -179,7 +203,7 @@ Include:
 - follow-up message
 ```
 
-## 8. Resource Gap Warnings
+## 10. Resource Gap Warnings
 
 Watch these failure points:
 
@@ -189,7 +213,7 @@ Watch these failure points:
 - No outreach volume. Five messages is not a market test.
 - Over-custom delivery. If every client requires a new process, the service will not scale.
 
-## 9. Your Next Step Today
+## 11. Your Next Step Today
 
 Write one sentence:
 

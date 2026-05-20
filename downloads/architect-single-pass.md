@@ -1,4 +1,4 @@
-# HugoMojo Architect Single Pass
+# HugoMojo Architect AI Income Path & Niche Action System
 
 ## 1. Your Match
 
@@ -41,7 +41,31 @@ The market pays more when the problem is tied to time saved, revenue protected, 
 
 The Architect wins by diagnosing the workflow before selling the tool.
 
-## 4. Best First Offer
+## 4. Niche Direction
+
+Start with a niche where the problem is repeated, the buyer understands the value quickly, and AI can help you deliver faster.
+
+Best starter niche directions:
+
+1. Service business intake and follow-up workflows
+2. Agency reporting or client operations workflows
+3. Small business SOP, CRM, or admin workflows
+
+For Architect, the best niche is a business process that repeats often, creates friction, and can be improved with AI-assisted systems.
+
+## 5. Niche Filter
+
+Before choosing a niche, run it through this filter:
+
+1. Can you reach 20 people in this niche?
+2. Do they repeat this problem often?
+3. Can AI help you deliver faster?
+4. Can you create a small first offer in 7 days?
+5. Would this buyer understand the value quickly?
+
+If the answer is no to most of these, do not start there yet. Pick a narrower niche.
+
+## 6. Best First Offer
 
 Start with one of these offers:
 
@@ -79,7 +103,7 @@ Simple offer:
 
 Start with an audit if you are not sure what to build. Audits are easier to sell than unknown implementation projects.
 
-## 5. Tool Stack
+## 7. Tool Stack
 
 Use tools that make business value visible:
 
@@ -92,7 +116,7 @@ Use tools that make business value visible:
 
 Avoid selling tools by name. Sell the workflow outcome.
 
-## 6. 30-Day Action Plan
+## 8. 30-Day Action Plan
 
 ### Week 1: Pick A Business Niche
 
@@ -122,7 +146,7 @@ Avoid selling tools by name. Sell the workflow outcome.
 - Record the process.
 - Package the final workflow as a repeatable offer.
 
-## 7. Copy-Paste Prompts And Templates
+## 9. Copy-Paste Prompts And Templates
 
 ### Workflow Audit Prompt
 
@@ -182,7 +206,7 @@ Create:
 - support option
 ```
 
-## 8. Resource Gap Warnings
+## 10. Resource Gap Warnings
 
 Watch these failure points:
 
@@ -192,7 +216,7 @@ Watch these failure points:
 - Underestimating client communication.
 - Forgetting documentation. Businesses pay more when the workflow can be repeated.
 
-## 9. Your Next Step Today
+## 11. Your Next Step Today
 
 Choose one business type and write:
 

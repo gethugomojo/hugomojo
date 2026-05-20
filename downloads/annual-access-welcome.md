@@ -36,9 +36,9 @@ The note focuses on:
 - What to keep, stop, or adjust.
 - The three actions to run next quarter.
 
-### 3. Versioned Prompt Vault
+### 3. Versioned Prompt Library
 
-The Prompt Vault is maintained by role and use case:
+The prompt library is maintained by path and use case:
 
 - Hunter prompts for offers, outreach, proposals, delivery, and client follow-up.
 - Artisan prompts for product ideas, packaging, landing pages, pricing, and content.
@@ -85,7 +85,7 @@ The longer you use it, the more valuable your own record becomes.
 - Annual Execution Tracker Workbook.
 - Monthly Signal Report Template.
 - Weekly Signal Digest Template.
-- Prompt Vault Index.
+- Prompt Library Index.
 
 ## Operating Rule
 
