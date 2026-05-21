@@ -1,15 +1,15 @@
 :root {
   --bg-dark: #0a0a0b;
   --rock-gray: #1a1a1c;
-  --dim-text: #4a4a4c;
+  --dim-text: rgba(190, 190, 196, 0.62);
   --readable-text: rgba(232, 232, 232, 0.86);
-  --soft-text: rgba(190, 190, 190, 0.72);
+  --soft-text: rgba(224, 224, 228, 0.78);
   --hope-glow: #ffb300;
   --hope-deep: #cc8e00;
   --hope-soft: rgba(255, 179, 0, 0.15);
   --glass: rgba(255, 255, 255, 0.018);
   --glass-border: rgba(255, 255, 255, 0.06);
-  --card-shadow: 0 40px 100px rgba(0, 0, 0, 0.62);
+  --card-shadow: 0 28px 70px rgba(0, 0, 0, 0.58);
 }
 
 * {
@@ -46,7 +46,7 @@ body::after {
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.04;
+  opacity: 0.018;
   pointer-events: none;
   z-index: 100;
 }
@@ -70,6 +70,8 @@ a {
   background: radial-gradient(circle at 50% 50%, #161618 0%, #0a0a0b 70%);
   z-index: -1;
   animation: drift 20s ease-in-out infinite alternate;
+  opacity: 0.55;
+  filter: none;
 }
 
 .site-shell {
@@ -81,8 +83,9 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(22px);
-  background: rgba(10, 10, 11, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 10, 11, 0.86);
   border-bottom: 1px solid var(--glass-border);
 }
 
@@ -171,9 +174,9 @@ a {
 .label,
 .micro {
   color: var(--hope-glow);
-  letter-spacing: 2.4px;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .eyebrow {
@@ -288,7 +291,7 @@ h3,
   min-height: 42px;
   padding: 11px 16px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1.8px;
 }
 
@@ -532,17 +535,31 @@ h3,
   padding: 24px;
 }
 
+.delivery-card,
+.panel {
+  border-color: rgba(255, 255, 255, 0.10);
+}
+
 .product-card h3,
 .delivery-card h3,
 .legal-block h3,
 .panel h3 {
-  font-size: 22px;
+  font-size: 20px;
+  line-height: 1.25;
   margin: 12px 0 10px;
 }
 
 .card-copy {
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.7;
+  color: rgba(224, 224, 228, 0.76);
+}
+
+.product-card p,
+.delivery-card p,
+.panel p {
+  font-size: 15px;
+  line-height: 1.68;
 }
 
 .price {
@@ -553,8 +570,9 @@ h3,
 }
 
 .price-note {
-  font-size: 9px;
-  letter-spacing: 2px;
+  font-size: 12px;
+  line-height: 1.55;
+  letter-spacing: 1.1px;
   color: var(--dim-text);
   text-transform: uppercase;
 }
@@ -657,6 +675,8 @@ h3,
 .timeline {
   display: grid;
   gap: 14px;
+  font-size: 15px;
+  line-height: 1.65;
 }
 
 .timeline-item {
@@ -753,7 +773,7 @@ h3,
   max-width: 720px;
   color: var(--soft-text);
   font-size: 17px;
-  line-height: 1.65;
+  line-height: 1.7;
   font-weight: 300;
 }
 
