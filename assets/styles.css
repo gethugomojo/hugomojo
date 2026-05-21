@@ -173,7 +173,7 @@ a {
   color: var(--hope-glow);
   letter-spacing: 2.4px;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .eyebrow {
@@ -541,8 +541,8 @@ h3,
 }
 
 .card-copy {
-  font-size: 14px;
-  line-height: 1.62;
+  font-size: 15px;
+  line-height: 1.65;
 }
 
 .price {
@@ -674,7 +674,7 @@ h3,
 .timeline-day {
   font-family: 'JetBrains Mono', monospace;
   color: var(--hope-glow);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -733,7 +733,7 @@ h3,
 
 .meta-line {
   margin-top: 24px;
-  font-size: 10px;
+  font-size: 11px;
   color: var(--dim-text);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -752,8 +752,8 @@ h3,
 .page-copy {
   max-width: 720px;
   color: var(--soft-text);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.65;
   font-weight: 300;
 }
 
