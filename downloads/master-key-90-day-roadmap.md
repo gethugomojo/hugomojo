@@ -1,6 +1,10 @@
 # HugoMojo Master Key 90-Day Roadmap
 
-The Master Key is not just three Action Systems. It is a way to compare the three income paths, choose one primary path, keep one backup path, and run a 90-day signal test without getting distracted by every new AI tactic.
+Master Key is for users who are not sure one path is enough yet.
+
+It unlocks all three Action Systems so you can compare Hunter, Artisan, and Architect, choose a primary path, keep a backup path, and run a 90-day signal test without getting distracted by every new AI tactic.
+
+Your job is not to try every AI idea. Your job is to find the first path that creates real signal.
 
 ## 1. The Three-Path Decision Model
 
@@ -10,7 +14,7 @@ The Master Key is not just three Action Systems. It is a way to compare the thre
 | Artisan | People with knowledge, taste, or creative judgment | One small digital product page | Building too long without feedback | Clicks, saves, replies, early purchases |
 | Architect | People who see systems and business workflows | One AI workflow audit offer | Selling tools instead of business outcomes | Audit calls, workflow pain, pilot requests |
 
-Your job is not to "try everything." Your job is to find which path produces real signal with your current resources.
+Your job is not to "try everything." Your job is to find which path produces real signal with where you are now.
 
 ## 2. How To Choose Your Primary Path
 
@@ -24,13 +28,14 @@ Use these rules:
 
 Do not choose based on which path sounds most impressive. Choose based on what you can actually execute.
 
-## 3. Phase 1: Signal - Days 1 To 14
+## 3. Phase 1: 14-Day Signal Test - Days 1 To 14
 
 Goal: find the first sign that the market cares.
 
 Actions:
 
 - Choose one primary path.
+- Choose one backup path, but do not work on it yet.
 - Define one customer or audience.
 - Create one offer, product idea, or audit angle.
 - Put it in front of at least 20 people or one focused audience channel.
@@ -50,6 +55,12 @@ What does not count as signal:
 - AI says the idea is good.
 - A friend says "cool."
 - The product looks polished but no one sees it.
+
+At the end of 14 days, choose one:
+
+- Continue the primary path if it created real response.
+- Narrow the niche if the response was weak but the problem still feels real.
+- Switch to the backup path only if you can explain what failed.
 
 ## 4. Phase 2: System - Days 15 To 45
 
@@ -141,7 +152,18 @@ Switch only when:
 
 Do not switch because you are bored or anxious. Switching too early resets your learning.
 
-## 10. Final Rule
+## 10. What Not To Change
+
+During the first 14 days, do not change:
+
+- The path every time a new AI video appears.
+- The buyer group before you have contacted enough people.
+- The offer before you have heard real objections.
+- The tool stack before the problem is clear.
+
+Change the path only after evidence. Adjust the wording and niche before you abandon the direction.
+
+## 11. Final Rule
 
 HugoMojo gives you a path. The market gives you evidence. Your job is to collect evidence before changing direction.
 

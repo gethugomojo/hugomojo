@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>HugoMojo — Find Your AI Income Path</title>
-<meta name="description" content="HugoMojo helps AI tool users find the AI income path and niche that fits how they actually work.">
+<meta name="description" content="HugoMojo helps AI-aware beginners and early users find the AI income path, niche direction, and first action that fit where they are now.">
 <script src="assets/tracking.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,16 +106,17 @@ a { color: inherit; text-decoration: none; }
 
 .brand-name {
   color: var(--hope-glow);
-  font-size: 10px;
-  letter-spacing: 3px;
+  font-size: 12px;
+  letter-spacing: 2px;
 }
 
 .nav-links {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   color: rgba(232, 232, 232, 0.76);
-  font-size: 9px;
-  letter-spacing: 1.8px;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-weight: 500;
 }
 
 .nav-links a:hover,
@@ -174,6 +175,7 @@ h1 {
   min-height: 54px;
   padding: 16px 28px;
   border: 1px solid transparent;
+  border-radius: 15px;
   font-family: 'Inter', sans-serif;
   font-size: 13px;
   font-weight: 900;
@@ -242,7 +244,7 @@ h1 {
 .silhouette-box {
   border: 1px solid var(--glass-border);
   background: var(--glass);
-  border-radius: 4px;
+  border-radius: 20px;
 }
 
 .preview-card,
@@ -298,6 +300,7 @@ h1 {
   gap: 12px;
   padding: 16px;
   border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 18px;
   background: rgba(0,0,0,0.18);
   color: var(--soft-text);
 }
@@ -363,16 +366,21 @@ h1 {
   margin-top: auto;
   padding-top: 34px;
   color: var(--dim-text);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  font-size: 9px;
-  letter-spacing: 1.6px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
+.footer-links a { color: rgba(232, 232, 232, 0.68); }
 .footer-links a:hover { color: var(--hope-glow); }
 
 @media (min-width: 480px) {
@@ -393,14 +401,26 @@ h1 {
     padding: 0 0 36px;
   }
   .topline { align-items: center; flex-direction: row; flex-wrap: wrap; gap: 12px; }
+  .brand-name {
+    font-size: 12px;
+    letter-spacing: 1.4px;
+  }
   .nav-links {
     width: auto;
     margin-left: auto;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 12px;
+    font-size: 12px;
+    letter-spacing: 0;
   }
   .nav-links a[href="#pricing"] { display: none; }
+  .footer,
+  .footer-links,
+  .footer-links a {
+    font-size: 12px;
+    letter-spacing: 0.2px;
+  }
   .hero { padding-top: 30px; }
   h1 { max-width: 100%; font-size: clamp(30px, 9.1vw, 35px); overflow-wrap: normal; }
   .title-line { display: block; }
@@ -437,139 +457,43 @@ h1 {
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a class="active" href="index.html">Home</a>
-        <a href="scanner.html">Assessment</a>
-        <a href="#pricing">Pricing</a>
+        <a href="scanner.html">Scanner</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
     <section class="hero">
-      <div class="hero-kicker mono">AI Path Diagnosis</div>
-      <h1><span class="title-line">You don't need</span> <span class="title-line">another AI tool.</span> <span class="title-line">You need the AI income path</span> <span class="title-line">and niche that fits how you actually work.</span></h1>
-      <p class="hero-desc">AI tools can help you move faster. But they do not choose your market, offer, or path. HugoMojo helps you find whether you are a Hunter, Artisan, or Architect — then gives you the action system to start with a direction that fits your time, skills, energy, and market access.</p>
+      <div class="hero-kicker mono">AI Income Scanner</div>
+      <h1><span class="title-line">Find Your</span> <span class="title-line">AI Income Path</span></h1>
+      <p class="hero-desc">Answer 16 quick questions to find the starting path, niche direction, and first action that fit where you are now.</p>
       <div class="action-stack">
-        <a class="btn-primary" href="scanner.html" data-event="scanner_start">Find My AI Income Path</a>
-        <a class="btn-secondary" href="scanner.html" data-event="scanner_secondary">Take the Free Scanner</a>
+        <a class="btn-primary" href="scanner.html" data-event="scanner_start">Start Free Scanner</a>
       </div>
-      <p class="meta-line">16 assessment questions · confidential results · educational service only</p>
+      <p class="meta-line">Free · 16 questions · path + niche direction + first action</p>
     </section>
 
-    <section class="info-section" aria-label="AI tool users who still feel stuck">
-      <div class="mono">For AI tool users who still feel stuck</div>
-      <h2 style="margin-top:14px;">Using AI tools but still stuck?</h2>
-      <div class="info-grid">
-        <article class="info-card">
-          <h3>ChatGPT is not a business model.</h3>
-          <p>A tool can help you move faster, but it cannot choose the right path for your resources.</p>
-        </article>
-        <article class="info-card">
-          <h3>More tools will not fix a path problem.</h3>
-          <p>If the path is wrong, every new tool just gives you another way to restart.</p>
-        </article>
-        <article class="info-card">
-          <h3>AI tools do not choose your market, offer, or niche.</h3>
-          <p>The missing piece is not another feature. It is a direction that fits how you work.</p>
-        </article>
-        <article class="info-card">
-          <h3>The same AI tool creates different outcomes for different people.</h3>
-          <p>Same AI tool. Different path.</p>
-        </article>
-      </div>
-      <p class="hero-desc" style="margin-top:22px; margin-bottom:18px;">Hunter sells faster. Artisan builds assets. Architect designs systems.</p>
-      <a class="btn-primary" href="scanner.html" data-event="pain_cta">Find your type first</a>
-    </section>
-
-    <section class="blueprint-preview" aria-label="Report dimensions">
-      <div class="mono">AI Path Diagnosis</div>
-      <div class="preview-grid">
-        <article class="preview-card">
-          <h4>01. Operation Style Assessment</h4>
-          <p>Identify whether your work behavior aligns with the Hunter, Artisan, or Architect work pattern.</p>
-        </article>
-        <article class="preview-card">
-          <h4>02. Path & Niche Matching</h4>
-          <p>Align your available time, devices, budget, audience and skills to a practical initial income path.</p>
-        </article>
-        <article class="preview-card">
-          <h4>03. 30-Day Target</h4>
-          <p>Receive a targeted initial goal and the optimized path to complete a reliable feasibility validation.</p>
-        </article>
-        <article class="preview-card">
-          <h4>04. Solution Matching</h4>
-          <p>Preview which paid implementation guide best matches your assessment result prior to purchase.</p>
-        </article>
-      </div>
-
+    <section class="info-section" id="how-it-works" aria-label="How the scanner works">
+      <div class="mono">AI feels overwhelming or nothing clicked?</div>
+      <p class="hero-desc" style="font-size:16px; max-width:620px; margin:0 auto 22px;">HugoMojo helps you find the path that fits where you are now.</p>
       <div class="silhouette-box">
-        <div class="mono">Possible Results</div>
         <div class="archetype-row" aria-label="HugoMojo archetypes">
           <div class="archetype">
             <span class="archetype-mark">H</span>
             <span class="archetype-title">Hunter</span>
-            <span class="archetype-copy">Fast client revenue solutions.</span>
+            <span class="archetype-copy">Starts with services.</span>
           </div>
           <div class="archetype">
             <span class="archetype-mark">A</span>
             <span class="archetype-title">Artisan</span>
-            <span class="archetype-copy">Packaged expertise services.</span>
+            <span class="archetype-copy">Starts with assets.</span>
           </div>
           <div class="archetype">
             <span class="archetype-mark">C</span>
             <span class="archetype-title">Architect</span>
-            <span class="archetype-copy">Scalable business systems.</span>
+            <span class="archetype-copy">Starts with systems.</span>
           </div>
         </div>
-        <p class="price-note">Your assessment responses will be matched to the Hunter, Artisan, or Architect path.</p>
       </div>
-    </section>
-
-    <section class="pricing-section" id="pricing" aria-label="Pricing">
-      <div class="mono">Choose After Your Result</div>
-      <div class="pricing-grid">
-        <article class="price-card">
-          <h3>Single Pass</h3>
-          <p>A personalized action system based on your assessment result.</p>
-          <div class="price">$9.90</div>
-          <div class="price-note">One path action system</div>
-          <a class="btn-secondary price-action" href="scanner.html" data-event="pricing_single_scan" data-plan="single_pass">Find My AI Income Path</a>
-        </article>
-        <article class="price-card featured">
-          <h3>Master Key</h3>
-          <p>All three path action systems, prompt resource library, and 90-day implementation roadmap.</p>
-          <div class="price">$19.90</div>
-          <div class="price-note">Complete the scanner first to get your matched path.</div>
-          <a class="btn-primary price-action" href="scanner.html" data-event="pricing_master_scan" data-plan="master_key">Find My AI Income Path</a>
-        </article>
-        <!-- Annual option hidden for launch focus. Keep public positioning centered on Single Pass and Master Key.
-        <article class="price-card">
-          <h3>Annual Access</h3>
-          <p>Yearly operating system with monthly signal reports, prompt library updates, weekly digest, execution tracking, and quarterly calibration.</p>
-          <div class="price">$199</div>
-          <div class="price-note">Best after your result is locked.</div>
-          <a class="btn-secondary price-action" href="scanner.html" data-event="pricing_annual_scan" data-plan="annual_access">Take the Free Scanner</a>
-        </article>
-        -->
-      </div>
-    </section>
-
-    <section class="info-section" aria-label="Delivery and compliance">
-      <div class="info-grid">
-        <article class="info-card">
-          <h3>What You Get</h3>
-          <p>Action Systems, prompt resources, operational steps, templates, and a 30-day execution plan. This is an educational service only.</p>
-        </article>
-        <article class="info-card">
-          <h3>How It Works</h3>
-          <p>Complete 16 assessment questions, preview your best-matched path, then unlock the Action System that aligns with your current resources.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="trust-strip" aria-label="Trust signals">
-      <span>No subscription on Single or Master</span>
-      <span>Instant digital delivery</span>
-      <span>Educational product only</span>
-      <span><a href="mailto:hi@hugomojo.com">hi@hugomojo.com</a></span>
     </section>
 
     <footer class="footer">

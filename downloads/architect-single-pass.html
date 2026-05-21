@@ -8,25 +8,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
   <style>
     :root { --bg:#0a0a0b; --panel:#111114; --panel2:#151518; --line:rgba(255,255,255,.1); --text:#ececef; --muted:rgba(236,236,239,.68); --soft:rgba(236,236,239,.48); --amber:#ffb300; --amber2:rgba(255,179,0,.12); }
     * { box-sizing:border-box; }
     body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,sans-serif; line-height:1.65; }
     .page { max-width:1040px; margin:0 auto; padding:40px 22px 72px; }
-    .cover { min-height:72vh; display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--line); background:linear-gradient(135deg, rgba(255,179,0,.08), transparent 38%), #0d0d0f; padding:42px; margin-bottom:56px; }
+    .cover { min-height:62vh; display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--line); background:linear-gradient(135deg, rgba(255,179,0,.08), transparent 38%), #0d0d0f; padding:42px; margin-bottom:48px; }
     .brand, .section-kicker, .tag, footer { font-family:"JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.18em; }
     .brand { color:var(--amber); font-size:12px; }
-    h1 { font-size:clamp(44px,8vw,92px); line-height:.92; letter-spacing:-.04em; margin:36px 0 18px; }
-    .subtitle { color:var(--muted); max-width:620px; font-size:18px; }
+    h1 { font-size:clamp(40px,7vw,82px); line-height:.96; letter-spacing:-.04em; margin:36px 0 18px; }
+    .subtitle { color:var(--muted); max-width:680px; font-size:18px; }
     .role { color:var(--amber); font-family:"JetBrains Mono",monospace; letter-spacing:.2em; font-size:13px; margin-top:44px; }
-    section { margin:44px 0; }
+    section { margin:40px 0; }
     .section-kicker { color:var(--amber); font-size:12px; margin-bottom:16px; }
     h2 { font-size:28px; line-height:1.15; margin:0 0 14px; }
     p { color:var(--muted); margin:0 0 14px; }
     .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
     .cards-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
-    .card, .action, .priority, .offer { border:1px solid var(--line); background:var(--panel); padding:20px; }
-    .signal { display:flex; gap:10px; color:var(--muted); border:1px solid var(--line); background:rgba(255,255,255,.018); padding:14px; }
+    .card, .action, .priority, .offer { border:1px solid var(--line); background:var(--panel); padding:20px; border-radius:18px; }
+    .signal { display:flex; gap:10px; color:var(--muted); border:1px solid var(--line); background:rgba(255,255,255,.018); padding:14px; border-radius:16px; }
     .check { color:var(--amber); flex:0 0 auto; }
     .tag { color:var(--amber); font-size:10px; margin-bottom:10px; }
     ul { margin:10px 0 0; padding-left:18px; color:var(--muted); }
@@ -34,10 +35,10 @@
     .priority { background:var(--amber2); border-color:rgba(255,179,0,.28); }
     .priority strong, .offer strong { display:block; color:var(--text); font-size:22px; line-height:1.25; margin-top:6px; }
     .sprint { display:grid; gap:10px; }
-    .day { border:1px solid var(--line); padding:14px 16px; color:var(--muted); background:rgba(255,255,255,.018); }
-    pre { white-space:pre-wrap; background:#070708; border:1px solid var(--line); padding:18px; overflow:auto; color:rgba(236,236,239,.82); }
+    .day { border:1px solid var(--line); padding:14px 16px; color:var(--muted); background:rgba(255,255,255,.018); border-radius:14px; }
+    pre { white-space:pre-wrap; background:#070708; border:1px solid var(--line); padding:18px; overflow:auto; color:rgba(236,236,239,.82); border-radius:16px; }
     footer { border-top:1px solid var(--line); margin-top:64px; padding-top:22px; color:var(--soft); font-size:10px; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; }
-    @media (max-width:760px) { .cover { padding:28px; min-height:62vh; } .grid, .cards-3 { grid-template-columns:1fr; } h1 { font-size:48px; } }
+    @media (max-width:760px) { .cover { padding:28px; min-height:56vh; } .grid, .cards-3 { grid-template-columns:1fr; } h1 { font-size:44px; } }
   </style>
 </head>
 <body>
@@ -46,173 +47,79 @@
       <div>
         <div class="brand">HugoMojo</div>
         <h1>Architect AI Income Path & Niche Action System</h1>
-        <p class="subtitle">A focused action system for turning your current resources into a clear first market test.</p>
+        <p class="subtitle">A focused action system for people who know AI can create opportunities, notice messy processes, and need a system-first starting path.</p>
       </div>
       <div>
         <div class="role">THE ARCHITECT</div>
-        <p class="subtitle">Diagnosing workflows, translating AI tools into business outcomes, and making operational value visible.</p>
+        <p class="subtitle">If AI felt overwhelming or nothing clicked, start with one path, one repeated process, and one business signal.</p>
       </div>
     </header>
 
     <section>
-      <div class="section-kicker">01 · YOUR MATCH</div>
-      <h2>You matched as an Architect.</h2>
-      <div class="grid">
-        <div class="card"><div class="tag">PATH LOGIC</div><p>The Architect path is for people who can see systems, diagnose workflow problems, and translate AI tools into business outcomes.</p></div>
-        <div class="card"><div class="tag">CORE DIAGNOSIS</div><p>Your strongest path is not selling generic AI content. It is finding operational pain and turning it into a paid audit, setup, or automation project.</p></div>
-      </div>
+      <div class="section-kicker">01 · BEGINNER STARTING POINT</div>
+      <h2>Start here.</h2>
+      <p>You do not need to build complex automation first. Architect starts by finding a repeated messy process and showing how it could work better. If you tried tools or ideas and nothing clicked, this path turns AI into a simple business outcome before any technical build.</p>
     </section>
 
     <section class="priority">
-      <div class="section-kicker">02 · TODAY'S PRIORITY</div>
-      <strong>List 20 businesses with one repeated workflow. Not code. Diagnosis first.</strong>
-      <p>The Architect path starts with seeing the workflow before selling the tool.</p>
+      <div class="section-kicker">02 · WHY YOU'RE STUCK</div>
+      <strong>You may see how things could work better, but you need to turn that into a simple business outcome.</strong>
     </section>
 
     <section>
-      <div class="section-kicker">03 · SIGNALS DETECTED</div>
-      <div class="grid">
-        <div class="signal"><span class="check">✓</span><span>You are comfortable thinking in workflows and systems.</span></div>
-        <div class="signal"><span class="check">✓</span><span>You can communicate with clients or business owners.</span></div>
-        <div class="signal"><span class="check">✓</span><span>You are more patient with diagnosis than a pure Hunter.</span></div>
-        <div class="signal"><span class="check">✓</span><span>You may not need a large audience because the customer value is higher.</span></div>
-        <div class="signal"><span class="check">✓</span><span>You can use AI, no-code tools, or automation platforms to solve repeated problems.</span></div>
-        <div class="signal"><span class="check">✓</span><span>You are interested in higher-value work rather than many small transactions.</span></div>
-      </div>
+      <div class="section-kicker">03 · NICHE DIRECTION</div>
+      <h2>Start with repeated business processes like:</h2>
+      <div class="grid"><div class="signal"><span class="check">✓</span><span>customer intake</span></div><div class="signal"><span class="check">✓</span><span>follow-up messages</span></div><div class="signal"><span class="check">✓</span><span>simple reporting</span></div><div class="signal"><span class="check">✓</span><span>admin tasks</span></div><div class="signal"><span class="check">✓</span><span>client onboarding</span></div><div class="signal"><span class="check">✓</span><span>repeated emails or documents</span></div></div>
     </section>
 
     <section>
-      <div class="section-kicker">04 · MARKET FIT MODEL</div>
-      <div class="cards-3">
-        <div class="card"><div class="tag">OPERATIONS</div><p>Lead intake, email follow-up, report writing, CRM updates, and client onboarding.</p></div>
-        <div class="card"><div class="tag">KNOWLEDGE</div><p>Internal knowledge search, proposal generation, customer support drafts, and SOPs.</p></div>
-        <div class="card"><div class="tag">VALUE</div><p>The market pays more when the problem is tied to time saved, revenue protected, or errors reduced.</p></div>
-      </div>
-      <p>The Architect wins by diagnosing the workflow before selling the tool.</p>
-    </section>
-
-    <section class="offer">
-      <div class="section-kicker">05 · NICHE DIRECTION</div>
-      <p>Start with a niche where the problem is repeated, the buyer understands the value quickly, and AI can help you deliver faster.</p>
-      <div class="grid" style="margin-top:16px;">
-        <div class="card"><div class="tag">DIRECTION 1</div><p>Service business intake and follow-up workflows.</p></div>
-        <div class="card"><div class="tag">DIRECTION 2</div><p>Agency reporting or client operations workflows.</p></div>
-        <div class="card"><div class="tag">DIRECTION 3</div><p>Small business SOP, CRM, or admin workflows.</p></div>
-      </div>
-      <p>For Architect, the best niche is a business process that repeats often, creates friction, and can be improved with AI-assisted systems.</p>
-    </section>
-
-    <section>
-      <div class="section-kicker">06 · NICHE FILTER</div>
+      <div class="section-kicker">04 · NICHE FILTER</div>
       <p>Before choosing a niche, run it through this filter:</p>
-      <div class="grid">
-        <div class="signal"><span class="check">✓</span><span>Can you reach 20 people in this niche?</span></div>
-        <div class="signal"><span class="check">✓</span><span>Do they repeat this problem often?</span></div>
-        <div class="signal"><span class="check">✓</span><span>Can AI help you deliver faster?</span></div>
-        <div class="signal"><span class="check">✓</span><span>Can you create a small first offer in 7 days?</span></div>
-        <div class="signal"><span class="check">✓</span><span>Would this buyer understand the value quickly?</span></div>
-      </div>
+      <div class="grid"><div class="signal"><span class="check">✓</span><span>Can you reach 20 people in this niche?</span></div><div class="signal"><span class="check">✓</span><span>Do they repeat this problem often?</span></div><div class="signal"><span class="check">✓</span><span>Can AI help you deliver faster?</span></div><div class="signal"><span class="check">✓</span><span>Can you create a small first offer in 7 days?</span></div><div class="signal"><span class="check">✓</span><span>Would this buyer understand the value quickly?</span></div></div>
       <p>If the answer is no to most of these, do not start there yet. Pick a narrower niche.</p>
     </section>
 
+    <section>
+      <div class="section-kicker">05 · BEGINNER TOOL STACK</div>
+      <h2>Use simple tools first.</h2>
+      <ul><li>ChatGPT or Claude for process questions and audit notes</li><li>Google Docs for audit delivery</li><li>Google Sheets for simple tracking</li><li>Loom if you want to explain the review on video</li><li>Automation tools only after the problem is clear</li></ul>
+    </section>
+
+    <section class="priority">
+      <div class="section-kicker">06 · TODAY'S 30-MINUTE MOVE</div>
+      <strong>Take one small action today.</strong>
+      <ul><li>Pick one business type.</li><li>Pick one repeated process.</li><li>Write 5 questions about where time is lost.</li><li>Message 5 businesses asking how they handle it.</li></ul>
+    </section>
+
     <section class="offer">
-      <div class="section-kicker">07 · YOUR FIRST OFFER</div>
-      <div class="tag">OFFER NAME</div>
-      <strong>AI Workflow Audit</strong>
-      <div class="grid" style="margin-top:16px;">
-        <div class="card">
-          <div class="tag">DELIVERABLES</div>
-          <ul>
-            <li>Workflow map and bottleneck list.</li>
-            <li>AI automation opportunities and tool stack recommendation.</li>
-            <li>A 30-day implementation plan for one business workflow.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="tag">SUGGESTED STARTER PRICING</div>
-          <p>$150-$500 for the first audit, depending on scope and buyer. This is a starting reference, not an income promise.</p>
-        </div>
-      </div>
+      <div class="section-kicker">07 · FIRST OFFER</div>
+      <div class="tag">FORMULA</div>
+      <strong>I help [business] review [messy process] and find simple AI-assisted improvements so they can [business outcome].</strong>
     </section>
 
     <section>
-      <div class="section-kicker">08 · OFFER OPTIONS</div>
-      <div class="cards-3">
-        <div class="card"><div class="tag">OPTION A</div><h2>Workflow Audit</h2><p>"I review one repetitive workflow in your business and show where AI or automation can save time."</p></div>
-        <div class="card"><div class="tag">OPTION B</div><h2>Assistant Setup</h2><p>"I help you create a focused internal AI assistant for one business process."</p></div>
-        <div class="card"><div class="tag">OPTION C</div><h2>Automation Pilot</h2><p>"I automate one admin process using AI and no-code tools, then document the workflow."</p></div>
-      </div>
-      <p>Start with an audit if you are not sure what to build. Audits are easier to sell than unknown implementation projects.</p>
+      <div class="section-kicker">08 · 7-DAY SPRINT</div>
+      <div class="sprint"><div class="day">□ Day 1 · Choose business type + process.</div><div class="day">□ Day 2 · Write audit offer.</div><div class="day">□ Day 3 · Create 5 diagnostic questions.</div><div class="day">□ Day 4 · Message 5 businesses.</div><div class="day">□ Day 5 · Message 10 more.</div><div class="day">□ Day 6 · Track pain points.</div><div class="day">□ Day 7 · Turn the clearest pain into a simple review outline.</div></div>
     </section>
 
     <section>
-      <div class="section-kicker">09 · TOOL STACK</div>
-      <div class="grid">
-        <div class="card"><div class="tag">DIAGNOSE</div><ul><li>ChatGPT or Claude for workflow analysis, SOP drafting, and assistant instructions.</li><li>Notion or Google Docs for SOPs and internal documentation.</li><li>Loom for short walkthrough videos for clients.</li></ul></div>
-        <div class="card"><div class="tag">IMPLEMENT</div><ul><li>Make or Zapier for automation between apps.</li><li>Google Sheets or Airtable for a lightweight operating database.</li><li>Calendly or Tally for simple intake and discovery forms.</li></ul></div>
-      </div>
+      <div class="section-kicker">09 · COPY-PASTE PROMPT</div>
+      <pre>Act as a beginner-friendly workflow consultant. Help me create a simple workflow review offer. Business: [business]. Process: [process]. Problem: [problem]. Create: one offer sentence, five diagnostic questions, one outreach message, and three business outcomes to mention.</pre>
     </section>
 
     <section>
-      <div class="section-kicker">10 · 7-DAY SPRINT</div>
-      <div class="sprint">
-        <div class="day">□ Day 1 · Choose one business niche.</div>
-        <div class="day">□ Day 2 · List 10 repetitive workflows they likely have.</div>
-        <div class="day">□ Day 3 · Choose one workflow and write an audit offer.</div>
-        <div class="day">□ Day 4 · Build a 10-question intake form.</div>
-        <div class="day">□ Day 5 · Prepare a one-page audit report template.</div>
-        <div class="day">□ Day 6 · Send 10 targeted audit messages.</div>
-        <div class="day">□ Day 7 · Send 10 more and book one diagnostic conversation.</div>
-      </div>
+      <div class="section-kicker">10 · WHAT TO AVOID</div>
+      <div class="grid"><div class="signal"><span class="check">✓</span><span>complex enterprise systems</span></div><div class="signal"><span class="check">✓</span><span>vague AI transformation</span></div><div class="signal"><span class="check">✓</span><span>selling automation before finding the pain</span></div><div class="signal"><span class="check">✓</span><span>technical builds you cannot explain simply</span></div><div class="signal"><span class="check">✓</span><span>buyers who do not repeat the process often</span></div></div>
     </section>
 
     <section>
-      <div class="section-kicker">11 · 30-DAY ACTION PLAN</div>
-      <div class="grid">
-        <div class="action"><div class="tag">WEEK 1</div><p>Pick a business niche, list 10 repetitive workflows, choose the workflow with the clearest time cost, and write one audit offer.</p></div>
-        <div class="action"><div class="tag">WEEK 2</div><p>Create the audit system: intake form, workflow map template, one-page audit report, and diagnostic call structure.</p></div>
-        <div class="action"><div class="tag">WEEK 3</div><p>Send audit outreach: focus on one pain point, offer a small diagnostic, and track which workflow pains get replies.</p></div>
-        <div class="action"><div class="tag">WEEK 4</div><p>Convert to a pilot: define inputs, outputs, tools, timeline, and package the final workflow as a repeatable offer.</p></div>
-      </div>
+      <div class="section-kicker">11 · IF YOU GET NO SIGNAL</div>
+      <div class="grid"><div class="signal"><span class="check">✓</span><span>Do not sell automation yet.</span></div><div class="signal"><span class="check">✓</span><span>Make the business type or process more specific.</span></div><div class="signal"><span class="check">✓</span><span>Explain the outcome in simple terms: time saved, fewer missed follow-ups, fewer mistakes, faster response.</span></div><div class="signal"><span class="check">✓</span><span>If nothing clicked before, test whether the process pain is real before building.</span></div></div>
     </section>
 
     <section>
-      <div class="section-kicker">12 · PROMPTS AND TEMPLATES</div>
-      <div class="tag">WORKFLOW AUDIT PROMPT</div>
-      <pre>Act as an AI automation consultant.
-
-Target business type:
-[BUSINESS TYPE]
-
-Their current workflow:
-[WORKFLOW]
-
-Analyze:
-1. Where time is being lost
-2. Which steps are repetitive
-3. Which steps require judgment
-4. Which steps could be assisted by AI
-5. Which steps should not be automated
-6. A simple implementation plan
-7. A low-risk paid pilot offer</pre>
-      <div class="tag">AUDIT OUTREACH TEMPLATE</div>
-      <pre>Hi [NAME] - I noticed your business likely handles [WORKFLOW] regularly.
-
-I help [BUSINESS TYPE] find where AI or no-code automation can reduce repetitive admin work without changing the whole operation.
-
-One place I would look first is [SPECIFIC WORKFLOW].
-
-If useful, I can send a short audit outline showing what I would check.</pre>
-    </section>
-
-    <section>
-      <div class="section-kicker">13 · RESOURCE GAP WARNINGS</div>
-      <div class="grid">
-        <div class="signal"><span class="check">✓</span><span>Talking about AI instead of business pain.</span></div>
-        <div class="signal"><span class="check">✓</span><span>Trying to build before diagnosing.</span></div>
-        <div class="signal"><span class="check">✓</span><span>Choosing huge workflows for the first project.</span></div>
-        <div class="signal"><span class="check">✓</span><span>Forgetting documentation. Businesses pay more when the workflow can be repeated.</span></div>
-      </div>
+      <div class="section-kicker">12 · DISCLAIMER</div>
+      <p>HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
     </section>
 
     <footer>

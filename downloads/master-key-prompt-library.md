@@ -1,6 +1,8 @@
 # HugoMojo Master Key Prompt Library
 
-Use this library to turn your assessment result into offers, products, audits, and weekly decisions. Prompts are working tools, not magic scripts. Replace every bracketed field with your real situation.
+Use this library to turn your assessment result into offers, products, audits, and weekly decisions. Prompts are working tools, not magic scripts. They are built for AI-aware beginners and early users who may have tried tools, tutorials, or side hustle ideas but still need a clear path.
+
+If AI felt overwhelming or nothing clicked, do not ask for more random ideas. Use these prompts to choose one path, one niche direction, and one first signal.
 
 ## 1. Universal Path Selector
 
@@ -20,6 +22,8 @@ My current resources:
 - English level: [ENGLISH]
 - AI experience: [AI_LEVEL]
 - Preferred work style: [STYLE]
+- What I have already tried: [TOOLS, TUTORIALS, OR SIDE HUSTLE IDEAS]
+- Where nothing clicked: [WHAT FELT CONFUSING OR STUCK]
 
 Score each path from 1 to 10.
 For each path, explain:
@@ -28,11 +32,40 @@ For each path, explain:
 3. The fastest first test
 4. The first offer or product I should try
 5. The one thing I should ignore
+6. The first signal I should look for
 
 End with one recommended primary path and one backup path.
 ```
 
-## 2. Hunter Offer Builder
+## 2. Nothing Clicked Diagnosis
+
+```text
+Act as a beginner-friendly AI income path diagnostician.
+
+I have heard AI can create income opportunities, but nothing has clicked yet.
+
+What I tried:
+[WHAT I TRIED]
+
+What felt confusing:
+[CONFUSION]
+
+My available time:
+[TIME]
+
+People or markets I can reach:
+[MARKET ACCESS]
+
+Compare Hunter, Artisan, and Architect.
+Tell me:
+1. Which path fits where I am now
+2. Why the previous attempt may not have clicked
+3. One niche direction to test
+4. One first action I can take today
+5. What not to learn or buy yet
+```
+
+## 3. Hunter Offer Builder
 
 ```text
 Turn my skill into a simple AI-assisted service offer.
@@ -58,7 +91,7 @@ Create:
 9. Five likely objections and responses
 ```
 
-## 3. Hunter Outreach Personalizer
+## 4. Hunter Outreach Personalizer
 
 ```text
 Write 10 personalized outreach messages for this offer:
@@ -80,7 +113,7 @@ Rules:
 - Keep each message under 90 words
 ```
 
-## 4. Artisan Product Builder
+## 5. Artisan Product Builder
 
 ```text
 Create a small digital product plan.
@@ -107,7 +140,7 @@ Create:
 10. Feedback question to ask early users
 ```
 
-## 5. Artisan Sales Page Builder
+## 6. Artisan Sales Page Builder
 
 ```text
 Write a simple sales page for this digital product:
@@ -137,7 +170,7 @@ Include:
 Tone: direct, specific, no hype.
 ```
 
-## 6. Architect Audit Builder
+## 7. Architect Audit Builder
 
 ```text
 Create a B2B AI workflow audit offer.
@@ -160,7 +193,7 @@ Create:
 9. A follow-up message
 ```
 
-## 7. Architect Workflow Mapper
+## 8. Architect Workflow Mapper
 
 ```text
 Map this business workflow and identify automation opportunities:
@@ -186,7 +219,32 @@ Analyze:
 9. Implementation order
 ```
 
-## 8. Resource Gap Warning Prompt
+## 9. Path Problem Prompt
+
+```text
+Diagnose whether this is a tool problem, niche problem, offer problem, or path problem.
+
+My current idea:
+[IDEA]
+
+What I am using AI for:
+[AI USE]
+
+Who I think the buyer is:
+[BUYER]
+
+What I want them to do:
+[ACTION]
+
+Tell me:
+1. Whether the real problem is tool, niche, offer, or path
+2. What is too vague
+3. What first signal would prove this direction is worth testing
+4. The smallest 7-day test
+5. What to avoid changing too early
+```
+
+## 10. Resource Gap Warning Prompt
 
 ```text
 Review my current plan:
@@ -205,7 +263,7 @@ Identify:
 5. The metric I should track
 ```
 
-## 9. Weekly Review Prompt
+## 11. Weekly Review Prompt
 
 ```text
 Review my last 7 days of execution.
@@ -224,7 +282,7 @@ Give me:
 Be direct. Do not motivate me with generic advice.
 ```
 
-## 10. Monthly Re-Scan Prompt
+## 12. Monthly Re-Scan Prompt
 
 ```text
 Act as a HugoMojo path calibration agent.

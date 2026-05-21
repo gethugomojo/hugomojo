@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Purchase Confirmed — HugoMojo</title>
-  <meta name="description" content="Post-purchase annual access upgrade option for HugoMojo Master Key customers.">
+  <meta name="description" content="Post-purchase delivery access for HugoMojo customers.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -18,8 +18,7 @@
       <a class="brand" href="index.html"><span class="brand-mark">HM</span><span class="brand-name">HugoMojo</span></a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="scanner.html">Assessment</a>
-        <a href="index.html#pricing">Pricing</a>
+        <a href="scanner.html">Scanner</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -28,17 +27,17 @@
     <section class="hero" style="grid-template-columns:1fr minmax(320px, 0.75fr);">
       <div>
         <div class="eyebrow"><span class="signal-dot"></span> Purchase Confirmed</div>
-        <h1 class="hero-title">Your Annual Upgrade Option Is Open.</h1>
-        <p class="hero-copy">
-          Your access is ready. Before you continue to the delivery page, you can upgrade to Annual Access for monthly signal reports, prompt library updates, weekly signal digests, execution tracking, and quarterly path calibration.
+        <h1 class="hero-title" id="success-title">Purchase Confirmed</h1>
+        <p class="hero-copy" id="success-copy">
+          Your access is ready. Open your delivery page to get your Action System.
         </p>
-        <div class="cta-row">
-          <a class="btn-primary" href="https://www.creem.io/payment/prod_3BtB5cRkL48ynkqCFPfssW" data-event="upsell_click" data-plan="annual_access" data-price="199">Upgrade To Annual Access</a>
-          <a class="btn-secondary" id="continue-delivery" href="access.html?plan=master" data-event="upsell_skip" data-plan="master_key">Access My Action System</a>
+        <div class="cta-row" id="success-actions">
+          <a class="btn-primary" id="primary-action" href="access.html" data-event="delivery_access">Access My Action System</a>
+          <a class="btn-secondary" id="continue-delivery" href="access.html?plan=master" data-event="upsell_skip" data-plan="master_key" style="display:none;">Access My Action System</a>
         </div>
-        <p class="meta-line">Optional annual upgrade · one-time annual access</p>
+        <p class="meta-line" id="success-meta">Digital delivery · educational product only</p>
       </div>
-      <aside class="terminal-card">
+      <aside class="terminal-card" id="annual-upsell-card" style="display:none;">
         <div class="label">Upgrade Math</div>
         <h2 style="font-size:34px; margin:18px 0 24px;">Annual Access</h2>
         <div class="terminal-stat"><span class="stat-name">Annual access</span><span class="stat-value">$199</span></div>
@@ -61,16 +60,44 @@
   </footer>
   <script>
     const params = new URLSearchParams(window.location.search);
-    const plan = params.get("plan") || "master";
+    const plan = params.get("plan");
     const role = params.get("role") || "H";
-    const deliveryHref = plan === "single"
-      ? "access.html?plan=single&role=" + encodeURIComponent(role)
-      : plan === "annual" || plan === "vault"
-        ? "access.html?plan=annual"
-        : "access.html?plan=master";
+    const title = document.getElementById("success-title");
+    const copy = document.getElementById("success-copy");
+    const meta = document.getElementById("success-meta");
+    const primary = document.getElementById("primary-action");
     const continueLink = document.getElementById("continue-delivery");
-    continueLink.href = deliveryHref;
-    continueLink.dataset.plan = plan;
+    const annualCard = document.getElementById("annual-upsell-card");
+
+    function setPrimary(text, href, eventName, planName, price) {
+      primary.textContent = text;
+      primary.href = href;
+      primary.dataset.event = eventName;
+      primary.dataset.plan = planName;
+      if (price) primary.dataset.price = price;
+      else primary.removeAttribute("data-price");
+    }
+
+    if (plan === "master") {
+      title.textContent = "Your Annual Upgrade Option Is Open.";
+      copy.textContent = "Your Master Key access is ready. You can optionally upgrade to Annual Access for monthly signal reports, prompt library updates, weekly signal digests, execution tracking, and quarterly path calibration.";
+      setPrimary("Upgrade To Annual Access", "https://www.creem.io/payment/prod_3BtB5cRkL48ynkqCFPfssW", "upsell_click", "annual_access", "199");
+      continueLink.style.display = "";
+      continueLink.href = "access.html?plan=master";
+      continueLink.dataset.plan = "master_key";
+      annualCard.style.display = "";
+      meta.textContent = "Optional annual upgrade · one-time annual access";
+    } else if (plan === "annual" || plan === "vault") {
+      setPrimary("Access My Annual Delivery", "access.html?plan=annual", "delivery_access", "annual_access");
+      meta.textContent = "Annual Access delivery · educational product only";
+    } else if (plan === "single") {
+      const safeRole = ["H", "A", "C"].includes(role) ? role : "H";
+      setPrimary("Access My Action System", "access.html?plan=single&role=" + encodeURIComponent(safeRole), "delivery_access", "single_pass");
+      meta.textContent = "Single Pass delivery · educational product only";
+    } else {
+      setPrimary("Access My Action System", "access.html", "delivery_access", "unknown");
+      meta.textContent = "Open the delivery link from your confirmation email if this button does not show your purchase.";
+    }
   </script>
 </body>
 </html>

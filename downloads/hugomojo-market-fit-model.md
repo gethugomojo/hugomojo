@@ -1,6 +1,6 @@
 # HugoMojo Market Fit Model
 
-This model explains why HugoMojo uses three income paths instead of giving one generic "make money with AI" recommendation.
+This model explains why HugoMojo uses three income paths instead of giving one generic AI income recommendation.
 
 ## 1. The Core Problem
 
@@ -16,9 +16,9 @@ That order is backwards.
 
 The better question is:
 
-"Which path fits my current resources well enough that I can actually test it?"
+"Which path fits where I am now well enough that I can actually test it?"
 
-HugoMojo evaluates resource fit before tactics.
+HugoMojo evaluates path fit before tactics.
 
 ## 2. The Five Resource Signals
 
@@ -80,7 +80,7 @@ Examples:
 - A fast executor spends months building a digital product without feedback.
 - A systems thinker sells cheap one-off tasks instead of audits or pilots.
 
-The goal is not to find the trendiest tactic. The goal is to find the path with the lowest friction for your current profile.
+The goal is not to find the trendiest tactic. The goal is to find the starting path with the lowest friction for where you are now.
 
 ## 5. How To Use This Model
 

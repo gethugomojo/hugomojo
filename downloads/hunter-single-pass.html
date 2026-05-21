@@ -8,25 +8,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
   <style>
     :root { --bg:#0a0a0b; --panel:#111114; --panel2:#151518; --line:rgba(255,255,255,.1); --text:#ececef; --muted:rgba(236,236,239,.68); --soft:rgba(236,236,239,.48); --amber:#ffb300; --amber2:rgba(255,179,0,.12); }
     * { box-sizing:border-box; }
     body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,sans-serif; line-height:1.65; }
     .page { max-width:1040px; margin:0 auto; padding:40px 22px 72px; }
-    .cover { min-height:72vh; display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--line); background:linear-gradient(135deg, rgba(255,179,0,.08), transparent 38%), #0d0d0f; padding:42px; margin-bottom:56px; }
+    .cover { min-height:62vh; display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--line); background:linear-gradient(135deg, rgba(255,179,0,.08), transparent 38%), #0d0d0f; padding:42px; margin-bottom:48px; }
     .brand, .section-kicker, .tag, footer { font-family:"JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.18em; }
     .brand { color:var(--amber); font-size:12px; }
-    h1 { font-size:clamp(44px,8vw,92px); line-height:.92; letter-spacing:-.04em; margin:36px 0 18px; }
-    .subtitle { color:var(--muted); max-width:620px; font-size:18px; }
+    h1 { font-size:clamp(40px,7vw,82px); line-height:.96; letter-spacing:-.04em; margin:36px 0 18px; }
+    .subtitle { color:var(--muted); max-width:680px; font-size:18px; }
     .role { color:var(--amber); font-family:"JetBrains Mono",monospace; letter-spacing:.2em; font-size:13px; margin-top:44px; }
-    section { margin:44px 0; }
+    section { margin:40px 0; }
     .section-kicker { color:var(--amber); font-size:12px; margin-bottom:16px; }
     h2 { font-size:28px; line-height:1.15; margin:0 0 14px; }
     p { color:var(--muted); margin:0 0 14px; }
     .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
     .cards-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
-    .card, .action, .priority, .offer { border:1px solid var(--line); background:var(--panel); padding:20px; }
-    .signal { display:flex; gap:10px; color:var(--muted); border:1px solid var(--line); background:rgba(255,255,255,.018); padding:14px; }
+    .card, .action, .priority, .offer { border:1px solid var(--line); background:var(--panel); padding:20px; border-radius:18px; }
+    .signal { display:flex; gap:10px; color:var(--muted); border:1px solid var(--line); background:rgba(255,255,255,.018); padding:14px; border-radius:16px; }
     .check { color:var(--amber); flex:0 0 auto; }
     .tag { color:var(--amber); font-size:10px; margin-bottom:10px; }
     ul { margin:10px 0 0; padding-left:18px; color:var(--muted); }
@@ -34,10 +35,10 @@
     .priority { background:var(--amber2); border-color:rgba(255,179,0,.28); }
     .priority strong, .offer strong { display:block; color:var(--text); font-size:22px; line-height:1.25; margin-top:6px; }
     .sprint { display:grid; gap:10px; }
-    .day { border:1px solid var(--line); padding:14px 16px; color:var(--muted); background:rgba(255,255,255,.018); }
-    pre { white-space:pre-wrap; background:#070708; border:1px solid var(--line); padding:18px; overflow:auto; color:rgba(236,236,239,.82); }
+    .day { border:1px solid var(--line); padding:14px 16px; color:var(--muted); background:rgba(255,255,255,.018); border-radius:14px; }
+    pre { white-space:pre-wrap; background:#070708; border:1px solid var(--line); padding:18px; overflow:auto; color:rgba(236,236,239,.82); border-radius:16px; }
     footer { border-top:1px solid var(--line); margin-top:64px; padding-top:22px; color:var(--soft); font-size:10px; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; }
-    @media (max-width:760px) { .cover { padding:28px; min-height:62vh; } .grid, .cards-3 { grid-template-columns:1fr; } h1 { font-size:48px; } }
+    @media (max-width:760px) { .cover { padding:28px; min-height:56vh; } .grid, .cards-3 { grid-template-columns:1fr; } h1 { font-size:44px; } }
   </style>
 </head>
 <body>
@@ -46,181 +47,79 @@
       <div>
         <div class="brand">HugoMojo</div>
         <h1>Hunter AI Income Path & Niche Action System</h1>
-        <p class="subtitle">A focused action system for turning your current resources into a clear first market test.</p>
+        <p class="subtitle">A focused action system for people who know AI can create opportunities, may have tried a few ideas, and need a clear service-first starting path.</p>
       </div>
       <div>
         <div class="role">THE HUNTER</div>
-        <p class="subtitle">Direct market feedback, client conversations, and proof of cash flow before building a larger system.</p>
+        <p class="subtitle">If AI felt overwhelming or nothing clicked, start with one path, one buyer group, and one signal.</p>
       </div>
     </header>
 
     <section>
-      <div class="section-kicker">01 · YOUR MATCH</div>
-      <h2>You matched as a Hunter.</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="tag">PATH LOGIC</div>
-          <p>The Hunter path is for people who need direct market feedback, fast client conversations, and a first proof of cash flow before building a larger system.</p>
-        </div>
-        <div class="card">
-          <div class="tag">CORE DIAGNOSIS</div>
-          <p>Your fastest path is not a perfect product. It is one clear offer sent to the right type of customer.</p>
-        </div>
-      </div>
+      <div class="section-kicker">01 · BEGINNER STARTING POINT</div>
+      <h2>Start here.</h2>
+      <p>You do not need to master every AI tool first. Hunter starts by using AI to help you write a clear offer, message real people, and learn what buyers respond to. If you tried tutorials or side hustle ideas and nothing clicked, this path brings the test back to real buyer feedback.</p>
     </section>
 
     <section class="priority">
-      <div class="section-kicker">02 · TODAY'S PRIORITY</div>
-      <strong>Send 10 proposals. Not 100. Just 10.</strong>
-      <p>Start with real market reaction. The Hunter path begins when a real prospect answers.</p>
+      <div class="section-kicker">02 · WHY YOU'RE STUCK</div>
+      <strong>You may be waiting to learn more tools, but your fastest path is getting real buyer feedback.</strong>
     </section>
 
     <section>
-      <div class="section-kicker">03 · SIGNALS DETECTED</div>
-      <div class="grid">
-        <div class="signal"><span class="check">✓</span><span>You want a first result sooner rather than later.</span></div>
-        <div class="signal"><span class="check">✓</span><span>You can dedicate consistent execution time each week.</span></div>
-        <div class="signal"><span class="check">✓</span><span>You are willing to communicate with prospects or clients.</span></div>
-        <div class="signal"><span class="check">✓</span><span>You do not want to wait months building an audience.</span></div>
-        <div class="signal"><span class="check">✓</span><span>You can use AI to make service delivery faster.</span></div>
-        <div class="signal"><span class="check">✓</span><span>You are more likely to learn by doing than by researching forever.</span></div>
-      </div>
+      <div class="section-kicker">03 · NICHE DIRECTION</div>
+      <h2>Start with buyers you can understand or contact quickly:</h2>
+      <div class="grid"><div class="signal"><span class="check">✓</span><span>local small businesses</span></div><div class="signal"><span class="check">✓</span><span>freelancers or solo operators</span></div><div class="signal"><span class="check">✓</span><span>ecommerce sellers</span></div><div class="signal"><span class="check">✓</span><span>service providers</span></div><div class="signal"><span class="check">✓</span><span>creators who need simple help</span></div></div>
     </section>
 
     <section>
-      <div class="section-kicker">04 · MARKET FIT MODEL</div>
-      <div class="cards-3">
-        <div class="card"><div class="tag">DEMAND</div><p>Founders who need content, emails, landing pages, or research faster.</p></div>
-        <div class="card"><div class="tag">WORKFLOW</div><p>Small businesses that need simple automation but do not have a technical team.</p></div>
-        <div class="card"><div class="tag">ASSETS</div><p>Creators or sellers who need AI images, product descriptions, ad assets, or listing visuals.</p></div>
-      </div>
-      <p>The Hunter wins by being specific, fast, and reliable. The market does not need another vague "AI freelancer." It needs a person who can solve one painful task this week.</p>
-    </section>
-
-    <section class="offer">
-      <div class="section-kicker">05 · NICHE DIRECTION</div>
-      <p>Start with a niche where the problem is repeated, the buyer understands the value quickly, and AI can help you deliver faster.</p>
-      <div class="grid" style="margin-top:16px;">
-        <div class="card"><div class="tag">DIRECTION 1</div><p>Small business content, email, or landing page help.</p></div>
-        <div class="card"><div class="tag">DIRECTION 2</div><p>Local service admin or simple automation support.</p></div>
-        <div class="card"><div class="tag">DIRECTION 3</div><p>Ecommerce listing, product description, or product asset support.</p></div>
-      </div>
-      <p>For Hunter, the best niche is not the most interesting market. It is the market where you can reach buyers quickly, explain the value simply, and get feedback fast.</p>
-    </section>
-
-    <section>
-      <div class="section-kicker">06 · NICHE FILTER</div>
+      <div class="section-kicker">04 · NICHE FILTER</div>
       <p>Before choosing a niche, run it through this filter:</p>
-      <div class="grid">
-        <div class="signal"><span class="check">✓</span><span>Can you reach 20 people in this niche?</span></div>
-        <div class="signal"><span class="check">✓</span><span>Do they repeat this problem often?</span></div>
-        <div class="signal"><span class="check">✓</span><span>Can AI help you deliver faster?</span></div>
-        <div class="signal"><span class="check">✓</span><span>Can you create a small first offer in 7 days?</span></div>
-        <div class="signal"><span class="check">✓</span><span>Would this buyer understand the value quickly?</span></div>
-      </div>
+      <div class="grid"><div class="signal"><span class="check">✓</span><span>Can you reach 20 people in this niche?</span></div><div class="signal"><span class="check">✓</span><span>Do they repeat this problem often?</span></div><div class="signal"><span class="check">✓</span><span>Can AI help you deliver faster?</span></div><div class="signal"><span class="check">✓</span><span>Can you create a small first offer in 7 days?</span></div><div class="signal"><span class="check">✓</span><span>Would this buyer understand the value quickly?</span></div></div>
       <p>If the answer is no to most of these, do not start there yet. Pick a narrower niche.</p>
     </section>
 
+    <section>
+      <div class="section-kicker">05 · BEGINNER TOOL STACK</div>
+      <h2>Use simple tools first.</h2>
+      <ul><li>ChatGPT or Claude for offer writing</li><li>Google Docs for delivery</li><li>Canva only if you need a simple visual</li><li>Gmail / Instagram / X / LinkedIn for outreach</li></ul>
+    </section>
+
+    <section class="priority">
+      <div class="section-kicker">06 · TODAY'S 30-MINUTE MOVE</div>
+      <strong>Take one small action today.</strong>
+      <ul><li>Pick one buyer group.</li><li>Pick one simple problem.</li><li>Ask AI to write a one-sentence offer.</li><li>Send it to 5 people today.</li></ul>
+    </section>
+
     <section class="offer">
-      <div class="section-kicker">07 · YOUR FIRST OFFER</div>
-      <div class="tag">OFFER NAME</div>
-      <strong>AI-Assisted Writing Sprint</strong>
-      <div class="grid" style="margin-top:16px;">
-        <div class="card">
-          <div class="tag">DELIVERABLES</div>
-          <ul>
-            <li>Landing page copy, email sequence, content pack, or sales page rewrite.</li>
-            <li>AI-assisted drafting with human editing and quality review.</li>
-            <li>A 7-day delivery checklist the client can understand.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="tag">SUGGESTED STARTER PRICING</div>
-          <p>$99-$300 for the first paid trial, depending on scope and buyer. This is a starting reference, not an income promise.</p>
-        </div>
-      </div>
+      <div class="section-kicker">07 · FIRST OFFER</div>
+      <div class="tag">FORMULA</div>
+      <strong>I help [buyer] solve [problem] using AI-assisted [service] so they can [outcome].</strong>
     </section>
 
     <section>
-      <div class="section-kicker">08 · OFFER OPTIONS</div>
-      <div class="cards-3">
-        <div class="card"><div class="tag">OPTION A</div><h2>Writing Sprint</h2><p>"I turn your rough idea into a polished sales page, email sequence, or content pack using AI-assisted drafting and human editing."</p></div>
-        <div class="card"><div class="tag">OPTION B</div><h2>Automation Setup</h2><p>"I help small teams automate one repetitive workflow using AI, Zapier, Make, or no-code tools."</p></div>
-        <div class="card"><div class="tag">OPTION C</div><h2>Visual Asset Delivery</h2><p>"I create a set of AI-assisted visual assets for one product, offer, or campaign."</p></div>
-      </div>
-      <p>Pick only one offer for the first 14 days. Do not sell all three at once.</p>
+      <div class="section-kicker">08 · 7-DAY SPRINT</div>
+      <div class="sprint"><div class="day">□ Day 1 · Choose buyer + problem.</div><div class="day">□ Day 2 · Write one offer.</div><div class="day">□ Day 3 · Send 5 messages.</div><div class="day">□ Day 4 · Send 10 more.</div><div class="day">□ Day 5 · Track replies.</div><div class="day">□ Day 6 · Rewrite based on objections.</div><div class="day">□ Day 7 · Decide whether to continue or narrow.</div></div>
     </section>
 
     <section>
-      <div class="section-kicker">09 · TOOL STACK</div>
-      <div class="grid">
-        <div class="card"><div class="tag">CREATE</div><ul><li>ChatGPT or Claude for drafting, outlining, client research, and message creation.</li><li>Canva for layout, mockups, PDFs, and simple visual packaging.</li><li>Google Docs for client drafts, revisions, and delivery notes.</li></ul></div>
-        <div class="card"><div class="tag">DELIVER</div><ul><li>Make or Zapier for basic automation work if your offer involves workflows.</li><li>Stripe, Creem, or PayPal link for simple payment collection if the client asks.</li><li>Avoid spending the first week comparing tools. A Hunter needs market signal.</li></ul></div>
-      </div>
+      <div class="section-kicker">09 · COPY-PASTE PROMPT</div>
+      <pre>Act as a beginner-friendly AI service coach. Help me create a simple first offer. My buyer is [buyer]. Their problem is [problem]. I can help with [skill or task]. Create: one offer sentence, one short outreach message, and three simple service ideas I can test this week.</pre>
     </section>
 
     <section>
-      <div class="section-kicker">10 · 7-DAY SPRINT</div>
-      <div class="sprint">
-        <div class="day">□ Day 1 · Choose one customer type and one painful task.</div>
-        <div class="day">□ Day 2 · Write a one-sentence offer and a short service menu.</div>
-        <div class="day">□ Day 3 · Build one sample delivery asset.</div>
-        <div class="day">□ Day 4 · Send 10 direct messages or proposals.</div>
-        <div class="day">□ Day 5 · Send 10 more and track replies, objections, and questions.</div>
-        <div class="day">□ Day 6 · Refine the offer based on actual objections.</div>
-        <div class="day">□ Day 7 · Offer one low-risk paid trial and keep the scope small.</div>
-      </div>
+      <div class="section-kicker">10 · WHAT TO AVOID</div>
+      <div class="grid"><div class="signal"><span class="check">✓</span><span>broad AI consulting</span></div><div class="signal"><span class="check">✓</span><span>vague AI automation offers</span></div><div class="signal"><span class="check">✓</span><span>audiences you cannot reach</span></div><div class="signal"><span class="check">✓</span><span>offers that take too long to explain</span></div></div>
     </section>
 
     <section>
-      <div class="section-kicker">11 · 30-DAY ACTION PLAN</div>
-      <div class="grid">
-        <div class="action"><div class="tag">WEEK 1</div><p>Build the offer: choose one customer type, choose one painful task, write a one-sentence offer, build one sample asset, and create one price range.</p></div>
-        <div class="action"><div class="tag">WEEK 2</div><p>Test the market: send 20 direct messages or proposals. Record what people actually respond to.</p></div>
-        <div class="action"><div class="tag">WEEK 3</div><p>Deliver a paid trial: keep scope small, use AI to speed up work, review manually, and turn delivery into a checklist.</p></div>
-        <div class="action"><div class="tag">WEEK 4</div><p>Package what worked: remove vague language, add a delivery timeline, add a revision rule, and raise price only after the offer is clear.</p></div>
-      </div>
+      <div class="section-kicker">11 · IF YOU GET NO SIGNAL</div>
+      <div class="grid"><div class="signal"><span class="check">✓</span><span>Do not buy another AI tool.</span></div><div class="signal"><span class="check">✓</span><span>Make the buyer or problem more specific.</span></div><div class="signal"><span class="check">✓</span><span>Send more real messages before changing paths.</span></div><div class="signal"><span class="check">✓</span><span>If nothing clicked before, track replies before judging the path.</span></div></div>
     </section>
 
     <section>
-      <div class="section-kicker">12 · PROMPTS AND TEMPLATES</div>
-      <div class="tag">OFFER BUILDER PROMPT</div>
-      <pre>Act as an AI service operator. Help me turn this skill into a clear client offer.
-
-My skill:
-[SKILL]
-
-My target customer:
-[CUSTOMER]
-
-The painful task I want to solve:
-[TASK]
-
-Create:
-1. A one-sentence offer
-2. Three deliverables
-3. A simple pricing range
-4. A 7-day delivery process
-5. Five objections a prospect might have
-6. A short response to each objection</pre>
-      <div class="tag">OUTREACH MESSAGE TEMPLATE</div>
-      <pre>Hi [NAME] - I noticed [SPECIFIC OBSERVATION].
-
-I help [CUSTOMER TYPE] improve [TASK/OUTCOME] using AI-assisted delivery and human review.
-
-One simple thing I could help with is [SPECIFIC OFFER].
-
-If useful, I can send a short example of what that would look like for your business.</pre>
-    </section>
-
-    <section>
-      <div class="section-kicker">13 · RESOURCE GAP WARNINGS</div>
-      <div class="grid">
-        <div class="signal"><span class="check">✓</span><span>Too many offers at once. Pick one customer and one painful task.</span></div>
-        <div class="signal"><span class="check">✓</span><span>Tool obsession. The market pays for the outcome, not your tool stack.</span></div>
-        <div class="signal"><span class="check">✓</span><span>Vague positioning. "AI services" is not an offer.</span></div>
-        <div class="signal"><span class="check">✓</span><span>No outreach volume. Five messages is not a market test.</span></div>
-      </div>
+      <div class="section-kicker">12 · DISCLAIMER</div>
+      <p>HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
     </section>
 
     <footer>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>HugoMojo — AI Income Path Assessment</title>
-<meta name="description" content="Find the AI income path and niche that fits how you actually work, then unlock the action system for your path.">
+<meta name="description" content="Take the free AI Income Scanner to find your starting path, niche direction, and first action for earning with AI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@ body {
   justify-content: center;
   position: relative;
   overflow-x: hidden;
-  padding-top: 72px;
+  padding-top: 42px;
 }
 
 .mist-layer {
@@ -89,23 +89,25 @@ body::after {
 }
 
 .scanner-intro {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   text-align: left;
 }
 
 .scanner-intro h1 {
-  font-size: clamp(30px, 8vw, 42px);
-  margin-bottom: 14px;
+  font-size: clamp(22px, 5.8vw, 28px);
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+  text-transform: none;
 }
 
 .scanner-intro p {
   color: var(--soft-text);
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 13px;
+  line-height: 1.35;
 }
 
 .scanner-intro-kicker {
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   color: var(--hope-glow);
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
@@ -123,8 +125,8 @@ body::after {
   z-index: 20;
   color: var(--hope-glow);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 3px;
+  font-size: 12px;
+  letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -132,7 +134,7 @@ body::after {
 .status {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   color: var(--dim-text);
@@ -158,8 +160,8 @@ body::after {
 .card {
   background: linear-gradient(145deg, rgba(20,20,22,0.8) 0%, rgba(10,10,11,0.95) 100%);
   border: 1px solid var(--glass-border);
-  border-radius: 2px;
-  padding: 56px 42px;
+  border-radius: 22px;
+  padding: 30px 28px;
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
   position: relative;
   overflow: hidden;
@@ -191,7 +193,7 @@ h1 {
 }
 
 #q-h {
-  font-size: clamp(28px, 4vw, 36px);
+  font-size: clamp(24px, 4vw, 32px);
   line-height: 1.08;
   letter-spacing: -0.8px;
   max-width: 100%;
@@ -202,7 +204,7 @@ h1 {
   font-style: italic;
   font-size: 21px;
   color: var(--soft-text);
-  margin-bottom: 45px;
+  margin-bottom: 28px;
   line-height: 1.4;
   white-space: normal;
   overflow-wrap: anywhere;
@@ -210,16 +212,18 @@ h1 {
 
 #q-t {
   color: var(--readable-text);
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.45;
   text-shadow: 0 0 18px rgba(255,255,255,0.04);
 }
 
 .btn-opt {
   width: 100%;
-  padding: 20px 24px;
-  margin-bottom: 12px;
+  min-height: 56px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
   border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 15px;
   background: transparent;
   color: rgba(234, 234, 234, 0.82);
   text-align: left;
@@ -259,7 +263,7 @@ h1 {
 
 .match-percent {
   font-family: 'Archivo Black', sans-serif;
-  font-size: 100px;
+  font-size: clamp(76px, 20vw, 100px);
   color: #fff;
   filter: drop-shadow(0 0 30px var(--hope-soft));
   line-height: 1;
@@ -268,9 +272,10 @@ h1 {
 
 .cta-buy {
   width: 100%;
-  padding: 26px;
+  min-height: 56px;
+  padding: 16px 22px;
   border: none;
-  border-radius: 2px;
+  border-radius: 16px;
   background: var(--hope-glow);
   color: #000;
   font-family: 'Archivo Black', sans-serif;
@@ -311,6 +316,7 @@ h1 {
   color: var(--readable-text);
   font-family: 'Inter', sans-serif;
   font-size: 14px;
+  border-radius: 15px;
   outline: none;
 }
 
@@ -389,6 +395,7 @@ h1 {
   width: 100%;
   padding: 20px;
   border: 1px solid var(--glass-border);
+  border-radius: 18px;
   background: rgba(255,255,255,0.012);
   text-align: left;
   color: var(--readable-text);
@@ -475,6 +482,7 @@ h1 {
 
 .preview-proof-item {
   border: 1px solid var(--glass-border);
+  border-radius: 16px;
   background: rgba(255,255,255,0.018);
   padding: 16px;
 }
@@ -511,7 +519,7 @@ h1 {
 
 @media (max-width: 640px) {
   body {
-    padding-top: 66px;
+    padding-top: 48px;
   }
 
   #app {
@@ -523,23 +531,25 @@ h1 {
   }
 
   .card {
-    padding: 42px 28px;
+    padding: 24px 20px;
   }
 
   .status {
-    margin-bottom: 22px;
+    margin-bottom: 12px;
   }
 
   #q-h {
-    font-size: clamp(28px, 8vw, 34px);
+    font-size: clamp(23px, 7vw, 28px);
   }
 
   #q-t {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .btn-opt {
-    padding: 18px 20px;
+    min-height: 54px;
+    padding: 14px 14px;
+    font-size: 13px;
   }
 
   .vault-link {
@@ -563,7 +573,7 @@ h1 {
   }
 
   .card {
-    padding: 38px 24px;
+    padding: 26px 18px;
   }
 
   .match-percent {
@@ -581,9 +591,8 @@ h1 {
   <!--  Quiz  -->
   <div id="step-quiz">
     <div class="scanner-intro">
-      <div class="scanner-intro-kicker">Start the Free Scanner</div>
-      <h1>Find the AI income path and niche that fits how you actually work.</h1>
-      <p>You already have access to powerful AI tools. HugoMojo shows whether your fastest path is clients, assets, or systems — and what kind of niche to start with.</p>
+      <h1>AI Income Scanner</h1>
+      <p>16 quick questions. Find your starting path, niche direction, and first action.</p>
     </div>
     <div class="status">
       <span style="color: var(--hope-glow)">●</span>
@@ -591,8 +600,8 @@ h1 {
       <span id="p-idx" style="width: 40px">01/16</span>
     </div>
     <div class="card">
-      <h1 id="q-h">Shadow Check.</h1>
-      <p class="sub-title" id="q-t">Evaluating your current position in the dark.</p>
+      <h1 id="q-h">Starting Goal</h1>
+      <p class="sub-title" id="q-t">Pick the answer that feels closest.</p>
       <div id="q-options"></div>
       <p class="assessment-disclaimer">Educational assessment only. Not financial advice or an income guarantee. Results depend on your effort, skills, market conditions, and individual circumstances.</p>
     </div>
@@ -602,7 +611,7 @@ h1 {
   <div id="step-scan" class="hidden">
     <div class="card" style="text-align: center; padding: 100px 40px;">
       <div id="scan-pulse" style="width:60px; height:60px; background: var(--hope-glow); border-radius: 50%; margin: 0 auto 40px; animation: pulse 1.5s infinite;"></div>
-      <h1 style="font-size: 16px; letter-spacing: 6px; color: var(--dim-text);">MATCHING YOUR BEST-FIT PATH...</h1>
+      <h1 style="font-size: 16px; letter-spacing: 2px; color: var(--dim-text);">FINDING YOUR STARTING PATH...</h1>
       <div id="scan-log" style="font-family:'JetBrains Mono'; font-size:9px; color:rgba(218,218,222,0.66); margin-top:30px; text-align:center; letter-spacing:1px;"></div>
     </div>
   </div>
@@ -614,12 +623,12 @@ h1 {
   <div id="step-email" class="hidden">
     <div class="card" style="text-align: center;">
       <h1 style="font-size: 30px; margin-bottom: 20px;">You're closer than you think.</h1>
-      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to save your result and unlock the action system built for your AI income path and niche direction.</p>
+      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to save your result and unlock the Action System built for your starting path.</p>
       <form class="email-gate" id="email-form" novalidate>
         <input class="email-input" id="lead-email" type="email" inputmode="email" placeholder="you@example.com" autocomplete="email" aria-describedby="email-error" aria-invalid="false">
         <div class="email-error" id="email-error" role="alert" aria-live="polite"></div>
         <button class="cta-buy" type="submit" style="font-size: 16px;">Unlock My Action System</button>
-        <p class="fine-print">We use your email to deliver your result, product access, and related HugoMojo updates. No spam. No income guarantees. Support: hi@hugomojo.com.</p>
+        <p class="fine-print">No spam. No income guarantees. Support: hi@hugomojo.com.</p>
       </form>
     </div>
   </div>
@@ -631,14 +640,14 @@ h1 {
       <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Your best-fit path</div>
       
       <h1 id="res-name" style="font-size: 32px; margin-bottom: 20px;">ARCHITECT</h1>
-      <p class="sub-title" style="margin-bottom: 40px; font-size: 16px;">Your matched action guide is ready.</p>
+      <p class="sub-title" style="margin-bottom: 40px; font-size: 16px;">Your Action System is ready.</p>
       
       <div class="result-blueprint">
         <div style="font-family: 'JetBrains Mono'; font-size: 9px; color: rgba(218,218,222,0.66); text-align: left; line-height: 2;">
           [SCAN_COMPLETE]<br>
-          RESOURCE_MATCH: OPTIMAL<br>
-          TIME_VECTOR: CALIBRATED<br>
-          REWARD_EST: HIGH_YIELD
+          PATH_FOUND<br>
+          STARTING_POINT: IDENTIFIED<br>
+          FIRST_ACTION: READY
         </div>
       </div>
 
@@ -650,256 +659,172 @@ h1 {
 
 <script>
 const LAYERS = {
-  1: { name: "Step 1 of 4 · Your Income Goal", desc: "What you want to earn — we start here to find your perfect path." },
-  2: { name: "Step 2 of 4 · Your Resources", desc: "What you have right now — time, tools, budget, skills." },
-  3: { name: "Step 3 of 4 · How You Work", desc: "Your natural style — fast action, planning, building, or creating." },
-  4: { name: "Step 4 of 4 · Your Best Path", desc: "Final match — the income method that fits you best." },
+  1: { name: "Step 1 of 4 · Starting Point", desc: "Where you are right now and what feels confusing." },
+  2: { name: "Step 2 of 4 · Real-Life Fit", desc: "Your time, access, comfort, and realistic first move." },
+  3: { name: "Step 3 of 4 · Work Style", desc: "How you naturally create value with AI." },
+  4: { name: "Step 4 of 4 · Starting Path", desc: "The path, niche direction, and first action that fit you best." },
 };
 
 const Qs = [
 
-  // ─────────────────────────────────────────────────────────
-  // LAYER 1: GOAL CALIBRATION (Q1-Q3)
-  // Purpose: Activate desire + set expectation anchor
-  // ─────────────────────────────────────────────────────────
-
-  { layer:1, dim:"Q1 · Income Target",
-    text:"What's your first real income goal with AI?",
-    sub:"Be honest — this shapes everything about which path is right for you.",
+  { layer:1, dim:"Q1 · Starting Goal",
+    text:"What do you want AI to help you do first?",
+    sub:"Pick the most honest starting point.",
     opts:[
-      { text:"$200–$500/mo — prove it works before going all-in",
-        scores:{H:3,A:1,C:1}, meta:"target:$200–500" },
-      { text:"$500–$1,500/mo — replace a bill or two, meaningful side income",
-        scores:{H:3,A:2,C:2}, meta:"target:$500–1500" },
-      { text:"$2,000–$5,000/mo — serious enough to change my life",
-        scores:{H:1,A:3,C:3}, meta:"target:$2000–5000" },
-      { text:"$5,000+/mo — I want to replace my job entirely",
-        scores:{H:0,A:3,C:4}, meta:"target:$5000+" },
+      { text:"Make my first small income online", scores:{H:3,A:2,C:1}, meta:"target:first_small_income" },
+      { text:"Build something I can sell", scores:{H:1,A:4,C:1}, meta:"target:build_to_sell" },
+      { text:"Help businesses save time or fix messy processes", scores:{H:1,A:1,C:4}, meta:"target:business_workflows" },
+      { text:"I don't know yet - I need direction", scores:{H:2,A:2,C:2}, meta:"target:needs_direction" },
     ]},
 
-  { layer:1, dim:"Q2 · Timeline",
-    text:"How fast do you need to see the first dollar?",
-    sub:"Speed affects which niche is realistic for your situation.",
+  { layer:1, dim:"Q2 · Current Stage",
+    text:"Where are you right now with AI?",
+    sub:"This helps match your path to your real starting point.",
     opts:[
-      { text:"This week — I need proof of concept fast",
-        scores:{H:4,A:1,C:0}, meta:"speed:urgent" },
-      { text:"Within 30 days — I'm patient but want momentum",
-        scores:{H:3,A:2,C:2}, meta:"speed:30days" },
-      { text:"2–3 months — I'm willing to build something properly",
-        scores:{H:1,A:3,C:3}, meta:"speed:90days" },
-      { text:"I care more about the ceiling than the speed",
-        scores:{H:0,A:2,C:4}, meta:"speed:longterm" },
+      { text:"I know AI can help me earn, but I have not started", scores:{H:2,A:2,C:1}, meta:"stage:not_started" },
+      { text:"I have tried ChatGPT or a few tools, but nothing clicked", scores:{H:2,A:2,C:2}, meta:"stage:nothing_clicked" },
+      { text:"I have tried a side hustle idea, but it did not go anywhere", scores:{H:3,A:2,C:2}, meta:"stage:tried_idea" },
+      { text:"I use AI often, but I still do not have a clear income path", scores:{H:2,A:3,C:3}, meta:"stage:no_path" },
     ]},
 
-  { layer:1, dim:"Q3 · Motivation",
-    text:"If AI gave you your first $500, what would that mean to you?",
-    sub:"This reveals your real drive — and the best way to earn.",
+  { layer:1, dim:"Q3 · Main Confusion",
+    text:"What feels most confusing about earning with AI?",
+    sub:"This points to the real bottleneck.",
     opts:[
-      { text:"It proves I can do this — I'd feel unstoppable",
-        scores:{H:4,A:2,C:2}, meta:"motive:validation" },
-      { text:"It covers a real expense — electricity, groceries, a subscription",
-        scores:{H:3,A:2,C:2}, meta:"motive:survival" },
-      { text:"It's seed money — I'd reinvest it into growing faster",
-        scores:{H:1,A:3,C:4}, meta:"motive:reinvest" },
-      { text:"It's the start of a system — one step toward full independence",
-        scores:{H:0,A:3,C:4}, meta:"motive:independence" },
+      { text:"I don't know what to sell", scores:{H:3,A:2,C:1}, meta:"confusion:what_to_sell" },
+      { text:"I don't know who would buy from me", scores:{H:2,A:2,C:2}, meta:"confusion:buyer" },
+      { text:"I see too many ideas and can't choose one", scores:{H:1,A:2,C:2}, meta:"confusion:too_many_ideas" },
+      { text:"I tried something, but nothing clicked", scores:{H:2,A:2,C:2}, meta:"confusion:nothing_clicked" },
     ]},
 
-  // ─────────────────────────────────────────────────────────
-  // LAYER 2: RESOURCE SCAN (Q4-Q9)
-  // Purpose: Objective inventory — what the user actually owns
-  // ─────────────────────────────────────────────────────────
-
-  { layer:2, dim:"Q4 · Time Budget",
-    text:"How many real, focused hours can you give this per day?",
-    sub:"Not \"I want to\" — how many hours will actually happen on a typical Tuesday.",
+  { layer:2, dim:"Q4 · Time Available",
+    text:"How much focused time can you realistically give this per day?",
+    sub:"Your path should fit your real life.",
     opts:[
-      { text:"Less than 1 hour — stolen moments, phone in breaks",
-        scores:{H:1,A:2,C:0}, meta:"time:<1hr" },
-      { text:"1–2 hours — consistent window, usually same time each day",
-        scores:{H:3,A:3,C:1}, meta:"time:1-2hrs" },
-      { text:"3–4 hours — real dedicated block, this is a priority",
-        scores:{H:4,A:3,C:3}, meta:"time:3-4hrs" },
-      { text:"4+ hours — basically a part-time job commitment",
-        scores:{H:4,A:4,C:4}, meta:"time:4+hrs" },
+      { text:"Less than 1 hour", scores:{H:2,A:1,C:1}, meta:"time:<1hr" },
+      { text:"About 1 hour", scores:{H:3,A:2,C:2}, meta:"time:1hr" },
+      { text:"2-3 hours", scores:{H:2,A:3,C:3}, meta:"time:2-3hrs" },
+      { text:"4+ hours", scores:{H:2,A:3,C:4}, meta:"time:4+hrs" },
     ]},
 
-  { layer:2, dim:"Q5 · Hardware",
-    text:"What's your primary work device right now?",
-    sub:"No judgment — we just need to know what you're actually working with.",
+  { layer:2, dim:"Q5 · Tomorrow Action",
+    text:"If you had one free hour tomorrow, what would feel easiest to start?",
+    sub:"Pick what you would actually do, not what sounds impressive.",
     opts:[
-      { text:"Smartphone only — no laptop or desktop available",
-        scores:{H:1,A:2,C:0}, meta:"device:phone" },
-      { text:"Basic laptop — gets the job done but nothing special",
-        scores:{H:3,A:3,C:2}, meta:"device:basic_laptop" },
-      { text:"Decent laptop or desktop with stable internet",
-        scores:{H:4,A:4,C:4}, meta:"device:good_laptop" },
-      { text:"High-performance setup — good GPU, fast connection, multiple screens",
-        scores:{H:4,A:4,C:5}, meta:"device:pro_setup" },
+      { text:"Message someone and ask what they need help with", scores:{H:4,A:1,C:1}, meta:"action:message" },
+      { text:"Make a small checklist, guide, or template", scores:{H:1,A:4,C:1}, meta:"action:asset" },
+      { text:"Look at a messy process and find ways to improve it", scores:{H:1,A:1,C:4}, meta:"action:workflow" },
+      { text:"Watch another tutorial because I still feel unsure", scores:{H:1,A:1,C:1}, meta:"action:tutorial" },
     ]},
 
-  { layer:2, dim:"Q6 · Budget",
-    text:"Can you invest $20–$50/month in AI subscriptions if it helps you earn more?",
-    sub:"ChatGPT Plus, MidJourney, Claude Pro — these are the tools that unlock the income.",
+  { layer:2, dim:"Q6 · People Access",
+    text:"Who could you reach or understand fastest?",
+    sub:"Your first path should start near people you can actually reach.",
     opts:[
-      { text:"Not right now — I need to earn before I spend",
-        scores:{H:2,A:1,C:0}, meta:"budget:zero" },
-      { text:"Yes, but only if I see results within the first month",
-        scores:{H:3,A:3,C:2}, meta:"budget:conditional" },
-      { text:"Absolutely — I already see this as an investment",
-        scores:{H:4,A:4,C:4}, meta:"budget:yes" },
-      { text:"I'm already paying for AI tools and not monetizing them yet",
-        scores:{H:5,A:5,C:5}, meta:"budget:already_paying" },
+      { text:"Small business owners", scores:{H:3,A:1,C:3}, meta:"audience:small_business" },
+      { text:"Creators, freelancers, or online sellers", scores:{H:2,A:4,C:1}, meta:"audience:creators_sellers" },
+      { text:"People in my job, school, local area, or industry", scores:{H:2,A:2,C:4}, meta:"audience:known_context" },
+      { text:"I don't know who I can reach yet", scores:{H:1,A:1,C:1}, meta:"audience:unclear" },
     ]},
 
-  { layer:2, dim:"Q7 · English Level",
-    text:"When it comes to written English, you're most comfortable…",
-    sub:"Honest answer here = more accurate niche match. Most markets need at least B2.",
+  { layer:2, dim:"Q7 · Comfort Zone",
+    text:"Which part feels hardest for you?",
+    sub:"The wrong path usually feels heavy before it fails.",
     opts:[
-      { text:"Reading and understanding — but writing feels slow and unnatural",
-        scores:{H:1,A:2,C:1}, meta:"english:reader" },
-      { text:"Writing short things — captions, emails, prompts — it's okay",
-        scores:{H:3,A:3,C:2}, meta:"english:functional" },
-      { text:"Writing almost anything — I can sound professional with AI's help",
-        scores:{H:4,A:4,C:4}, meta:"english:good" },
-      { text:"Fluent or near-fluent — English is a real asset for me",
-        scores:{H:5,A:5,C:5}, meta:"english:fluent" },
+      { text:"Reaching out to people", scores:{H:0,A:3,C:2}, meta:"block:outreach" },
+      { text:"Choosing a niche", scores:{H:2,A:2,C:2}, meta:"block:niche" },
+      { text:"Making something people would pay for", scores:{H:2,A:1,C:3}, meta:"block:offer" },
+      { text:"Explaining how AI creates value", scores:{H:2,A:1,C:4}, meta:"block:value" },
     ]},
 
-  { layer:2, dim:"Q8 · Existing Audience",
-    text:"Do you already have followers anywhere online?",
-    sub:"Doesn't matter where or how many — even 200 real followers changes your options.",
+  { layer:2, dim:"Q8 · First Deliverable",
+    text:"What could you realistically create or deliver in 7 days?",
+    sub:"Start small enough to test.",
     opts:[
-      { text:"Zero — starting completely from scratch",
-        scores:{H:3,A:2,C:3}, meta:"audience:zero" },
-      { text:"A few hundred — personal account, not built for business",
-        scores:{H:3,A:3,C:3}, meta:"audience:small" },
-      { text:"1,000–10,000 — some real engagement in at least one place",
-        scores:{H:2,A:5,C:3}, meta:"audience:medium" },
-      { text:"10,000+ — I have real reach and people actually listen",
-        scores:{H:1,A:6,C:2}, meta:"audience:large" },
+      { text:"A simple AI-assisted service", scores:{H:4,A:1,C:1}, meta:"deliverable:service" },
+      { text:"A template, checklist, or small guide", scores:{H:1,A:4,C:1}, meta:"deliverable:asset" },
+      { text:"A simple workflow review or improvement plan", scores:{H:1,A:1,C:4}, meta:"deliverable:workflow_review" },
+      { text:"I'm not sure yet", scores:{H:1,A:1,C:1}, meta:"deliverable:unclear" },
     ]},
 
-  { layer:2, dim:"Q9 · Specialized Knowledge",
-    text:"Is there a topic you know significantly more about than most people?",
-    sub:"Could be your job, a hobby, a niche obsession — anything with real depth.",
+  { layer:3, dim:"Q9 · AI Start",
+    text:"What would you most likely ask AI to help with first?",
+    sub:"This shows what your starting path can use AI for.",
     opts:[
-      { text:"No, I'm pretty general — nothing stands out",
-        scores:{H:4,A:0,C:2}, meta:"knowledge:none" },
-      { text:"Maybe — but I'm not sure it's valuable or sellable",
-        scores:{H:2,A:3,C:2}, meta:"knowledge:unsure" },
-      { text:"Yes — and people have actually asked me about it before",
-        scores:{H:1,A:5,C:3}, meta:"knowledge:yes" },
-      { text:"Definitely — it's my career or a deep passion with real expertise",
-        scores:{H:0,A:6,C:4}, meta:"knowledge:expert" },
+      { text:"Write messages, offers, or outreach", scores:{H:4,A:1,C:1}, meta:"tool_use:outreach" },
+      { text:"Create content, templates, or product ideas", scores:{H:1,A:4,C:1}, meta:"tool_use:assets" },
+      { text:"Organize a process or map steps", scores:{H:1,A:1,C:4}, meta:"tool_use:process" },
+      { text:"I don't know what to ask AI yet", scores:{H:1,A:1,C:1}, meta:"tool_use:unclear" },
     ]},
 
-  // ─────────────────────────────────────────────────────────
-  // LAYER 3: CAPABILITY TEST (Q10-Q13)
-  // Purpose: Behavioral questions — revealed preferences over stated ones
-  // ─────────────────────────────────────────────────────────
-
-  { layer:3, dim:"Q10 · Visual Judgment",
-    text:"You see two product images side by side. One converts better. What do you notice?",
-    sub:"Pick the answer that most honestly describes your first reaction.",
+  { layer:3, dim:"Q10 · Buyer Comfort",
+    text:"How comfortable are you talking to potential buyers?",
+    sub:"This affects whether you should start with services, assets, or systems.",
     opts:[
-      { text:"I see one looks nicer but couldn't explain why to anyone",
-        scores:{H:2,A:1,C:1}, meta:"visual:basic" },
-      { text:"I can name 2–3 specific things — lighting, spacing, color contrast",
-        scores:{H:2,A:4,C:2}, meta:"visual:good" },
-      { text:"I immediately know what to change and roughly how to do it",
-        scores:{H:1,A:5,C:2}, meta:"visual:strong" },
-      { text:"I'm already thinking about how to recreate or improve it",
-        scores:{H:1,A:5,C:3}, meta:"visual:pro" },
+      { text:"Comfortable - I can message people directly", scores:{H:4,A:1,C:2}, meta:"buyer:direct" },
+      { text:"Somewhat - if I have a clear script", scores:{H:3,A:2,C:2}, meta:"buyer:script" },
+      { text:"Not very - I would rather build something first", scores:{H:0,A:4,C:2}, meta:"buyer:build_first" },
+      { text:"Comfortable if I am helping diagnose a real problem", scores:{H:2,A:1,C:4}, meta:"buyer:diagnose" },
     ]},
 
-  { layer:3, dim:"Q11 · Logical Patience",
-    text:"You paste a prompt into ChatGPT and the output is 70% good. You…",
-    sub:"This reveals your relationship with iteration — critical in any AI income path.",
+  { layer:3, dim:"Q11 · Work Style",
+    text:"What kind of work feels most natural to you?",
+    sub:"This points to how you create value.",
     opts:[
-      { text:"Use the 70% — edit it manually, move on fast",
-        scores:{H:5,A:2,C:2}, meta:"logic:executor" },
-      { text:"Tweak the prompt once, see if it gets better",
-        scores:{H:3,A:3,C:3}, meta:"logic:pragmatic" },
-      { text:"Spend 20 minutes testing different versions until it's right",
-        scores:{H:1,A:4,C:4}, meta:"logic:optimizer" },
-      { text:"Document what worked, build a template, systematize the whole thing",
-        scores:{H:0,A:3,C:6}, meta:"logic:builder" },
+      { text:"Talking to people and finding what they need", scores:{H:4,A:1,C:1}, meta:"style:people" },
+      { text:"Turning ideas into useful resources", scores:{H:1,A:4,C:1}, meta:"style:assets" },
+      { text:"Organizing messy steps into a clearer process", scores:{H:1,A:1,C:4}, meta:"style:systems" },
+      { text:"Researching many options before choosing", scores:{H:1,A:2,C:2}, meta:"style:research" },
     ]},
 
-  { layer:3, dim:"Q12 · Camera Comfort",
-    text:"Someone offers you $500 to post 10 videos on TikTok with your face. You…",
-    sub:"Be honest — this rules out or unlocks entire income paths.",
+  { layer:3, dim:"Q12 · Pattern",
+    text:"When you watch or try AI side hustle advice, what usually happens?",
+    sub:"This reveals where the path breaks.",
     opts:[
-      { text:"Hard no — I won't put my face online for any amount",
-        scores:{H:3,A:4,C:4}, meta:"camera:no" },
-      { text:"Maybe — I'm not comfortable yet but would push through for the money",
-        scores:{H:4,A:3,C:3}, meta:"camera:reluctant" },
-      { text:"Yes — I'd be nervous but I could do it",
-        scores:{H:4,A:3,C:2}, meta:"camera:yes_nervous" },
-      { text:"Easily — I'm comfortable on camera, I might even enjoy it",
-        scores:{H:4,A:5,C:1}, meta:"camera:comfortable" },
+      { text:"I feel inspired, then don't know who to contact", scores:{H:2,A:1,C:1}, meta:"pattern:no_contacts" },
+      { text:"I save ideas, but never build the first version", scores:{H:1,A:3,C:1}, meta:"pattern:saved_ideas" },
+      { text:"I see business problems, but don't know how to sell the solution", scores:{H:1,A:1,C:4}, meta:"pattern:sell_solution" },
+      { text:"I try something, then switch when it does not click", scores:{H:1,A:1,C:1}, meta:"pattern:switching" },
     ]},
 
-  { layer:3, dim:"Q13 · Execution Style",
-    text:"You get a new task you've never done before. Your natural approach is to…",
-    sub:"No right answer — this tells us how to format your roadmap.",
+  { layer:4, dim:"Q13 · Niche Clarity",
+    text:"How clear is your niche right now?",
+    sub:"It is okay if you do not know yet.",
     opts:[
-      { text:"Start immediately, figure it out as problems arise",
-        scores:{H:5,A:2,C:1}, meta:"style:executor" },
-      { text:"Watch one tutorial, then start — minimum viable research",
-        scores:{H:4,A:3,C:2}, meta:"style:pragmatic" },
-      { text:"Make a plan first — outline the steps before touching anything",
-        scores:{H:2,A:3,C:4}, meta:"style:planner" },
-      { text:"Find the best existing framework and adapt it",
-        scores:{H:1,A:3,C:5}, meta:"style:systems" },
+      { text:"I know a buyer group and a problem", scores:{H:3,A:3,C:3}, meta:"niche:clear" },
+      { text:"I know the problem, but not the buyer", scores:{H:2,A:3,C:2}, meta:"niche:problem_only" },
+      { text:"I know the buyer, but not the offer", scores:{H:3,A:1,C:2}, meta:"niche:buyer_only" },
+      { text:"I don't know either yet", scores:{H:1,A:1,C:1}, meta:"niche:unclear" },
     ]},
 
-  // ─────────────────────────────────────────────────────────
-  // LAYER 4: NICHE VALIDATION (Q14-Q16)
-  // Purpose: Final confirmation — tiebreaker questions
-  // ─────────────────────────────────────────────────────────
-
-  { layer:4, dim:"Q14 · Client Comfort",
-    text:"Someone wants to pay you for work. The idea of having a client feels…",
-    sub:"Some income paths require clients. Others don't. This matters for your match.",
+  { layer:4, dim:"Q14 · First Signal",
+    text:"What kind of early signal would help you believe you are on the right path?",
+    sub:"Different paths create different kinds of feedback.",
     opts:[
-      { text:"Fine — I can handle communication, that's not the scary part",
-        scores:{H:5,A:2,C:4}, meta:"client:comfortable" },
-      { text:"A little anxious — I prefer systems where the product sells itself",
-        scores:{H:1,A:5,C:2}, meta:"client:avoidant" },
-      { text:"Actually exciting — I like understanding what people need",
-        scores:{H:3,A:2,C:5}, meta:"client:loves" },
-      { text:"Depends — one-off projects yes, ongoing relationships maybe not",
-        scores:{H:4,A:3,C:3}, meta:"client:project_only" },
+      { text:"Replies from potential buyers", scores:{H:4,A:1,C:1}, meta:"signal:replies" },
+      { text:"Clicks, saves, or early purchases", scores:{H:1,A:4,C:1}, meta:"signal:asset_interest" },
+      { text:"Someone saying, \"yes, this process is painful\"", scores:{H:1,A:1,C:4}, meta:"signal:process_pain" },
+      { text:"Any clear sign I am not wasting time", scores:{H:2,A:2,C:2}, meta:"signal:any" },
     ]},
 
-  { layer:4, dim:"Q15 · AI Fluency",
-    text:"How much have you actually used AI tools in the past 7 days?",
-    sub:"Real usage, not \"I have an account\" — opens Claude, types a prompt, gets output.",
+  { layer:4, dim:"Q15 · First Offer",
+    text:"Which first offer feels most realistic?",
+    sub:"Pick the one you could test first.",
     opts:[
-      { text:"Zero — I've been meaning to start",
-        scores:{H:2,A:2,C:1}, meta:"ai_fluency:none" },
-      { text:"A few times — tried ChatGPT or Claude once or twice",
-        scores:{H:3,A:3,C:2}, meta:"ai_fluency:basic" },
-      { text:"Daily — it's part of how I work or learn right now",
-        scores:{H:4,A:4,C:4}, meta:"ai_fluency:regular" },
-      { text:"Heavily — I'm using multiple AI tools and exploring their limits",
-        scores:{H:4,A:5,C:5}, meta:"ai_fluency:power_user" },
+      { text:"I can help you with this AI-assisted task", scores:{H:4,A:1,C:1}, meta:"offer:service" },
+      { text:"I made this template or guide for this problem", scores:{H:1,A:4,C:1}, meta:"offer:asset" },
+      { text:"I can review this process and show what to improve", scores:{H:1,A:1,C:4}, meta:"offer:review" },
+      { text:"I am not sure what to offer yet", scores:{H:1,A:1,C:1}, meta:"offer:unclear" },
     ]},
 
-  { layer:4, dim:"Q16 · Long-term Vision",
-    text:"One year from now, what does success look like to you?",
-    sub:"The last question. Pick the one that genuinely excites you — not what sounds right.",
+  { layer:4, dim:"Q16 · Starting Path",
+    text:"Which sentence sounds most like a path you could actually start?",
+    sub:"Your final answer helps confirm the match.",
     opts:[
-      { text:"I have a client roster. I get paid weekly for work I'm proud of.",
-        scores:{H:5,A:1,C:3}, meta:"vision:freelancer" },
-      { text:"I have products online earning while I sleep. My name means something in my niche.",
-        scores:{H:0,A:6,C:2}, meta:"vision:creator" },
-      { text:"I run a small AI consultancy. Businesses pay me to build their systems.",
-        scores:{H:1,A:1,C:6}, meta:"vision:consultant" },
-      { text:"Honestly, I just want the freedom — I don't care which path gets me there.",
-        scores:{H:3,A:3,C:3}, meta:"vision:freedom" },
+      { text:"I can learn by talking to buyers", scores:{H:4,A:1,C:1}, meta:"vision:buyer_feedback" },
+      { text:"I can build a useful asset for a clear problem", scores:{H:1,A:4,C:1}, meta:"vision:asset" },
+      { text:"I can improve a messy process for a business", scores:{H:1,A:1,C:4}, meta:"vision:workflow" },
+      { text:"I need HugoMojo to tell me where to begin", scores:{H:2,A:2,C:2}, meta:"vision:needs_direction" },
     ]},
 
 ];
@@ -914,15 +839,17 @@ const RESULTS = {
     label: "AI Freelancing & Services",
     badgeBg: "rgba(255,179,0,0.045)",
     badgeColor: "#FFB300",
-    tagline: "Your resources are built for fast results. Here's your exact target.",
-    stuck: "You don't need another course.<br>You needed a path that rewards action before perfection.",
-    actionLine: "Send 10 proposals.",
+    tagline: "Your path, niche direction, and first action are ready.",
+    stuck: "You may be waiting to learn more tools, but your fastest path is getting real buyer feedback.",
+    startingDirection: "Start with a simple AI-assisted service for a small business problem.",
+    actionLine: "Pick one problem and message 20 potential buyers.",
     fitLine: "Your resources favor speed over perfection.",
+    lockedBenefits: ["niche direction", "first offer", "7-day sprint", "copy-paste script", "what to avoid"],
     why: [
-      "You have enough time and tools to start this week — no waiting required.",
-      "Freelancing rewards speed over perfection, which matches your execution style.",
-      "This path has zero upfront cost and clients are hiring right now.",
-      "Your first client is your proof of success. After that, everything grows faster."
+      "You can start with a simple service test before learning every AI tool.",
+      "Hunter works through direct feedback, clear outreach, and practical delivery.",
+      "This path works best when the offer is specific and easy to understand.",
+      "Your first useful signal is a real buyer reply, question, or conversation."
     ],
     firstAction: {
       title: "Your First Action",
@@ -936,15 +863,15 @@ const RESULTS = {
     avoid: "Avoid spending weeks building an audience before testing service demand.",
     paths: [
       { name:"AI-assisted writing & editing on Upwork",
-        desc:"Use Claude to deliver client work 5× faster. Write proposals, landing pages, email sequences. Income range: $15–$80/hr." },
+        desc:"Use AI to draft faster, then apply human review. Test proposals, landing pages, email sequences, or product descriptions." },
       { name:"AI automation setup for small businesses",
-        desc:"Build Make or Zapier workflows for clients who have no idea AI can do this. No coding. Per project: $300–$2,000." },
+        desc:"Help a small business review one repetitive task and suggest a simple AI-assisted improvement." },
       { name:"AI image & visual asset delivery",
-        desc:"Midjourney commercial images for Etsy sellers, Amazon listings, and ad creatives. Income range: $200–$800 per client/month." },
+        desc:"Create simple product or campaign assets for sellers who need faster visual support." },
     ],
     locked: ["30-Day Hunter SOP (daily task checklist)", "Upwork proposal templates that actually get replies", "Client pricing calculator + rate-setting guide"],
-    target30: "$300–$800",
-    targetLabel: "30-day income target",
+    target30: "20 buyer messages",
+    targetLabel: "30-day validation target",
     bars: [
       {n:"Execution speed",  v:90, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
       {n:"Market demand",    v:85, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
@@ -958,15 +885,17 @@ const RESULTS = {
     label: "Digital Products & Knowledge Assets",
     badgeBg: "rgba(255,179,0,0.045)",
     badgeColor: "#FFB300",
-    tagline: "You already have something to sell — you just haven’t packaged it yet.",
-    stuck: "Your problem was never talent.<br>You stayed trapped consuming instead of publishing.",
-    actionLine: "Publish one small digital product.",
+    tagline: "Your path, niche direction, and first action are ready.",
+    stuck: "You may have too many ideas, but your best start is turning one repeated problem into a small asset.",
+    startingDirection: "Start with a template, checklist, guide, or simple digital product.",
+    actionLine: "Ask 10 people if they repeat this problem often.",
     fitLine: "You already have something valuable to package.",
+    lockedBenefits: ["niche direction", "first offer", "7-day sprint", "copy-paste prompt", "what to avoid"],
     why: [
-      "Your knowledge or creative eye is rare — AI lets you build products in days, not months.",
-      "Digital products sell while you sleep. Once built, every sale is nearly pure profit.",
-      "Your existing expertise gives you a head start no beginner can match.",
-      "The only risk is overthinking. Your first product just needs to be useful, not perfect."
+      "Your knowledge or creative eye can become a small useful asset.",
+      "Artisan works best when one repeated problem becomes one focused template, checklist, or guide.",
+      "Your experience can help you choose a sharper product angle.",
+      "The biggest risk is building too much before validating the problem."
     ],
     firstAction: {
       title: "Your First Action",
@@ -980,15 +909,15 @@ const RESULTS = {
     avoid: "Avoid freelancing paths that require constant calls and cold outreach.",
     paths: [
       { name:"Ebook, guide, or prompt pack on Gumroad",
-        desc:"Use AI to write fast, Canva to design. Sell your expertise for $9–$49 a download. Income range: $500–$5,000/mo at scale." },
+        desc:"Use AI to outline, draft, and package one specific solution for one repeated problem." },
       { name:"Digital products on Etsy (AI-generated)",
-        desc:"Printable planners, coloring books, wall art, Lightroom presets. Low competition, evergreen demand. Income range: $200–$3,000/mo." },
+        desc:"Test a narrow digital asset for a specific buyer or use case before expanding." },
       { name:"Paid newsletter or content subscription",
-        desc:"Weekly AI-enhanced deep dives in your niche. Beehiiv or Substack. Income range: $300–$8,000/mo with the right audience." },
+        desc:"Use a focused channel to test whether people repeatedly care about your niche problem." },
     ],
     locked: ["30-Day Artisan SOP (from idea to first sale)", "Gumroad product page copy template", "Pricing psychology guide for digital products"],
-    target30: "$200–$1,200",
-    targetLabel: "30-day income target",
+    target30: "10 validation replies",
+    targetLabel: "30-day validation target",
     bars: [
       {n:"Asset leverage",v:95, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
       {n:"Compounding",      v:90, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
@@ -1002,15 +931,17 @@ const RESULTS = {
     label: "B2B AI Consulting & Automation",
     badgeBg: "rgba(255,179,0,0.045)",
     badgeColor: "#FFB300",
-    tagline: "You don’t need a big audience. You just need three good clients.",
-    stuck: "You think like a systems builder.<br>But you've been trying to monetize like a creator.",
-    actionLine: "Start one business conversation.",
+    tagline: "Your path, niche direction, and first action are ready.",
+    stuck: "You may see how things could work better, but you need to turn that into a simple business outcome.",
+    startingDirection: "Start with a workflow review for a repeated business process.",
+    actionLine: "List 20 businesses with messy intake, follow-up, admin, or reporting steps.",
     fitLine: "You are optimized for systems, not content volume.",
+    lockedBenefits: ["niche direction", "first offer", "7-day sprint", "copy-paste script", "what to avoid"],
     why: [
-      "Businesses are paying top dollar to solve the exact problems you can fix with AI.",
-      "High-ticket, low-volume: one $500/month client beats 50 small buyers.",
-      "Your logical, systems-focused mind is the real skill — AI is just the tool.",
-      "You don’t need followers. You just need to send three good outreach messages."
+      "Businesses often need repeated processes explained before they need automation.",
+      "Architect works best when the problem is tied to time, follow-up, admin, reporting, or mistakes.",
+      "Your systems-focused thinking is the useful skill; AI is the support tool.",
+      "You do not need a big audience to test one clear workflow review offer."
     ],
     firstAction: {
       title: "Your First Action",
@@ -1024,15 +955,15 @@ const RESULTS = {
     avoid: "Avoid low-value prompt packs when your value is systems thinking.",
     paths: [
       { name:"AI workflow automation for small businesses",
-        desc:"Build Make.com or Zapier flows for service businesses. Invoice automation, CRM syncing, report generation. Per project: $500–$3,000." },
+        desc:"Review one repeated workflow and identify where AI or no-code tools could reduce friction." },
       { name:"Custom GPT or AI tool setup for clients",
-        desc:"Build industry-specific chatbots or internal AI assistants. Retainer: $300–$800/mo ongoing maintenance." },
+        desc:"Start with a narrow internal assistant idea only after the workflow pain is clear." },
       { name:"AI audit & strategy consulting",
-        desc:"Help businesses find where AI can save them 10+ hours/week. Charge $200–$500 for a 90-minute audit session." },
+        desc:"Help a business map a repeated process and choose one small improvement to test." },
     ],
     locked: ["30-Day Architect SOP (from zero to first client)", "Cold email scripts that get replies from business owners", "Project proposal template + pricing framework"],
-    target30: "$500–$1,500",
-    targetLabel: "30-day income target",
+    target30: "20 workflow leads",
+    targetLabel: "30-day validation target",
     bars: [
       {n:"Client value",     v:92, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
       {n:"Barrier to entry", v:55, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
@@ -1073,7 +1004,25 @@ function updateProgress(doneCount) {
 
 function formatQuestionTitle(dim) {
   const clean = dim.replace(/^Q\d+\s*·\s*/, '');
-  return clean;
+  const shortTitles = {
+    "Income Target": "Income Goal",
+    "Timeline": "Timeline",
+    "Motivation": "Motivation",
+    "Time Budget": "Time Available",
+    "Hardware": "Work Device",
+    "Budget": "Budget",
+    "English Level": "English Level",
+    "Existing Audience": "Audience",
+    "Specialized Knowledge": "Market Access",
+    "Visual Judgment": "Creation Style",
+    "Logical Patience": "Feedback Speed",
+    "Camera Comfort": "Offer Preference",
+    "Execution Style": "Execution Style",
+    "Client Comfort": "Client Comfort",
+    "AI Fluency": "AI Skill",
+    "Long-term Vision": "Path Fit"
+  };
+  return shortTitles[clean] || clean;
 }
 
 function render() {
@@ -1121,10 +1070,8 @@ function startScan() {
   });
 
   const logs = [
-    'Analyzing your resource profile...',
-    'Matching time, tools, and skill signals...',
-    'Scoring Hunter / Artisan / Architect fit...',
-    'Building your action roadmap...'
+    'Checking your starting point...',
+    'Finding your first action...'
   ];
   const lb = document.getElementById('scan-log');
   lb.innerHTML = '';
@@ -1172,31 +1119,24 @@ function showPreview(type) {
   const resourcePreview = buildResourceLines().slice(0, 3).join(' · ');
   document.getElementById('preview-card').innerHTML = `
     <div class="preview-score">${matchPct}%</div>
-    <div class="preview-pill">Your path is becoming clear</div>
-    <h1 style="font-size: 32px; margin-bottom: 16px;">THE ${t.niche.toUpperCase()}</h1>
-    <p class="sub-title" style="margin-bottom: 28px; font-size: 16px;">${t.tagline}</p>
+    <div class="preview-pill">Your path is becoming clear.</div>
+    <h1 style="font-size: 30px; margin-bottom: 14px;">THE ${t.niche.toUpperCase()}</h1>
+    <p class="sub-title" style="margin-bottom: 18px; font-size: 16px;">Your result includes:</p>
     <div class="preview-proof">
       <div class="preview-proof-item">
-        <div class="preview-proof-k">Unlocked now</div>
-        <div class="preview-proof-v">Your highest-fit AI income path is visible. Unlock the action system to see your niche direction, first action, and what to avoid.</div>
+        <div class="preview-proof-k">Path</div>
+        <div class="preview-proof-v">✓ your AI income path</div>
       </div>
       <div class="preview-proof-item">
-        <div class="preview-proof-k">Based on your resources</div>
-        <div class="preview-proof-v">${resourcePreview || 'Your time, tools, budget, and skill signals.'}</div>
+        <div class="preview-proof-k">Niche</div>
+        <div class="preview-proof-v">✓ your niche direction</div>
       </div>
       <div class="preview-proof-item">
-        <div class="preview-proof-k">Locked action system includes</div>
-        <div class="preview-proof-v">Your first action, what to avoid, matched prompts, templates, 7-day checklist, and 30-day target.</div>
+        <div class="preview-proof-k">Action</div>
+        <div class="preview-proof-v">✓ your first action</div>
       </div>
     </div>
-    <div class="locked-preview">
-      <div class="preview-proof-k">Locked inside your action system</div>
-      <div class="locked-line">✓ Exact starter offer</div>
-      <div class="locked-line">✓ First outreach script</div>
-      <div class="locked-line">✓ 7-day sprint</div>
-      <div class="locked-line">✓ Pricing framework</div>
-    </div>
-    <button class="cta-buy" id="unlock-full-result" type="button" style="font-size: 16px;">Unlock My Action System</button>
+    <button class="cta-buy" id="unlock-full-result" type="button" style="font-size: 16px;">Save My Result</button>
     <p class="fine-print" style="margin-top: 18px;">No income guarantees. Educational product only. Support: hi@hugomojo.com.</p>
   `;
   updateProgress(Qs.length);
@@ -1224,39 +1164,32 @@ function showResult(type) {
 
   document.querySelector('#step-pay .card').innerHTML = `
     <div class="match-percent">${matchPct}%</div>
-    <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:22px; text-transform: uppercase;">Your best-fit path</div>
-    <h1 id="res-name" style="font-size: 32px; margin-bottom: 20px;">THE ${t.niche.toUpperCase()}</h1>
+    <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:22px; text-transform: uppercase;">Match</div>
+    <h1 id="res-name" style="font-size: 34px; margin-bottom: 20px;">${t.niche}</h1>
     <div style="margin: 18px 0 22px; text-align:left; border-left:2px solid rgba(255,179,0,0.50); padding:18px 0 18px 16px; background:rgba(255,179,0,0.035); box-shadow:0 0 28px rgba(255,179,0,0.06);">
-      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:12px;">WHY YOU'VE BEEN STUCK</div>
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:12px;">WHY YOU'RE STUCK</div>
       <div style="font-size:16px; color:#f0f0f0; line-height:1.8;">${t.stuck}</div>
     </div>
     <div style="margin: 18px 0 20px; text-align:left;">
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:10px;">STARTING PATH</div>
+      <div style="font-size:15px; color:rgba(242,242,242,0.92); line-height:1.7;">${t.startingDirection}</div>
+    </div>
+    <div style="margin: 18px 0 20px; text-align:left;">
       <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:10px;">FIRST ACTION</div>
-      <div style="font-size:22px; color:#fff; font-weight:800; line-height:1.25;">${t.actionLine}</div>
+      <div style="font-size:20px; color:#fff; font-weight:800; line-height:1.35;">${t.actionLine}</div>
       <div style="font-size:12px; color:rgba(224,224,228,0.66); line-height:1.6; margin-top:8px;">Not next month. Today.</div>
     </div>
     <div style="border:1px solid var(--glass-border); background:rgba(255,255,255,0.018); padding:16px; margin:18px 0; text-align:left;">
-      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:12px;">LOCKED INSIDE YOUR ACTION SYSTEM</div>
-      <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ Exact starter offer</div>
-      <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ First outreach script</div>
-      <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ 7-day sprint</div>
-      <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ Pricing framework</div>
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:12px;">UNLOCK YOUR ACTION SYSTEM</div>
+      ${t.lockedBenefits.map(item => `<div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ ${item}</div>`).join("")}
     </div>
     <button class="cta-buy" type="button" id="early-unlock-cta" style="font-size:16px; margin: 8px 0 18px;">Unlock My Action System</button>
     <p style="font-size:10px; color:rgba(218,218,222,0.60); line-height:1.6; margin: -6px 0 18px; text-align:left;">For educational purposes only.<br>Individual results depend on effort, skills, and market conditions.</p>
-    <div style="border:1px solid rgba(255,179,0,0.22); background:rgba(255,179,0,0.04); padding:16px; margin:20px 0; text-align:left;">
-      <div style="font-size:14px; color:#e8e8e8; line-height:1.7; margin-bottom:12px;">
-        Your result points to a path, a niche direction, and a first action.<br><br>You probably already had enough tools.<br>What you lacked was one clear path.
-      </div>
-      <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.7;">
-        Most people stay stuck because they restart every week.
-      </div>
-    </div>
-    <p style="font-size:11px; color:rgba(218,218,222,0.70); line-height:1.6; margin: 14px 0; text-align:left;">Instant digital delivery. No subscription required.</p>
+    <p style="font-size:12px; color:rgba(218,218,222,0.70); line-height:1.6; margin: 14px 0; text-align:left;">Your result points to a path, a niche direction, and a first action.</p>
     <div class="pricing-stack" id="pricing-options">
       <a class="pay-option muted" href="${CHECKOUT_URLS.single[type]}" data-event="checkout_click" data-plan="${singlePlan}" data-price="9.90">
         <div class="pay-tag">Single Pass</div>
-        <div class="pay-name"><span>One ${t.niche} action system</span><span class="pay-price">$9.90</span></div>
+        <div class="pay-name"><span>Matched Action System</span><span class="pay-price">$9.90</span></div>
         <div class="pay-note">Matched action system + starter offer + 7-day sprint</div>
       </a>
       <a class="pay-option featured" href="${CHECKOUT_URLS.master}" data-event="checkout_click" data-plan="master_key" data-price="19.90">

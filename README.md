@@ -10,12 +10,8 @@ Static website for HugoMojo, built for GitHub deployment.
 - `terms.html` — public terms of service
 - `refund.html` — public refund policy
 - `privacy.html` — public privacy notice
-- `membership.html` — pricing ladder and Annual Access membership page, not linked from public navigation
 - `access.html` — automatic delivery page after checkout
-- `success.html` — post-purchase Annual Access upgrade window
-- `data-system.html` — internal event taxonomy and KPI dashboard design
-- `creem-application.html` — internal payment review readiness notes
-- `compliance.html` — internal compliance and responsible-use checklist
+- `success.html` — post-purchase delivery and optional Master Key Annual Access upgrade window
 - `contact.html` — support and contact page
 - `404.html` — GitHub Pages not-found page
 - `robots.txt` — crawler access file
@@ -27,9 +23,9 @@ Support email: hi@hugomojo.com
 
 ## Pricing Model
 
-- Single Pass: $9.90, one matched role report.
-- Master Key: $19.90, all three role reports, prompt library, 90-day roadmap, and 90-day updates.
-- Annual Access: $199 per year, full Master Key package, Annual Member System PDF, monthly ecosystem signal reports, versioned Prompt Vault updates, weekly signal digest, execution tracker, and quarterly path calibration.
+- Single Pass: $9.90, one matched Action System.
+- Master Key: $19.90, all three Action Systems, prompt library, 90-day roadmap, and 90-day updates.
+- Annual Access: $199 per year, full Master Key package, Annual Member System PDF, monthly ecosystem signal reports, versioned prompt library updates, weekly signal digest, execution tracker, and quarterly path calibration.
 
 ## Automatic Delivery URLs
 
@@ -69,14 +65,14 @@ Annual Access delivery includes:
 
 Master Key delivery includes:
 
-- all three upgraded Single Pass role reports
+- all three upgraded Single Pass Action Systems
 - `downloads/hugomojo-market-fit-model.md`
 - `downloads/master-key-prompt-library.md`
 - `downloads/master-key-90-day-roadmap.md`
 
 Public navigation should only expose:
 
-- Header: Home, Assessment, Pricing, Contact
+- Header: Home, Scanner, Contact
 - Footer: Delivery, Contact, Privacy, Terms, Refund
 
 Internal pages such as Creem readiness, data system, and compliance checklist should not be linked from public navigation.

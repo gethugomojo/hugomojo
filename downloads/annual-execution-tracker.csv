@@ -1,4 +1,0 @@
-date,path,action_type,action_taken,asset_used,prompt_version,market_feedback,result_metric,next_action,notes
-2026-05-12,Hunter,outreach,Sent 20 audit messages,Audit offer draft,Hunter-Audit-v1,2 replies,10 percent reply rate,Rewrite offer opener,
-2026-05-12,Artisan,product,Published first product page,Mini guide page,Artisan-Page-v1,No sales yet,0 sales,Improve headline,
-2026-05-12,Architect,consulting,Booked one discovery call,Workflow audit script,Architect-Audit-v1,Client has CRM issue,1 call booked,Prepare proposal,
