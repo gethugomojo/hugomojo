@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Market Fit Model — HugoMojo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0a0a0b; --panel:#111114; --panel2:#151518; --text:#f2f2f2; --soft:rgba(224,224,228,.78); --muted:rgba(190,190,196,.64); --line:rgba(255,255,255,.10); --amber:#ffb300; --amber2:rgba(255,179,0,.12); }
+    * { box-sizing:border-box; }
+    html { background:var(--bg); }
+    body { margin:0; color:var(--text); background:radial-gradient(circle at 16% 0%, rgba(255,179,0,.10), transparent 34%), radial-gradient(circle at 90% 10%, rgba(255,255,255,.045), transparent 28%), var(--bg); font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    body::after { content:""; position:fixed; inset:0; pointer-events:none; opacity:.018; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E"); }
+    .shell { width:min(980px, calc(100% - 36px)); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:10; background:rgba(10,10,11,.88); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+    .nav { min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; }
+    .mark { display:grid; place-items:center; width:34px; height:34px; border:1px solid rgba(255,179,0,.36); background:#050505; color:var(--amber); font-family:Archivo Black, Inter, sans-serif; font-size:15px; letter-spacing:.5px; }
+    .brand span:last-child { font-family:JetBrains Mono, monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:rgba(242,242,242,.82); }
+    .toplink { color:rgba(232,232,232,.68); font-family:JetBrains Mono, monospace; font-size:12px; letter-spacing:.3px; text-decoration:none; }
+    .toplink:hover { color:var(--amber); }
+    header.hero { padding:78px 0 38px; }
+    .eyebrow { display:inline-flex; gap:10px; align-items:center; font-family:JetBrains Mono, monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+    .dot { width:7px; height:7px; border-radius:50%; background:var(--amber); box-shadow:0 0 18px rgba(255,179,0,.7); }
+    h1 { margin:0; max-width:820px; font-family:Archivo Black, Inter, sans-serif; font-size:clamp(38px, 7vw, 72px); line-height:.96; letter-spacing:0; text-transform:uppercase; }
+    .purpose { max-width:760px; margin:24px 0 0; color:var(--soft); font-size:18px; line-height:1.68; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 18px; border:1px solid rgba(255,179,0,.4); background:var(--amber); color:#09090a; text-decoration:none; font-weight:800; font-size:14px; }
+    .btn.secondary { background:rgba(255,255,255,.035); color:var(--text); border-color:var(--line); }
+    main.article { padding:20px 0 88px; }
+    .content { border:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018)); box-shadow:0 28px 70px rgba(0,0,0,.58); padding:clamp(24px, 5vw, 48px); }
+    .content h1 { display:none; }
+    .content h2 { margin:46px 0 16px; padding-top:12px; border-top:1px solid var(--line); font-family:JetBrains Mono, monospace; font-size:13px; letter-spacing:1.7px; text-transform:uppercase; color:var(--amber); }
+    .content h2:first-child { margin-top:0; }
+    .content h3 { margin:28px 0 10px; font-size:22px; line-height:1.28; color:#fff; }
+    .content p { margin:13px 0; color:var(--soft); font-size:16px; line-height:1.72; }
+    .content strong { color:#fff; font-weight:800; }
+    .content ul, .content ol { margin:14px 0 18px; padding-left:22px; color:var(--soft); }
+    .content li { margin:8px 0; font-size:15px; line-height:1.68; }
+    .content hr { border:0; border-top:1px solid var(--line); margin:28px 0; }
+    .table-wrap { width:100%; overflow-x:auto; margin:20px 0 26px; border:1px solid var(--line); background:rgba(0,0,0,.18); }
+    table { width:100%; border-collapse:collapse; min-width:560px; }
+    th, td { text-align:left; vertical-align:top; border-bottom:1px solid rgba(255,255,255,.08); padding:13px 14px; font-size:14px; line-height:1.58; color:var(--soft); }
+    th { font-family:JetBrains Mono, monospace; font-size:11px; letter-spacing:1.2px; text-transform:uppercase; color:var(--amber); background:rgba(255,179,0,.055); }
+    tr:last-child td { border-bottom:0; }
+    code { color:var(--amber); background:rgba(255,179,0,.08); padding:.1em .35em; }
+    footer { border-top:1px solid var(--line); padding:28px 0 36px; color:var(--muted); font-size:12px; }
+    footer a { color:rgba(232,232,232,.68); text-decoration:none; }
+    footer a:hover { color:var(--amber); }
+    @media (max-width:640px) { .shell { width:min(100% - 28px, 980px); } .nav { min-height:58px; } header.hero { padding:44px 0 24px; } .purpose { font-size:16px; } .content { padding:22px; } .content p { font-size:15px; } .content li { font-size:14px; } .actions { flex-direction:column; } .btn { width:100%; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="../index.html"><span class="mark">HM</span><span>HugoMojo</span></a>
+      <a class="toplink" href="../access.html">Access</a>
+    </div>
+  </div>
+  <header class="hero shell">
+    <div class="eyebrow"><span class="dot"></span>Master Key Action System</div>
+    <h1>Market Fit Model</h1>
+    <p class="purpose">Understand why your result points to a starting path, not a personality label.</p>
+    <div class="actions">
+      <a class="btn" href="hugomojo-market-fit-model.md">Download Plain Text</a>
+      <a class="btn secondary" href="../access.html">Back To Delivery</a>
+    </div>
+  </header>
+  <main class="article shell">
+    <section class="content">
+<h1>HugoMojo | Market Fit Model</h1>
+<p><strong>Product:</strong> Master Key Action System <strong>Purpose:</strong> Understand why your result points to a starting path, not a personality label.</p>
+<hr>
+<h2>01 · The Core Problem</h2>
+<p>Most AI income advice starts with tactics:</p>
+<ul>
+<li>Start freelancing.</li>
+<li>Make digital products.</li>
+<li>Build automations.</li>
+<li>Create content.</li>
+<li>Sell prompts.</li>
+</ul>
+<p>That order creates confusion.</p>
+<p>The better question is:</p>
+<p><strong>Which path fits where I am now well enough that I can actually test it?</strong></p>
+<p>HugoMojo evaluates path fit before tactics.</p>
+<hr>
+<h2>02 · The Five Resource Signals</h2>
+<p>HugoMojo looks for patterns across five practical resource areas.</p>
+<div class="table-wrap"><table><thead><tr><th>Signal</th><th>What It Means</th></tr></thead><tbody><tr><td>Time</td><td>How much focused execution time you can realistically commit.</td></tr><tr><td>Tools</td><td>Whether your current devices and software are enough to begin.</td></tr><tr><td>Skills</td><td>Writing, judgment, systems thinking, client communication, and delivery comfort.</td></tr><tr><td>Market Access</td><td>Whether you can reach buyers, audiences, communities, or businesses.</td></tr><tr><td>Work Style</td><td>Whether you move fastest through services, assets, or systems.</td></tr></tbody></table></div>
+<p>No single answer decides your result. The path comes from the combination.</p>
+<hr>
+<h2>03 · The Three Starting Paths</h2>
+<h3>Hunter</h3>
+<p>Hunter is the service-first path.</p>
+<p>It fits users who need fast market feedback, can communicate with potential buyers, and can test one clear AI-assisted service.</p>
+<p><strong>Best first test:</strong> Send one clear service offer to 20 relevant prospects.</p>
+<p><strong>First signal to look for:</strong> Replies, objections, questions, call requests, or clear silence after outreach.</p>
+<hr>
+<h3>Artisan</h3>
+<p>Artisan is the asset-first path.</p>
+<p>It fits users who can turn one repeated problem into a template, checklist, guide, prompt pack, worksheet, or small digital product.</p>
+<p><strong>Best first test:</strong> Publish or share one small asset with a focused audience.</p>
+<p><strong>First signal to look for:</strong> Saves, clicks, replies, requests, questions, or early purchases.</p>
+<hr>
+<h3>Architect</h3>
+<p>Architect is the system-first path.</p>
+<p>It fits users who notice messy workflows, repeated business problems, and opportunities to make a process clearer with AI-assisted systems.</p>
+<p><strong>Best first test:</strong> Offer a simple workflow review to businesses with repeated operational friction.</p>
+<p><strong>First signal to look for:</strong> Someone confirms the workflow is painful, asks how it could improve, or describes a repeated process problem.</p>
+<hr>
+<h2>04 · Why Wrong Path Fit Fails</h2>
+<p>Many users do not fail because AI has no opportunity. They fail because they choose a path that does not fit their starting point.</p>
+<p>Examples:</p>
+<ul>
+<li>A fast executor spends months polishing a product before getting feedback.</li>
+<li>A quiet builder forces daily cold outreach and burns out.</li>
+<li>A systems thinker sells cheap one-off tasks instead of diagnosing higher-value workflows.</li>
+</ul>
+<p>The goal is not to choose the most impressive path. The goal is to choose the path you can test with the lowest friction.</p>
+<hr>
+<h2>05 · How To Use This Model</h2>
+<p>Treat your result as a starting hypothesis.</p>
+<div class="table-wrap"><table><thead><tr><th>Result</th><th>First Test</th></tr></thead><tbody><tr><td>Hunter</td><td>Test service demand first.</td></tr><tr><td>Artisan</td><td>Test asset demand first.</td></tr><tr><td>Architect</td><td>Test workflow pain first.</td></tr></tbody></table></div>
+<p>Then use market feedback to adjust.</p>
+<p><strong>HugoMojo gives direction. The market gives evidence.</strong></p>
+<hr>
+<h2>06 · Final Rule</h2>
+<p>Do not switch paths before you collect a signal.</p>
+<p>A signal can be:</p>
+<ul>
+<li>A reply.</li>
+<li>A save.</li>
+<li>A click.</li>
+<li>A buyer question.</li>
+<li>A workflow problem.</li>
+<li>A clear reason to adjust.</li>
+</ul>
+<p>The value is not knowing your type. The value is knowing what to do next.</p>
+<hr>
+<h2>Disclaimer</h2>
+<p>HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">hugomojo.com · Educational use only · No income guarantee · <a href="../contact.html">Support</a></div>
+  </footer>
+</body>
+</html>

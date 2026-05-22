@@ -1,54 +1,96 @@
-# HugoMojo Prompt Library Index
+# HugoMojo | Prompt Library Index
 
-The prompt library is organized by path and versioned over time.
+**Product:** Annual Access Delivery  
+**Purpose:** Keep prompts organized by path, use case, and version.
 
-## Hunter Library
+---
+
+## 01 · Library Structure
+
+The prompt library is organized around action, not inspiration.
+
+| Path | Main Use |
+| --- | --- |
+| Hunter | Offers, outreach, proposals, delivery, and follow-up. |
+| Artisan | Product ideas, small assets, sales pages, pricing, and feedback. |
+| Architect | Workflow reviews, discovery questions, proposals, and process documentation. |
+
+---
+
+## 02 · Hunter Library
 
 ### Offer And Outreach
 
-- Hunter-Offer-v1: Turn a skill into a simple service offer.
-- Hunter-Outreach-v1: Write 20 direct outreach messages.
-- Hunter-Proposal-v1: Convert client needs into a simple proposal.
+- Hunter Offer Builder.
+- Hunter Outreach Writer.
+- Hunter Objection Response.
+- Hunter Proposal Draft.
 
 ### Delivery
 
-- Hunter-Delivery-v1: Turn client input into a fast first draft.
-- Hunter-Review-v1: Prepare a client update and next-step email.
+- Hunter Delivery Checklist.
+- Hunter Client Update.
+- Hunter Follow-Up Email.
 
-## Artisan Library
+---
+
+## 03 · Artisan Library
 
 ### Product Creation
 
-- Artisan-Idea-v1: Convert knowledge into small product ideas.
-- Artisan-Page-v1: Draft a simple product page.
-- Artisan-Pricing-v1: Pick a practical first price.
+- Artisan Asset Builder.
+- Artisan Product Outline.
+- Artisan Sales Page.
+- Artisan Pricing Check.
 
-### Publishing
+### Publishing And Feedback
 
-- Artisan-Content-v1: Write posts that explain the product problem.
-- Artisan-Feedback-v1: Turn buyer feedback into product changes.
+- Artisan Launch Message.
+- Artisan Feedback Review.
+- Artisan Product Update.
 
-## Architect Library
+---
+
+## 04 · Architect Library
 
 ### Discovery And Audit
 
-- Architect-Audit-v1: Map a small business workflow.
-- Architect-Discovery-v1: Prepare discovery questions.
-- Architect-Proposal-v1: Turn a workflow gap into a proposal.
+- Architect Workflow Review.
+- Architect Discovery Questions.
+- Architect Process Diagnosis.
+- Architect Proposal Draft.
 
 ### Systems
 
-- Architect-SOP-v1: Document a repeatable workflow.
-- Architect-Retainer-v1: Create a maintenance offer.
+- Architect SOP Draft.
+- Architect Pilot Scope.
+- Architect Maintenance Offer.
 
-## Versioning Rule
+---
 
-When a prompt changes, record:
+## 05 · Versioning Rule
 
-- Old version:
-- New version:
-- Why it changed:
-- What improved:
-- What still needs testing:
+Update a prompt only when real use shows a reason to change it.
 
-Educational service only. Not financial advice. No income guarantees.
+Track:
+
+- What changed.
+- Why it changed.
+- What improved.
+- What still needs testing.
+
+Do not update prompts because a new AI trend appears. Update them because execution produced evidence.
+
+---
+
+## 06 · Final Rule
+
+The prompt library should reduce confusion, not create more options.
+
+Use one prompt, create one output, and put that output in front of the market.
+
+---
+
+## Disclaimer
+
+HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.

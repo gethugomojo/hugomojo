@@ -1,99 +1,139 @@
-# HugoMojo Market Fit Model
+# HugoMojo | Market Fit Model
 
-This model explains why HugoMojo uses three income paths instead of giving one generic AI income recommendation.
+**Product:** Master Key Action System  
+**Purpose:** Understand why your result points to a starting path, not a personality label.
 
-## 1. The Core Problem
+---
 
-Most AI income advice starts with the tactic:
+## 01 · The Core Problem
 
-- Start freelancing
-- Make digital products
-- Build automations
-- Create content
-- Sell prompts
+Most AI income advice starts with tactics:
 
-That order is backwards.
+- Start freelancing.
+- Make digital products.
+- Build automations.
+- Create content.
+- Sell prompts.
+
+That order creates confusion.
 
 The better question is:
 
-"Which path fits where I am now well enough that I can actually test it?"
+**Which path fits where I am now well enough that I can actually test it?**
 
 HugoMojo evaluates path fit before tactics.
 
-## 2. The Five Resource Signals
+---
 
-The assessment looks for patterns across five resource areas:
+## 02 · The Five Resource Signals
 
-1. Time: how much focused execution time you can actually commit.
-2. Tools: whether you have the devices and software needed for the path.
-3. Skills: writing, design, systems thinking, client communication, technical comfort.
-4. Market access: whether you can reach clients, audiences, communities, or businesses.
-5. Work style: whether you prefer fast service, asset building, or systems diagnosis.
+HugoMojo looks for patterns across five practical resource areas.
 
-No single answer decides the result. The path comes from the combination.
+| Signal | What It Means |
+| --- | --- |
+| Time | How much focused execution time you can realistically commit. |
+| Tools | Whether your current devices and software are enough to begin. |
+| Skills | Writing, judgment, systems thinking, client communication, and delivery comfort. |
+| Market Access | Whether you can reach buyers, audiences, communities, or businesses. |
+| Work Style | Whether you move fastest through services, assets, or systems. |
 
-## 3. The Three Income Paths
+No single answer decides your result. The path comes from the combination.
+
+---
+
+## 03 · The Three Starting Paths
 
 ### Hunter
 
-The Hunter path is strongest when the user needs faster proof, can handle direct communication, and can sell one clear service.
+Hunter is the service-first path.
 
-Market logic:
+It fits users who need fast market feedback, can communicate with potential buyers, and can test one clear AI-assisted service.
 
-Small businesses and solo operators often need AI-assisted work now, but do not want to learn the tools themselves.
+**Best first test:**  
+Send one clear service offer to 20 relevant prospects.
 
-Best test:
+**First signal to look for:**  
+Replies, objections, questions, call requests, or clear silence after outreach.
 
-One clear service offer sent to 20 relevant prospects.
+---
 
 ### Artisan
 
-The Artisan path is strongest when the user has knowledge, taste, or creative judgment that can be packaged into a small asset.
+Artisan is the asset-first path.
 
-Market logic:
+It fits users who can turn one repeated problem into a template, checklist, guide, prompt pack, worksheet, or small digital product.
 
-People buy templates, guides, prompt packs, and small systems when they want a shortcut to a specific result.
+**Best first test:**  
+Publish or share one small asset with a focused audience.
 
-Best test:
+**First signal to look for:**  
+Saves, clicks, replies, requests, questions, or early purchases.
 
-One small product page shared with a focused audience or community.
+---
 
 ### Architect
 
-The Architect path is strongest when the user can diagnose workflows, explain business value, and turn AI into operational improvement.
+Architect is the system-first path.
 
-Market logic:
+It fits users who notice messy workflows, repeated business problems, and opportunities to make a process clearer with AI-assisted systems.
 
-Businesses will pay more for AI when it is connected to time saved, errors reduced, or revenue protected.
+**Best first test:**  
+Offer a simple workflow review to businesses with repeated operational friction.
 
-Best test:
+**First signal to look for:**  
+Someone confirms the workflow is painful, asks how it could improve, or describes a repeated process problem.
 
-One workflow audit offer sent to businesses with a repeated operational problem.
+---
 
-## 4. Why Wrong Path Fit Fails
+## 04 · Why Wrong Path Fit Fails
 
-Many people fail because they choose the tactic that sounds exciting instead of the path that fits their constraints.
+Many users do not fail because AI has no opportunity. They fail because they choose a path that does not fit their starting point.
 
 Examples:
 
-- A quiet expert tries cold outreach every day and burns out.
-- A fast executor spends months building a digital product without feedback.
-- A systems thinker sells cheap one-off tasks instead of audits or pilots.
+- A fast executor spends months polishing a product before getting feedback.
+- A quiet builder forces daily cold outreach and burns out.
+- A systems thinker sells cheap one-off tasks instead of diagnosing higher-value workflows.
 
-The goal is not to find the trendiest tactic. The goal is to find the starting path with the lowest friction for where you are now.
+The goal is not to choose the most impressive path.  
+The goal is to choose the path you can test with the lowest friction.
 
-## 5. How To Use This Model
+---
 
-Use your HugoMojo result as a starting hypothesis:
+## 05 · How To Use This Model
 
-- Hunter: test service demand first.
-- Artisan: test product demand first.
-- Architect: test business workflow pain first.
+Treat your result as a starting hypothesis.
 
-Then use market feedback to update the path.
+| Result | First Test |
+| --- | --- |
+| Hunter | Test service demand first. |
+| Artisan | Test asset demand first. |
+| Architect | Test workflow pain first. |
 
-The assessment gives direction. The market gives evidence.
+Then use market feedback to adjust.
+
+**HugoMojo gives direction. The market gives evidence.**
+
+---
+
+## 06 · Final Rule
+
+Do not switch paths before you collect a signal.
+
+A signal can be:
+
+- A reply.
+- A save.
+- A click.
+- A buyer question.
+- A workflow problem.
+- A clear reason to adjust.
+
+The value is not knowing your type.  
+The value is knowing what to do next.
+
+---
 
 ## Disclaimer
 
-This model is educational and strategic. It is not financial advice and does not guarantee income. Actual results depend on your effort, skills, market conditions, and individual circumstances.
+HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.

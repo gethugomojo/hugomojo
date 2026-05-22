@@ -1,172 +1,180 @@
-# HugoMojo Master Key 90-Day Roadmap
+# HugoMojo | Master Key 90-Day Roadmap
 
-Master Key is for users who are not sure one path is enough yet.
+**Product:** Master Key Action System  
+**Purpose:** Compare all three paths, choose one primary path, keep one backup path, and run a structured signal test.
 
-It unlocks all three Action Systems so you can compare Hunter, Artisan, and Architect, choose a primary path, keep a backup path, and run a 90-day signal test without getting distracted by every new AI tactic.
+---
 
-Your job is not to try every AI idea. Your job is to find the first path that creates real signal.
+## 01 · The Master Key Rule
 
-## 1. The Three-Path Decision Model
+Your job is not to try every AI idea.
 
-| Path | Best For | First Market Test | Main Risk | Good Signal |
-| --- | --- | --- | --- | --- |
-| Hunter | People who need faster feedback and can sell a service | 20 targeted outreach messages | Too many offers, vague positioning | Replies, calls, small paid trials |
-| Artisan | People with knowledge, taste, or creative judgment | One small digital product page | Building too long without feedback | Clicks, saves, replies, early purchases |
-| Architect | People who see systems and business workflows | One AI workflow audit offer | Selling tools instead of business outcomes | Audit calls, workflow pain, pilot requests |
+Your job is to find the first path that creates real signal.
 
-Your job is not to "try everything." Your job is to find which path produces real signal with where you are now.
+Master Key unlocks Hunter, Artisan, and Architect so you can compare paths without restarting every week.
 
-## 2. How To Choose Your Primary Path
+---
+
+## 02 · Three-Path Decision Model
+
+| Path | Best First Test | Main Risk | Good Signal |
+| --- | --- | --- | --- |
+| Hunter | 20 targeted outreach messages | Too many vague offers | Replies, objections, calls, small paid trials |
+| Artisan | One small digital asset shared with a focused audience | Building too long without feedback | Saves, clicks, replies, early purchases |
+| Architect | One workflow review offer sent to businesses | Selling tools instead of business outcomes | Audit calls, process pain, pilot requests |
+
+Choose based on what you can test, not what sounds most impressive.
+
+---
+
+## 03 · How To Choose Your Primary Path
 
 Use these rules:
 
-- If you need the fastest market feedback, choose Hunter.
-- If you hate ongoing client communication but can package knowledge, choose Artisan.
-- If you can diagnose business workflows and explain value, choose Architect.
-- If two paths feel close, choose the one with the clearest customer access.
+- Choose Hunter if you need fast buyer feedback and can message people directly.
+- Choose Artisan if you can turn one repeated problem into a small useful asset.
+- Choose Architect if you notice messy processes and can explain business value.
+- If two paths feel close, choose the one with clearer market access.
 - If all three feel possible, choose the one you can test in the next 7 days.
 
-Do not choose based on which path sounds most impressive. Choose based on what you can actually execute.
+Keep one backup path, but do not work on it until your primary test gives evidence.
 
-## 3. Phase 1: 14-Day Signal Test - Days 1 To 14
+---
 
-Goal: find the first sign that the market cares.
+## 04 · Phase 1: 14-Day Signal Test
+
+**Goal:** Find the first sign that the market cares.
 
 Actions:
 
-- Choose one primary path.
-- Choose one backup path, but do not work on it yet.
-- Define one customer or audience.
-- Create one offer, product idea, or audit angle.
-- Put it in front of at least 20 people or one focused audience channel.
-- Track replies, clicks, objections, saves, calls, or questions.
+1. Choose one primary path.
+2. Choose one backup path.
+3. Define one customer or audience.
+4. Create one offer, asset, or audit angle.
+5. Put it in front of at least 20 people or one focused audience channel.
+6. Track replies, clicks, saves, objections, calls, questions, or silence.
 
 What counts as signal:
 
 - Someone asks a specific follow-up question.
 - Someone requests a sample, call, or link.
 - Someone clicks or saves the offer.
-- Someone tells you the problem is real.
+- Someone says the problem is real.
 - Someone pays, even a small amount.
 
 What does not count as signal:
 
 - You like the idea.
 - AI says the idea is good.
-- A friend says "cool."
-- The product looks polished but no one sees it.
+- A friend says it is interesting.
+- The asset looks polished but no one sees it.
+
+---
+
+## 05 · Phase 1 Decision
 
 At the end of 14 days, choose one:
 
-- Continue the primary path if it created real response.
-- Narrow the niche if the response was weak but the problem still feels real.
-- Switch to the backup path only if you can explain what failed.
+| Decision | When To Choose It |
+| --- | --- |
+| Continue | The path created real response. |
+| Narrow | Response was weak, but the problem still feels real. |
+| Adjust | The path fits, but the audience, offer, or message was unclear. |
+| Switch | You tested honestly and can explain what failed. |
 
-## 4. Phase 2: System - Days 15 To 45
+Do not change everything at once.
 
-Goal: turn the first signal into a repeatable process.
+---
+
+## 06 · Phase 2: System Build · Days 15 To 45
+
+**Goal:** Turn the first signal into a repeatable process.
 
 Actions:
 
-- Keep the offer or product that created the best response.
+- Keep the offer, asset, or audit angle that created the best response.
 - Remove anything that caused confusion.
 - Save reusable prompts.
 - Write a delivery checklist.
 - Define the smallest paid version.
-- Create a weekly review cadence.
+- Review progress once per week.
 
 By Day 45, you should have:
 
-- One primary path
-- One tested offer or product
-- One repeatable checklist
-- One simple pricing range
-- One feedback log
-- One next test
+- One primary path.
+- One tested offer, asset, or audit angle.
+- One repeatable checklist.
+- One simple pricing range.
+- One feedback log.
+- One next test.
 
-## 5. Phase 3: Scale - Days 46 To 90
+---
 
-Goal: compound the path with real response.
+## 07 · Phase 3: Focused Growth · Days 46 To 90
+
+**Goal:** Repeat the action that produced the clearest response.
 
 Actions:
 
-- Double down on the best signal.
+- Double down on the strongest signal.
 - Cut paths with no response.
-- Package proof into a short case note or product update.
+- Package proof into a short case note, product update, or workflow summary.
 - Improve the tool stack only where it saves time.
-- Decide whether to stay with the current path, switch to the backup path, or use Annual Access for monthly recalibration.
+- Decide whether to stay with the current path, use the backup path, or recalibrate.
 
-Scaling does not mean doing more random work. It means repeating the action that produced the clearest response.
+Growth does not mean doing more random work.
 
-## 6. Tool Stack By Path
+It means repeating what produced evidence.
 
-### Hunter
+---
 
-- ChatGPT or Claude for drafting, research, and offer creation.
-- Canva for service menus, mockups, and simple delivery assets.
-- Google Docs for client delivery.
-- Make or Zapier only if your offer is automation-related.
+## 08 · Tool Stack By Path
 
-### Artisan
+| Path | Practical Tools |
+| --- | --- |
+| Hunter | ChatGPT or Claude, Google Docs, Gmail, LinkedIn, Instagram, X, Canva when needed |
+| Artisan | ChatGPT or Claude, Google Docs, Notion, Canva, Gumroad, Creem, simple payment page |
+| Architect | ChatGPT or Claude, Google Docs, Google Sheets, Loom, Make or Zapier only after the workflow pain is clear |
 
-- Claude or ChatGPT for product structure, outlines, and sales copy.
-- Canva for PDF and visual packaging.
-- Notion or Google Docs for product drafting.
-- Gumroad, Creem, or another simple checkout for the product page.
+Do not learn another tool before the first market test.
 
-### Architect
+---
 
-- Claude or ChatGPT for workflow analysis and SOP drafting.
-- Make or Zapier for no-code automation.
-- Google Sheets, Airtable, or Notion for lightweight operations.
-- Loom for walkthroughs and client explanations.
+## 09 · Weekly Review System
 
-## 7. Weekly Review System
-
-Every week, answer these five questions:
+Every week, answer:
 
 1. What did I put in front of the market?
 2. What response did I get?
-3. Which objection or question appeared most often?
+3. Which objection, question, or silence pattern appeared?
 4. What should I stop doing?
 5. What is the next smallest test?
 
 If the answer to question 1 is "nothing," the problem is not strategy. The problem is lack of market contact.
 
-## 8. Monthly Update Slots
+---
 
-Use these slots to update your plan:
-
-- Month 1: first opportunity gap briefing.
-- Month 2: tool stack update based on real usage.
-- Month 3: path correction and next offer/product recommendation.
-
-## 9. When To Switch Paths
+## 10 · When To Switch Paths
 
 Switch only when:
 
-- You ran a real 14-day test.
-- You got weak or no response.
+- You ran a real test.
+- You received weak or no response.
 - You can explain what failed.
 - Another path has a clearer customer, channel, or offer.
 
-Do not switch because you are bored or anxious. Switching too early resets your learning.
+Do not switch because you feel bored, anxious, or distracted by a new AI tactic.
 
-## 10. What Not To Change
+---
 
-During the first 14 days, do not change:
+## 11 · Final Rule
 
-- The path every time a new AI video appears.
-- The buyer group before you have contacted enough people.
-- The offer before you have heard real objections.
-- The tool stack before the problem is clear.
+HugoMojo gives you a path. The market gives you evidence.
 
-Change the path only after evidence. Adjust the wording and niche before you abandon the direction.
+Your job is to collect evidence before changing direction.
 
-## 11. Final Rule
-
-HugoMojo gives you a path. The market gives you evidence. Your job is to collect evidence before changing direction.
+---
 
 ## Disclaimer
 
-This roadmap is educational and strategic. It is not financial advice and does not guarantee income. Actual results depend on your effort, skills, market conditions, and individual circumstances.
+This roadmap is educational and strategic. It is not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.

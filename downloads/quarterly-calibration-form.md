@@ -1,58 +1,104 @@
-# HugoMojo Quarterly Calibration Form
+# HugoMojo | Quarterly Calibration Form
 
-Use this form once every 90 days. Keep answers short and concrete.
+**Product:** Annual Access Delivery  
+**Purpose:** Review one quarter of execution and decide whether to continue, narrow, adjust, or switch paths.
 
-## 1. Current Path
+---
 
-- Primary path this quarter: Hunter / Artisan / Architect
-- Backup path, if any:
-- Did you stay focused on one path? Yes / No
+## 01 · Current Path
 
-## 2. Execution Record
+Record your current direction.
 
-- What did you do each week?
-- How many market actions did you take? Examples: outreach messages, product page visits, calls booked, offers sent, tests published.
-- What did you build or ship?
-- What did you avoid or delay?
+| Field | Answer |
+| --- | --- |
+| Primary path | Hunter / Artisan / Architect |
+| Backup path |  |
+| Current niche direction |  |
+| Main offer, asset, or workflow review |  |
+| Did you stay focused on one path? | Yes / No |
 
-## 3. Market Feedback
+---
 
-- What got replies, clicks, saves, calls, sales, or useful feedback?
-- What got silence?
-- What objection appeared more than once?
-- What surprised you?
+## 02 · Execution Record
 
-## 4. Bottleneck
+Summarize what actually happened.
 
-Pick the main bottleneck:
+| Question | Answer |
+| --- | --- |
+| What did you do each week? |  |
+| What did you ship or publish? |  |
+| How many market actions did you take? |  |
+| What did you avoid or delay? |  |
+| Which tool or tactic distracted you most? |  |
+
+Market actions can include outreach messages, product page visits, calls booked, offers sent, tests published, feedback requests, or workflow conversations.
+
+---
+
+## 03 · Market Feedback
+
+Track evidence, not feelings.
+
+| Signal Type | Notes |
+| --- | --- |
+| Replies |  |
+| Clicks or saves |  |
+| Calls or conversations |  |
+| Objections |  |
+| Silence patterns |  |
+| Useful feedback |  |
+
+---
+
+## 04 · Main Bottleneck
+
+Choose the strongest bottleneck.
 
 - Offer is unclear.
 - Audience or niche is too broad.
 - Outreach volume is too low.
-- Product is too abstract.
+- Asset is too general.
+- Workflow value is hard to explain.
 - Skill gap is slowing delivery.
 - Time is inconsistent.
-- Confidence or perfectionism is blocking action.
-- Other:
+- Perfectionism is blocking action.
+- The path may not fit current resources.
 
-## 5. Next Quarter Decision
+---
 
-Choose one:
+## 05 · Next Quarter Decision
 
-- Stay: same path, same offer, more volume.
-- Adjust: same path, better niche or offer.
-- Pivot: switch primary path.
+Choose one decision.
 
-Why?
+| Decision | Use When |
+| --- | --- |
+| Continue | The path created real signal. |
+| Narrow | The path fits, but the niche is too broad. |
+| Adjust | The audience, offer, format, or message needs work. |
+| Switch | You tested honestly and can explain why this path is not working. |
 
-## 6. Next Three Actions
+Decision:
 
-1.
-2.
-3.
+Reason:
 
-## 7. Notes For HugoMojo Calibration
+---
 
-What do you want the next calibration note to help you decide?
+## 06 · Next Three Actions
 
-Educational service only. Not financial advice. No income guarantees.
+Choose actions small enough to complete.
+
+1. 
+2. 
+3. 
+
+---
+
+## 07 · Calibration Note
+
+Use this space to write the decision you want your next calibration to clarify.
+
+---
+
+## Disclaimer
+
+HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.

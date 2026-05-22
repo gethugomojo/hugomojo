@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Master Key Prompt Library — HugoMojo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0a0a0b; --panel:#111114; --panel2:#151518; --text:#f2f2f2; --soft:rgba(224,224,228,.78); --muted:rgba(190,190,196,.64); --line:rgba(255,255,255,.10); --amber:#ffb300; --amber2:rgba(255,179,0,.12); }
+    * { box-sizing:border-box; }
+    html { background:var(--bg); }
+    body { margin:0; color:var(--text); background:radial-gradient(circle at 16% 0%, rgba(255,179,0,.10), transparent 34%), radial-gradient(circle at 90% 10%, rgba(255,255,255,.045), transparent 28%), var(--bg); font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    body::after { content:""; position:fixed; inset:0; pointer-events:none; opacity:.018; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E"); }
+    .shell { width:min(980px, calc(100% - 36px)); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:10; background:rgba(10,10,11,.88); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+    .nav { min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; }
+    .mark { display:grid; place-items:center; width:34px; height:34px; border:1px solid rgba(255,179,0,.36); background:#050505; color:var(--amber); font-family:Archivo Black, Inter, sans-serif; font-size:15px; letter-spacing:.5px; }
+    .brand span:last-child { font-family:JetBrains Mono, monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:rgba(242,242,242,.82); }
+    .toplink { color:rgba(232,232,232,.68); font-family:JetBrains Mono, monospace; font-size:12px; letter-spacing:.3px; text-decoration:none; }
+    .toplink:hover { color:var(--amber); }
+    header.hero { padding:78px 0 38px; }
+    .eyebrow { display:inline-flex; gap:10px; align-items:center; font-family:JetBrains Mono, monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+    .dot { width:7px; height:7px; border-radius:50%; background:var(--amber); box-shadow:0 0 18px rgba(255,179,0,.7); }
+    h1 { margin:0; max-width:820px; font-family:Archivo Black, Inter, sans-serif; font-size:clamp(38px, 7vw, 72px); line-height:.96; letter-spacing:0; text-transform:uppercase; }
+    .purpose { max-width:760px; margin:24px 0 0; color:var(--soft); font-size:18px; line-height:1.68; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 18px; border:1px solid rgba(255,179,0,.4); background:var(--amber); color:#09090a; text-decoration:none; font-weight:800; font-size:14px; }
+    .btn.secondary { background:rgba(255,255,255,.035); color:var(--text); border-color:var(--line); }
+    main.article { padding:20px 0 88px; }
+    .content { border:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018)); box-shadow:0 28px 70px rgba(0,0,0,.58); padding:clamp(24px, 5vw, 48px); }
+    .content h1 { display:none; }
+    .content h2 { margin:46px 0 16px; padding-top:12px; border-top:1px solid var(--line); font-family:JetBrains Mono, monospace; font-size:13px; letter-spacing:1.7px; text-transform:uppercase; color:var(--amber); }
+    .content h2:first-child { margin-top:0; }
+    .content h3 { margin:28px 0 10px; font-size:22px; line-height:1.28; color:#fff; }
+    .content p { margin:13px 0; color:var(--soft); font-size:16px; line-height:1.72; }
+    .content strong { color:#fff; font-weight:800; }
+    .content ul, .content ol { margin:14px 0 18px; padding-left:22px; color:var(--soft); }
+    .content li { margin:8px 0; font-size:15px; line-height:1.68; }
+    .content hr { border:0; border-top:1px solid var(--line); margin:28px 0; }
+    .table-wrap { width:100%; overflow-x:auto; margin:20px 0 26px; border:1px solid var(--line); background:rgba(0,0,0,.18); }
+    table { width:100%; border-collapse:collapse; min-width:560px; }
+    th, td { text-align:left; vertical-align:top; border-bottom:1px solid rgba(255,255,255,.08); padding:13px 14px; font-size:14px; line-height:1.58; color:var(--soft); }
+    th { font-family:JetBrains Mono, monospace; font-size:11px; letter-spacing:1.2px; text-transform:uppercase; color:var(--amber); background:rgba(255,179,0,.055); }
+    tr:last-child td { border-bottom:0; }
+    code { color:var(--amber); background:rgba(255,179,0,.08); padding:.1em .35em; }
+    footer { border-top:1px solid var(--line); padding:28px 0 36px; color:var(--muted); font-size:12px; }
+    footer a { color:rgba(232,232,232,.68); text-decoration:none; }
+    footer a:hover { color:var(--amber); }
+    @media (max-width:640px) { .shell { width:min(100% - 28px, 980px); } .nav { min-height:58px; } header.hero { padding:44px 0 24px; } .purpose { font-size:16px; } .content { padding:22px; } .content p { font-size:15px; } .content li { font-size:14px; } .actions { flex-direction:column; } .btn { width:100%; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="../index.html"><span class="mark">HM</span><span>HugoMojo</span></a>
+      <a class="toplink" href="../access.html">Access</a>
+    </div>
+  </div>
+  <header class="hero shell">
+    <div class="eyebrow"><span class="dot"></span>Master Key Action System</div>
+    <h1>Master Key Prompt Library</h1>
+    <p class="purpose">Turn your path into offers, assets, audits, weekly reviews, and better next decisions.</p>
+    <div class="actions">
+      <a class="btn" href="master-key-prompt-library.md">Download Plain Text</a>
+      <a class="btn secondary" href="../access.html">Back To Delivery</a>
+    </div>
+  </header>
+  <main class="article shell">
+    <section class="content">
+<h1>HugoMojo | Master Key Prompt Library</h1>
+<p><strong>Product:</strong> Master Key Action System <strong>Purpose:</strong> Turn your path into offers, assets, audits, weekly reviews, and better next decisions.</p>
+<hr>
+<h2>01 · How To Use This Library</h2>
+<p>These prompts are not magic scripts.</p>
+<p>They are decision tools for users who know AI can create income opportunities, may have tried tools or tutorials, but still need a clear path.</p>
+<p>Use them in this order:</p>
+<ol>
+<li>Choose one primary path.</li>
+<li>Pick one niche direction.</li>
+<li>Create one first offer or asset.</li>
+<li>Run one 7-day test.</li>
+<li>Review the signal before switching paths.</li>
+</ol>
+<hr>
+<h2>02 · Path Selector Prompt</h2>
+<p><strong>Use when:</strong> You are unsure whether Hunter, Artisan, or Architect should be your primary path.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<p>Act as my AI income path strategist. Compare three paths for my current situation: Hunter, Artisan, and Architect.</p>
+<p>Here is my current context:</p>
+<ul>
+<li>Daily time available:</li>
+<li>Skills I can use:</li>
+<li>Budget:</li>
+<li>People or markets I can reach:</li>
+<li>AI experience level:</li>
+<li>Work style:</li>
+<li>What I have already tried:</li>
+<li>Where I feel stuck:</li>
+</ul>
+<p>For each path, explain:</p>
+<ol>
+<li>Why it fits.</li>
+<li>Why it might fail.</li>
+<li>The fastest first test.</li>
+<li>One niche direction.</li>
+<li>One first offer or asset.</li>
+<li>The first signal to look for.</li>
+<li>What to avoid.</li>
+</ol>
+<p>End with one recommended primary path and one backup path.</p>
+<hr>
+<h2>03 · Nothing Clicked Diagnosis</h2>
+<p><strong>Use when:</strong> You tried tools, tutorials, or side hustle ideas, but none became a clear direction.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<p>Act as a beginner-friendly AI income path diagnostician.</p>
+<p>I know AI can create income opportunities, but nothing has clicked yet.</p>
+<p>Here is what I tried:</p>
+<ul>
+<li>Tools:</li>
+<li>Tutorials:</li>
+<li>Side hustle ideas:</li>
+<li>What felt confusing:</li>
+<li>Available time:</li>
+<li>People or markets I can reach:</li>
+</ul>
+<p>Tell me:</p>
+<ol>
+<li>Which path fits where I am now.</li>
+<li>Why the previous attempt may not have clicked.</li>
+<li>One niche direction to test.</li>
+<li>One first action I can take today.</li>
+<li>What not to learn or buy yet.</li>
+</ol>
+<hr>
+<h2>04 · Hunter Offer Builder</h2>
+<p><strong>Use when:</strong> Your path is service-first and you need one simple offer.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<p>Help me create a simple AI-assisted service offer.</p>
+<p>Context:</p>
+<ul>
+<li>Buyer group:</li>
+<li>Problem they repeat:</li>
+<li>Task I can help with:</li>
+<li>Skill or experience I can use:</li>
+</ul>
+<p>Create:</p>
+<ol>
+<li>A clear offer name.</li>
+<li>A one-sentence promise.</li>
+<li>Three deliverables.</li>
+<li>A starter package.</li>
+<li>A 7-day delivery process.</li>
+<li>A short outreach message.</li>
+<li>Five likely objections and direct responses.</li>
+</ol>
+<p>Keep the offer simple enough to explain in one message.</p>
+<hr>
+<h2>05 · Hunter Outreach Prompt</h2>
+<p><strong>Use when:</strong> You need buyer feedback, not another idea.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<p>Write 10 short outreach messages for this offer.</p>
+<p>Offer:</p>
+<p>Buyer type:</p>
+<p>Problem:</p>
+<p>Rules:</p>
+<ul>
+<li>No hype.</li>
+<li>No fake compliments.</li>
+<li>Mention one specific business problem.</li>
+<li>Ask for a small next step.</li>
+<li>Keep each message under 90 words.</li>
+</ul>
+<p>The goal is not to close a perfect deal today. The goal is to create a real buyer signal.</p>
+<hr>
+<h2>06 · Artisan Asset Builder</h2>
+<p><strong>Use when:</strong> Your path is asset-first and you need a small sellable resource.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<p>Help me turn one repeated problem into a small digital asset.</p>
+<p>Context:</p>
+<ul>
+<li>Buyer or audience:</li>
+<li>Repeated problem:</li>
+<li>What they currently do instead:</li>
+<li>Format I can build quickly:</li>
+</ul>
+<p>Create:</p>
+<ol>
+<li>One product idea.</li>
+<li>A one-sentence promise.</li>
+<li>A simple outline.</li>
+<li>What is included.</li>
+<li>What is not included.</li>
+<li>A first version I can build in 7 days.</li>
+<li>One validation message.</li>
+<li>One feedback question.</li>
+</ol>
+<p>The first asset should test whether the problem is real, not become a full product on day one.</p>
+<hr>
+<h2>07 · Artisan Product Page Prompt</h2>
+<p><strong>Use when:</strong> You need a clean product page for a small asset.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<p>Write a simple product page for this digital asset.</p>
+<p>Asset:</p>
+<p>Audience:</p>
+<p>Problem:</p>
+<p>Outcome:</p>
+<p>Include:</p>
+<ul>
+<li>Headline.</li>
+<li>Subheadline.</li>
+<li>Who it is for.</li>
+<li>What is inside.</li>
+<li>Why it is useful.</li>
+<li>What it does not include.</li>
+<li>Common objections.</li>
+<li>Clear call to action.</li>
+</ul>
+<p>Tone: direct, specific, no hype.</p>
+<hr>
+<h2>08 · Architect Audit Builder</h2>
+<p><strong>Use when:</strong> Your path is system-first and you need a workflow review offer.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<p>Help me create a simple AI workflow review offer.</p>
+<p>Context:</p>
+<ul>
+<li>Business type:</li>
+<li>Repeated process:</li>
+<li>Where time, errors, or delays happen:</li>
+<li>Outcome the business likely wants:</li>
+</ul>
+<p>Create:</p>
+<ol>
+<li>Audit offer name.</li>
+<li>One-sentence promise.</li>
+<li>Five diagnostic questions.</li>
+<li>Three likely process problems.</li>
+<li>Three AI-assisted improvements.</li>
+<li>What should not be automated yet.</li>
+<li>A small paid review scope.</li>
+<li>A short outreach message.</li>
+</ol>
+<p>The goal is to reveal a repeated process problem, not build a full automation on day one.</p>
+<hr>
+<h2>09 · Architect Workflow Mapper</h2>
+<p><strong>Use when:</strong> You need to make a messy process clearer.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<p>Map this business workflow and identify practical improvement opportunities.</p>
+<p>Workflow:</p>
+<p>Current tools:</p>
+<p>Known pain:</p>
+<p>Analyze:</p>
+<ol>
+<li>Inputs.</li>
+<li>Outputs.</li>
+<li>Manual steps.</li>
+<li>Repetitive steps.</li>
+<li>Judgment-heavy steps.</li>
+<li>Risk points.</li>
+<li>AI-assisted improvements.</li>
+<li>Simple process changes.</li>
+<li>Implementation order.</li>
+</ol>
+<p>Explain everything in plain business language.</p>
+<hr>
+<h2>10 · Path Problem Diagnostic</h2>
+<p><strong>Use when:</strong> You are not sure whether the issue is the tool, niche, offer, or path.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<p>Diagnose whether my current blocker is a tool problem, niche problem, offer problem, or path problem.</p>
+<p>Current idea:</p>
+<p>AI use:</p>
+<p>Buyer:</p>
+<p>Desired action:</p>
+<p>Tell me:</p>
+<ol>
+<li>What the real blocker is.</li>
+<li>What is too vague.</li>
+<li>The first signal that would prove this direction is worth testing.</li>
+<li>The smallest 7-day test.</li>
+<li>What not to change too early.</li>
+</ol>
+<hr>
+<h2>11 · Weekly Review Prompt</h2>
+<p><strong>Use when:</strong> You need to decide what to repeat, stop, or adjust.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<p>Review my last 7 days of execution.</p>
+<p>What I did:</p>
+<p>Market response:</p>
+<p>What felt unclear:</p>
+<p>Tell me:</p>
+<ol>
+<li>What worked.</li>
+<li>What did not work.</li>
+<li>What signal appeared.</li>
+<li>What to stop.</li>
+<li>What to repeat.</li>
+<li>One next action with the highest learning value.</li>
+</ol>
+<p>Be direct. Do not give generic motivation.</p>
+<hr>
+<h2>12 · Monthly Recalibration Prompt</h2>
+<p><strong>Use when:</strong> You need to decide whether to continue, adjust, or switch.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<p>Act as my HugoMojo path calibration assistant.</p>
+<p>Original path:</p>
+<p>This month I did:</p>
+<p>Market feedback:</p>
+<p>Current blocker:</p>
+<p>Goal for next month:</p>
+<p>Tell me:</p>
+<ol>
+<li>Whether to continue, adjust, or switch path.</li>
+<li>The reason.</li>
+<li>The next three actions.</li>
+<li>One thing to stop doing.</li>
+<li>One prompt or template I should update.</li>
+</ol>
+<hr>
+<h2>13 · Final Rule</h2>
+<p>Do not use prompts to avoid action.</p>
+<p>Use one prompt, create one output, put it in front of the market, and collect one signal.</p>
+<hr>
+<h2>Disclaimer</h2>
+<p>These prompts are educational templates. They are not financial advice and do not guarantee income or business results. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">hugomojo.com · Educational use only · No income guarantee · <a href="../contact.html">Support</a></div>
+  </footer>
+</body>
+</html>

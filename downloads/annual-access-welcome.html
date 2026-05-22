@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Annual Access Welcome — HugoMojo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0a0a0b; --panel:#111114; --panel2:#151518; --text:#f2f2f2; --soft:rgba(224,224,228,.78); --muted:rgba(190,190,196,.64); --line:rgba(255,255,255,.10); --amber:#ffb300; --amber2:rgba(255,179,0,.12); }
+    * { box-sizing:border-box; }
+    html { background:var(--bg); }
+    body { margin:0; color:var(--text); background:radial-gradient(circle at 16% 0%, rgba(255,179,0,.10), transparent 34%), radial-gradient(circle at 90% 10%, rgba(255,255,255,.045), transparent 28%), var(--bg); font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    body::after { content:""; position:fixed; inset:0; pointer-events:none; opacity:.018; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E"); }
+    .shell { width:min(980px, calc(100% - 36px)); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:10; background:rgba(10,10,11,.88); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+    .nav { min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; }
+    .mark { display:grid; place-items:center; width:34px; height:34px; border:1px solid rgba(255,179,0,.36); background:#050505; color:var(--amber); font-family:Archivo Black, Inter, sans-serif; font-size:15px; letter-spacing:.5px; }
+    .brand span:last-child { font-family:JetBrains Mono, monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:rgba(242,242,242,.82); }
+    .toplink { color:rgba(232,232,232,.68); font-family:JetBrains Mono, monospace; font-size:12px; letter-spacing:.3px; text-decoration:none; }
+    .toplink:hover { color:var(--amber); }
+    header.hero { padding:78px 0 38px; }
+    .eyebrow { display:inline-flex; gap:10px; align-items:center; font-family:JetBrains Mono, monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+    .dot { width:7px; height:7px; border-radius:50%; background:var(--amber); box-shadow:0 0 18px rgba(255,179,0,.7); }
+    h1 { margin:0; max-width:820px; font-family:Archivo Black, Inter, sans-serif; font-size:clamp(38px, 7vw, 72px); line-height:.96; letter-spacing:0; text-transform:uppercase; }
+    .purpose { max-width:760px; margin:24px 0 0; color:var(--soft); font-size:18px; line-height:1.68; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 18px; border:1px solid rgba(255,179,0,.4); background:var(--amber); color:#09090a; text-decoration:none; font-weight:800; font-size:14px; }
+    .btn.secondary { background:rgba(255,255,255,.035); color:var(--text); border-color:var(--line); }
+    main.article { padding:20px 0 88px; }
+    .content { border:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018)); box-shadow:0 28px 70px rgba(0,0,0,.58); padding:clamp(24px, 5vw, 48px); }
+    .content h1 { display:none; }
+    .content h2 { margin:46px 0 16px; padding-top:12px; border-top:1px solid var(--line); font-family:JetBrains Mono, monospace; font-size:13px; letter-spacing:1.7px; text-transform:uppercase; color:var(--amber); }
+    .content h2:first-child { margin-top:0; }
+    .content h3 { margin:28px 0 10px; font-size:22px; line-height:1.28; color:#fff; }
+    .content p { margin:13px 0; color:var(--soft); font-size:16px; line-height:1.72; }
+    .content strong { color:#fff; font-weight:800; }
+    .content ul, .content ol { margin:14px 0 18px; padding-left:22px; color:var(--soft); }
+    .content li { margin:8px 0; font-size:15px; line-height:1.68; }
+    .content hr { border:0; border-top:1px solid var(--line); margin:28px 0; }
+    .table-wrap { width:100%; overflow-x:auto; margin:20px 0 26px; border:1px solid var(--line); background:rgba(0,0,0,.18); }
+    table { width:100%; border-collapse:collapse; min-width:560px; }
+    th, td { text-align:left; vertical-align:top; border-bottom:1px solid rgba(255,255,255,.08); padding:13px 14px; font-size:14px; line-height:1.58; color:var(--soft); }
+    th { font-family:JetBrains Mono, monospace; font-size:11px; letter-spacing:1.2px; text-transform:uppercase; color:var(--amber); background:rgba(255,179,0,.055); }
+    tr:last-child td { border-bottom:0; }
+    code { color:var(--amber); background:rgba(255,179,0,.08); padding:.1em .35em; }
+    footer { border-top:1px solid var(--line); padding:28px 0 36px; color:var(--muted); font-size:12px; }
+    footer a { color:rgba(232,232,232,.68); text-decoration:none; }
+    footer a:hover { color:var(--amber); }
+    @media (max-width:640px) { .shell { width:min(100% - 28px, 980px); } .nav { min-height:58px; } header.hero { padding:44px 0 24px; } .purpose { font-size:16px; } .content { padding:22px; } .content p { font-size:15px; } .content li { font-size:14px; } .actions { flex-direction:column; } .btn { width:100%; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="../index.html"><span class="mark">HM</span><span>HugoMojo</span></a>
+      <a class="toplink" href="../access.html">Access</a>
+    </div>
+  </div>
+  <header class="hero shell">
+    <div class="eyebrow"><span class="dot"></span>Annual Access Delivery</div>
+    <h1>Annual Access Welcome</h1>
+    <p class="purpose">Use Master Key as your base system, then stay oriented with monthly signals, execution tracking, and quarterly calibration.</p>
+    <div class="actions">
+      <a class="btn" href="annual-access-welcome.md">Download Plain Text</a>
+      <a class="btn secondary" href="../access.html">Back To Delivery</a>
+    </div>
+  </header>
+  <main class="article shell">
+    <section class="content">
+<h1>HugoMojo | Annual Access Welcome</h1>
+<p><strong>Product:</strong> Annual Access Delivery <strong>Purpose:</strong> Use Master Key as your base system, then stay oriented with monthly signals, execution tracking, and quarterly calibration.</p>
+<hr>
+<h2>01 · What Annual Access Provides</h2>
+<p>Annual Access is not a larger folder of files.</p>
+<p>It is a 12-month operating system for staying oriented while AI tools, markets, and income paths keep changing.</p>
+<p>The goal is simple:</p>
+<ul>
+<li>Keep one clear path visible.</li>
+<li>Track what you have tested.</li>
+<li>Notice real market signals.</li>
+<li>Recalibrate before wasting another quarter on the wrong thing.</li>
+</ul>
+<hr>
+<h2>02 · The Five Annual Layers</h2>
+<h3>Monthly Signal Reports</h3>
+<p>HugoMojo filters market changes through the three paths:</p>
+<ul>
+<li>Hunter: service demand, outreach angles, buyer conversations, platform shifts.</li>
+<li>Artisan: digital products, packaged knowledge, audience leverage, product gaps.</li>
+<li>Architect: AI systems, workflow reviews, operational pain, consulting opportunities.</li>
+</ul>
+<p>Each report should answer:</p>
+<ul>
+<li>What changed?</li>
+<li>Which opportunity matters?</li>
+<li>What should be ignored?</li>
+<li>What should be tested next?</li>
+</ul>
+<hr>
+<h3>Quarterly Path Calibration</h3>
+<p>Every quarter, review your execution and decide whether to continue, narrow, adjust, or switch.</p>
+<p>Calibration focuses on:</p>
+<ul>
+<li>Where execution is stuck.</li>
+<li>Whether the path still fits your resources.</li>
+<li>What to keep.</li>
+<li>What to stop.</li>
+<li>What to test next.</li>
+</ul>
+<hr>
+<h3>Versioned Prompt Library</h3>
+<p>The prompt library is organized by path and use case:</p>
+<ul>
+<li>Hunter prompts for offers, outreach, proposals, delivery, and follow-up.</li>
+<li>Artisan prompts for product ideas, packaging, landing pages, pricing, and feedback.</li>
+<li>Architect prompts for audits, workflow mapping, discovery, proposals, and process notes.</li>
+</ul>
+<p>Prompts are updated because AI workflows age quickly.</p>
+<hr>
+<h3>Weekly Signal Digest</h3>
+<p>The weekly digest should stay short:</p>
+<ul>
+<li>One market signal worth noticing.</li>
+<li>One useful tool or workflow change.</li>
+<li>One example or execution note.</li>
+<li>One thing to ignore.</li>
+</ul>
+<p>The point is not more noise. The point is better filtering.</p>
+<hr>
+<h3>Execution Tracker</h3>
+<p>Use the tracker to record:</p>
+<ul>
+<li>What you tested.</li>
+<li>What received replies, clicks, saves, feedback, or silence.</li>
+<li>Which prompts changed.</li>
+<li>Which milestone you reached.</li>
+<li>What you will do next.</li>
+</ul>
+<p>Over time, your execution record becomes the most valuable part of the system.</p>
+<hr>
+<h2>03 · First Member Actions</h2>
+<ol>
+<li>Save your Master Key delivery.</li>
+<li>Choose one primary path for the next 30 days.</li>
+<li>Choose one backup path.</li>
+<li>Start the execution tracker.</li>
+<li>Run one 7-day sprint.</li>
+<li>Review your first signal before changing direction.</li>
+</ol>
+<hr>
+<h2>04 · Included Annual Assets</h2>
+<ul>
+<li>Annual Member System PDF.</li>
+<li>Quarterly Calibration Form.</li>
+<li>Annual Execution Tracker Workbook.</li>
+<li>Prompt Library Index.</li>
+<li>Monthly Signal Report Template.</li>
+<li>Weekly Signal Digest Template.</li>
+<li>Full Master Key Action System.</li>
+</ul>
+<hr>
+<h2>05 · Operating Rule</h2>
+<p>Annual Access is a filter, tracker, and calibration system.</p>
+<p>It can help you avoid random action, but it cannot replace execution.</p>
+<p>Start with one path. Collect one signal. Make one better next decision.</p>
+<hr>
+<h2>Disclaimer</h2>
+<p>HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">hugomojo.com · Educational use only · No income guarantee · <a href="../contact.html">Support</a></div>
+  </footer>
+</body>
+</html>

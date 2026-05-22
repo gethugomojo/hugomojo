@@ -1,96 +1,130 @@
-# HugoMojo Annual Access Welcome
+# HugoMojo | Annual Access Welcome
 
-## What Annual Access Really Provides
+**Product:** Annual Access Delivery  
+**Purpose:** Use Master Key as your base system, then stay oriented with monthly signals, execution tracking, and quarterly calibration.
 
-Annual Access is not a larger PDF folder.
+---
+
+## 01 · What Annual Access Provides
+
+Annual Access is not a larger folder of files.
 
 It is a 12-month operating system for staying oriented while AI tools, markets, and income paths keep changing.
 
-The goal is simple: help you keep one clear path visible, track what you have already tried, and recalibrate before you waste another quarter on the wrong thing.
+The goal is simple:
 
-## The Five Layers
+- Keep one clear path visible.
+- Track what you have tested.
+- Notice real market signals.
+- Recalibrate before wasting another quarter on the wrong thing.
 
-### 1. Monthly Ecosystem Signal Reports
+---
 
-Each month, HugoMojo filters the market by path:
+## 02 · The Five Annual Layers
 
-- Hunter: fast client revenue, service demand, outreach angles, platform shifts.
+### Monthly Signal Reports
+
+HugoMojo filters market changes through the three paths:
+
+- Hunter: service demand, outreach angles, buyer conversations, platform shifts.
 - Artisan: digital products, packaged knowledge, audience leverage, product gaps.
-- Architect: B2B AI systems, automation demand, consulting offers, workflow opportunities.
+- Architect: AI systems, workflow reviews, operational pain, consulting opportunities.
 
-These are not generic tool lists. Each report answers:
+Each report should answer:
 
-- What changed this month?
+- What changed?
 - Which opportunity matters?
-- Which tool or tactic should be ignored?
-- What should you test next?
+- What should be ignored?
+- What should be tested next?
 
-### 2. Quarterly Path Calibration
+---
 
-Every quarter, you complete a short structured review. HugoMojo uses your answers to generate a written calibration note.
+### Quarterly Path Calibration
 
-The note focuses on:
+Every quarter, review your execution and decide whether to continue, narrow, adjust, or switch.
 
-- Where your execution is stuck.
-- Whether your path still fits your resources.
-- What to keep, stop, or adjust.
-- The three actions to run next quarter.
+Calibration focuses on:
 
-### 3. Versioned Prompt Library
+- Where execution is stuck.
+- Whether the path still fits your resources.
+- What to keep.
+- What to stop.
+- What to test next.
 
-The prompt library is maintained by path and use case:
+---
 
-- Hunter prompts for offers, outreach, proposals, delivery, and client follow-up.
-- Artisan prompts for product ideas, packaging, landing pages, pricing, and content.
-- Architect prompts for audits, workflow mapping, client discovery, proposals, and SOPs.
+### Versioned Prompt Library
 
-Prompts are versioned because AI workflows age quickly. A prompt that worked three months ago may need a new structure today.
+The prompt library is organized by path and use case:
 
-### 4. Weekly Signal Digest
+- Hunter prompts for offers, outreach, proposals, delivery, and follow-up.
+- Artisan prompts for product ideas, packaging, landing pages, pricing, and feedback.
+- Architect prompts for audits, workflow mapping, discovery, proposals, and process notes.
 
-Each week, members receive a short signal digest:
+Prompts are updated because AI workflows age quickly.
+
+---
+
+### Weekly Signal Digest
+
+The weekly digest should stay short:
 
 - One market signal worth noticing.
 - One useful tool or workflow change.
-- One example, tactic, or execution note.
+- One example or execution note.
 - One thing to ignore.
 
-The point is not more noise. The point is less noise.
+The point is not more noise. The point is better filtering.
 
-### 5. Execution Tracker
+---
 
-Annual Access includes a simple execution record. You track:
+### Execution Tracker
+
+Use the tracker to record:
 
 - What you tested.
-- What got replies, sales, feedback, or silence.
-- Which prompts you changed.
+- What received replies, clicks, saves, feedback, or silence.
+- Which prompts changed.
 - Which milestone you reached.
-- What you are doing next.
+- What you will do next.
 
-The longer you use it, the more valuable your own record becomes.
+Over time, your execution record becomes the most valuable part of the system.
 
-## First Member Actions
+---
 
-1. Save your Master Key results.
+## 03 · First Member Actions
+
+1. Save your Master Key delivery.
 2. Choose one primary path for the next 30 days.
-3. Complete the baseline resource profile.
-4. Set your first execution tracker milestone.
-5. Review the Annual Member System PDF.
-6. Submit quarterly calibration notes when requested.
+3. Choose one backup path.
+4. Start the execution tracker.
+5. Run one 7-day sprint.
+6. Review your first signal before changing direction.
 
-## Included Annual Assets
+---
+
+## 04 · Included Annual Assets
 
 - Annual Member System PDF.
 - Quarterly Calibration Form.
 - Annual Execution Tracker Workbook.
+- Prompt Library Index.
 - Monthly Signal Report Template.
 - Weekly Signal Digest Template.
-- Prompt Library Index.
+- Full Master Key Action System.
 
-## Operating Rule
+---
 
-Annual Access is not a promise of income. It is a filter, tracker, and calibration system for high-signal AI income opportunities.
+## 05 · Operating Rule
 
-It helps you avoid random action, but it cannot replace execution.
+Annual Access is a filter, tracker, and calibration system.
 
-Educational service only. Not financial advice. No income guarantees. Results depend on your effort, skills, market conditions, and individual circumstances.
+It can help you avoid random action, but it cannot replace execution.
+
+Start with one path. Collect one signal. Make one better next decision.
+
+---
+
+## Disclaimer
+
+HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.

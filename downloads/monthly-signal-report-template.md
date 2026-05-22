@@ -1,48 +1,80 @@
-# HugoMojo Monthly Ecosystem Signal Report Template
+# HugoMojo | Monthly Signal Report Template
 
-Use one report per path each month.
+**Product:** Annual Access Delivery  
+**Purpose:** Turn monthly AI market noise into one clearer path decision.
 
-## Path
+---
 
-Hunter / Artisan / Architect
+## 01 · Monthly Focus
 
-## One-Sentence Summary
+Use this monthly review to answer one question:
 
-This month, the highest-signal opportunity is:
+**What changed this month that should affect the next action?**
 
-## What Changed
+Do not treat this as another tool list. Use it to decide what to test, ignore, or adjust.
 
-- Market demand:
-- Platform or tool change:
-- Buyer behavior:
-- Competition level:
+---
 
-## What To Test
+## 02 · Path Signal Summary
 
-1.
-2.
-3.
+| Path | Signal To Watch | Practical Meaning |
+| --- | --- | --- |
+| Hunter | Buyer demand for fast AI-assisted services | A simple service offer may be easier to test this month. |
+| Artisan | Repeated audience problems that can become assets | A checklist, guide, template, or worksheet may be worth testing. |
+| Architect | Business workflow friction | A workflow review offer may be easier to explain. |
 
-## What To Ignore
+---
 
-- Noisy trend:
-- Tool or tactic that looks exciting but is not worth attention:
+## 03 · What Changed This Month
 
-## Suggested Offer Or Asset
+Record only changes that affect action.
 
-- Offer/product/workflow:
-- Target user:
-- Why now:
-- First test:
+| Area | Notes |
+| --- | --- |
+| Market demand |  |
+| Buyer behavior |  |
+| Tool or platform shifts |  |
+| Competition and noise |  |
 
-## Prompt Library Updates Needed
+If a change does not affect your next action, leave it out.
 
-- Prompt to update:
-- Reason:
-- Version:
+---
 
-## Member Action
+## 04 · What To Test
 
-One action to complete before the next report:
+Choose one small test for each path.
 
-Educational service only. Not financial advice. No income guarantees.
+| Path | 7-Day Test |
+| --- | --- |
+| Hunter |  |
+| Artisan |  |
+| Architect |  |
+
+Each test should be small enough to run in 7 days.
+
+---
+
+## 05 · What To Ignore This Month
+
+Name at least one distraction to avoid.
+
+- A noisy tool.
+- A tactic that looks exciting but does not fit most users.
+- A market claim without clear buyer evidence.
+- A trend that encourages switching paths too early.
+
+Ignoring noise is part of the product value.
+
+---
+
+## 06 · This Month's Action
+
+Choose one clear action:
+
+**Choose one path, run one small test, and record the signal.**
+
+---
+
+## Disclaimer
+
+HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.
