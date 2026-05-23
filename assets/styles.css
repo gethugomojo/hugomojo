@@ -10,6 +10,9 @@
   --glass: rgba(255, 255, 255, 0.018);
   --glass-border: rgba(255, 255, 255, 0.06);
   --card-shadow: 0 28px 70px rgba(0, 0, 0, 0.58);
+  --hero-title: clamp(42px, 5.6vw, 76px);
+  --delivery-title: clamp(40px, 5vw, 72px);
+  --cover-title: clamp(38px, 4.6vw, 68px);
 }
 
 * {
@@ -141,7 +144,7 @@ a {
   align-items: center;
   gap: 16px;
   font-size: 12px;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.16em;
   font-weight: 500;
   text-transform: uppercase;
   color: rgba(220, 220, 220, 0.62);
@@ -814,8 +817,9 @@ h3,
   color: var(--dim-text);
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
+  line-height: 1.6;
   font-weight: 500;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
@@ -826,7 +830,7 @@ h3,
   flex-wrap: wrap;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.16em;
 }
 
 .footer-links {
@@ -835,14 +839,62 @@ h3,
   flex-wrap: wrap;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.16em;
 }
 
 .footer a {
   color: rgba(232, 232, 232, 0.68);
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.16em;
+}
+
+.success-hero {
+  min-height: auto;
+  grid-template-columns: minmax(0, 760px) minmax(380px, 440px);
+  gap: 56px;
+  align-items: center;
+  padding: 72px 0 64px;
+}
+
+.success-hero .hero-copy {
+  margin-bottom: 28px;
+}
+
+.success-hero .hero-title {
+  font-size: var(--hero-title);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.success-hero .terminal-card {
+  width: 100%;
+}
+
+.delivery-access .page-hero {
+  padding: 64px 0 34px;
+  max-width: 860px;
+}
+
+.delivery-access .page-title {
+  font-size: var(--delivery-title);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  max-width: 780px;
+}
+
+.delivery-access .page-copy {
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(224, 224, 228, 0.80);
+}
+
+.delivery-access #today-move {
+  font-size: clamp(18px, 1.8vw, 26px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
 .footer a:hover {
@@ -883,7 +935,7 @@ h3,
   .footer-links,
   .footer a {
     font-size: 12px;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.14em;
   }
 
   .hero,
@@ -900,8 +952,24 @@ h3,
     padding: 58px 0 72px;
   }
 
+  .success-hero {
+    padding: 48px 0 44px;
+  }
+
   .hero > * + * {
     margin-top: 56px;
+  }
+
+  .success-hero > * + * {
+    margin-top: 36px;
+  }
+
+  .delivery-access .page-hero {
+    padding: 42px 0 28px;
+  }
+
+  .delivery-access .page-copy {
+    font-size: 17px;
   }
 
   .hero-copy {
@@ -940,6 +1008,15 @@ h3,
   .hero-title {
     font-size: clamp(36px, 10.6vw, 42px);
     line-height: 1.05;
+  }
+
+  .success-hero .hero-title {
+    font-size: clamp(38px, 10.6vw, 44px);
+  }
+
+  .delivery-access .page-title {
+    font-size: clamp(38px, 10.6vw, 44px);
+    line-height: 1.06;
   }
 
   .hero-copy,
