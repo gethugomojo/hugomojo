@@ -1,13 +1,13 @@
-# HugoMojo | Annual Access Welcome
+# HugoMojo | Signal Review Welcome
 
-**Product:** Annual Access Delivery  
-**Purpose:** Use Master Key as your base system, then stay oriented with monthly signals, execution tracking, and quarterly calibration.
+**Product:** Signal Review Membership Delivery
+**Purpose:** Use Master Key as your base system, then stay oriented with monthly signals, execution tracking, and path review.
 
 ---
 
-## 01 · What Annual Access Provides
+## 01 · What Signal Review Provides
 
-Annual Access is not a larger folder of files.
+Signal Review Membership is not a larger folder of files.
 
 It is a 12-month operating system for staying oriented while AI tools, markets, and income paths keep changing.
 
@@ -20,9 +20,9 @@ The goal is simple:
 
 ---
 
-## 02 · The Five Annual Layers
+## 02 · The Five Review Layers
 
-### Monthly Signal Reports
+### Monthly Path Reviews
 
 HugoMojo filters market changes through the three paths:
 
@@ -30,7 +30,7 @@ HugoMojo filters market changes through the three paths:
 - Artisan: digital products, packaged knowledge, audience leverage, product gaps.
 - Architect: AI systems, workflow reviews, operational pain, consulting opportunities.
 
-Each report should answer:
+Each monthly review should answer:
 
 - What changed?
 - Which opportunity matters?
@@ -39,7 +39,7 @@ Each report should answer:
 
 ---
 
-### Quarterly Path Calibration
+### Path Review
 
 Every quarter, review your execution and decide whether to continue, narrow, adjust, or switch.
 
@@ -65,9 +65,9 @@ Prompts are updated because AI workflows age quickly.
 
 ---
 
-### Weekly Signal Digest
+### Weekly Signal Check
 
-The weekly digest should stay short:
+The weekly signal check should stay short:
 
 - One market signal worth noticing.
 - One useful tool or workflow change.
@@ -103,21 +103,21 @@ Over time, your execution record becomes the most valuable part of the system.
 
 ---
 
-## 04 · Included Annual Assets
+## 04 · Included Signal Review Assets
 
-- Annual Member System PDF.
-- Quarterly Calibration Form.
-- Annual Execution Tracker Workbook.
+- Signal Review Membership Guide.
+- Path Review Form.
+- Signal Execution Tracker Workbook.
 - Prompt Library Index.
-- Monthly Signal Report Template.
-- Weekly Signal Digest Template.
+- Monthly Path Review Template.
+- Weekly Signal Check Template.
 - Full Master Key Action System.
 
 ---
 
 ## 05 · Operating Rule
 
-Annual Access is a filter, tracker, and calibration system.
+Signal Review Membership is a filter, tracker, and review system.
 
 It can help you avoid random action, but it cannot replace execution.
 

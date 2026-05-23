@@ -1,6 +1,6 @@
-# HugoMojo | Monthly Signal Report Template
+# HugoMojo | Monthly Path Review Template
 
-**Product:** Annual Access Delivery  
+**Product:** Signal Review Membership Delivery
 **Purpose:** Turn monthly AI market noise into one clearer path decision.
 
 ---

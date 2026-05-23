@@ -32,6 +32,9 @@
       <p class="page-copy" id="access-copy">
         Start with today's move. You do not need to master every AI tool first.
       </p>
+      <p class="page-copy" style="max-width:760px; margin-top:16px;">
+        The value is not knowing your type. The value is knowing what to do next. Use the 7-day sprint to test one path, collect one signal, and stop switching ideas every week.
+      </p>
       <p class="meta-line">Support: hi@hugomojo.com</p>
     </section>
 
@@ -74,6 +77,40 @@
           Do not read everything passively. Start with today's move, then use the 7-day sprint to collect your first signal.
         </p>
         <div class="timeline" id="delivery-sequence"></div>
+      </div>
+    </section>
+
+    <section class="section" id="signal-review-upsell" style="display:none; padding-top:20px;">
+      <div class="panel" style="border:1px solid rgba(255,179,0,0.20); background:rgba(255,179,0,0.035);">
+        <div class="label">Signal Review Membership</div>
+        <h3>Want help reading your signals after the sprint?</h3>
+        <p class="card-copy">
+          Signal Review Membership helps you submit what happened, review your first signals, and decide what to adjust next.
+        </p>
+        <div class="grid-2" style="margin-top:22px;">
+          <div class="delivery-card">
+            <div class="label">Weekly Signal Check</div>
+            <p class="card-copy">Submit what you did and what happened.</p>
+          </div>
+          <div class="delivery-card">
+            <div class="label">Monthly Path Review</div>
+            <p class="card-copy">See whether your path still fits or needs adjustment.</p>
+          </div>
+          <div class="delivery-card">
+            <div class="label">Latest Field Notes</div>
+            <p class="card-copy">Learn from current tests, patterns, and examples.</p>
+          </div>
+          <div class="delivery-card">
+            <div class="label">Next-Move Recommendations</div>
+            <p class="card-copy">Know what to continue, stop, or change next.</p>
+          </div>
+        </div>
+        <p class="card-copy" style="margin-top:18px;">
+          Step 1 — Find your path. Step 2 — Run your Action System. Step 3 — Review your signal.
+        </p>
+        <div class="cta-row" style="margin-top:24px;">
+          <a class="btn-secondary" href="https://www.creem.io/payment/prod_3BtB5cRkL48ynkqCFPfssW" data-event="upsell_click" data-plan="annual_access" data-price="199">Upgrade to Signal Review</a>
+        </div>
       </div>
     </section>
 
@@ -136,8 +173,8 @@
         steps: ["Read your match.", "Pick one niche direction.", "Use the beginner tool stack.", "Take today's 30-minute move.", "Run the 7-day sprint."]
       },
       annual: {
-        title: "Annual Access Delivery",
-        copy: "Annual access starts with the full Master Key package plus the Annual Member System: signals, prompts, execution tracking, and quarterly calibration.",
+        title: "Signal Review Membership Delivery",
+        copy: "Signal Review Membership starts with the full Master Key package, then helps you submit signals, review what happened, and decide what to adjust next.",
         items: [
           roles.H,
           roles.A,
@@ -145,15 +182,15 @@
           { title: "HugoMojo Market Fit Model", copy: "The diagnostic model behind Hunter, Artisan, and Architect: resource signals, market logic, and path-fit rules.", file: "downloads/hugomojo-market-fit-model.html" },
           { title: "Master Key Prompt Library", copy: "Reusable prompts for path selection, offers, products, audits, and weekly reviews.", file: "downloads/master-key-prompt-library.html" },
           { title: "90-Day Roadmap", copy: "Signal, system, and scale sequence for the first three months.", file: "downloads/master-key-90-day-roadmap.html" },
-          { title: "Annual Member System PDF", copy: "The five-layer annual system: monthly signal reports, quarterly calibration, prompt library, weekly digest, and execution tracker.", file: "downloads/annual-access-member-system.pdf" },
-          { title: "Annual Access Welcome", copy: "Member orientation, first actions, and operating rules.", file: "downloads/annual-access-welcome.html" },
-          { title: "Quarterly Calibration Form", copy: "Structured 90-day review form for path adjustment and next-quarter planning.", file: "downloads/quarterly-calibration-form.html" },
-          { title: "Annual Execution Tracker Workbook", copy: "Professional XLSX workbook with HM branding, dashboard, execution log, prompt library, monthly review, and quarterly calibration sheets.", file: "downloads/hugomojo-annual-execution-tracker.xlsx" },
+          { title: "Signal Review Membership Guide", copy: "The membership system: weekly signal check, monthly path review, latest field notes, and next-move recommendations.", file: "downloads/annual-access-member-system.pdf" },
+          { title: "Signal Review Welcome", copy: "Member orientation, first actions, and operating rules.", file: "downloads/annual-access-welcome.html" },
+          { title: "Path Review Form", copy: "Structured review form for path adjustment and next-move planning.", file: "downloads/quarterly-calibration-form.html" },
+          { title: "Signal Execution Tracker", copy: "Professional XLSX workbook with HM branding, dashboard, execution log, signal review, and path review sheets.", file: "downloads/hugomojo-annual-execution-tracker.xlsx" },
           { title: "Prompt Library Index", copy: "Path-based prompt structure with versioning rules for future updates.", file: "downloads/prompt-vault-index.html" },
-          { title: "Monthly Signal Report Template", copy: "Template for ecosystem updates by path.", file: "downloads/monthly-signal-report-template.html" },
-          { title: "Weekly Signal Digest Template", copy: "Short member digest format for signal filtering.", file: "downloads/weekly-signal-digest-template.html" }
+          { title: "Monthly Path Review Template", copy: "Template for reviewing path fit and signal patterns.", file: "downloads/monthly-signal-report-template.html" },
+          { title: "Weekly Signal Check Template", copy: "Short member check format for signal filtering and next-move review.", file: "downloads/weekly-signal-digest-template.html" }
         ],
-        steps: ["Read your match.", "Pick one niche direction.", "Use the beginner tool stack.", "Take today's 30-minute move.", "Run the 7-day sprint."]
+        steps: ["Find your path with the scanner.", "Run your Action System and collect one signal.", "Submit what happened for review.", "Review what to continue, stop, or change.", "Take the next move."]
       }
     };
 
@@ -239,6 +276,8 @@
         document.getElementById("single-upsell").style.display = "block";
         const upsellLink = document.querySelector("#single-upsell a");
         if (upsellLink) upsellLink.href = MASTER_KEY_CHECKOUT_URL;
+      } else if (plan === "master") {
+        document.getElementById("signal-review-upsell").style.display = "block";
       }
     }
 

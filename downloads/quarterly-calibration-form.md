@@ -1,6 +1,6 @@
-# HugoMojo | Quarterly Calibration Form
+# HugoMojo | Path Review Form
 
-**Product:** Annual Access Delivery  
+**Product:** Signal Review Membership Delivery
 **Purpose:** Review one quarter of execution and decide whether to continue, narrow, adjust, or switch paths.
 
 ---
@@ -93,9 +93,9 @@ Choose actions small enough to complete.
 
 ---
 
-## 07 · Calibration Note
+## 07 · Review Note
 
-Use this space to write the decision you want your next calibration to clarify.
+Use this space to write the decision you want your next review to clarify.
 
 ---
 

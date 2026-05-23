@@ -78,20 +78,22 @@
         </p>
         <div class="cta-row" id="success-actions">
           <a class="btn-primary" id="primary-action" href="access.html?plan=single&role=H" data-event="delivery_access" data-plan="single_pass">Access My Action System</a>
-          <a class="btn-secondary" id="continue-delivery" href="https://www.creem.io/payment/prod_3BtB5cRkL48ynkqCFPfssW" data-event="upsell_click" data-plan="annual_access" data-price="199" style="display:none;">Upgrade To Annual Access</a>
+          <a class="btn-secondary" id="continue-delivery" href="https://www.creem.io/payment/prod_3BtB5cRkL48ynkqCFPfssW" data-event="upsell_click" data-plan="annual_access" data-price="199" style="display:none;">Upgrade To Signal Review</a>
         </div>
         <div class="next-steps" id="next-steps"></div>
         <p class="meta-line" id="success-meta">Digital delivery · educational product only</p>
       </div>
       <aside class="terminal-card" id="annual-upsell-card" style="display:none;">
-        <div class="label">Upgrade Math</div>
-        <h2 style="font-size:34px; margin:18px 0 24px;">Annual Access</h2>
-        <div class="terminal-stat"><span class="stat-name">Annual access</span><span class="stat-value">$199</span></div>
+        <div class="label">Optional Review Layer</div>
+        <h2 style="font-size:34px; margin:18px 0 18px;">Signal Review Membership</h2>
+        <p class="card-copy" style="margin-bottom:18px;">Run the sprint. Submit your signals. Get your next move reviewed.</p>
+        <div class="terminal-stat"><span class="stat-name">Signal Review</span><span class="stat-value">$199/yr</span></div>
         <div class="terminal-stat"><span class="stat-name">Billing</span><span class="stat-value">Yearly</span></div>
         <div class="terminal-stat"><span class="stat-name">Master Key package</span><span class="stat-value">Included</span></div>
-        <div class="terminal-stat"><span class="stat-name">Monthly signal reports</span><span class="stat-value">Included</span></div>
-        <div class="terminal-stat"><span class="stat-name">Prompt library updates</span><span class="stat-value">Included</span></div>
-        <div class="terminal-stat"><span class="stat-name">Quarterly calibration</span><span class="stat-value">Included</span></div>
+        <div class="terminal-stat"><span class="stat-name">Weekly Signal Check</span><span class="stat-value">Included</span></div>
+        <div class="terminal-stat"><span class="stat-name">Monthly Path Review</span><span class="stat-value">Included</span></div>
+        <div class="terminal-stat"><span class="stat-name">Latest Field Notes</span><span class="stat-value">Included</span></div>
+        <div class="terminal-stat"><span class="stat-name">Next-Move Recommendations</span><span class="stat-value">Included</span></div>
       </aside>
     </section>
   </main>
@@ -148,15 +150,15 @@
       annual: [
         {
           title: "Open your delivery hub",
-          copy: "Your Annual Access resources are ready."
+          copy: "Your Signal Review Membership resources are ready."
         },
         {
           title: "Start with your Action System",
           copy: "Use your path system before adding more tools."
         },
         {
-          title: "Use tracking and calibration",
-          copy: "Use monthly signals and quarterly calibration to adjust."
+          title: "Review your first signals",
+          copy: "Use signal checks and path review to decide what to adjust."
         }
       ]
     };
@@ -182,22 +184,22 @@
 
     if (plan === "master") {
       title.textContent = "Your Master Key Is Ready";
-      copy.textContent = "You now have all three paths: Hunter, Artisan, and Architect. Access your Action System now, or optionally upgrade to Annual Access for monthly signal reports, prompt updates, execution tracking, and quarterly path calibration.";
+      copy.textContent = "You now have all three paths: Hunter, Artisan, and Architect. Access your Action System now, or optionally add Signal Review to review what happened after your 7-day sprint and decide what to adjust next.";
       setPrimary("Access My Action System", "access.html?plan=master", "delivery_access", "master_key");
       continueLink.style.display = "";
-      continueLink.textContent = "Upgrade To Annual Access";
+      continueLink.textContent = "Upgrade To Signal Review";
       continueLink.href = "https://www.creem.io/payment/prod_3BtB5cRkL48ynkqCFPfssW";
       continueLink.dataset.event = "upsell_click";
       continueLink.dataset.plan = "annual_access";
       continueLink.dataset.price = "199";
       annualCard.style.display = "";
-      meta.textContent = "Optional annual upgrade · one-time annual access";
+      meta.textContent = "Optional Signal Review upgrade · yearly membership";
       renderNextSteps(stepSets.master);
     } else if (plan === "annual" || plan === "vault") {
-      title.textContent = "Your Annual Access Is Ready";
-      copy.textContent = "Open your annual delivery page to start with your Action System, tracking tools, and calibration resources.";
-      setPrimary("Access My Annual Delivery", "access.html?plan=annual", "delivery_access", "annual_access");
-      meta.textContent = "Annual Access delivery · educational product only";
+      title.textContent = "Your Signal Review Membership Is Ready";
+      copy.textContent = "Open your delivery page to start with your Action System, signal checks, field notes, and next-move review resources.";
+      setPrimary("Access My Signal Review Delivery", "access.html?plan=annual", "delivery_access", "annual_access");
+      meta.textContent = "Signal Review Membership delivery · educational product only";
       renderNextSteps(stepSets.annual);
     } else if (plan === "single") {
       const safeRole = ["H", "A", "C"].includes(role) ? role : "H";

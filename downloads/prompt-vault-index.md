@@ -1,6 +1,6 @@
 # HugoMojo | Prompt Library Index
 
-**Product:** Annual Access Delivery  
+**Product:** Signal Review Membership Delivery
 **Purpose:** Keep prompts organized by path, use case, and version.
 
 ---

@@ -312,13 +312,13 @@ Be direct. Do not give generic motivation.
 
 ---
 
-## 12 · Monthly Recalibration Prompt
+## 12 · Monthly Path Review Prompt
 
 **Use when:** You need to decide whether to continue, adjust, or switch.
 
 **Copy-ready prompt:**
 
-Act as my HugoMojo path calibration assistant.
+Act as my HugoMojo path review assistant.
 
 Original path:
 

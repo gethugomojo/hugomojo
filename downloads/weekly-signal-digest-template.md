@@ -1,6 +1,6 @@
-# HugoMojo | Weekly Signal Digest Template
+# HugoMojo | Weekly Signal Check Template
 
-**Product:** Annual Access Delivery  
+**Product:** Signal Review Membership Delivery
 **Purpose:** Keep your week focused on one useful signal instead of more AI noise.
 
 ---

@@ -1184,6 +1184,21 @@ function showResult(type) {
       <div style="font-size:20px; color:#fff; font-weight:800; line-height:1.35;">${t.actionLine}</div>
       <div style="font-size:12px; color:rgba(224,224,228,0.66); line-height:1.6; margin-top:8px;">Not next month. Today.</div>
     </div>
+    <div style="border:1px solid rgba(255,179,0,0.20); background:rgba(255,179,0,0.035); padding:16px; margin:18px 0; text-align:left;">
+      <div style="font-size:14px; color:#fff; line-height:1.75; font-weight:700;">You do not need another AI-generated list. You need a path filter.</div>
+      <div style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7; margin-top:8px;">AI gives you more options. HugoMojo gives you the path filter.</div>
+      <div style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7;">The value is not knowing your type. The value is knowing what to do next.</div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr; gap:10px; margin:18px 0; text-align:left;">
+      <div style="border:1px solid var(--glass-border); background:rgba(255,255,255,0.015); padding:14px;">
+        <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:10px;">FREE RESULT SHOWS</div>
+        <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ your likely path<br>✓ why you are stuck<br>✓ what to avoid next</div>
+      </div>
+      <div style="border:1px solid rgba(255,179,0,0.24); background:rgba(255,179,0,0.025); padding:14px;">
+        <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:10px;">PAID UNLOCK GIVES</div>
+        <div style="font-size:13px; color:rgba(224,224,228,0.82); line-height:1.8;">✓ niche direction<br>✓ first offer<br>✓ today's 30-minute move<br>✓ 7-day signal sprint<br>✓ copy-paste AI prompt<br>✓ what to adjust if no signal</div>
+      </div>
+    </div>
     <div style="border:1px solid var(--glass-border); background:rgba(255,255,255,0.018); padding:16px; margin:18px 0; text-align:left;">
       <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:12px;">UNLOCK YOUR ACTION SYSTEM</div>
       ${t.lockedBenefits.map(item => `<div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ ${item}</div>`).join("")}
@@ -1194,22 +1209,25 @@ function showResult(type) {
     <div class="pricing-stack" id="pricing-options">
       <a class="pay-option muted" href="${CHECKOUT_URLS.single[type]}" data-event="checkout_click" data-plan="${singlePlan}" data-price="9.90">
         <div class="pay-tag">Single Pass</div>
-        <div class="pay-name"><span>Matched Action System</span><span class="pay-price">$9.90</span></div>
-        <div class="pay-note">Matched action system + starter offer + 7-day sprint</div>
+        <div class="pay-name"><span>Action System · instant digital access</span><span class="pay-price">$9.90</span></div>
+        <div class="pay-note">
+          <div>Inside: niche direction, first offer, today's 30-minute move, 7-day signal sprint, copy-paste AI prompt, what to avoid, and what to adjust if no signal.</div>
+        </div>
       </a>
       <a class="pay-option featured" href="${CHECKOUT_URLS.master}" data-event="checkout_click" data-plan="master_key" data-price="19.90">
         <div class="pay-tag">Recommended</div>
-        <div class="pay-name"><span>Master Key · full action system</span><span class="pay-price">$19.90</span></div>
-        <div class="pay-note">All 3 paths + prompts + templates + 90-day implementation roadmap</div>
+        <div class="pay-name"><span>Master Key · all three paths</span><span class="pay-price">$19.90</span></div>
+        <div class="pay-note">Compare Hunter, Artisan, and Architect. Choose your primary path, keep a backup path, and use the 90-day roadmap.</div>
       </a>
-      <!-- Annual option hidden for launch focus. Keep checkout code and data attributes intact.
+      <!-- Signal Review option hidden for launch focus. Keep checkout code and data attributes intact.
       <a class="pay-option" href="${CHECKOUT_URLS.annual}" data-event="checkout_click" data-plan="annual_vault" data-price="199">
-        <div class="pay-tag">Annual Access</div>
-        <div class="pay-name"><span>Monthly toolkits + private access</span><span class="pay-price">$199</span></div>
-        <div class="pay-note">Full Master Key + monthly progress review + quarterly recalibration</div>
+        <div class="pay-tag">Signal Review Membership</div>
+        <div class="pay-name"><span>Signal checks + next-move review</span><span class="pay-price">$199</span></div>
+        <div class="pay-note">Run the sprint. Submit your signals. Get your next move reviewed.</div>
       </a>
       -->
     </div>
+    <p style="margin-top: 14px; font-size: 12px; line-height: 1.55; color: rgba(218,218,222,0.68); letter-spacing: 0.4px;">Instant digital access. Educational product only. Not an income guarantee.</p>
     <p style="margin-top: 20px; font-size: 12px; line-height: 1.55; color: var(--hope-glow); letter-spacing: 1.4px; font-family: 'JetBrains Mono'; text-transform: uppercase;">Start before you overthink again.</p>
     <p style="margin-top: 20px; font-size: 12px; line-height: 1.55; color: rgba(218,218,222,0.66); letter-spacing: 0.6px; font-family: 'JetBrains Mono';">Secure digital delivery · Access available immediately · hi@hugomojo.com</p>
   `;
