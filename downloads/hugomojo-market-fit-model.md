@@ -1,7 +1,6 @@
 # HugoMojo | Market Fit Model
 
-**Product:** Master Key Action System  
-**Purpose:** Understand why your result points to a starting path, not a personality label.
+This guide explains why your result points to a starting path, not a personality label.
 
 ---
 

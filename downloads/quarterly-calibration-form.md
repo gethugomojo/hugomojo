@@ -1,7 +1,6 @@
 # HugoMojo | Path Review Form
 
-**Product:** Signal Review Membership Delivery
-**Purpose:** Review one quarter of execution and decide whether to continue, narrow, adjust, or switch paths.
+Use this form to review one quarter of execution and decide whether to continue, narrow, adjust, or switch paths.
 
 ---
 

@@ -1,7 +1,6 @@
 # HugoMojo | Monthly Path Review Template
 
-**Product:** Signal Review Membership Delivery
-**Purpose:** Turn monthly AI market noise into one clearer path decision.
+Use this monthly review to turn AI market noise into one clearer path decision.
 
 ---
 

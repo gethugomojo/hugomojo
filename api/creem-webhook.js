@@ -2,8 +2,7 @@ const crypto = require("crypto");
 const {
   PRODUCTS,
   json,
-  getMailerLiteGroupId,
-  addSubscriberToMailerLite
+  sendDeliveryEmailWithResend
 } = require("./_delivery-config");
 
 const GRANT_EVENTS = new Set([
@@ -95,30 +94,25 @@ module.exports = async function handler(req, res) {
     return json(res, 400, { ok: false, error: "Customer email is missing.", eventType, productId });
   }
 
-  const groupId = getMailerLiteGroupId(product.groupEnv);
+  const idempotencyKey = [
+    "hugomojo-delivery",
+    productId,
+    object.order?.id || object.id || email,
+    eventType
+  ].join(":");
 
   try {
-    await addSubscriberToMailerLite({
+    await sendDeliveryEmailWithResend({
       email,
-      groupId,
-      fields: {
-        name: customer.name || "",
-        hm_plan: product.plan,
-        hm_role: product.role,
-        hm_product_id: productId,
-        hm_event_type: eventType,
-        hm_order_id: object.order?.id || "",
-        hm_checkout_id: object.id || "",
-        hm_access_url: product.accessUrl
-      }
+      product,
+      idempotencyKey
     });
   } catch (error) {
     return json(res, 500, {
       ok: false,
       error: error.message,
       eventType,
-      productId,
-      groupEnv: product.groupEnv
+      productId
     });
   }
 
@@ -128,6 +122,7 @@ module.exports = async function handler(req, res) {
     productId,
     plan: product.plan,
     role: product.role,
+    delivery: "resend",
     email
   });
 };

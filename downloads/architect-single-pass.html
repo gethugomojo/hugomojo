@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>HugoMojo Architect AI Income Path & Niche Action System</title>
+  <title>HugoMojo Architect Action System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -21,25 +21,35 @@
     h1 { font-size:var(--cover-title); line-height:1.04; letter-spacing:-.035em; margin:32px 0 18px; max-width:980px; }
     .subtitle { color:var(--muted); max-width:760px; font-size:clamp(16px,1.3vw,20px); line-height:1.6; }
     .role { color:var(--amber); font-family:"JetBrains Mono",monospace; letter-spacing:.18em; font-size:12px; margin-top:0; }
-    section { margin:38px 0; }
-    .section-kicker { color:var(--amber); font-size:12px; margin-bottom:16px; }
-    h2 { font-size:var(--section-title); line-height:1.15; letter-spacing:-.02em; margin:0 0 14px; }
+    section { margin:24px 0; border:1px solid var(--line); background:var(--panel); padding:24px; border-radius:16px; box-shadow:0 18px 60px rgba(0,0,0,.14); }
+    .section-kicker { color:var(--amber); font-size:11px; line-height:1.35; letter-spacing:.16em; margin-bottom:12px; }
+    h2 { display:block; color:var(--text); font-size:clamp(22px,2.2vw,30px); line-height:1.2; letter-spacing:-.015em; margin:0 0 12px; }
+    .formula-text { color:var(--text); font-weight:800; font-size:clamp(18px,1.7vw,24px); line-height:1.35; margin:10px 0 12px; }
     p { color:var(--muted); margin:0 0 14px; font-size:16px; line-height:1.72; }
     .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
     .cards-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
-    .card, .action, .priority, .offer { border:1px solid var(--line); background:var(--panel); padding:22px; border-radius:18px; box-shadow:0 18px 60px rgba(0,0,0,.18); }
+    .card, .action { border:1px solid var(--line); background:var(--panel); padding:22px; border-radius:16px; box-shadow:0 18px 60px rgba(0,0,0,.14); }
     .signal { display:flex; align-items:flex-start; gap:10px; color:var(--muted); border:1px solid var(--line); background:rgba(255,255,255,.018); padding:15px 16px; border-radius:16px; font-size:15px; line-height:1.55; }
+    .brief-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:18px; }
+    .brief-item, .log-cell { border:1px solid var(--line); background:rgba(255,255,255,.018); border-radius:14px; padding:14px 15px; color:var(--muted); font-size:15px; line-height:1.58; }
+    .brief-label, .log-label { color:var(--amber); font-family:"JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.12em; font-size:11px; line-height:1.35; margin-bottom:8px; }
+    .scan-brief { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    .scan-brief-item { border:1px solid var(--line); background:rgba(255,255,255,.018); border-radius:14px; padding:14px 15px; }
+    .scan-brief-item p { margin:0; color:rgba(236,236,239,.82); font-size:15px; line-height:1.58; }
+    .log-grid { display:grid; gap:10px; margin-top:18px; }
+    .log-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+    .log-row.header .log-cell { color:var(--amber); font-family:"JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.14em; font-size:10px; }
     .check { color:var(--amber); flex:0 0 auto; }
     .tag { color:var(--amber); font-size:10px; margin-bottom:10px; }
     ul { margin:10px 0 0; padding-left:18px; color:var(--muted); }
     li { margin:7px 0; font-size:15px; line-height:1.68; }
-    .priority { background:var(--amber2); border-color:rgba(255,179,0,.28); }
-    .priority strong, .offer strong { display:block; color:var(--text); font-size:22px; line-height:1.25; margin-top:6px; }
+    .priority, .offer { border-left:2px solid rgba(255,179,0,.45); }
+    .priority h2 + p, .offer .formula-text + p { margin-top:0; }
     .sprint { display:grid; gap:10px; }
     .day { border:1px solid var(--line); padding:14px 16px; color:var(--muted); background:rgba(255,255,255,.018); border-radius:14px; font-size:15px; line-height:1.6; }
     pre { max-width:100%; white-space:pre-wrap; background:#070708; border:1px solid var(--line); padding:18px; overflow:auto; color:rgba(236,236,239,.82); border-radius:16px; font-size:14px; line-height:1.65; }
     footer { border-top:1px solid var(--line); margin-top:56px; padding-top:22px; color:var(--soft); font-size:12px; line-height:1.6; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; }
-    @media (max-width:760px) { .page { padding:24px 18px 52px; } .cover { padding:24px 22px; min-height:auto; margin-bottom:28px; gap:22px; } .grid, .cards-3 { grid-template-columns:1fr; } h1 { font-size:clamp(38px,10vw,42px); line-height:1.05; letter-spacing:-.025em; margin:24px 0 14px; overflow-wrap:break-word; } .subtitle { line-height:1.55; } h2 { font-size:clamp(26px,8vw,32px); } p { font-size:16px; } li { font-size:15px; } .card, .action, .priority, .offer { padding:20px; } .signal, .day { font-size:14px; } footer { font-size:12px; } }
+    @media (max-width:760px) { .page { padding:24px 18px 52px; } .cover { padding:24px 22px; min-height:auto; margin-bottom:28px; gap:22px; } .grid, .cards-3, .brief-grid, .scan-brief, .log-row { grid-template-columns:1fr; } h1 { font-size:clamp(38px,10vw,42px); line-height:1.05; letter-spacing:-.025em; margin:24px 0 14px; overflow-wrap:break-word; } .subtitle { line-height:1.55; } h2, .formula-text { font-size:clamp(22px,7vw,28px); } p { font-size:16px; } li { font-size:15px; } section, .card, .action { padding:20px; } .signal, .day, .brief-item, .log-cell { font-size:14px; } footer { font-size:12px; } }
   </style>
 </head>
 <body>
@@ -47,14 +57,33 @@
     <header class="cover">
       <div>
         <div class="brand">HugoMojo</div>
-        <h1>Architect AI Income Path & Niche Action System</h1>
-        <p class="subtitle">A focused action system for people who know AI can create opportunities, notice messy processes, and need a system-first starting path.</p>
+        <h1>Architect Action System</h1>
+        <p class="subtitle">A focused starting path for people who notice messy processes and need one system-first test.</p>
       </div>
       <div>
         <div class="role">THE ARCHITECT</div>
-        <p class="subtitle">If AI felt overwhelming or nothing clicked, start with one path, one repeated process, and one business signal.</p>
+        <p class="subtitle">Use this to confirm one workflow pain before selling automation.</p>
+      </div>
+      <div class="scan-brief" data-role="C">
+        <div class="scan-brief-item"><div class="brief-label">Match Reason</div><p data-scan-field="match">Workflow pain and business process clarity are your strongest starting point.</p></div>
+        <div class="scan-brief-item"><div class="brief-label">Real Constraint</div><p data-scan-field="constraint">Review one concrete process before selling automation or complex systems.</p></div>
+        <div class="scan-brief-item"><div class="brief-label">Today's Action</div><p data-scan-field="today">Ask 5 businesses about one repeated intake, follow-up, admin, or reporting process.</p></div>
       </div>
     </header>
+
+    <section class="priority">
+      <div class="section-kicker">MISSION BRIEF</div>
+      <strong>Your first job is to prove one workflow pain, not sell complex automation.</strong>
+      <p>Complete the move, record the signal, then adjust one variable instead of restarting the whole path.</p>
+      <div class="brief-grid">
+        <div class="brief-item"><div class="brief-label">Path</div>Architect: workflow-first validation.</div>
+        <div class="brief-item"><div class="brief-label">7-Day Focus</div>One process. Five conversations. Sell the review before automation.</div>
+        <div class="brief-item"><div class="brief-label">Do Not</div>Sell automation before the pain is confirmed.</div>
+        <div class="brief-item"><div class="brief-label">Signal</div>Confirmed pain, audit interest, process details, or pilot request.</div>
+        <div class="brief-item"><div class="brief-label">Tool</div>Use AI to create questions and a review outline.</div>
+        <div class="brief-item"><div class="brief-label">Decision</div>Continue, narrow, or rewrite after 7 days.</div>
+      </div>
+    </section>
 
     <section>
       <div class="section-kicker">01 · BEGINNER STARTING POINT</div>
@@ -64,15 +93,14 @@
 
     <section class="priority">
       <div class="section-kicker">02 · WHAT THIS SYSTEM IS FOR</div>
-      <strong>The value is not knowing your type. The value is knowing what to do next.</strong>
-      <p>This is not a personality label. This Action System is designed to help you choose one starting path, take one visible action, and collect one real signal within 7 days.</p>
-      <p>Your first signal may be a reply, a saved idea, a buyer reaction, a workflow problem, or a clear reason to adjust.</p>
-      <p>The goal is not to master every AI tool. The goal is to stop switching ideas and make one better next move.</p>
+      <h2>The value is knowing what to do next.</h2>
+      <p>Use this as a 7-day operating plan: one workflow, one review angle, one visible test.</p>
+      <p>The goal is to stop switching ideas and make one better next move from real process signal.</p>
     </section>
 
     <section class="priority">
       <div class="section-kicker">03 · WHY YOU'RE STUCK</div>
-      <strong>You may see how things could work better, but you need to turn that into a simple business outcome.</strong>
+      <h2>Turn process insight into one simple business outcome.</h2>
     </section>
 
     <section>
@@ -96,14 +124,15 @@
 
     <section class="priority">
       <div class="section-kicker">07 · TODAY'S 30-MINUTE MOVE</div>
-      <strong>Take one small action today.</strong>
+      <h2>Take one small action today.</h2>
       <ul><li>Pick one business type.</li><li>Pick one repeated process.</li><li>Write 5 questions about where time is lost.</li><li>Message 5 businesses asking how they handle it.</li></ul>
     </section>
 
     <section class="offer">
       <div class="section-kicker">08 · FIRST OFFER</div>
+      <h2>Use this first offer formula.</h2>
       <div class="tag">FORMULA</div>
-      <strong>I help [business] review [messy process] and find simple AI-assisted improvements so they can [business outcome].</strong>
+      <p class="formula-text">I help [business] review [messy process] and find simple AI-assisted improvements so they can [business outcome].</p>
       <p>Your first workflow review is meant to reveal a repeated process problem, not build a full automation on day one.</p>
     </section>
 
@@ -114,36 +143,89 @@
     </section>
 
     <section>
-      <div class="section-kicker">10 · COPY-PASTE PROMPT</div>
+      <div class="section-kicker">10 · FIRST SIGNAL LOG</div>
+      <h2>Record what happened before you judge the path.</h2>
+      <p>Do not decide from mood. Decide from signal. Fill this in after each visible action.</p>
+      <div class="log-grid">
+        <div class="log-row header"><div class="log-cell">Action Taken</div><div class="log-cell">Market Response</div><div class="log-cell">Next Adjustment</div></div>
+        <div class="log-row"><div class="log-cell">Messaged 5 businesses about one repeated process.</div><div class="log-cell">Confirmed pain, questions, objections, or silence.</div><div class="log-cell">Narrow the business type or process.</div></div>
+        <div class="log-row"><div class="log-cell">Asked 5 diagnostic workflow questions.</div><div class="log-cell">Repeated friction, missed steps, or admin pain.</div><div class="log-cell">Turn the clearest pain into an audit outline.</div></div>
+        <div class="log-row"><div class="log-cell">Shared a simple workflow review idea.</div><div class="log-cell">Interest, confusion, or request for details.</div><div class="log-cell">Translate the offer into a business outcome.</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-kicker">11 · COPY-PASTE PROMPT</div>
       <pre>Act as a beginner-friendly workflow consultant. Help me create a simple workflow review offer. Business: [business]. Process: [process]. Problem: [problem]. Create: one offer sentence, five diagnostic questions, one outreach message, and three business outcomes to mention.</pre>
     </section>
 
     <section>
-      <div class="section-kicker">11 · USE THIS WITH YOUR AI PATH AGENT</div>
-      <p>This system is designed to work with AI, not replace it. Use the prompt below to turn your path into a concrete next move.</p>
-      <pre>Act as my HugoMojo Path Agent. My path is Architect. Help me identify one messy workflow I can review for a small business, then write a simple workflow audit offer.</pre>
+      <div class="section-kicker">12 · USE THIS WITH AI</div>
+      <p>Use the prompt below to turn your path into a concrete next move.</p>
+      <pre>Act as my practical AI assistant. My path is Architect. Help me identify one messy workflow I can review for a small business, then write a simple workflow audit offer.</pre>
     </section>
 
     <section>
-      <div class="section-kicker">12 · WHAT TO AVOID</div>
+      <div class="section-kicker">13 · WHAT TO AVOID</div>
       <div class="grid"><div class="signal"><span class="check">✓</span><span>complex enterprise systems</span></div><div class="signal"><span class="check">✓</span><span>vague AI transformation</span></div><div class="signal"><span class="check">✓</span><span>selling automation before finding the pain</span></div><div class="signal"><span class="check">✓</span><span>technical builds you cannot explain simply</span></div><div class="signal"><span class="check">✓</span><span>buyers who do not repeat the process often</span></div><div class="signal"><span class="check">✓</span><span>Do not switch paths before you collect a signal.</span></div><div class="signal"><span class="check">✓</span><span>Do not learn another tool as a way to avoid the first action.</span></div><div class="signal"><span class="check">✓</span><span>Do not judge the path from one quiet day.</span></div><div class="signal"><span class="check">✓</span><span>Do not turn the first sprint into a full business plan.</span></div></div>
     </section>
 
     <section>
-      <div class="section-kicker">13 · IF YOU GET NO SIGNAL</div>
+      <div class="section-kicker">14 · IF YOU GET NO SIGNAL</div>
       <p>No signal does not mean you failed. It means the first test gave you information. Adjust one variable, not everything at once.</p>
       <div class="grid"><div class="signal"><span class="check">✓</span><span>Adjust the audience or business type.</span></div><div class="signal"><span class="check">✓</span><span>Adjust the problem or process.</span></div><div class="signal"><span class="check">✓</span><span>Adjust the offer.</span></div><div class="signal"><span class="check">✓</span><span>Adjust the format.</span></div><div class="signal"><span class="check">✓</span><span>Adjust the message.</span></div><div class="signal"><span class="check">✓</span><span>Do not sell automation yet.</span></div><div class="signal"><span class="check">✓</span><span>If nothing clicked before, test whether the process pain is real before building.</span></div></div>
     </section>
 
     <section>
-      <div class="section-kicker">14 · DISCLAIMER</div>
+      <div class="section-kicker">15 · DISCLAIMER</div>
       <p>HugoMojo is an educational assessment service, not financial advice or an income guarantee. Actual results depend on your effort, skills, market conditions, and individual circumstances.</p>
     </section>
 
     <footer>
       <span>hugomojo.com</span>
-      <span>Educational use only · No income guarantee</span>
+      <span>Support: hi@hugomojo.com</span>
     </footer>
   </main>
+  <script>
+    (function() {
+      const wrap = document.querySelector('.scan-brief');
+      if (!wrap) return;
+      const role = wrap.dataset.role;
+      const fallbacks = {
+        H: {
+          match: 'Buyer contact is your fastest useful signal.',
+          constraint: 'Keep the first test small: one buyer group, one simple offer, five messages.',
+          today: 'Message 5 potential buyers with one simple AI-assisted offer.'
+        },
+        A: {
+          match: 'A small asset fits better than chasing more client conversations.',
+          constraint: 'Validate one repeated problem before spending time building the product.',
+          today: 'Ask 10 people whether they repeat one narrow problem before building the asset.'
+        },
+        C: {
+          match: 'Workflow pain and business process clarity are your strongest starting point.',
+          constraint: 'Review one concrete process before selling automation or complex systems.',
+          today: 'Ask 5 businesses about one repeated intake, follow-up, admin, or reporting process.'
+        }
+      };
+      let saved = null;
+      try {
+        const raw = localStorage.getItem('hm_scan_result');
+        saved = raw ? JSON.parse(raw) : null;
+      } catch (error) {}
+      const fallback = fallbacks[role] || fallbacks.H;
+      const useSaved = saved && saved.role === role;
+      const reasons = useSaved && Array.isArray(saved.reasons) ? saved.reasons.filter(Boolean) : [];
+      const data = {
+        match: useSaved ? (saved.matchReason || reasons[0] || fallback.match) : fallback.match,
+        constraint: useSaved ? (saved.constraint || reasons[1] || fallback.constraint) : fallback.constraint,
+        today: useSaved ? (saved.todayMove || fallback.today) : fallback.today
+      };
+      ['match', 'constraint', 'today'].forEach(key => {
+        const el = wrap.querySelector('[data-scan-field="' + key + '"]');
+        if (el) el.textContent = data[key];
+      });
+    })();
+  </script>
 </body>
 </html>

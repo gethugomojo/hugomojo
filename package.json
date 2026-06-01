@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "check": "node scripts/check-site.js"
+  },
+  "devDependencies": {}
+}

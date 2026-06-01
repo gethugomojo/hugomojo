@@ -1,7 +1,6 @@
 # HugoMojo | Weekly Signal Check Template
 
-**Product:** Signal Review Membership Delivery
-**Purpose:** Keep your week focused on one useful signal instead of more AI noise.
+Use this weekly check to stay focused on one useful signal instead of more AI noise.
 
 ---
 

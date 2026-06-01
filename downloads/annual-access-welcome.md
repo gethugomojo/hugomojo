@@ -1,7 +1,6 @@
 # HugoMojo | Signal Review Welcome
 
-**Product:** Signal Review Membership Delivery
-**Purpose:** Use Master Key as your base system, then stay oriented with monthly signals, execution tracking, and path review.
+Use Master Key as your base system, then stay oriented with monthly signals, execution tracking, and path review.
 
 ---
 
@@ -53,9 +52,9 @@ Calibration focuses on:
 
 ---
 
-### Versioned Prompt Library
+### AI Prompt Guide
 
-The prompt library is organized by path and use case:
+The guide is organized by path and use case:
 
 - Hunter prompts for offers, outreach, proposals, delivery, and follow-up.
 - Artisan prompts for product ideas, packaging, landing pages, pricing, and feedback.
@@ -108,7 +107,7 @@ Over time, your execution record becomes the most valuable part of the system.
 - Signal Review Membership Guide.
 - Path Review Form.
 - Signal Execution Tracker Workbook.
-- Prompt Library Index.
+- AI Prompt Guide.
 - Monthly Path Review Template.
 - Weekly Signal Check Template.
 - Full Master Key Action System.

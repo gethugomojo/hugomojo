@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>HugoMojo — AI Income Path Assessment</title>
-<meta name="description" content="Take the free AI Income Scanner to find your starting path, niche direction, and first action for earning with AI.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HugoMojo — AI Income Niche Scanner</title>
+<meta name="description" content="Take the free scanner to find your AI income niche and first clear move based on your current constraints.">
+<link rel="canonical" href="https://hugomojo.com/scanner.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HugoMojo">
+<meta property="og:title" content="HugoMojo — AI Income Niche Scanner">
+<meta property="og:description" content="Take the free scanner to find your AI income niche and first clear move based on your current constraints.">
+<meta property="og:url" content="https://hugomojo.com/scanner.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HugoMojo — AI Income Niche Scanner">
+<meta name="twitter:description" content="Take the free scanner to find your AI income niche and first clear move based on your current constraints.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;500;600;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -29,6 +38,18 @@
   padding: 0;
   cursor: default;
   -webkit-tap-highlight-color: transparent;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .btn-opt,
@@ -96,7 +117,7 @@ body::after {
 }
 
 .scanner-intro h1 {
-  font-size: clamp(22px, 5.8vw, 28px);
+  font-size: clamp(24px, 6vw, 30px);
   margin-bottom: 6px;
   letter-spacing: -0.5px;
   text-transform: none;
@@ -104,8 +125,8 @@ body::after {
 
 .scanner-intro p {
   color: var(--soft-text);
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: 15px;
+  line-height: 1.55;
 }
 
 .scanner-intro-kicker {
@@ -118,7 +139,7 @@ body::after {
 }
 
 .vault-link {
-  position: fixed;
+  position: absolute;
   top: 22px;
   left: 50%;
   width: calc(100vw - 40px);
@@ -180,7 +201,10 @@ body::after {
   pointer-events: none;
 }
 
-h1 {
+h1,
+.screen-title,
+.question-title,
+.result-name {
   font-family: 'Archivo Black', sans-serif;
   font-size: 44px;
   line-height: 1.2;
@@ -195,10 +219,14 @@ h1 {
 }
 
 #q-h {
-  font-size: clamp(24px, 4vw, 32px);
-  line-height: 1.08;
-  letter-spacing: -0.8px;
+  display: none;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(28px, 4.4vw, 34px);
+  line-height: 1.1;
+  letter-spacing: 0;
+  font-weight: 900;
   max-width: 100%;
+  text-transform: none;
 }
 
 .sub-title {
@@ -214,27 +242,31 @@ h1 {
 
 #q-t {
   color: var(--readable-text);
-  font-size: 18px;
-  line-height: 1.5;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.28;
+  font-weight: 600;
   text-shadow: 0 0 18px rgba(255,255,255,0.04);
 }
 
 .btn-opt {
   width: 100%;
-  min-height: 56px;
-  padding: 16px 18px;
+  min-height: 60px;
+  padding: 17px 18px;
   margin-bottom: 10px;
   border: 1px solid rgba(255,255,255,0.04);
   border-radius: 15px;
   background: transparent;
   color: rgba(234, 234, 234, 0.82);
+  font-family: 'Inter', sans-serif;
   text-align: left;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   transition: all 0.4s ease;
   position: relative;
   white-space: normal;
-  line-height: 1.48;
+  line-height: 1.55;
   overflow-wrap: anywhere;
   word-break: normal;
 }
@@ -265,11 +297,47 @@ h1 {
 
 .match-percent {
   font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(76px, 20vw, 100px);
+  font-size: clamp(42px, 12vw, 58px);
   color: #fff;
   filter: drop-shadow(0 0 30px var(--hope-soft));
-  line-height: 1;
-  margin-bottom: 15px;
+  line-height: 0.96;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.match-score-small {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 179, 0, 0.32);
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.result-match-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+  margin: 0 auto 16px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 179, 0, 0.34);
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.result-match-row span {
+  white-space: nowrap;
 }
 
 .cta-buy {
@@ -379,19 +447,103 @@ h1 {
   text-transform: uppercase;
 }
 
+.answer-diagnostic {
+  margin: 18px 0 22px;
+  padding: 16px;
+  border: 1px solid rgba(255,179,0,0.24);
+  border-radius: 16px;
+  background: rgba(255,179,0,0.035);
+  text-align: left;
+}
+
+.answer-diagnostic-title {
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.answer-diagnostic-list {
+  display: grid;
+  gap: 8px;
+}
+
+.answer-diagnostic-item {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 8px;
+  color: rgba(236,236,239,0.82);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.answer-diagnostic-item span:first-child {
+  color: var(--hope-glow);
+}
+
+.answer-diagnostic-decision {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.mechanism-proof {
+  margin: 14px 0 16px;
+  padding: 15px 16px;
+  border: 1px solid rgba(255,179,0,0.18);
+  border-radius: 18px;
+  background: rgba(255,179,0,0.03);
+  text-align: left;
+}
+
+.mechanism-proof-title {
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.mechanism-proof-copy {
+  color: rgba(236,236,239,0.84);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.6;
+}
+
 .pricing-stack {
   display: grid;
   gap: 12px;
-  margin: 28px 0;
+  margin: 20px 0 24px;
+}
+
+.unlock-choice-title {
+  margin: 20px 0 10px;
+  color: var(--hope-glow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: uppercase;
 }
 
 .pay-option {
   display: block;
   width: 100%;
-  padding: 20px;
+  padding: 20px 20px 18px;
   border: 1px solid var(--glass-border);
   border-radius: 18px;
-  background: rgba(255,255,255,0.012);
+  background: rgba(255,255,255,0.018);
   text-align: left;
   color: var(--readable-text);
   text-decoration: none;
@@ -403,6 +555,11 @@ h1 {
   border-color: var(--hope-deep);
 }
 
+.pay-option.muted {
+  border-color: rgba(255, 179, 0, 0.28);
+  background: rgba(255, 179, 0, 0.026);
+}
+
 .pay-option.featured {
   border-color: rgba(255, 179, 0, 0.42);
   background: rgba(255, 179, 0, 0.055);
@@ -411,8 +568,7 @@ h1 {
 }
 
 .pay-tag,
-.pay-name,
-.pay-note {
+.pay-name {
   font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;
 }
@@ -443,19 +599,66 @@ h1 {
 
 .pay-note {
   margin-top: 9px;
-  color: rgba(210, 210, 214, 0.68);
-  font-size: 12px;
-  line-height: 1.55;
-  letter-spacing: 0.4px;
+  color: rgba(230, 230, 234, 0.74);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.pay-items {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.pay-item {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 8px;
+  color: rgba(246,246,248,0.92);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+.pay-item span:first-child {
+  color: var(--hope-glow);
+}
+
+.pay-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 40px;
+  margin-top: 14px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  background: var(--hope-glow);
+  color: #050505;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.pay-option.featured .pay-cta {
+  background: #fff;
 }
 
 .preview-score {
   font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(70px, 20vw, 96px);
+  font-size: clamp(46px, 14vw, 66px);
   color: #fff;
-  line-height: 1;
+  line-height: 0.98;
   margin-bottom: 14px;
   filter: drop-shadow(0 0 30px var(--hope-soft));
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .preview-pill {
@@ -516,68 +719,112 @@ h1 {
 
 @media (max-width: 640px) {
   body {
-    padding-top: 48px;
+    padding-top: 32px;
   }
 
   #app {
-    width: calc(100vw - 40px);
-    max-width: 350px;
+    width: calc(100vw - 28px);
+    max-width: 390px;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
   }
 
+  .scanner-intro h1 {
+    font-size: clamp(25px, 6.8vw, 30px);
+    margin-bottom: 4px;
+  }
+
+  .scanner-intro p {
+    font-size: 14.5px;
+    line-height: 1.45;
+  }
+
+  .scanner-intro {
+    margin-bottom: 8px;
+  }
+
   .card {
-    padding: 24px 20px;
+    padding: 20px 18px;
+    border-radius: 18px;
   }
 
   .status {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   #q-h {
-    font-size: clamp(23px, 7vw, 28px);
+    font-size: clamp(27px, 7.6vw, 32px);
+    line-height: 1.06;
+    margin-bottom: 12px;
   }
 
   #q-t {
-    font-size: 17px;
+    font-size: 22px;
+    line-height: 1.28;
+    margin-bottom: 18px;
   }
 
   .btn-opt {
     min-height: 54px;
-    padding: 14px 14px;
-    font-size: 14px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    font-size: 15.5px;
+    line-height: 1.38;
+    border-radius: 13px;
   }
 
   .vault-link {
     top: 20px;
-    width: calc(100vw - 40px);
-    max-width: 350px;
+    width: calc(100vw - 28px);
+    max-width: 390px;
   }
 }
 
 @media (max-width: 390px) {
   #app {
-    width: calc(100vw - 36px);
-    max-width: 344px;
+    width: calc(100vw - 24px);
+    max-width: 366px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .vault-link {
-    width: calc(100vw - 36px);
-    max-width: 344px;
+    width: calc(100vw - 24px);
+    max-width: 366px;
   }
 
   .card {
-    padding: 26px 18px;
+    padding: 20px 16px;
+  }
+
+  #q-h {
+    font-size: clamp(26px, 7.5vw, 30px);
+  }
+
+  #q-t {
+    font-size: 21px;
+  }
+
+  .btn-opt {
+    font-size: 15.5px;
   }
 
   .match-percent {
-    font-size: clamp(64px, 22vw, 90px);
+    font-size: clamp(40px, 12vw, 52px);
   }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "HugoMojo AI Income Niche Scanner",
+  "description": "A free resource and constraint scanner for choosing an AI income starting path.",
+  "brand": { "@type": "Brand", "name": "HugoMojo" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+}
+</script>
 </head>
 <body>
 
@@ -588,8 +835,7 @@ h1 {
   <!--  Quiz  -->
   <div id="step-quiz">
     <div class="scanner-intro">
-      <h1>AI Income Scanner</h1>
-      <p>16 quick questions. Find your starting path, niche direction, and first action.</p>
+      <h1>AI Income Niche Scanner</h1>
     </div>
     <div class="status">
       <span style="color: var(--hope-glow)">●</span>
@@ -597,7 +843,7 @@ h1 {
       <span id="p-idx" style="width: 40px">01/16</span>
     </div>
     <div class="card">
-      <h1 id="q-h">Starting Goal</h1>
+      <h2 id="q-h" class="question-title">Starting Goal</h2>
       <p class="sub-title" id="q-t">Pick the answer that feels closest.</p>
       <div id="q-options"></div>
     </div>
@@ -607,7 +853,7 @@ h1 {
   <div id="step-scan" class="hidden">
     <div class="card" style="text-align: center; padding: 100px 40px;">
       <div id="scan-pulse" style="width:60px; height:60px; background: var(--hope-glow); border-radius: 50%; margin: 0 auto 40px; animation: pulse 1.5s infinite;"></div>
-      <h1 style="font-size: 16px; letter-spacing: 2px; color: var(--dim-text);">FINDING YOUR STARTING PATH...</h1>
+      <h2 class="screen-title" style="font-size: 16px; letter-spacing: 2px; color: var(--dim-text);">FINDING YOUR STARTING PATH...</h2>
       <div id="scan-log" style="font-family:'JetBrains Mono'; font-size:9px; color:rgba(218,218,222,0.66); margin-top:30px; text-align:center; letter-spacing:1px;"></div>
     </div>
   </div>
@@ -618,13 +864,16 @@ h1 {
 
   <div id="step-email" class="hidden">
     <div class="card" style="text-align: center;">
-      <h1 style="font-size: 30px; margin-bottom: 20px;">Your path is almost ready.</h1>
-      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Enter your email to save your result and unlock the Action System built for your starting path.</p>
+      <h2 class="screen-title" style="font-size: 30px; margin-bottom: 20px;">Your path is ready to save.</h2>
+      <p class="sub-title" style="margin-bottom: 24px; font-size: 17px;">Save your free result, then unlock the full Action System if you want the exact next steps.</p>
       <form class="email-gate" id="email-form" novalidate>
+        <label class="sr-only" for="lead-email">Email address</label>
         <input class="email-input" id="lead-email" type="email" inputmode="email" placeholder="you@example.com" autocomplete="email" aria-describedby="email-error" aria-invalid="false">
+        <label class="sr-only" for="lead-company">Company</label>
+        <input class="sr-only" id="lead-company" name="company" type="text" autocomplete="off" tabindex="-1" aria-hidden="true">
         <div class="email-error" id="email-error" role="alert" aria-live="polite"></div>
-        <button class="cta-buy" type="submit" style="font-size: 16px;">Unlock My Action System</button>
-        <p class="fine-print">No spam. No income guarantees. Support: hi@hugomojo.com.</p>
+        <button class="cta-buy" type="submit" style="font-size: 16px;">Continue To My Result</button>
+        <p class="fine-print">No spam. Free result first. Educational product only.</p>
       </form>
     </div>
   </div>
@@ -632,16 +881,16 @@ h1 {
   <!--  Result  -->
   <div id="step-pay" class="hidden">
     <div class="card" style="text-align: center;">
-      <div class="match-percent">98.8%</div>
-      <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:40px; text-transform: uppercase;">Your best-fit path</div>
+      <div class="match-percent">Strong Match</div>
+      <div class="match-score-small">Path fit score shown after scan</div>
       
-      <h1 id="res-name" style="font-size: 32px; margin-bottom: 20px;">ARCHITECT</h1>
+      <h2 id="res-name" class="result-name" style="font-size: 32px; margin-bottom: 20px;">ARCHITECT</h2>
       <p class="sub-title" style="margin-bottom: 40px; font-size: 16px;">Unlock your niche direction, first offer, and 7-day sprint.</p>
       
       <div class="result-blueprint">
         <div style="font-family: 'JetBrains Mono'; font-size: 9px; color: rgba(218,218,222,0.66); text-align: left; line-height: 2;">
-          [SCAN_COMPLETE]<br>
-          PATH_FOUND<br>
+          SCAN COMPLETE<br>
+          PATH FOUND<br>
           STARTING_POINT: IDENTIFIED<br>
           FIRST_ACTION: READY
         </div>
@@ -655,116 +904,116 @@ h1 {
 
 <script>
 const LAYERS = {
-  1: { name: "Step 1 of 4 · Starting Point", desc: "Where you are right now and what feels confusing." },
-  2: { name: "Step 2 of 4 · Real-Life Fit", desc: "Your time, access, comfort, and realistic first move." },
-  3: { name: "Step 3 of 4 · Work Style", desc: "How you naturally create value with AI." },
-  4: { name: "Step 4 of 4 · Starting Path", desc: "The path, niche direction, and first action that fit you best." },
+  1: { name: "Step 1 of 4 · Real Constraints", desc: "Your time, energy, and current AI confusion." },
+  2: { name: "Step 2 of 4 · Path Friction", desc: "Where tools, tutorials, and unclear access slow you down." },
+  3: { name: "Step 3 of 4 · Work Fit", desc: "How you create value and handle buyer contact." },
+  4: { name: "Step 4 of 4 · First Signal", desc: "The path, offer, and first test you can run now." },
 };
 
 const Qs = [
 
-  { layer:1, dim:"Q1 · Starting Goal",
-    text:"What do you want AI to help you do first?",
-    sub:"Pick the most honest starting point.",
+  { layer:1, dim:"Q1 · Real Constraint",
+    text:"What does your real life allow you to test first?",
+    sub:"Choose the move you could actually start.",
     opts:[
-      { text:"Make my first small income online", scores:{H:3,A:2,C:1}, meta:"target:first_small_income" },
-      { text:"Build something I can sell", scores:{H:1,A:4,C:1}, meta:"target:build_to_sell" },
-      { text:"Help businesses save time or fix messy processes", scores:{H:1,A:1,C:4}, meta:"target:business_workflows" },
-      { text:"I don't know yet - I need direction", scores:{H:2,A:2,C:2}, meta:"target:needs_direction" },
+      { text:"A small cash test I can run after work", scores:{H:3,A:2,C:1}, meta:"target:first_small_income" },
+      { text:"A small asset I can build for one clear problem", scores:{H:1,A:4,C:1}, meta:"target:build_to_sell" },
+      { text:"A messy business process I can review or improve", scores:{H:1,A:1,C:4}, meta:"target:business_workflows" },
+      { text:"I need one path chosen before I can act", scores:{H:2,A:2,C:2}, meta:"target:needs_direction" },
     ]},
 
-  { layer:1, dim:"Q2 · Current Stage",
-    text:"Where are you right now with AI?",
-    sub:"This helps match your path to your real starting point.",
+  { layer:1, dim:"Q2 · Current Reality",
+    text:"What is your honest AI situation right now?",
+    sub:"Pick the sentence that feels most accurate.",
     opts:[
-      { text:"I know AI can help me earn, but I have not started", scores:{H:2,A:2,C:1}, meta:"stage:not_started" },
-      { text:"I have tried ChatGPT or a few tools, but nothing clicked", scores:{H:2,A:2,C:2}, meta:"stage:nothing_clicked" },
-      { text:"I have tried a side hustle idea, but it did not go anywhere", scores:{H:3,A:2,C:2}, meta:"stage:tried_idea" },
-      { text:"I use AI often, but I still do not have a clear income path", scores:{H:2,A:3,C:3}, meta:"stage:no_path" },
+      { text:"I know AI can help, but I keep delaying the first move", scores:{H:2,A:2,C:1}, meta:"stage:not_started" },
+      { text:"I have tried AI tools, but I still do not know what to make", scores:{H:2,A:2,C:2}, meta:"stage:nothing_clicked" },
+      { text:"I restart side hustle ideas every few weeks", scores:{H:3,A:2,C:2}, meta:"stage:tried_idea" },
+      { text:"I use AI often, but I do not have one income path", scores:{H:2,A:3,C:3}, meta:"stage:no_path" },
     ]},
 
-  { layer:1, dim:"Q3 · Main Confusion",
-    text:"What feels most confusing about earning with AI?",
+  { layer:1, dim:"Q3 · Main Constraint",
+    text:"What makes starting feel hard this week?",
     sub:"This points to the real bottleneck.",
     opts:[
-      { text:"I don't know what to sell", scores:{H:3,A:2,C:1}, meta:"confusion:what_to_sell" },
-      { text:"I don't know who would buy from me", scores:{H:2,A:2,C:2}, meta:"confusion:buyer" },
-      { text:"I see too many ideas and can't choose one", scores:{H:1,A:2,C:2}, meta:"confusion:too_many_ideas" },
-      { text:"I tried something, but nothing clicked", scores:{H:2,A:2,C:2}, meta:"confusion:nothing_clicked" },
+      { text:"I do not know what offer to test first", scores:{H:3,A:2,C:1}, meta:"confusion:what_to_sell" },
+      { text:"I do not know which buyer to ask", scores:{H:2,A:2,C:2}, meta:"confusion:buyer" },
+      { text:"Too many tools, tutorials, and paths make me freeze", scores:{H:1,A:2,C:2}, meta:"confusion:too_many_ideas" },
+      { text:"I lose momentum when the idea does not click fast", scores:{H:2,A:2,C:2}, meta:"confusion:nothing_clicked" },
     ]},
 
   { layer:2, dim:"Q4 · Time Available",
-    text:"How much focused time can you realistically give this per day?",
-    sub:"Your path should fit your real life.",
+    text:"How much focused time can you protect on a normal day?",
+    sub:"Your path should fit your real schedule.",
     opts:[
-      { text:"Less than 1 hour", scores:{H:2,A:1,C:1}, meta:"time:<1hr" },
-      { text:"About 1 hour", scores:{H:3,A:2,C:2}, meta:"time:1hr" },
+      { text:"Late-night 60 minutes or less", scores:{H:2,A:1,C:1}, meta:"time:<1hr" },
+      { text:"About 1 hour if the task is already clear", scores:{H:3,A:2,C:2}, meta:"time:1hr" },
       { text:"2-3 hours", scores:{H:2,A:3,C:3}, meta:"time:2-3hrs" },
       { text:"4+ hours", scores:{H:2,A:3,C:4}, meta:"time:4+hrs" },
     ]},
 
-  { layer:2, dim:"Q5 · Tomorrow Action",
-    text:"If you had one free hour tomorrow, what would feel easiest to start?",
-    sub:"Pick what you would actually do, not what sounds impressive.",
+  { layer:2, dim:"Q5 · Last Week Pattern",
+    text:"In the last week, where did most AI side-hustle time go?",
+    sub:"Choose the closest pattern.",
     opts:[
-      { text:"Message someone and ask what they need help with", scores:{H:4,A:1,C:1}, meta:"action:message" },
-      { text:"Make a small checklist, guide, or template", scores:{H:1,A:4,C:1}, meta:"action:asset" },
-      { text:"Look at a messy process and find ways to improve it", scores:{H:1,A:1,C:4}, meta:"action:workflow" },
-      { text:"Watch another tutorial because I still feel unsure", scores:{H:1,A:1,C:1}, meta:"action:tutorial" },
+      { text:"Trying to message or understand real buyers", scores:{H:4,A:1,C:1}, meta:"action:message" },
+      { text:"Thinking about a template, guide, or small asset", scores:{H:1,A:4,C:1}, meta:"action:asset" },
+      { text:"Noticing messy workflows that AI could improve", scores:{H:1,A:1,C:4}, meta:"action:workflow" },
+      { text:"Watching tutorials because I still felt unsure", scores:{H:1,A:1,C:1}, meta:"action:tutorial" },
     ]},
 
   { layer:2, dim:"Q6 · People Access",
-    text:"Who could you reach or understand fastest?",
-    sub:"Your first path should start near people you can actually reach.",
+    text:"Who can you reach this week without building an audience?",
+    sub:"Your first test should start near people you can actually reach.",
     opts:[
-      { text:"Small business owners", scores:{H:3,A:1,C:3}, meta:"audience:small_business" },
+      { text:"Small business owners near my niche or local area", scores:{H:3,A:1,C:3}, meta:"audience:small_business" },
       { text:"Creators, freelancers, or online sellers", scores:{H:2,A:4,C:1}, meta:"audience:creators_sellers" },
-      { text:"People in my job, school, local area, or industry", scores:{H:2,A:2,C:4}, meta:"audience:known_context" },
-      { text:"I don't know who I can reach yet", scores:{H:1,A:1,C:1}, meta:"audience:unclear" },
+      { text:"People in my job, industry, school, or workplace context", scores:{H:2,A:2,C:4}, meta:"audience:known_context" },
+      { text:"I do not know who I can reach yet", scores:{H:1,A:1,C:1}, meta:"audience:unclear" },
     ]},
 
   { layer:2, dim:"Q7 · Comfort Zone",
-    text:"Which part feels hardest for you?",
+    text:"Which part makes you avoid taking the first step?",
     sub:"The wrong path usually feels heavy before it fails.",
     opts:[
-      { text:"Reaching out to people", scores:{H:0,A:3,C:2}, meta:"block:outreach" },
-      { text:"Choosing a niche", scores:{H:2,A:2,C:2}, meta:"block:niche" },
-      { text:"Making something people would pay for", scores:{H:2,A:1,C:3}, meta:"block:offer" },
-      { text:"Explaining how AI creates value", scores:{H:2,A:1,C:4}, meta:"block:value" },
+      { text:"Reaching out or selling directly", scores:{H:0,A:3,C:2}, meta:"block:outreach" },
+      { text:"Choosing one niche instead of saving more ideas", scores:{H:2,A:2,C:2}, meta:"block:niche" },
+      { text:"Packaging something people would pay for", scores:{H:2,A:1,C:3}, meta:"block:offer" },
+      { text:"Explaining the business value of AI", scores:{H:2,A:1,C:4}, meta:"block:value" },
     ]},
 
   { layer:2, dim:"Q8 · First Deliverable",
-    text:"What could you realistically create or deliver in 7 days?",
+    text:"What could you put in front of someone within 7 days?",
     sub:"Start small enough to test.",
     opts:[
-      { text:"A simple AI-assisted service", scores:{H:4,A:1,C:1}, meta:"deliverable:service" },
-      { text:"A template, checklist, or small guide", scores:{H:1,A:4,C:1}, meta:"deliverable:asset" },
-      { text:"A simple workflow review or improvement plan", scores:{H:1,A:1,C:4}, meta:"deliverable:workflow_review" },
-      { text:"I'm not sure yet", scores:{H:1,A:1,C:1}, meta:"deliverable:unclear" },
+      { text:"A small AI-assisted service offer", scores:{H:4,A:1,C:1}, meta:"deliverable:service" },
+      { text:"A simple template, checklist, or mini-guide", scores:{H:1,A:4,C:1}, meta:"deliverable:asset" },
+      { text:"A workflow review or improvement plan", scores:{H:1,A:1,C:4}, meta:"deliverable:workflow_review" },
+      { text:"I am not sure yet", scores:{H:1,A:1,C:1}, meta:"deliverable:unclear" },
     ]},
 
   { layer:3, dim:"Q9 · AI Start",
-    text:"What would you most likely ask AI to help with first?",
-    sub:"This shows what your starting path can use AI for.",
+    text:"When you open an AI tool, what would you ask it to help with first?",
+    sub:"This shows how AI should support your path.",
     opts:[
       { text:"Write messages, offers, or outreach", scores:{H:4,A:1,C:1}, meta:"tool_use:outreach" },
       { text:"Create content, templates, or product ideas", scores:{H:1,A:4,C:1}, meta:"tool_use:assets" },
       { text:"Organize a process or map steps", scores:{H:1,A:1,C:4}, meta:"tool_use:process" },
-      { text:"I don't know what to ask AI yet", scores:{H:1,A:1,C:1}, meta:"tool_use:unclear" },
+      { text:"I do not know what to ask AI yet", scores:{H:1,A:1,C:1}, meta:"tool_use:unclear" },
     ]},
 
   { layer:3, dim:"Q10 · Buyer Comfort",
-    text:"How comfortable are you talking to potential buyers?",
+    text:"How much buyer conversation can you handle this week?",
     sub:"This affects whether you should start with services, assets, or systems.",
     opts:[
-      { text:"Comfortable - I can message people directly", scores:{H:4,A:1,C:2}, meta:"buyer:direct" },
-      { text:"Somewhat - if I have a clear script", scores:{H:3,A:2,C:2}, meta:"buyer:script" },
-      { text:"Not very - I would rather build something first", scores:{H:0,A:4,C:2}, meta:"buyer:build_first" },
-      { text:"Comfortable if I am helping diagnose a real problem", scores:{H:2,A:1,C:4}, meta:"buyer:diagnose" },
+      { text:"Direct messages are okay for me", scores:{H:4,A:1,C:2}, meta:"buyer:direct" },
+      { text:"I can do it if I have a clear script", scores:{H:3,A:2,C:2}, meta:"buyer:script" },
+      { text:"I would rather build something first and let it explain itself", scores:{H:0,A:4,C:2}, meta:"buyer:build_first" },
+      { text:"I like conversations when I am diagnosing a real problem", scores:{H:2,A:1,C:4}, meta:"buyer:diagnose" },
     ]},
 
   { layer:3, dim:"Q11 · Work Style",
-    text:"What kind of work feels most natural to you?",
+    text:"Which work feels most natural when you are not forcing it?",
     sub:"This points to how you create value.",
     opts:[
       { text:"Talking to people and finding what they need", scores:{H:4,A:1,C:1}, meta:"style:people" },
@@ -774,27 +1023,27 @@ const Qs = [
     ]},
 
   { layer:3, dim:"Q12 · Pattern",
-    text:"When you watch or try AI side hustle advice, what usually happens?",
+    text:"When AI side-hustle content gets your attention, what repeats?",
     sub:"This reveals where the path breaks.",
     opts:[
-      { text:"I feel inspired, then don't know who to contact", scores:{H:2,A:1,C:1}, meta:"pattern:no_contacts" },
-      { text:"I save ideas, but never build the first version", scores:{H:1,A:3,C:1}, meta:"pattern:saved_ideas" },
-      { text:"I see business problems, but don't know how to sell the solution", scores:{H:1,A:1,C:4}, meta:"pattern:sell_solution" },
-      { text:"I try something, then switch when it does not click", scores:{H:1,A:1,C:1}, meta:"pattern:switching" },
+      { text:"I feel inspired, then realize I do not know who to contact", scores:{H:2,A:1,C:1}, meta:"pattern:no_contacts" },
+      { text:"I save tools and ideas, but never ship a first version", scores:{H:1,A:3,C:1}, meta:"pattern:saved_ideas" },
+      { text:"I spot business problems, but do not know how to sell the fix", scores:{H:1,A:1,C:4}, meta:"pattern:sell_solution" },
+      { text:"I try one direction, get no signal, then restart", scores:{H:1,A:1,C:1}, meta:"pattern:switching" },
     ]},
 
   { layer:4, dim:"Q13 · Niche Clarity",
-    text:"How clear is your niche right now?",
+    text:"What do you already know about the market you could test?",
     sub:"It is okay if you do not know yet.",
     opts:[
       { text:"I know a buyer group and a problem", scores:{H:3,A:3,C:3}, meta:"niche:clear" },
       { text:"I know the problem, but not the buyer", scores:{H:2,A:3,C:2}, meta:"niche:problem_only" },
       { text:"I know the buyer, but not the offer", scores:{H:3,A:1,C:2}, meta:"niche:buyer_only" },
-      { text:"I don't know either yet", scores:{H:1,A:1,C:1}, meta:"niche:unclear" },
+      { text:"I do not know either yet", scores:{H:1,A:1,C:1}, meta:"niche:unclear" },
     ]},
 
   { layer:4, dim:"Q14 · First Signal",
-    text:"What kind of early signal would help you believe you are on the right path?",
+    text:"What first signal would make this path feel worth continuing?",
     sub:"Different paths create different kinds of feedback.",
     opts:[
       { text:"Replies from potential buyers", scores:{H:4,A:1,C:1}, meta:"signal:replies" },
@@ -804,23 +1053,23 @@ const Qs = [
     ]},
 
   { layer:4, dim:"Q15 · First Offer",
-    text:"Which first offer feels most realistic?",
+    text:"Which first offer could you test without pretending to be an expert?",
     sub:"Pick the one you could test first.",
     opts:[
       { text:"I can help you with this AI-assisted task", scores:{H:4,A:1,C:1}, meta:"offer:service" },
       { text:"I made this template or guide for this problem", scores:{H:1,A:4,C:1}, meta:"offer:asset" },
       { text:"I can review this process and show what to improve", scores:{H:1,A:1,C:4}, meta:"offer:review" },
-      { text:"I am not sure what to offer yet", scores:{H:1,A:1,C:1}, meta:"offer:unclear" },
+      { text:"I still need the offer shaped for me", scores:{H:1,A:1,C:1}, meta:"offer:unclear" },
     ]},
 
-  { layer:4, dim:"Q16 · Starting Path",
-    text:"Which sentence sounds most like a path you could actually start?",
-    sub:"Your final answer helps confirm the match.",
+  { layer:4, dim:"Q16 · Execution Friction",
+    text:"If you had a clear 30-minute task today, what would make you act?",
+    sub:"This confirms the first signal you need.",
     opts:[
-      { text:"I can learn by talking to buyers", scores:{H:4,A:1,C:1}, meta:"vision:buyer_feedback" },
-      { text:"I can build a useful asset for a clear problem", scores:{H:1,A:4,C:1}, meta:"vision:asset" },
-      { text:"I can improve a messy process for a business", scores:{H:1,A:1,C:4}, meta:"vision:workflow" },
-      { text:"I need HugoMojo to tell me where to begin", scores:{H:2,A:2,C:2}, meta:"vision:needs_direction" },
+      { text:"A buyer message I can send without overthinking", scores:{H:4,A:1,C:1}, meta:"vision:buyer_feedback" },
+      { text:"A small asset angle I can validate before building", scores:{H:1,A:4,C:1}, meta:"vision:asset" },
+      { text:"A workflow problem I can diagnose clearly", scores:{H:1,A:1,C:4}, meta:"vision:workflow" },
+      { text:"One clear next move before I lose momentum again", scores:{H:2,A:2,C:2}, meta:"vision:needs_direction" },
     ]},
 
 ];
@@ -835,10 +1084,10 @@ const RESULTS = {
     label: "AI Freelancing & Services",
     badgeBg: "rgba(255,179,0,0.045)",
     badgeColor: "#FFB300",
-    tagline: "Your path, niche direction, and first action are ready.",
+    tagline: "Your starting point is ready.",
     stuck: "You may be waiting to learn more tools, but your fastest path is getting real buyer feedback.",
     startingDirection: "Start with a simple AI-assisted service for a small business problem.",
-    actionLine: "Pick one problem and message 20 potential buyers.",
+    actionLine: "Pick one problem and message 5 potential buyers.",
     fitLine: "Your resources favor speed over perfection.",
     lockedBenefits: ["niche direction", "first offer", "7-day sprint", "copy-paste script", "what to avoid"],
     why: [
@@ -852,7 +1101,7 @@ const RESULTS = {
       text: "Do not start with content. Start by offering a small AI-assisted service to a real person or business.",
       bullets: [
         "Pick one simple service",
-        "Send 10 direct messages or proposals",
+        "Send 5 direct messages or proposals",
         "Aim for one real conversation, not a perfect brand"
       ]
     },
@@ -866,7 +1115,7 @@ const RESULTS = {
         desc:"Create simple product or campaign assets for sellers who need faster visual support." },
     ],
     locked: ["30-Day Hunter SOP (daily task checklist)", "Upwork proposal templates that actually get replies", "Client pricing calculator + rate-setting guide"],
-    target30: "20 buyer messages",
+    target30: "5 buyer messages today",
     targetLabel: "30-day validation target",
     bars: [
       {n:"Execution speed",  v:90, c:"linear-gradient(90deg,#B71C1C,#E65100,#FFB300)"},
@@ -881,7 +1130,7 @@ const RESULTS = {
     label: "Digital Products & Knowledge Assets",
     badgeBg: "rgba(255,179,0,0.045)",
     badgeColor: "#FFB300",
-    tagline: "Your path, niche direction, and first action are ready.",
+    tagline: "Your starting point is ready.",
     stuck: "You may have too many ideas, but your best start is turning one repeated problem into a small asset.",
     startingDirection: "Start with a template, checklist, guide, or simple digital product.",
     actionLine: "Ask 10 people if they repeat this problem often.",
@@ -927,7 +1176,7 @@ const RESULTS = {
     label: "B2B AI Consulting & Automation",
     badgeBg: "rgba(255,179,0,0.045)",
     badgeColor: "#FFB300",
-    tagline: "Your path, niche direction, and first action are ready.",
+    tagline: "Your starting point is ready.",
     stuck: "You may see how things could work better, but you need to turn that into a simple business outcome.",
     startingDirection: "Start with a workflow review for a repeated business process.",
     actionLine: "List 20 businesses with messy intake, follow-up, admin, or reporting steps.",
@@ -1082,6 +1331,7 @@ function startScan() {
 function finish() {
   const winner = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
   activeResultType = winner;
+  saveScanSnapshot(winner);
   if (window.HugoMojoTrack) {
     window.HugoMojoTrack.track("scanner_complete", { result_type: winner, scores });
   }
@@ -1108,32 +1358,252 @@ function buildResourceLines() {
   return lines.length ? lines : ['RESOURCE SUMMARY: COMPLETE'];
 }
 
+const DIAGNOSTIC_LABELS = {
+  target: {
+    first_small_income: "You need a first cash test, not another long learning plan.",
+    build_to_sell: "You prefer a reusable asset over selling time.",
+    business_workflows: "You see value in fixing messy business processes.",
+    needs_direction: "You need the path chosen before more tools help."
+  },
+  stage: {
+    not_started: "You know AI can help, but the first move is unclear.",
+    nothing_clicked: "You have tool access, but no clear thing to make.",
+    tried_idea: "You restart often, so the next move needs fast feedback.",
+    no_path: "You use AI often, but still need one path."
+  },
+  confusion: {
+    what_to_sell: "Your bottleneck is offer clarity.",
+    buyer: "Your bottleneck is knowing who to ask.",
+    too_many_ideas: "Tools and tutorials are creating decision drag.",
+    nothing_clicked: "This looks like path fit, not lack of effort."
+  },
+  time: {
+    "<1hr": "Your time is tight, so the task must be small.",
+    "1hr": "You can move if the task is already clear.",
+    "2-3hrs": "You can run a focused build-and-test loop.",
+    "4+hrs": "You can handle deeper work if the path stays clear."
+  },
+  action: {
+    message: "Your first useful signal can come from buyer contact.",
+    asset: "Your first useful signal can come from a small asset.",
+    workflow: "Your first useful signal can come from one process review.",
+    tutorial: "Tutorials are delaying the first real signal."
+  },
+  audience: {
+    small_business: "You can start near small business problems.",
+    creators_sellers: "Your market is closer to creators or sellers.",
+    known_context: "Your strongest access may be your current context.",
+    unclear: "Your first move must reveal a reachable buyer group."
+  },
+  block: {
+    outreach: "Direct outreach drains you, so the path must reduce selling pressure.",
+    niche: "Niche choice is creating friction before execution.",
+    offer: "The offer needs shape before you build too much.",
+    value: "The value needs to become a simple business outcome."
+  },
+  deliverable: {
+    service: "A small service offer is realistic within 7 days.",
+    asset: "A small template, checklist, or mini-guide is realistic within 7 days.",
+    workflow_review: "A workflow review is realistic within 7 days.",
+    unclear: "You need a narrowed first deliverable before more research."
+  },
+  buyer: {
+    direct: "You can handle direct buyer messages.",
+    script: "You can handle buyer contact with a script.",
+    build_first: "You prefer the asset to explain value first.",
+    diagnose: "You are strongest when the conversation is diagnostic."
+  },
+  pattern: {
+    no_contacts: "Inspiration fades when there is no buyer to contact.",
+    saved_ideas: "Saving ideas is replacing the first shipment.",
+    sell_solution: "You see problems, but the sales frame is unclear.",
+    switching: "You switch when the first signal is undefined."
+  },
+  signal: {
+    replies: "Your first signal is a buyer reply or objection.",
+    asset_interest: "Your first signal is a click, save, reply, or purchase.",
+    process_pain: "Your first signal is confirmed process pain.",
+    any: "Your first signal must show whether to continue or adjust."
+  }
+};
+
+const DIAGNOSTIC_PRIORITY = ["stage", "confusion", "time", "pattern", "block", "buyer", "action", "deliverable", "audience", "signal", "target"];
+
+const PATH_DECISION_LINES = {
+  H: "That is why Hunter starts with buyer replies before brand building.",
+  A: "That is why Artisan starts with one small asset before more outreach.",
+  C: "That is why Architect starts with one workflow review before complex automation."
+};
+
+const PAID_UNLOCK_ITEMS = {
+  H: [
+    "Matched path: Hunter",
+    "Service niche + buyer group",
+    "First offer angle",
+    "5-message buyer outreach script",
+    "30-minute move + 7-day sprint",
+    "Copy-paste AI prompt"
+  ],
+  A: [
+    "Matched path: Artisan",
+    "Asset niche + buyer group",
+    "First small product angle",
+    "Validation message template",
+    "30-minute move + 7-day sprint",
+    "Copy-paste AI prompt",
+    "Adjustment if nobody clicks"
+  ],
+  C: [
+    "Matched path: Architect",
+    "Workflow niche + buyer group",
+    "First workflow offer",
+    "Workflow review script",
+    "30-minute move + 7-day sprint",
+    "Copy-paste AI prompt"
+  ]
+};
+
+const PAYPAGE_ACTION_LINES = {
+  H: "Get your buyer niche, first offer, outreach script, prompt, and sprint.",
+  A: "Get your asset niche, product angle, validation message, prompt, and sprint.",
+  C: "Get the workflow niche, review script, prompt, and sprint."
+};
+
+const SINGLE_PASS_CTA = {
+  H: "Get My Hunter System",
+  A: "Get My Artisan Asset",
+  C: "Get My Architect System"
+};
+
+const MASTER_UNLOCK_ITEMS = [
+  "Hunter + Artisan + Architect",
+  "Primary + backup path",
+  "90-day roadmap",
+  "Prompt library + market fit model",
+  "Everything in Single Pass"
+];
+
+function getPathRanking() {
+  return Object.entries(scores).sort((a, b) => b[1] - a[1]);
+}
+
+function getSecondaryPath(type) {
+  const ranking = getPathRanking();
+  const secondary = ranking.find(([key]) => key !== type);
+  if (!secondary) return null;
+  const gap = scores[type] - secondary[1];
+  return { key: secondary[0], score: secondary[1], gap };
+}
+
+function buildMechanismProof(type) {
+  return `
+    <div class="mechanism-proof">
+      <div class="mechanism-proof-title">Built from your scan</div>
+      <div class="mechanism-proof-copy">16 answers become one niche, one offer, one script, and one 30-minute test.</div>
+    </div>
+  `;
+}
+
+function buildImmediateInstruction(type) {
+  return `
+    <div style="margin: 14px 0 16px; text-align:left; border-left:2px solid rgba(255,179,0,0.50); padding:14px 0 14px 14px; background:rgba(255,179,0,0.035); box-shadow:0 0 28px rgba(255,179,0,0.06);">
+      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:10px;">DO THIS AFTER PAYMENT</div>
+      <div style="font-size:18px; color:#fff; font-weight:800; line-height:1.35;">Open your delivery. Copy one script or prompt. Run the 30-minute test.</div>
+    </div>
+  `;
+}
+
+function buildPayItemList(items) {
+  return `
+    <div class="pay-items">
+      ${items.map(item => `<div class="pay-item"><span>&check;</span><span>${item}</span></div>`).join("")}
+    </div>
+  `;
+}
+
+function buildDiagnosticReasons(type) {
+  const reasons = [];
+  DIAGNOSTIC_PRIORITY.forEach(key => {
+    const value = metaData[key];
+    const label = DIAGNOSTIC_LABELS[key] && DIAGNOSTIC_LABELS[key][value];
+    if (label) reasons.push(label);
+  });
+  const fallback = [
+    "Your answers point to one path filter, not more options.",
+    "The next move must be small enough to do today and concrete enough to create a signal."
+  ];
+  return (reasons.length ? reasons : fallback).slice(0, 3);
+}
+
+const SCAN_TODAY_MOVES = {
+  H: "Message 5 potential buyers with one simple AI-assisted offer.",
+  A: "Ask 10 people whether they repeat one narrow problem before building the asset.",
+  C: "Ask 5 businesses about one repeated intake, follow-up, admin, or reporting process."
+};
+
+function saveScanSnapshot(type) {
+  try {
+    const t = RESULTS[type];
+    const reasons = buildDiagnosticReasons(type);
+    const snapshot = {
+      role: type,
+      path: t.niche,
+      reasons,
+      matchReason: reasons[0] || "Your answers point to one clear starting path.",
+      constraint: reasons[1] || "Your next move needs to be small enough to take today.",
+      todayMove: SCAN_TODAY_MOVES[type] || t.actionLine,
+      scores,
+      metaData,
+      savedAt: new Date().toISOString()
+    };
+    localStorage.setItem("hm_scan_result", JSON.stringify(snapshot));
+  } catch (error) {
+    window.hmScanResult = {
+      role: type,
+      path: RESULTS[type] ? RESULTS[type].niche : type,
+      todayMove: SCAN_TODAY_MOVES[type] || ""
+    };
+  }
+}
+
+function buildAnswerDiagnostic(type) {
+  const reasons = buildDiagnosticReasons(type);
+  return `
+    <div class="answer-diagnostic">
+      <div class="answer-diagnostic-title">Your scan shows</div>
+      <div class="answer-diagnostic-list">
+        ${reasons.map(reason => `<div class="answer-diagnostic-item"><span>&bull;</span><span>${reason}</span></div>`).join("")}
+      </div>
+      <div class="answer-diagnostic-decision">${PATH_DECISION_LINES[type]}</div>
+    </div>
+  `;
+}
+
 function showPreview(type) {
   activeResultType = type;
   const t = RESULTS[type];
   const matchPct = calculateMatchPct(type);
-  const resourcePreview = buildResourceLines().slice(0, 3).join(' · ');
   document.getElementById('preview-card').innerHTML = `
-    <div class="preview-score">${matchPct}%</div>
-    <div class="preview-pill">Your path is becoming clear.</div>
-    <h1 style="font-size: 30px; margin-bottom: 14px;">THE ${t.niche.toUpperCase()}</h1>
-    <p class="sub-title" style="margin-bottom: 18px; font-size: 16px;">Your result includes:</p>
+    <div class="preview-score">Path Found</div>
+    <div class="preview-pill">The blocker is becoming clear</div>
+    <h2 class="screen-title" style="font-size: 30px; margin-bottom: 14px;">THE ${t.niche.toUpperCase()}</h2>
+    <p class="sub-title" style="margin-bottom: 18px; font-size: 16px;">Your result turns your constraints into one path and one move to test today.</p>
     <div class="preview-proof">
       <div class="preview-proof-item">
-        <div class="preview-proof-k">Path</div>
-        <div class="preview-proof-v">✓ your AI income path</div>
+        <div class="preview-proof-k">Constraint</div>
+        <div class="preview-proof-v">✓ why the old approach stalls</div>
       </div>
       <div class="preview-proof-item">
         <div class="preview-proof-k">Niche</div>
-        <div class="preview-proof-v">✓ your niche direction</div>
+        <div class="preview-proof-v">✓ what direction fits you</div>
       </div>
       <div class="preview-proof-item">
-        <div class="preview-proof-k">Action</div>
-        <div class="preview-proof-v">✓ your first action</div>
+        <div class="preview-proof-k">Move</div>
+        <div class="preview-proof-v">✓ what to test today</div>
       </div>
     </div>
-    <button class="cta-buy" id="unlock-full-result" type="button" style="font-size: 16px;">Save My Result</button>
-    <p class="fine-print" style="margin-top: 18px;">No income guarantees. Educational product only. Support: hi@hugomojo.com.</p>
+    <button class="cta-buy" id="unlock-full-result" type="button" style="font-size: 16px;">Save Result & Continue</button>
+    <p class="fine-print" style="margin-top: 18px;">Free result first. Educational product only. Support: hi@hugomojo.com.</p>
   `;
   updateProgress(Qs.length);
   if (window.HugoMojoTrack) {
@@ -1157,71 +1627,35 @@ function showResult(type) {
   const t = RESULTS[type];
   const matchPct = calculateMatchPct(type);
   const singlePlan = `single_pass_${t.niche.toLowerCase()}`;
+  const secondary = getSecondaryPath(type);
+  const isCloseResult = secondary && secondary.gap <= 6;
+  const masterTag = isCloseResult ? "If you are still split" : "All paths + roadmap";
 
   document.querySelector('#step-pay .card').innerHTML = `
-    <div class="match-percent">${matchPct}%</div>
-    <div style="font-family:'JetBrains Mono'; font-size:10px; color:var(--hope-glow); letter-spacing:5px; margin-bottom:22px; text-transform: uppercase;">Match</div>
-    <h1 id="res-name" style="font-size: 34px; margin-bottom: 20px;">${t.niche}</h1>
-    <p class="sub-title" style="margin-bottom: 24px; font-size: 16px;">Unlock your niche direction, first offer, and 7-day sprint.</p>
-    <div style="margin: 18px 0 22px; text-align:left; border-left:2px solid rgba(255,179,0,0.50); padding:18px 0 18px 16px; background:rgba(255,179,0,0.035); box-shadow:0 0 28px rgba(255,179,0,0.06);">
-      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:12px;">WHY YOU'RE STUCK</div>
-      <div style="font-size:16px; color:#f0f0f0; line-height:1.8;">${t.stuck}</div>
-    </div>
-    <div style="margin: 18px 0 20px; text-align:left;">
-      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:10px;">STARTING PATH</div>
-      <div style="font-size:15px; color:rgba(242,242,242,0.92); line-height:1.7;">${t.startingDirection}</div>
-    </div>
-    <div style="margin: 18px 0 20px; text-align:left;">
-      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:10px;">FIRST ACTION</div>
-      <div style="font-size:20px; color:#fff; font-weight:800; line-height:1.35;">${t.actionLine}</div>
-      <div style="font-size:12px; color:rgba(224,224,228,0.66); line-height:1.6; margin-top:8px;">Not next month. Today.</div>
-    </div>
-    <div style="border:1px solid rgba(255,179,0,0.20); background:rgba(255,179,0,0.035); padding:16px; margin:18px 0; text-align:left;">
-      <div style="font-size:14px; color:#fff; line-height:1.75; font-weight:700;">You do not need another AI-generated list. You need a path filter.</div>
-      <div style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7; margin-top:8px;">AI gives you more options. HugoMojo gives you the path filter.</div>
-      <div style="font-size:13px; color:rgba(224,224,228,0.76); line-height:1.7;">The value is not knowing your type. The value is knowing what to do next.</div>
-    </div>
-    <div style="display:grid; grid-template-columns:1fr; gap:10px; margin:18px 0; text-align:left;">
-      <div style="border:1px solid var(--glass-border); background:rgba(255,255,255,0.015); padding:14px;">
-        <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:10px;">FREE RESULT SHOWS</div>
-        <div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ your likely path<br>✓ why you are stuck<br>✓ what to avoid next</div>
-      </div>
-      <div style="border:1px solid rgba(255,179,0,0.24); background:rgba(255,179,0,0.025); padding:14px;">
-        <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:10px;">PAID UNLOCK GIVES</div>
-        <div style="font-size:13px; color:rgba(224,224,228,0.82); line-height:1.8;">✓ niche direction<br>✓ first offer<br>✓ today's 30-minute move<br>✓ 7-day signal sprint<br>✓ copy-paste AI prompt<br>✓ what to adjust if no signal</div>
-      </div>
-    </div>
-    <div style="border:1px solid var(--glass-border); background:rgba(255,255,255,0.018); padding:16px; margin:18px 0; text-align:left;">
-      <div style="font-family:'JetBrains Mono'; font-size:9px; color:var(--hope-glow); letter-spacing:2px; margin-bottom:12px;">UNLOCK YOUR ACTION SYSTEM</div>
-      ${t.lockedBenefits.map(item => `<div style="font-size:13px; color:rgba(224,224,228,0.78); line-height:1.8;">✓ ${item}</div>`).join("")}
-    </div>
-    <button class="cta-buy" type="button" id="early-unlock-cta" style="font-size:16px; margin: 8px 0 18px;">Unlock My Action System</button>
-    <p style="font-size:10px; color:rgba(218,218,222,0.60); line-height:1.6; margin: -6px 0 18px; text-align:left;">For educational purposes only.<br>Individual results depend on effort, skills, and market conditions.</p>
-    <p style="font-size:12px; color:rgba(218,218,222,0.70); line-height:1.6; margin: 14px 0; text-align:left;">Your result points to a path, a niche direction, and a first action.</p>
+    <div class="result-match-row"><span>Diagnosis Ready</span></div>
+    <h2 id="res-name" class="result-name" style="font-size: 34px; margin-bottom: 10px;">Your ${t.niche} path is ready.</h2>
+    <p class="sub-title" style="margin-bottom: 8px; font-size: 17px; line-height:1.45; color:#fff;">${PAYPAGE_ACTION_LINES[type]}</p>
+    ${buildAnswerDiagnostic(type)}
+    <div class="unlock-choice-title">Pay once · access instantly</div>
     <div class="pricing-stack" id="pricing-options">
-      <a class="pay-option muted" href="${CHECKOUT_URLS.single[type]}" data-event="checkout_click" data-plan="${singlePlan}" data-price="9.90">
+      <a class="pay-option featured" href="${CHECKOUT_URLS.single[type]}" data-event="checkout_click" data-plan="${singlePlan}" data-price="9.90">
         <div class="pay-tag">Single Pass</div>
-        <div class="pay-name"><span>Action System · instant digital access</span><span class="pay-price">$9.90</span></div>
-        <div class="pay-note">
-          <div>Inside: niche direction, first offer, today's 30-minute move, 7-day signal sprint, copy-paste AI prompt, what to avoid, and what to adjust if no signal.</div>
-        </div>
+        <div class="pay-name"><span>${t.niche} Action System</span><span class="pay-price">$9.90</span></div>
+        <div class="pay-note">Your matched path only.</div>
+        <div class="pay-cta">${SINGLE_PASS_CTA[type]}</div>
+        ${buildPayItemList(PAID_UNLOCK_ITEMS[type])}
       </a>
-      <a class="pay-option featured" href="${CHECKOUT_URLS.master}" data-event="checkout_click" data-plan="master_key" data-price="19.90">
-        <div class="pay-tag">Recommended</div>
-        <div class="pay-name"><span>Master Key · all three paths</span><span class="pay-price">$19.90</span></div>
-        <div class="pay-note">Compare Hunter, Artisan, and Architect. Choose your primary path, keep a backup path, and use the 90-day roadmap.</div>
+      <a class="pay-option muted" href="${CHECKOUT_URLS.master}" data-event="checkout_click" data-plan="master_key" data-price="19.90">
+        <div class="pay-tag">${masterTag}</div>
+        <div class="pay-name"><span>Master Key</span><span class="pay-price">$19.90</span></div>
+        <div class="pay-note">All paths plus the roadmap.</div>
+        <div class="pay-cta">Get All Three Paths</div>
+        ${buildPayItemList(MASTER_UNLOCK_ITEMS)}
       </a>
-      <!-- Signal Review option hidden for launch focus. Keep checkout code and data attributes intact.
-      <a class="pay-option" href="${CHECKOUT_URLS.annual}" data-event="checkout_click" data-plan="annual_vault" data-price="199">
-        <div class="pay-tag">Signal Review Membership</div>
-        <div class="pay-name"><span>Signal checks + next-move review</span><span class="pay-price">$199</span></div>
-        <div class="pay-note">Run the sprint. Submit your signals. Get your next move reviewed.</div>
-      </a>
-      -->
     </div>
-    <p style="margin-top: 14px; font-size: 12px; line-height: 1.55; color: rgba(218,218,222,0.68); letter-spacing: 0.4px;">Instant digital access. Educational product only. Not an income guarantee.</p>
-    <p style="margin-top: 20px; font-size: 12px; line-height: 1.55; color: var(--hope-glow); letter-spacing: 1.4px; font-family: 'JetBrains Mono'; text-transform: uppercase;">Start before you overthink again.</p>
-    <p style="margin-top: 20px; font-size: 12px; line-height: 1.55; color: rgba(218,218,222,0.66); letter-spacing: 0.6px; font-family: 'JetBrains Mono';">Secure digital delivery · Access available immediately · hi@hugomojo.com</p>
+    ${buildImmediateInstruction(type)}
+    ${buildMechanismProof(type)}
+    <p style="margin-top: 16px; font-size: 12px; line-height: 1.55; color: rgba(218,218,222,0.68); letter-spacing: 0.4px;">Educational product only · not an income guarantee · support: hi@hugomojo.com</p>
   `;
 
   if (window.HugoMojoTrack) {
@@ -1231,12 +1665,6 @@ function showResult(type) {
       scores
     });
   }
-  document.getElementById("early-unlock-cta").addEventListener("click", () => {
-    if (window.HugoMojoTrack) {
-      window.HugoMojoTrack.track("early_unlock_click", { result_type: type });
-    }
-    document.getElementById("pricing-options").scrollIntoView({ behavior: "smooth", block: "start" });
-  });
   updateProgress(Qs.length);
   setStep('step-pay');
 }
@@ -1251,6 +1679,7 @@ async function sendLeadCapture(email, resultType) {
         result_type: resultType,
         scores,
         meta_data: metaData,
+        company: document.getElementById('lead-company')?.value || '',
         source: 'scanner'
       })
     });

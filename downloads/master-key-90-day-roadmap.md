@@ -1,7 +1,6 @@
 # HugoMojo | Master Key 90-Day Roadmap
 
-**Product:** Master Key Action System  
-**Purpose:** Compare all three paths, choose one primary path, keep one backup path, and run a structured signal test.
+Use this roadmap to compare all three paths, choose one primary path, keep one backup path, and run a structured signal test.
 
 ---
 

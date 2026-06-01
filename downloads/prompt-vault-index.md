@@ -1,13 +1,12 @@
-# HugoMojo | Prompt Library Index
+# HugoMojo | AI Prompt Guide
 
-**Product:** Signal Review Membership Delivery
-**Purpose:** Keep prompts organized by path, use case, and version.
+Use the right prompt for the next action.
 
 ---
 
 ## 01 · Library Structure
 
-The prompt library is organized around action, not inspiration.
+This guide is organized around action, not inspiration.
 
 | Path | Main Use |
 | --- | --- |
@@ -68,7 +67,7 @@ The prompt library is organized around action, not inspiration.
 
 ---
 
-## 05 · Versioning Rule
+## 05 · Update Rule
 
 Update a prompt only when real use shows a reason to change it.
 
@@ -85,7 +84,7 @@ Do not update prompts because a new AI trend appears. Update them because execut
 
 ## 06 · Final Rule
 
-The prompt library should reduce confusion, not create more options.
+The guide should reduce confusion, not create more options.
 
 Use one prompt, create one output, and put that output in front of the market.
 

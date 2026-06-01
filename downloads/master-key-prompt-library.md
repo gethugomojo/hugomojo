@@ -1,7 +1,6 @@
-# HugoMojo | Master Key Prompt Library
+# HugoMojo | Master Key AI Prompt Guide
 
-**Product:** Master Key Action System  
-**Purpose:** Turn your path into offers, assets, audits, weekly reviews, and better next decisions.
+Use these prompts to turn your chosen path into offers, assets, audits, weekly reviews, and better next decisions.
 
 ---
 
