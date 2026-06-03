@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "check": "node scripts/check-site.js"
+    "check": "node scripts/check-site.js",
+    "generate:geo": "node scripts/generate-geo-content.js"
   },
   "devDependencies": {}
 }

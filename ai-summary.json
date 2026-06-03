@@ -1,0 +1,41 @@
+{
+  "name": "HugoMojo",
+  "url": "https://hugomojo.com/",
+  "lastUpdated": "2026-06-03",
+  "description": "A free 16-question scanner for people who use AI tools but still do not know what to build first.",
+  "coreAnswer": "The problem is usually not a lack of AI tools. It is path mismatch.",
+  "framework": {
+    "paths": [
+      {
+        "name": "Hunter",
+        "label": "Service-first",
+        "summary": "Use AI to shape one offer, contact real buyers, and get fast market feedback."
+      },
+      {
+        "name": "Artisan",
+        "label": "Asset-first",
+        "summary": "Use AI to package one repeated problem into a template, checklist, guide, prompt set, or small product."
+      },
+      {
+        "name": "Architect",
+        "label": "System-first",
+        "summary": "Use AI to review messy workflows, repeated operations, handoffs, and automation opportunities."
+      }
+    ],
+    "inputs": [
+      "time",
+      "skills",
+      "selling style",
+      "communication preference",
+      "budget",
+      "audience",
+      "execution friction"
+    ]
+  },
+  "primaryPages": [
+    "https://hugomojo.com/scanner.html",
+    "https://hugomojo.com/answers/",
+    "https://hugomojo.com/geo/"
+  ],
+  "disclaimer": "Educational guidance only. No income guarantees."
+}
