@@ -3,490 +3,357 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HugoMojo — Find Your AI Income Path</title>
-<meta name="description" content="HugoMojo helps AI-aware beginners find their AI income niche and first clear move based on real time, skills, and constraints.">
+<title>HugoMojo - Find Your AI Path</title>
+<meta name="description" content="A free 16-question scanner for people who use AI tools but still do not know what to build first.">
 <link rel="canonical" href="https://hugomojo.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HugoMojo">
-<meta property="og:title" content="HugoMojo — Find Your AI Income Path">
-<meta property="og:description" content="HugoMojo helps AI-aware beginners find their AI income niche and first clear move based on real time, skills, and constraints.">
+<meta property="og:title" content="HugoMojo - Find Your AI Path">
+<meta property="og:description" content="A free 16-question scanner for people who use AI tools but still do not know what to build first.">
 <meta property="og:url" content="https://hugomojo.com/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HugoMojo — Find Your AI Income Path">
-<meta name="twitter:description" content="HugoMojo helps AI-aware beginners find their AI income niche and first clear move based on real time, skills, and constraints.">
+<meta name="twitter:title" content="HugoMojo - Find Your AI Path">
+<meta name="twitter:description" content="A free 16-question scanner for people who use AI tools but still do not know what to build first.">
 <script src="assets/tracking.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg-dark: #0a0a0b;
-  --rock-gray: #1a1a1c;
-  --dim-text: rgba(176, 176, 180, 0.74);
-  --readable-text: rgba(242, 242, 242, 0.92);
-  --soft-text: rgba(224, 224, 228, 0.78);
-  --hope-glow: #ffb300;
-  --hope-deep: #cc8e00;
-  --hope-soft: rgba(255, 179, 0, 0.14);
-  --glass: rgba(255, 255, 255, 0.04);
-  --glass-border: rgba(255, 255, 255, 0.12);
+  --bg: #09090a;
+  --panel: rgba(255, 255, 255, 0.035);
+  --panel-strong: rgba(255, 255, 255, 0.055);
+  --line: rgba(255, 255, 255, 0.12);
+  --line-soft: rgba(255, 255, 255, 0.075);
+  --text: rgba(248, 248, 250, 0.96);
+  --muted: rgba(232, 232, 236, 0.68);
+  --soft: rgba(232, 232, 236, 0.50);
+  --gold: #ffb300;
+  --gold-soft: rgba(255, 179, 0, 0.14);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
-html { background: var(--bg-dark); scroll-behavior: smooth; }
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--bg); scroll-behavior: smooth; }
 body {
   min-height: 100vh;
-  background-color: var(--bg-dark);
-  color: var(--readable-text);
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255, 179, 0, 0.08), transparent 30%),
+    radial-gradient(circle at 50% 16%, #171718 0, var(--bg) 62%);
+  color: var(--text);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.45;
+  line-height: 1.5;
   overflow-x: hidden;
-  position: relative;
 }
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at 50% 18%, #171718 0%, #0a0a0b 68%);
-  z-index: -2;
-}
-
 a { color: inherit; text-decoration: none; }
 
-.vault-shell {
-  width: calc(100vw - 40px);
-  max-width: 680px;
-  min-height: 100vh;
+.page {
+  width: min(100% - 40px, 920px);
   margin: 0 auto;
-  padding: 0 0 36px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 .topline {
-  position: sticky;
-  top: 0;
-  z-index: 20;
+  min-height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin: 0;
-  padding: 16px 0 12px;
-  border-bottom: 1px solid var(--glass-border);
-  background: rgba(10, 10, 11, 0.86);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  gap: 18px;
+  border-bottom: 1px solid var(--line);
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
 }
-
 .brand-mark {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
   border: 1px solid rgba(255, 179, 0, 0.34);
-  background: rgba(255, 179, 0, 0.06);
-  color: var(--hope-glow);
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  background: rgba(255, 179, 0, 0.055);
+  color: var(--gold);
   font-size: 11px;
+  font-weight: 800;
 }
-
-.brand-name,
-.nav-links,
-.mono,
-.meta-line,
-.price-note,
-.trust-strip,
-.footer-links {
-  font-family: 'Inter', sans-serif;
-  text-transform: none;
-}
-
 .brand-name {
-  color: var(--hope-glow);
+  color: var(--gold);
   font-size: 12px;
-  letter-spacing: 2px;
+  font-weight: 800;
+  letter-spacing: 0;
 }
-
 .nav-links {
   display: flex;
-  gap: 16px;
-  color: rgba(232, 232, 232, 0.76);
-  font-size: 12px;
-  letter-spacing: 0.4px;
-  font-weight: 500;
-}
-
-.nav-links a:hover,
-.nav-links a.active { color: var(--hope-glow); }
-
-.mono {
-  color: var(--dim-text);
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
-.hero { padding: 38px 0 8px; }
-
-.hero-kicker {
-  color: var(--hope-glow);
-  margin-bottom: 14px;
-}
-
-h1 {
-  max-width: 640px;
-  margin-bottom: 20px;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 13px;
   font-weight: 700;
-  font-size: clamp(34px, 8vw, 54px);
-  line-height: 1.04;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
 }
+.nav-links a.active,
+.nav-links a:hover { color: var(--gold); }
 
-.title-line {
-  display: inline;
-}
-
-.hero-desc {
-  max-width: 600px;
-  margin-bottom: 26px;
-  color: var(--soft-text);
-  font-size: 16px;
-  line-height: 1.7;
-  font-weight: 300;
-}
-
-.section-heading {
-  max-width: 620px;
-  margin: 0 auto 12px;
-  color: #fff;
-  font-size: clamp(22px, 4vw, 30px);
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-  font-weight: 700;
+.hero {
+  min-height: 470px;
+  padding: 66px 0 58px;
+  display: grid;
+  place-items: center;
   text-align: center;
 }
-
-.action-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
+.hero-inner {
+  width: min(100%, 920px);
+  display: grid;
+  justify-items: center;
 }
-
-.btn-primary,
-.btn-secondary {
+h1 {
+  max-width: 920px;
+  color: #fff;
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+h1 span {
+  display: block;
+}
+.cta-stack {
+  width: min(100%, 360px);
+  margin-top: 28px;
+  display: grid;
+  gap: 13px;
+  justify-items: center;
+}
+.btn-primary {
+  width: min(100%, 270px);
+  min-height: 58px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 54px;
-  padding: 16px 28px;
-  border: 1px solid transparent;
-  border-radius: 15px;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 1.4px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.btn-primary {
-  background: var(--hope-glow);
-  color: #050505;
-  box-shadow: 0 24px 52px rgba(255, 179, 0, 0.18);
-}
-
-.btn-secondary {
-  min-height: 42px;
-  padding: 11px 16px;
-  border-color: var(--glass-border);
-  background: rgba(255, 255, 255, 0.012);
-  color: rgba(230, 230, 230, 0.72);
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-}
-
-.btn-primary:hover,
-.btn-secondary:hover { transform: translateY(-2px); }
-
-.btn-primary:hover { background: #fff; }
-.btn-secondary:hover { color: var(--hope-glow); border-color: rgba(255, 179, 0, 0.32); }
-
-.price-action {
-  margin-top: 18px;
-  width: 100%;
-  min-height: 72px;
-}
-
-.meta-line {
-  margin-top: 18px;
-  color: var(--dim-text);
-  font-size: 10px;
-  letter-spacing: 1.8px;
-}
-
-.blueprint-preview,
-.pricing-section,
-.info-section,
-.trust-strip {
-  margin-top: 42px;
-  padding-top: 36px;
-  border-top: 1px solid var(--glass-border);
-}
-
-.preview-grid,
-.pricing-grid,
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.preview-card,
-.price-card,
-.info-card,
-.silhouette-box {
-  border: 1px solid var(--glass-border);
-  background: var(--glass);
-  border-radius: 20px;
-}
-
-.preview-card,
-.price-card,
-.info-card { padding: 20px; }
-
-.price-card {
-  display: flex;
-  flex-direction: column;
-  min-height: 302px;
-}
-
-.preview-card h4,
-.price-card h3,
-.info-card h3 {
-  margin-bottom: 8px;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.1;
-  text-transform: uppercase;
-}
-
-.preview-card p,
-.price-card p,
-.info-card p {
-  color: var(--soft-text);
+  border-radius: 8px;
+  background: var(--gold);
+  color: #070707;
+  box-shadow: 0 20px 46px rgba(255, 179, 0, 0.18);
   font-size: 15px;
-  line-height: 1.68;
-  font-weight: 300;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.btn-primary:hover { background: #fff; }
+.hero-note {
+  max-width: 360px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.55;
 }
 
-.silhouette-box {
-  margin-top: 18px;
-  padding: 24px;
-  text-align: center;
-  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
+.path-section {
+  padding: 42px 0 54px;
+  border-top: 1px solid var(--line);
 }
-
-.archetype-row {
+.section-head {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin: 18px 0;
+  justify-items: center;
+  text-align: center;
+  margin-bottom: 24px;
 }
-
-.archetype {
-  min-height: 128px;
+.section-head h2 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+.section-head p {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.path-card {
+  min-height: 176px;
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  background: var(--panel);
+}
+.path-card:hover {
+  border-color: rgba(255, 179, 0, 0.30);
+  background: var(--panel-strong);
+}
+.path-top {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 16px;
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 18px;
-  background: rgba(0,0,0,0.18);
-  color: var(--soft-text);
 }
-
-.archetype-mark {
+.path-left {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.path-mark {
   width: 30px;
   height: 30px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(255, 179, 0, 0.28);
-  color: var(--hope-glow);
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  border: 1px solid rgba(255, 179, 0, 0.32);
+  color: var(--gold);
   font-size: 11px;
+  font-weight: 800;
 }
-
-.archetype-title {
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 1px;
+.path-type {
+  color: var(--soft);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
-
-.archetype-copy {
-  color: var(--soft-text);
-  font-size: 12px;
-  line-height: 1.45;
+.path-card h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0;
 }
-
-.price {
-  margin: auto 0 4px;
-  color: var(--hope-glow);
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 1;
-}
-
-.price-card.featured {
-  border-color: rgba(255, 179, 0, 0.34);
-  background: linear-gradient(180deg, rgba(255, 179, 0, 0.07), rgba(255,255,255,0.018));
-}
-
-.price-note {
-  color: var(--dim-text);
-  font-size: 12px;
-  line-height: 1.55;
-  letter-spacing: 0.8px;
-  min-height: 30px;
-}
-
-.trust-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  color: rgba(230, 230, 230, 0.76);
-  font-size: 9px;
-  letter-spacing: 1.2px;
+.path-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.58;
 }
 
 .footer {
   margin-top: auto;
-  padding-top: 34px;
-  color: var(--dim-text);
+  padding: 26px 0 34px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--soft);
   font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.3px;
 }
-
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.3px;
+  gap: 14px;
 }
+.footer a:hover { color: var(--gold); }
 
-.footer-links a { color: rgba(232, 232, 232, 0.68); }
-.footer-links a:hover { color: var(--hope-glow); }
-
-@media (min-width: 480px) {
-  .preview-grid,
-  .pricing-grid,
-  .info-grid { grid-template-columns: 1fr 1fr; }
-  .pricing-grid { grid-template-columns: 0.9fr 1.1fr 1fr; }
-  .btn-primary { width: auto; }
-}
-
-@media (max-width: 640px) {
-  body { width: 100%; }
-  .vault-shell {
-    width: calc(100vw - 40px);
-    max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 0 36px;
+@media (max-width: 720px) {
+  .page { width: min(100% - 32px, 420px); }
+  .topline { display: none; }
+  .hero {
+    min-height: auto;
+    padding: 46px 0 28px;
+    text-align: left;
+    place-items: stretch;
   }
-  .topline { align-items: center; flex-direction: row; flex-wrap: wrap; gap: 12px; }
-  .brand-name {
-    font-size: 12px;
-    letter-spacing: 1.4px;
-  }
-  .nav-links {
-    width: auto;
-    margin-left: auto;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    gap: 12px;
-    font-size: 12px;
+  .hero-inner { justify-items: stretch; }
+  h1 {
+    max-width: 390px;
+    font-size: 42px;
+    line-height: 1.03;
     letter-spacing: 0;
   }
-  .footer,
-  .footer-links,
-  .footer-links a {
-    font-size: 12px;
-    letter-spacing: 0.2px;
+  .cta-stack {
+    width: 100%;
+    margin-top: 26px;
+    justify-items: stretch;
+    gap: 16px;
   }
-  .hero { padding-top: 28px; }
-  h1 {
+  .btn-primary {
+    width: 100%;
+    min-height: 68px;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: 900;
+  }
+  .hero-note {
     max-width: 100%;
-    font-size: clamp(28px, 8.2vw, 32px);
-    line-height: 1.08;
-    letter-spacing: -0.025em;
-    overflow-wrap: normal;
+    font-size: 16px;
+    line-height: 1.55;
   }
-  .title-line { display: block; }
-  .hero-desc { font-size: 15px; line-height: 1.65; }
-  .hero-desc,
-  .meta-line { max-width: min(100%, 340px); }
-  .section-heading {
-    margin-left: 0;
-    margin-right: 0;
+  .path-section { padding: 26px 0 40px; }
+  .section-head {
+    justify-items: start;
     text-align: left;
-    font-size: clamp(22px, 6.2vw, 26px);
+    gap: 10px;
+    margin-bottom: 18px;
   }
-  .info-section .hero-desc {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  .section-head h2 {
+    max-width: 360px;
+    font-size: 32px;
+    line-height: 1.04;
   }
-  .vault-shell { overflow-x: hidden; }
-  .btn-primary,
-  .btn-secondary { width: 100%; }
-  .preview-grid,
-  .pricing-grid,
-  .info-grid,
-  .archetype-row { grid-template-columns: 1fr !important; }
-  .preview-card,
-  .price-card,
-  .info-card,
-  .silhouette-box { min-width: 0; }
-  .price-card { min-height: 0; }
-  .price { margin-top: 16px; }
-  .price-note { min-height: 0; }
-  .price-action { min-height: 54px; }
-  .preview-card p,
-  .price-card p,
-  .info-card p { overflow-wrap: break-word; }
+  .section-head p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .path-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .path-card {
+    min-height: 0;
+    padding: 16px 16px 18px;
+    gap: 12px;
+    border-radius: 12px;
+  }
+  .path-top { gap: 14px; }
+  .path-left { gap: 14px; }
+  .path-mark {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    font-size: 15px;
+  }
+  .path-type {
+    flex: 0 0 auto;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .path-card h3 {
+    min-width: 0;
+    font-size: 25px;
+    line-height: 1.05;
+  }
+  .path-card p {
+    font-size: 15px;
+    line-height: 1.48;
+  }
+  .footer {
+    padding: 22px 0 30px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
-@media (max-width: 430px) {
-  .brand-name { display: none; }
-  .topline { gap: 10px; }
-  .nav-links { gap: 10px; font-size: 11px; }
+@media (max-width: 380px) {
+  .page { width: min(100% - 32px, 420px); }
+  h1 { font-size: 38px; }
+  .section-head h2 { font-size: 28px; }
+  .btn-primary { font-size: 18px; }
+  .path-card h3 { font-size: 23px; }
+  .path-type { font-size: 12px; }
 }
 </style>
 <script type="application/ld+json">
@@ -495,12 +362,12 @@ h1 {
   "@type": "WebSite",
   "name": "HugoMojo",
   "url": "https://hugomojo.com/",
-  "description": "Find your AI income niche and first clear move based on your actual resources."
+  "description": "A free 16-question scanner for people who use AI tools but still do not know what to build first."
 }
 </script>
 </head>
 <body>
-  <main class="vault-shell">
+  <main class="page">
     <header class="topline">
       <a class="brand" href="index.html" aria-label="HugoMojo home">
         <span class="brand-mark">HM</span>
@@ -508,53 +375,74 @@ h1 {
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a class="active" href="index.html">Home</a>
+        <a href="answers/">Answers</a>
         <a href="scanner.html">Scanner</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <section class="hero">
-      <div class="hero-kicker mono">AI Income Niche Scanner</div>
-      <h1><span class="title-line">Paying for AI tools,</span> <span class="title-line">still stuck?</span> <span class="title-line">Stop the path error tax.</span></h1>
-      <p class="hero-desc">Take the 3-minute scan, find your AI income path, and get today's first move.</p>
-      <div class="action-stack">
-        <a class="btn-primary" href="scanner.html" data-event="scanner_start">Start Free Scanner</a>
-      </div>
-      <p class="meta-line">Free scanner · 16 practical questions</p>
-    </section>
-
-    <section class="info-section" id="how-it-works" aria-label="How the scanner works">
-      <h2 class="section-heading">Find the path your resources can support.</h2>
-      <p class="hero-desc" style="font-size:16px; max-width:620px; margin:0 auto 22px;">The scanner turns your answers into one starting path.</p>
-      <div class="silhouette-box">
-        <div class="archetype-row" aria-label="HugoMojo archetypes">
-          <div class="archetype">
-            <span class="archetype-mark">H</span>
-            <span class="archetype-title">Hunter</span>
-            <span class="archetype-copy">Starts with services.</span>
-          </div>
-          <div class="archetype">
-            <span class="archetype-mark">A</span>
-            <span class="archetype-title">Artisan</span>
-            <span class="archetype-copy">Starts with assets.</span>
-          </div>
-          <div class="archetype">
-            <span class="archetype-mark">C</span>
-            <span class="archetype-title">Architect</span>
-            <span class="archetype-copy">Starts with systems.</span>
-          </div>
+    <section class="hero" aria-labelledby="home-title">
+      <div class="hero-inner">
+        <h1 id="home-title">
+          <span>You have AI tools.</span>
+          <span>Still don't know what to build.</span>
+        </h1>
+        <div class="cta-stack">
+          <a class="btn-primary" href="scanner.html" data-event="scanner_start">Find My AI Path</a>
+          <p class="hero-note">16 questions about your time, skills, and selling style. One matched starting path.</p>
         </div>
       </div>
     </section>
 
+    <section class="path-section" aria-labelledby="paths-title">
+      <div class="section-head">
+        <h2 id="paths-title">Three paths. One matches your constraints.</h2>
+        <p>Your result points to the one your current situation can support.</p>
+      </div>
+      <div class="path-grid" aria-label="AI path preview">
+        <article class="path-card">
+          <div class="path-top">
+            <div class="path-left">
+              <span class="path-mark">H</span>
+            <h3>Hunter</h3>
+            </div>
+            <span class="path-type">Service-first</span>
+          </div>
+          <p>Start with a clear offer, real buyer replies, and fast service validation.</p>
+        </article>
+        <article class="path-card">
+          <div class="path-top">
+            <div class="path-left">
+              <span class="path-mark">A</span>
+            <h3>Artisan</h3>
+            </div>
+            <span class="path-type">Asset-first</span>
+          </div>
+          <p>Package one useful skill into a template, checklist, guide, or small product.</p>
+        </article>
+        <article class="path-card">
+          <div class="path-top">
+            <div class="path-left">
+              <span class="path-mark">C</span>
+            <h3>Architect</h3>
+            </div>
+            <span class="path-type">System-first</span>
+          </div>
+          <p>Review a repeated workflow and turn process pain into a simple AI-assisted offer.</p>
+        </article>
+      </div>
+    </section>
+
     <footer class="footer">
-      <div class="footer-links">
+      <span>Educational guidance only. No income guarantees.</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="answers/" data-event="footer_answers">Answers</a>
         <a href="delivery.html" data-event="footer_delivery">Delivery</a>
         <a href="contact.html" data-event="footer_contact">Contact</a>
         <a href="privacy.html" data-event="footer_privacy">Privacy</a>
         <a href="terms.html" data-event="footer_terms">Terms</a>
         <a href="refund.html" data-event="footer_refund">Refund</a>
-      </div>
+      </nav>
     </footer>
   </main>
 </body>
